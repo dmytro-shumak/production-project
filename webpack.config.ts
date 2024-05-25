@@ -1,8 +1,8 @@
 import path from "path";
 import type { Configuration } from "webpack";
-import { buildLoaders } from "./config/build/buildLoaders";
-import { buildPlugins } from "./config/build/buildPlugin";
-import { buildResolve } from "./config/build/buildResolve";
+import { buildLoaders } from "./config/webpack-build/buildLoaders";
+import { buildPlugins } from "./config/webpack-build/buildPlugin";
+import { buildResolve } from "./config/webpack-build/buildResolve";
 
 const config: Configuration = {
   mode: "production",
