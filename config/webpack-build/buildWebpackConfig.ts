@@ -6,7 +6,7 @@ import { buildResolve } from "./buildResolve";
 import type { BuildOption } from "./types/config";
 
 export const buildWebpackConfig = (option: BuildOption): Configuration => {
-  const { mode, paths } = option;
+  const { mode, paths, isDev } = option;
   return {
     mode,
     performance: {
@@ -18,12 +18,12 @@ export const buildWebpackConfig = (option: BuildOption): Configuration => {
       path: paths.build,
       clean: true,
     },
-    devtool: "inline-source-map",
+    devtool: isDev ? "inline-source-map" : false,
     module: {
       rules: buildLoaders(),
     },
     resolve: buildResolve(),
     plugins: buildPlugins(option),
-    devServer: buildDevServer(option),
+    devServer: isDev ? buildDevServer(option) : undefined,
   };
 };
