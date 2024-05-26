@@ -10,6 +10,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "verbatimModuleSyntax": true
+    // "baseUrl": "./"
   },
   "ts-node": {
     "compilerOptions": {
