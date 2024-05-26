@@ -1,3 +1,4 @@
+import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
 import type { Configuration } from "webpack";
 import { buildDevServer } from "./buildDevServer";
 import { buildLoaders } from "./buildLoaders";
@@ -20,7 +21,14 @@ export const buildWebpackConfig = (option: BuildOption): Configuration => {
     },
     devtool: isDev ? "inline-source-map" : false,
     module: {
-      rules: buildLoaders(),
+      rules: buildLoaders(option),
+    },
+    optimization: {
+      minimizer: [
+        // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
+        `...`,
+        new CssMinimizerPlugin(),
+      ],
     },
     resolve: buildResolve(),
     plugins: buildPlugins(option),
