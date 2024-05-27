@@ -15,7 +15,7 @@ export const Counter: FC = () => {
   return (
     <div>
       <h1>Counter: {count}</h1>
-      <button onClick={increment} className={styles.button}>
+      <button onClick={increment} className={styles.btn}>
         Increment
       </button>
       <button onClick={decrement}>Decrement</button>

@@ -6,6 +6,7 @@ export const buildDevServer = ({ port, paths }: BuildOption): DevServerConfigura
   return {
     port,
     open: false,
+    historyApiFallback: true,
     onListening: function (devServer) {
       const address = devServer.server.address();
       if (typeof address === "object" && "port" in address) {
