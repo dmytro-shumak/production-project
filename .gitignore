@@ -3,7 +3,7 @@
 
 # Ignore compiled output
 node_modules/
-build/
+/build/
 dist/
 
 # Ignore environment-specific files
