@@ -10,7 +10,7 @@ export const buildDevServer = ({ port, paths }: BuildOption): DevServerConfigura
     onListening: function (devServer) {
       const address = devServer.server.address();
       if (typeof address === "object" && "port" in address) {
-        // open browser in the same app
+        // open the app in the same tab
         openBrowser(`http://localhost:${address.port}`);
       }
     },
