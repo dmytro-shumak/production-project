@@ -4,9 +4,9 @@ import { buildDevServer } from "./buildDevServer";
 import { buildLoaders } from "./buildLoaders";
 import { buildPlugins } from "./buildPlugin";
 import { buildResolve } from "./buildResolve";
-import type { BuildOption } from "./types/config";
+import type { BuildOptions } from "./types/config";
 
-export const buildWebpackConfig = (option: BuildOption): Configuration => {
+export const buildWebpackConfig = (option: BuildOptions): Configuration => {
   const { mode, paths, isDev } = option;
   return {
     mode,
@@ -30,7 +30,7 @@ export const buildWebpackConfig = (option: BuildOption): Configuration => {
         new CssMinimizerPlugin(),
       ],
     },
-    resolve: buildResolve(),
+    resolve: buildResolve(option),
     plugins: buildPlugins(option),
     devServer: isDev ? buildDevServer(option) : undefined,
   };

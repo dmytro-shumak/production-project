@@ -10,8 +10,11 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "verbatimModuleSyntax": true,
-    "plugins": [{ "name": "typescript-plugin-css-modules" }]
-    // "baseUrl": "./"
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
+    "baseUrl": "./",
+    "paths": {
+      "*": ["./src/*"]
+    }
   },
   "ts-node": {
     "compilerOptions": {
