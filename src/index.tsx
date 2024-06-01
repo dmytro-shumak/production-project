@@ -1,5 +1,5 @@
 import App from "app/App";
-import { ThemeProvider } from "app/providers/ThemeProvider";
+import { ThemeProvider } from "app/providers/theme";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 
