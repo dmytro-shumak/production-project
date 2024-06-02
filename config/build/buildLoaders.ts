@@ -34,5 +34,14 @@ export const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
     use: ["@svgr/webpack"],
   };
 
-  return [typescriptLoader, cssLoader, svgLoader];
+  const fileLoader: RuleSetRule = {
+    test: /\.(png|jpe?g|gif|woff|woff2)$/i,
+    use: [
+      {
+        loader: "file-loader",
+      },
+    ],
+  };
+
+  return [typescriptLoader, cssLoader, svgLoader, fileLoader];
 };
