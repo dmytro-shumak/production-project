@@ -1,3 +1,5 @@
+declare const __DEV__: string;
+
 declare module "*.css" {
   interface IClassNames {
     [className: string]: string;
