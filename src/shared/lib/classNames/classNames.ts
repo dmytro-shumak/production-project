@@ -5,7 +5,7 @@ export const classNames = (
 ): string =>
   [
     classes,
-    Object.entries(mods)
+    ...Object.entries(mods)
       .filter(([_, value]) => Boolean(value))
       .map(([classes]) => classes),
     ...additionalClasses.filter(Boolean),
