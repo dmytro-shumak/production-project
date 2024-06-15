@@ -8,6 +8,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'airbnb',
     'prettier',
+    'plugin:i18next/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -17,7 +18,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint', 'i18next'],
   rules: {
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],

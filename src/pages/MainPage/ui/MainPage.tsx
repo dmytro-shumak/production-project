@@ -7,7 +7,6 @@ const MainPage: FC = () => {
   return (
     <div>
       <h1>{t('MainPage')}</h1>
-      <div>sddfssdfsdfs</div>
     </div>
   );
 };

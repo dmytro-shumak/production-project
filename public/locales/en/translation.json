@@ -1,5 +1,9 @@
 {
   "test": "Test",
   "translate": "Translate",
-  "MainPage": "Main Page"
+  "MainPage": "Main Page",
+  "English": "English",
+  "Russian": "Russian",
+  "Ukrainian": "Ukrainian",
+  "AboutPage": "About Page"
 }
