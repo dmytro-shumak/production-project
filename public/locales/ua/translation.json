@@ -1,9 +1,8 @@
 {
-  "test": "Тест",
-  "translate": "Перекласти",
   "MainPage": "Головна сторінка",
   "English": "Англійська",
   "Russian": "Російська",
   "Ukrainian": "Українська",
-  "AboutPage": "Про нас"
+  "AboutPage": "Про нас",
+  "PageNotFound": "Сторінка не знайдена"
 }
