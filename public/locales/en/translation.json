@@ -4,5 +4,7 @@
   "Russian": "Russian",
   "Ukrainian": "Ukrainian",
   "AboutPage": "About Page",
-  "PageNotFound": "Page Not Found"
+  "PageNotFound": "Page Not Found",
+  "UnexpectedErrorOccurred": "An unexpected error occurred",
+  "ReloadPage": "Reload Page"
 }

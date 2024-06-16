@@ -6,6 +6,6 @@ export const AboutPageLazy = lazy(
       // Specify the type of the imported module
       setTimeout(() => {
         resolve(import('./AboutPage'));
-      }, 55500);
+      }, 500);
     })
 );

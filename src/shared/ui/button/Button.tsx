@@ -4,6 +4,7 @@ import styles from './Button.module.css';
 
 export enum ThemeButton {
   Clear = 'clear',
+  Primary = 'primary',
 }
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -19,7 +20,7 @@ export const Button: FC<Props> = ({
   ...buttonProps
 }) => (
   <button
-    className={classNames(styles.button, {}, [className, theme])}
+    className={classNames(styles.button, {}, [className, styles[theme]])}
     // eslint-disable-next-line react/jsx-props-no-spreading
     {...buttonProps}
     type="button"

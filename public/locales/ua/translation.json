@@ -4,5 +4,7 @@
   "Russian": "Російська",
   "Ukrainian": "Українська",
   "AboutPage": "Про нас",
-  "PageNotFound": "Сторінка не знайдена"
+  "PageNotFound": "Сторінка не знайдена",
+  "UnexpectedErrorOccurred": "Виникла непередбачувана помилка",
+  "ReloadPage": "Перезавантажити сторінку"
 }
