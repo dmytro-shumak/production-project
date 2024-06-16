@@ -1,8 +1,8 @@
 import { useState, type FC } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui';
-import { LangSwitcher } from 'widgets/lang-switcher';
-import { ThemeSwitcher } from 'widgets/theme-switcher';
+import { LangSwitcher } from 'widgets/LangSwitcher';
+import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import styles from './Sidebar.module.css';
 
 interface Props {
