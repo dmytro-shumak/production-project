@@ -44,6 +44,7 @@ module.exports = {
     ],
     'no-underscore-dangle': 'off',
     'no-trailing-spaces': 'error',
+    'arrow-body-style': ['off'],
   },
   globals: {
     __DEV__: true,

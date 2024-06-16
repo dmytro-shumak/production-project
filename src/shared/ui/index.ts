@@ -1,4 +1,4 @@
-export { AppLink } from './app-link/AppLink';
-export { AppLinkTheme } from './app-link/types';
+export { AppLink } from './AppLink/AppLink';
+export { AppLinkTheme } from './AppLink/types';
 
 export { Button, ThemeButton } from './button/Button';
