@@ -42,14 +42,10 @@ module.exports = {
       'error',
       {
         devDependencies: [
-          '**/*.test.js',
           '**/*.test.ts',
           '**/*.test.tsx',
-          '**/*.test.jsx',
-          '**/*.spec.js',
           '**/*.spec.ts',
           '**/*.spec.tsx',
-          '**/*.spec.jsx',
           'config/**',
         ],
       },
@@ -58,6 +54,14 @@ module.exports = {
     'no-trailing-spaces': 'error',
     'arrow-body-style': ['off'],
   },
+  overrides: [
+    {
+      files: ['*.test.tsx', '*.test.ts'], // Add other patterns if needed
+      rules: {
+        'i18next/no-literal-string': 'off',
+      },
+    },
+  ],
   globals: {
     __DEV__: true,
   },

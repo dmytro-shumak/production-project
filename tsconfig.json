@@ -12,6 +12,7 @@
     "verbatimModuleSyntax": true,
     "plugins": [{ "name": "typescript-plugin-css-modules" }],
     "baseUrl": "./",
+    "types": ["node", "jest", "./config/jest/setupTests.ts"],
     "paths": {
       "*": ["./src/*"]
     }
@@ -22,5 +23,4 @@
       "verbatimModuleSyntax": false
     }
   },
-  "include": ["./setupTests.ts"]
 }
