@@ -40,7 +40,19 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': [
       'error',
-      { devDependencies: ['**/*.test.js', '**/*.spec.js', 'config/**'] },
+      {
+        devDependencies: [
+          '**/*.test.js',
+          '**/*.test.ts',
+          '**/*.test.tsx',
+          '**/*.test.jsx',
+          '**/*.spec.js',
+          '**/*.spec.ts',
+          '**/*.spec.tsx',
+          '**/*.spec.jsx',
+          'config/**',
+        ],
+      },
     ],
     'no-underscore-dangle': 'off',
     'no-trailing-spaces': 'error',

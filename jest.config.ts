@@ -12,7 +12,15 @@ const config: Config = {
   coveragePathIgnorePatterns: ['/node_modules/'],
 
   // An array of directory names to be searched recursively up from the requiring module's location
-  moduleDirectories: ['node_modules'],
+  moduleDirectories: ['node_modules', 'src'],
+
+  setupFilesAfterEnv: [
+    "<rootDir>/setupTests.ts"
+  ],
+
+  moduleNameMapper: {
+    '\\.(css|less)$': 'identity-obj-proxy',
+  },
 
   // An array of file extensions your modules use
   moduleFileExtensions: [
