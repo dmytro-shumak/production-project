@@ -42,11 +42,10 @@ module.exports = {
       'error',
       {
         devDependencies: [
-          '**/*.test.ts',
-          '**/*.test.tsx',
-          '**/*.spec.ts',
-          '**/*.spec.tsx',
+          '**/*.test.{ts,tsx}',
+          '**/*.spec.{ts,tsx}',
           'config/**',
+          '**/tests/**'
         ],
       },
     ],

@@ -4,6 +4,7 @@
  */
 
 import type { Config } from 'jest';
+import path from "path";
 
 const config: Config = {
   testEnvironment: 'jsdom',
@@ -20,6 +21,7 @@ const config: Config = {
 
   moduleNameMapper: {
     '\\.(css|less)$': 'identity-obj-proxy',
+    '\\.svg$': path.resolve(__dirname, 'config/jest/svgTransform.tsx'),
   },
 
   // An array of file extensions your modules use
