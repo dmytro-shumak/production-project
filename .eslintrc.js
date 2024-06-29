@@ -52,6 +52,9 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'no-trailing-spaces': 'error',
     'arrow-body-style': ['off'],
+    curly: ["error", "multi-line"],
+    'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 1 }],
+    'eol-last': ["error", "always"]
   },
   overrides: [
     {

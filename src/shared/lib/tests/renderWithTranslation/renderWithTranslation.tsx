@@ -6,5 +6,6 @@ import i18nTest from "shared/config/i18n/18nTest";
 export const renderWithTranslation = (component: ReactElement) => {
   return render(<I18nextProvider i18n={i18nTest}>
     {component}
+
   </I18nextProvider>);
 }

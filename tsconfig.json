@@ -10,9 +10,10 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "verbatimModuleSyntax": true,
+    "skipLibCheck": true,
     "plugins": [{ "name": "typescript-plugin-css-modules" }],
     "baseUrl": "./",
-    "types": ["node", "jest", "./config/jest/setupTests.ts"],
+    "types": ["node", "jest"],
     "paths": {
       "*": ["./src/*"]
     }
