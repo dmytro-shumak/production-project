@@ -5,6 +5,7 @@ import styles from './Button.module.css';
 export enum ThemeButton {
   Clear = 'clear',
   Primary = 'primary',
+  Outline = 'outline',
 }
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -16,7 +17,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button: FC<Props> = ({
   className,
   children,
-  theme,
+  theme = ThemeButton.Primary,
   ...buttonProps
 }) => (
   <button
