@@ -1,5 +1,6 @@
 import type { StorybookConfig } from '@storybook/react-webpack5';
 import path from "path";
+import { DefinePlugin } from "webpack";
 
 const config: StorybookConfig = {
   stories: ['../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -49,6 +50,10 @@ const config: StorybookConfig = {
       issuer: /\.[jt]sx?$/,
       use: ["@svgr/webpack"],
     })
+
+    config.plugins.push(new DefinePlugin({
+      __DEV__: true,
+    }),)
 
     return config;
   },

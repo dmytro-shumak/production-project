@@ -2,6 +2,7 @@ import type { Preview } from '@storybook/react';
 import { Theme } from "app/providers/theme";
 import { RouterDecorator } from "shared/config/storybook/RouterDecorator";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator";
+import { withI18nextDecorator } from "shared/config/storybook/withI18nextDecorator";
 
 const preview: Preview = {
   parameters: {
@@ -19,7 +20,23 @@ const preview: Preview = {
       },
     },
   },
-  decorators: [RouterDecorator, ThemeDecorator(Theme.Light)],
+  decorators: [withI18nextDecorator,RouterDecorator, ThemeDecorator(Theme.Light)],
+};
+
+export const globalTypes = {
+  locale: {
+    name: 'Locale',
+    description: 'Internationalization locale',
+    toolbar: {
+      icon: 'globe',
+      items: [
+        { value: 'en', title: 'English' },
+        { value: 'ru', title: 'Russian' },
+        { value: 'ua', title: 'Ukraine' },
+      ],
+      showName: true,
+    },
+  },
 };
 
 export default preview;
