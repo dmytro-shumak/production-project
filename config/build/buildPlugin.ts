@@ -29,11 +29,10 @@ export const buildPlugins = ({
       __DEV__: JSON.stringify(isDev),
     }),
     new HotModuleReplacementPlugin(),
-    new BundleAnalyzerPlugin({ openAnalyzer: false }),
   ];
 
   if (isDev) {
-    plugins.push(new ReactRefreshWebpackPlugin());
+    plugins.push(new ReactRefreshWebpackPlugin(), new BundleAnalyzerPlugin({ openAnalyzer: false }),);
   }
 
   return plugins;
