@@ -16,7 +16,8 @@
     "test": "jest",
     "storybook": "storybook dev -p 6006 -c config/storybook",
     "build-storybook": "storybook build -c config/storybook",
-    "loki:test": "npx loki test",
+    "test:screenshot": "npm run build-storybook && npx loki --requireReference --reactUri file:./storybook-static",
+    "loki:test": "npx loki test --skipStories Loader",
     "loki:approve": "npx loki approve"
   },
   "keywords": [],

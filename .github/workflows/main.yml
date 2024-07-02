@@ -29,6 +29,8 @@ jobs:
       run: npm run test
     - name: Type checking
       run: npm run type-check
+    - name: Screeenshot testing
+      run: npm run test:screenshot
        
     
 
