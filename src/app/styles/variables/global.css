@@ -1,11 +1,17 @@
 :root {
   --font-family-main: consolas, "Times New Roman", serif;
+  --font-size-sm: 12px;
+  --font-line-sm: 16px;
+  --font-sm: var(--font-size-sm) / var(--font-line-sm) var(--font-family-main);
   --font-size-md: 16px;
   --font-line-md: 24px;
   --font-md: var(--font-size-md) / var(--font-line-md) var(--font-family-main);
   --font-size-lg: 24px;
   --font-line-lg: 32px;
   --font-lg: var(--font-size-lg) / var(--font-line-lg) var(--font-family-main);
+  --font-size-xl: 32px;
+  --font-line-xl: 40px;
+  --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
 
   /* Sizes */
   --navbar-height: 50px;

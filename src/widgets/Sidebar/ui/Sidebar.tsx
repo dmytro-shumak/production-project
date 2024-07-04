@@ -1,6 +1,6 @@
 import { useState, type FC } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button } from 'shared/ui';
+import { Button, ButtonSize } from 'shared/ui';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import styles from './Sidebar.module.css';
@@ -10,7 +10,7 @@ interface Props {
 }
 
 export const Sidebar: FC<Props> = ({ className }) => {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
 
   const handleToggle = () => {
     setCollapsed((prev) => !prev);
@@ -22,12 +22,12 @@ export const Sidebar: FC<Props> = ({ className }) => {
         className,
       ])}
     >
-      <Button onClick={handleToggle}>
-        {collapsed ? 'Expand' : 'Collapse'}
+      <Button onClick={handleToggle} square size={ButtonSize.L} className={styles.button}>
+        {collapsed ? '>' : '<'}
       </Button>
       <div className={styles.switchers}>
         <ThemeSwitcher />
-        <LangSwitcher />
+        <LangSwitcher collapsed={collapsed}/>
       </div>
     </div>
   );

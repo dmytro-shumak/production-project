@@ -2,26 +2,39 @@ import type { ButtonHTMLAttributes, FC, ReactNode } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import styles from './Button.module.css';
 
-export enum ThemeButton {
+export enum ButtonTheme {
   Clear = 'clear',
   Primary = 'primary',
   Outline = 'outline',
 }
 
+export enum ButtonSize {
+  L = "sizeL",
+  M = "sizeM",
+  S = "sizeS",
+  XL = "sizeXL",
+}
+
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   children?: ReactNode;
-  theme?: ThemeButton;
+  square?: boolean;
+  theme?: ButtonTheme;
+  size?: ButtonSize;
 }
 
 export const Button: FC<Props> = ({
   className,
   children,
-  theme = ThemeButton.Primary,
+  theme = ButtonTheme.Primary,
+  square = false,
+  size = ButtonSize.M,
   ...buttonProps
 }) => (
   <button
-    className={classNames(styles.button, {}, [className, styles[theme]])}
+    className={classNames(styles.button, {
+      [styles.square]: square,
+    }, [className, styles[theme], styles[size]])}
     // eslint-disable-next-line react/jsx-props-no-spreading
     {...buttonProps}
     type="button"

@@ -41,3 +41,52 @@
   background-color: var(--primary-color);
   color: #fff;
 }
+
+.square {
+  border-radius: 5px;
+  padding: 0;
+}
+
+.square.sizeL {
+  width: var(--font-line-lg);
+  height: var(--font-line-lg);
+  font-size: var(--font-size-lg);
+}
+
+.square.sizeM {
+  width: var(--font-line-md);
+  height: var(--font-line-md);
+  font-size: var(--font-size-md);
+}
+
+.square.sizeS {
+  width: var(--font-line-sm);
+  height: var(--font-line-sm);
+  font-size: var(--font-size-sm);
+}
+
+.square.sizeXL {
+  width: var(--font-line-xl);
+  height: var(--font-line-xl);
+  font-size: var(--font-size-xl);
+}
+
+.sizeL {
+  font-size: var(--font-size-lg);
+  line-height: var(--font-line-lg);
+}
+
+.sizeM {
+  font-size: var(--font-size-md);
+  line-height: var(--font-line-md);
+}
+
+.sizeS {
+  font-size: var(--font-size-sm);
+  line-height: var(--font-line-sm);
+}
+
+.sizeXL {
+  font-size: var(--font-size-xl);
+  line-height: var(--font-line-xl);
+}
