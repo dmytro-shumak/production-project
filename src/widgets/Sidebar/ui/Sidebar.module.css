@@ -37,7 +37,7 @@
 }
 
 .icon {
-  fill: red
+  fill: var(--inverted-primary-color);
 }
 
 .links a span {
