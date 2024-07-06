@@ -53,6 +53,8 @@ module.exports = {
     'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 1 }],
     'eol-last': ["error", "always"],
     'global-require': 'off',
+    'no-multi-spaces': 'error',
+    'react/jsx-tag-spacing': ['error', { beforeSelfClosing: 'always' }],
   },
   overrides: [
     {

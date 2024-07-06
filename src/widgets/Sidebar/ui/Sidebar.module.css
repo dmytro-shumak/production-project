@@ -23,6 +23,28 @@
   }
 }
 
+.links {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px
+}
+
+.links a{
+  display: flex;
+  gap: 5px;
+}
+
+.icon {
+  fill: red
+}
+
+.links a span {
+  transition: opacity 0.3s;
+  display: block;
+}
+
 .button {
   margin: 10px 10px 0 auto;
   display: block;
@@ -31,4 +53,11 @@
 .collapsed .button {
   margin-right: calc(var(--collapsed-sidebar-width) / 2);
   transform: translateX(50%);
+}
+
+
+.collapsed .links a span {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
