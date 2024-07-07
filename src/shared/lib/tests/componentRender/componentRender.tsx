@@ -1,8 +1,8 @@
-import { render } from '@testing-library/react';
-import type { ReactElement } from 'react';
-import { I18nextProvider } from 'react-i18next';
-import { MemoryRouter } from 'react-router-dom';
-import i18nTest from 'shared/config/i18n/18nTest';
+import { render } from "@testing-library/react";
+import type { ReactElement } from "react";
+import { I18nextProvider } from "react-i18next";
+import { MemoryRouter } from "react-router-dom";
+import i18nTest from "shared/config/i18n/18nTest";
 
 export interface ComponentRenderOptions {
   route?: string;

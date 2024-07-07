@@ -1,7 +1,7 @@
 export const classNames = (
   classes: string,
   mods: Record<string, boolean> = {},
-  additionalClasses: string[] = []
+  additionalClasses: string[] = [],
 ): string =>
   [
     classes,
@@ -9,4 +9,4 @@ export const classNames = (
       .filter(([_, value]) => Boolean(value))
       .map(([classes]) => classes),
     ...additionalClasses.filter(Boolean),
-  ].join(' ');
+  ].join(" ");

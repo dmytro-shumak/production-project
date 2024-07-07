@@ -1,5 +1,5 @@
 const svgTransform = () => {
-  return <div />
-}
+  return <div />;
+};
 
 export default svgTransform;

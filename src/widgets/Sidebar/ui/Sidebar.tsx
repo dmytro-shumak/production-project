@@ -1,13 +1,13 @@
-import { useState, type FC } from 'react';
-import { useTranslation } from 'react-i18next';
-import AboutIcon from 'shared/assets/icons/about.svg';
-import MainIcon from 'shared/assets/icons/main.svg';
-import { RoutesPath } from 'shared/config/route-config/routeConfig';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme, Button, ButtonSize } from 'shared/ui';
-import { LangSwitcher } from 'widgets/LangSwitcher';
-import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
-import styles from './Sidebar.module.css';
+import { useState, type FC } from "react";
+import { useTranslation } from "react-i18next";
+import AboutIcon from "shared/assets/icons/about.svg";
+import MainIcon from "shared/assets/icons/main.svg";
+import { RoutesPath } from "shared/config/route-config/routeConfig";
+import { classNames } from "shared/lib/classNames/classNames";
+import { AppLink, AppLinkTheme, Button, ButtonSize } from "shared/ui";
+import { LangSwitcher } from "widgets/LangSwitcher";
+import { ThemeSwitcher } from "widgets/ThemeSwitcher";
+import styles from "./Sidebar.module.css";
 
 interface Props {
   className?: string;
@@ -34,19 +34,19 @@ export const Sidebar: FC<Props> = ({ className }) => {
         size={ButtonSize.L}
         className={styles.button}
       >
-        {collapsed ? '>' : '<'}
+        {collapsed ? ">" : "<"}
       </Button>
       <ul className={styles.links}>
         <li>
           <AppLink to={RoutesPath.main} theme={AppLinkTheme.InvertedPrimary}>
             <MainIcon className={styles.icon} />
-            <span>{t('MainPage')}</span>
+            <span>{t("MainPage")}</span>
           </AppLink>
         </li>
         <li>
           <AppLink to={RoutesPath.about} theme={AppLinkTheme.InvertedPrimary}>
             <AboutIcon className={styles.icon} />
-            <span>{t('AboutPage')}</span>
+            <span>{t("AboutPage")}</span>
           </AppLink>
         </li>
       </ul>

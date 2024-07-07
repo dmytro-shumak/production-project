@@ -1,8 +1,8 @@
-import type { FC } from 'react';
-import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme } from 'shared/ui';
-import styles from './NavBar.module.css';
+import type { FC } from "react";
+import { useTranslation } from "react-i18next";
+import { classNames } from "shared/lib/classNames/classNames";
+import { AppLink, AppLinkTheme } from "shared/ui";
+import styles from "./NavBar.module.css";
 
 interface Props {
   className?: string;
@@ -16,11 +16,11 @@ export const NavBar: FC<Props> = ({ className }) => {
       <ul className={styles.links}>
         <li>
           <AppLink to="/" theme={AppLinkTheme.Secondary}>
-            {t('MainPage')}
+            {t("MainPage")}
           </AppLink>
         </li>
         <li>
-          <AppLink to="/about">{t('AboutPage')}</AppLink>
+          <AppLink to="/about">{t("AboutPage")}</AppLink>
         </li>
       </ul>
     </nav>

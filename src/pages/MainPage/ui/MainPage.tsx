@@ -1,12 +1,12 @@
-import { type FC } from 'react';
-import { useTranslation } from 'react-i18next';
+import { type FC } from "react";
+import { useTranslation } from "react-i18next";
 
 const MainPage: FC = () => {
   const { t } = useTranslation();
 
   return (
     <div>
-      <h1>{t('MainPage')}</h1>
+      <h1>{t("MainPage")}</h1>
     </div>
   );
 };

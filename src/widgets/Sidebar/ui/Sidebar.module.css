@@ -28,10 +28,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px
+  gap: 5px;
 }
 
-.links a{
+.links a {
   display: flex;
   gap: 5px;
 }
@@ -54,7 +54,6 @@
   margin-right: calc(var(--collapsed-sidebar-width) / 2);
   transform: translateX(50%);
 }
-
 
 .collapsed .links a span {
   opacity: 0;

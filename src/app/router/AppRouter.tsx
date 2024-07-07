@@ -1,7 +1,7 @@
-import { Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
-import { routesConfig } from 'shared/config/route-config/routeConfig';
-import { Loader } from 'shared/ui/Loader';
+import { Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
+import { routesConfig } from "shared/config/route-config/routeConfig";
+import { Loader } from "shared/ui/Loader";
 
 export const AppRouter = () => (
   <Routes>

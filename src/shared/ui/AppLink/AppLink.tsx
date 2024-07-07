@@ -1,8 +1,8 @@
-import type { FC, ReactNode } from 'react';
-import { Link, type LinkProps } from 'react-router-dom';
-import { classNames } from 'shared/lib/classNames/classNames';
-import styles from './AppLink.module.css';
-import { AppLinkTheme } from './types';
+import type { FC, ReactNode } from "react";
+import { Link, type LinkProps } from "react-router-dom";
+import { classNames } from "shared/lib/classNames/classNames";
+import styles from "./AppLink.module.css";
+import { AppLinkTheme } from "./types";
 
 interface Props extends LinkProps {
   className?: string;
@@ -18,7 +18,7 @@ export const AppLink: FC<Props> = ({
   ...linkProps
 }) => (
   <Link
-    className={classNames('', {}, [className, styles[theme]])}
+    className={classNames("", {}, [className, styles[theme]])}
     to={to}
     // eslint-disable-next-line react/jsx-props-no-spreading
     {...linkProps}

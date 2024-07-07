@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
-import { Component, Suspense, type ErrorInfo, type ReactNode } from 'react';
-import { PageError } from 'widgets/PageError';
+import { Component, Suspense, type ErrorInfo, type ReactNode } from "react";
+import { PageError } from "widgets/PageError";
 
 interface Props {
   children: ReactNode;
