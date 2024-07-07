@@ -23,18 +23,23 @@ jobs:
       run: npm run build:prod
     - name: Linting 
       run: npm run lint
+      if: always()
     - name: Stylelint
       run: npm run stylelint
+      if: always()
     - name: Unit testing
       run: npm run test
+      if: always()
     - name: Type checking
       run: npm run type-check
+      if: always()
     - name: Build storybook
       run: npm run build-storybook
-    - name: Lighthouse testing
+    - name: Loki update
       run: npx loki update --reactUri="file:./storybook-static" --skipStories="Loader"
     - name: Screeenshot testing
       run: npm run test:screenshot
+      if: always()
        
     
 
