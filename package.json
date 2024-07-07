@@ -17,8 +17,11 @@
     "storybook": "storybook dev -p 6006 -c config/storybook",
     "build-storybook": "storybook build -c config/storybook",
     "test:screenshot": "npx loki --requireReference --reactUri file:./storybook-static  --skipStories Loader",
-    "loki:test": "npx loki test --skipStories Loader",
-    "loki:approve": "npx loki approve"
+    "test:ui": "npx loki test --skipStories Loader",
+    "test:ui:approve": "npx loki approve",
+    "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
+    "test:ui:json": "node scripts/generate-visual-json-report.js",
+    "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html"
   },
   "keywords": [],
   "author": "",
@@ -71,6 +74,7 @@
     "react-dev-utils": "^12.0.1",
     "react-refresh": "^0.14.2",
     "react-test-renderer": "^18.3.1",
+    "reg-cli": "^0.18.6",
     "storybook": "^8.1.11",
     "style-loader": "^4.0.0",
     "stylelint": "^16.6.1",

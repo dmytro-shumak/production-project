@@ -29,3 +29,7 @@ Thumbs.db
 
 # Ignore storybook static files
 storybook-static
+
+# Ignore loki report files
+.loki/report.json
+.loki/report.html
