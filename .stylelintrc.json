@@ -1,6 +1,9 @@
 {
   "extends": ["stylelint-config-standard"],
-  "rules": {},
+  "rules": {
+    "color-function-notation": "legacy",
+    "alpha-value-notation": "number"
+  },
   "overrides": [
     {
       "files": ["**/*.module.css"],
