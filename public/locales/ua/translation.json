@@ -6,5 +6,6 @@
   "AboutPage": "Про нас",
   "PageNotFound": "Сторінка не знайдена",
   "UnexpectedErrorOccurred": "Виникла непередбачувана помилка",
-  "ReloadPage": "Перезавантажити сторінку"
+  "ReloadPage": "Перезавантажити сторінку",
+  "Login": "Увійти"
 }

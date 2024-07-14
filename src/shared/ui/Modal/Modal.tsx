@@ -6,6 +6,7 @@ import {
   type ReactNode,
 } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
+import { Portal } from "shared/ui/Portal/Portal";
 import styles from "./Modal.module.css";
 
 interface Props {
@@ -42,16 +43,18 @@ export const Modal: FC<Props> = ({ className, children, isOpen, onClose }) => {
   }, [onKeyDown]);
 
   return (
-    <div
-      className={classNames(styles.modal, { [styles.opened]: isOpen }, [
-        className,
-      ])}
-    >
-      <div className={styles.overlay} onClick={handleOverlayClick}>
-        <div className={styles.content} onClick={handleContentClick}>
-          {children}
+    <Portal portalContainer={document.body}>
+      <div
+        className={classNames(styles.modal, { [styles.opened]: isOpen }, [
+          className,
+        ])}
+      >
+        <div className={styles.overlay} onClick={handleOverlayClick}>
+          <div className={styles.content} onClick={handleContentClick}>
+            {children}
+          </div>
         </div>
       </div>
-    </div>
+    </Portal>
   );
 };

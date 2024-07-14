@@ -6,5 +6,6 @@
   "AboutPage": "About Page",
   "PageNotFound": "Page Not Found",
   "UnexpectedErrorOccurred": "An unexpected error occurred",
-  "ReloadPage": "Reload Page"
+  "ReloadPage": "Reload Page",
+  "Login": "Login"
 }

@@ -6,5 +6,6 @@
   "AboutPage": "О нас",
   "PageNotFound": "Страница не найдена",
   "UnexpectedErrorOccurred": "Произошла неожиданная ошибка",
-  "ReloadPage": "Перезагрузить страницу"
+  "ReloadPage": "Перезагрузить страницу",
+  "Login": "Войти"
 }
