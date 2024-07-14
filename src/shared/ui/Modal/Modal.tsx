@@ -24,11 +24,14 @@ export const Modal: FC<Props> = ({ className, children, isOpen, onClose }) => {
     e.stopPropagation();
   };
 
-  const onKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.code === "Escape") {
-      onClose?.();
-    }
-  }, []);
+  const onKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.code === "Escape") {
+        onClose?.();
+      }
+    },
+    [onClose],
+  );
 
   useEffect(() => {
     window.addEventListener("keydown", onKeyDown);
@@ -36,7 +39,7 @@ export const Modal: FC<Props> = ({ className, children, isOpen, onClose }) => {
     return () => {
       window.removeEventListener("keydown", onKeyDown);
     };
-  }, []);
+  }, [onKeyDown]);
 
   return (
     <div

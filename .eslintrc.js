@@ -4,6 +4,17 @@ module.exports = {
     es2021: true,
     jest: true,
   },
+  overrides: [
+    {
+      files: ["*.test.tsx", "*.test.ts"], // Add other patterns if needed
+      rules: {
+        "i18next/no-literal-string": "off",
+      },
+    },
+  ],
+  globals: {
+    __DEV__: true,
+  },
   extends: [
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
@@ -11,6 +22,7 @@ module.exports = {
     "plugin:i18next/recommended",
     "plugin:storybook/recommended",
     "plugin:prettier/recommended",
+    "plugin:react-hooks/recommended",
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -20,7 +32,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint", "i18next"],
+  plugins: ["react", "@typescript-eslint", "i18next", "react-hooks"],
   rules: {
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
@@ -71,16 +83,7 @@ module.exports = {
     ],
     "jsx-a11y/no-static-element-interactions": "off",
     "jsx-a11y/click-events-have-key-events": "off",
-  },
-  overrides: [
-    {
-      files: ["*.test.tsx", "*.test.ts"], // Add other patterns if needed
-      rules: {
-        "i18next/no-literal-string": "off",
-      },
-    },
-  ],
-  globals: {
-    __DEV__: true,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
   },
 };
