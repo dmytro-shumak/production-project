@@ -1,4 +1,4 @@
-declare const __DEV__: string;
+declare const __DEV__: boolean;
 
 declare module '*.css' {
   interface IClassNames {

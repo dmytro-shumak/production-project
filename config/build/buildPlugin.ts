@@ -26,7 +26,7 @@ export const buildPlugins = ({
       chunkFilename: "[id].[contenthash].css",
     }),
     new DefinePlugin({
-      __DEV__: JSON.stringify(isDev),
+      __DEV__: isDev,
     }),
     new HotModuleReplacementPlugin(),
   ];
