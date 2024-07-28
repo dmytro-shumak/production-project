@@ -7,5 +7,8 @@
   "PageNotFound": "Сторінка не знайдена",
   "UnexpectedErrorOccurred": "Виникла непередбачувана помилка",
   "ReloadPage": "Перезавантажити сторінку",
-  "Login": "Увійти"
+  "Login": "Увійти",
+  "Value": "Значення",
+  "Increment": "Інкремент",
+  "Decrement": "Декремент"
 }

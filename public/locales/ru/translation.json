@@ -7,5 +7,8 @@
   "PageNotFound": "Страница не найдена",
   "UnexpectedErrorOccurred": "Произошла неожиданная ошибка",
   "ReloadPage": "Перезагрузить страницу",
-  "Login": "Войти"
+  "Login": "Войти",
+  "Value": "Значение",
+  "Increment": "Инкремент",
+  "Decrement": "Декремент"
 }

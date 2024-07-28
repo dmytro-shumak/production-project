@@ -1,8 +1,9 @@
-import type { FC } from "react";
+import { type FC } from "react";
 import { useDispatch } from "react-redux";
 import { Button } from "shared/ui";
 import { useAppSelector } from "shared/lib";
 import { getCounterValue } from "entities/Counter/model/selectors/getCounterValue/getCounterValue";
+import { useTranslation } from "react-i18next";
 import {
   counterDecrement,
   counterIncrement,
@@ -11,6 +12,8 @@ import {
 export const Counter: FC = () => {
   const value = useAppSelector(getCounterValue);
   const dispatch = useDispatch();
+
+  const { t } = useTranslation();
   const increment = () => {
     dispatch(counterIncrement());
   };
@@ -20,9 +23,15 @@ export const Counter: FC = () => {
   };
   return (
     <div>
-      <h1>Value {value} </h1>
-      <Button onClick={increment}>increment</Button>
-      <Button onClick={decrement}>decrement</Button>
+      <h1 data-testid="value-title">
+        {t("Value")} {value}{" "}
+      </h1>
+      <Button onClick={increment} data-testid="increment-button">
+        {t("Increment")}
+      </Button>
+      <Button onClick={decrement} data-testid="decrement-button">
+        {t("Decrement")}
+      </Button>
     </div>
   );
 };
