@@ -87,5 +87,6 @@ module.exports = {
     "react-hooks/exhaustive-deps": "warn",
     "no-param-reassign": "off",
     "i18next/no-literal-string": "warn",
+    "consistent-return": "off",
   },
 };
