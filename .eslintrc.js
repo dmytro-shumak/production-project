@@ -61,6 +61,7 @@ module.exports = {
           "**/storybook/**",
           "config/**",
           "**/tests/**",
+          "json-server/**",
         ],
       },
     ],
