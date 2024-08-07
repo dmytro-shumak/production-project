@@ -11,7 +11,7 @@ import styles from "./Input.module.css";
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
   className?: string;
-  label: string;
+  label?: string;
 }
 
 export const Input = memo(

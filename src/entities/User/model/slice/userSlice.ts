@@ -9,6 +9,6 @@ export const userUser = createSlice({
   reducers: {},
 });
 
-export const {} = userUser.actions;
+// export const {} = userUser.actions;
 
 export const userReducer = userUser.reducer;
