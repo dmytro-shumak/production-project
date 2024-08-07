@@ -17,7 +17,7 @@ export const LoginModal: FC<Props> = ({ className, isOpen, onClose }) => {
       isOpen={isOpen}
       onClose={onClose}
     >
-      <LoginForm />
+      <LoginForm isOpen={isOpen} />
     </Modal>
   );
 };
