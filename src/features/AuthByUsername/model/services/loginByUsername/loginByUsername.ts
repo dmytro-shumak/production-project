@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import type { User } from "entities/User";
+import { setAuthData, type User } from "entities/User";
+import { LocalStorageKeys } from "shared/constants/localStorage";
 
 interface LoginByUserName {
   username: string;
@@ -17,6 +18,8 @@ export const loginByUsername = createAsyncThunk<
     if (!response.data) {
       throw new Error("failed to login");
     }
+    localStorage.setItem(LocalStorageKeys.USER, JSON.stringify(response.data));
+    thunkApi.dispatch(setAuthData(response.data));
     return response.data;
   } catch (error) {
     if (error instanceof Error) {
@@ -25,6 +28,7 @@ export const loginByUsername = createAsyncThunk<
     if (typeof error?.response?.data?.message === "string") {
       return thunkApi.rejectWithValue(error.response.data.message);
     }
+
     return thunkApi.rejectWithValue(String(error));
   }
 });
