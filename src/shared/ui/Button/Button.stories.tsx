@@ -58,3 +58,11 @@ export const OutlineDark: Story = {
     backgrounds: { default: "dark" },
   },
 };
+
+export const Disabled: Story = {
+  args: {
+    children: "Click me!",
+    disabled: true,
+    theme: ButtonTheme.Outline,
+  },
+};

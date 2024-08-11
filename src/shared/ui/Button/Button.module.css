@@ -37,7 +37,7 @@
   cursor: pointer;
 }
 
-.outline:hover {
+.outline:hover:not(:disabled) {
   background-color: var(--primary-color);
   color: #fff;
 }
@@ -89,4 +89,9 @@
 .sizeXL {
   font-size: var(--font-size-xl);
   line-height: var(--font-line-xl);
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }

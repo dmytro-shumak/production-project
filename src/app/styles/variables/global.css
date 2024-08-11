@@ -20,4 +20,6 @@
 
   /* Colors */
   --overlay-color: rgba(0, 0, 0, 0.5);
+  --red-light: #f51c0c;
+  --red-dark: #b0241a;
 }

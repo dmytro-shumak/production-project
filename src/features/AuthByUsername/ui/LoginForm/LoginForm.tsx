@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from "shared/lib";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "shared/ui";
 import { Input } from "shared/ui/Input/Input";
+import { Text, TextTheme } from "shared/ui/Text/Text";
 import { setPassword, setUsername } from "../../model/slice/loginSlice";
 import styles from "./LoginForm.module.css";
 
@@ -17,7 +18,8 @@ interface Props {
 export const LoginForm: FC<Props> = ({ className, isOpen }) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
-  const { password, username } = useAppSelector(getLoginState);
+  const { password, username, isLoading, error } =
+    useAppSelector(getLoginState);
 
   const handleChangeUsername = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
@@ -39,6 +41,8 @@ export const LoginForm: FC<Props> = ({ className, isOpen }) => {
 
   return (
     <div className={classNames(styles.loginForm, {}, [className])}>
+      <Text title={t("Login")} />
+      {error && <Text text={error} theme={TextTheme.ERROR} />}
       <Input
         label="Username"
         autoFocus={isOpen}
@@ -54,6 +58,7 @@ export const LoginForm: FC<Props> = ({ className, isOpen }) => {
         className={styles.loginBtn}
         theme={ButtonTheme.Outline}
         onClick={handleLoginClick}
+        disabled={isLoading}
       >
         {t("Login")}
       </Button>

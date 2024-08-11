@@ -20,11 +20,11 @@ export const loginByUsername = createAsyncThunk<
     return response.data;
   } catch (error) {
     if (error instanceof Error) {
-      thunkApi.rejectWithValue(error.message);
-    } else if (typeof error.response.data === "string") {
-      thunkApi.rejectWithValue(error.response.data);
-    } else {
-      thunkApi.rejectWithValue(String(error));
+      return thunkApi.rejectWithValue(error.message);
     }
+    if (typeof error?.response?.data?.message === "string") {
+      return thunkApi.rejectWithValue(error.response.data.message);
+    }
+    return thunkApi.rejectWithValue(String(error));
   }
 });
