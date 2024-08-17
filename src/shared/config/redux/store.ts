@@ -1,18 +1,30 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, type ReducersMapObject } from "@reduxjs/toolkit";
 import { counterReducer } from "entities/Counter/model/slice/counterSlice";
 import { userReducer } from "entities/User";
-import { loginReducer } from "features/AuthByUsername";
+// import { loginReducer } from "features/AuthByUsername";
+import type {
+  ReducerSchema,
+  ReduxStoreWithManager,
+} from "shared/config/redux/reducerSchema";
+import { createReducerManager } from "./reducerManager";
 
-export const createReduxStore = (initialState?: object) => {
-  return configureStore({
-    reducer: {
-      counter: counterReducer,
-      user: userReducer,
-      loginForm: loginReducer,
-    },
+export const createReduxStore = (
+  initialState?: object,
+): ReduxStoreWithManager => {
+  const rootReducer: ReducersMapObject<ReducerSchema> = {
+    counter: counterReducer,
+    user: userReducer,
+  };
+  const reducerManager = createReducerManager(rootReducer);
+  const store = configureStore({
+    reducer: reducerManager.reduce,
     devTools: __DEV__,
     preloadedState: initialState,
   });
+
+  // @ts-expect-error ignore for now
+  store.reducerManager = reducerManager;
+  return store;
 };
 
 export const store = createReduxStore();

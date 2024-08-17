@@ -89,5 +89,6 @@ module.exports = {
     "no-param-reassign": "off",
     "i18next/no-literal-string": "warn",
     "consistent-return": "off",
+    "no-restricted-syntax": "off",
   },
 };
