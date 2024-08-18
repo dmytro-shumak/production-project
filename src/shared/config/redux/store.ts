@@ -8,9 +8,11 @@ import type {
 import { createReducerManager } from "./reducerManager";
 
 export const createReduxStore = (
-  initialState?: object,
+  initialState?: ReducersMapObject<ReducerSchema>,
+  asyncReducers?: ReducersMapObject<ReducerSchema>,
 ): ReduxStoreWithManager => {
   const rootReducer: ReducersMapObject<ReducerSchema> = {
+    ...asyncReducers,
     counter: counterReducer,
     user: userReducer,
   };

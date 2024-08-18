@@ -19,11 +19,15 @@ interface Props {
   isOpen?: boolean;
 }
 
+const initialReducer = {
+  loginForm: loginReducer,
+};
+
 export const LoginForm: FC<Props> = ({ className, isOpen }) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
 
-  useAsyncReducer("loginForm", loginReducer);
+  useAsyncReducer(initialReducer);
 
   const {
     password = "",

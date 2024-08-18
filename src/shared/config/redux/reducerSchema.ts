@@ -14,6 +14,8 @@ export interface ReducerSchema {
   loginForm?: LoginSchema;
 }
 
+export type ReducerSchemaKey = keyof ReducerSchema;
+
 export type ReducerManager = ReturnType<typeof createReducerManager>;
 
 export interface ReduxStoreWithManager extends EnhancedStore<ReducerSchema> {
