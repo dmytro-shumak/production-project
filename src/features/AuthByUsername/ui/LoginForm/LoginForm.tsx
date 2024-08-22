@@ -17,13 +17,14 @@ import styles from "./LoginForm.module.css";
 interface Props {
   className?: string;
   isOpen?: boolean;
+  onSuccess?: () => void;
 }
 
 const initialReducer = {
   loginForm: loginReducer,
 };
 
-export const LoginForm: FC<Props> = ({ className, isOpen }) => {
+export const LoginForm: FC<Props> = ({ className, isOpen, onSuccess }) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
 
@@ -50,9 +51,12 @@ export const LoginForm: FC<Props> = ({ className, isOpen }) => {
     [dispatch],
   );
 
-  const handleLoginClick = useCallback(() => {
-    dispatch(loginByUsername({ password, username }));
-  }, [dispatch, password, username]);
+  const handleLoginClick = useCallback(async () => {
+    const result = await dispatch(loginByUsername({ password, username }));
+    if (result.meta.requestStatus === "fulfilled") {
+      onSuccess?.();
+    }
+  }, [dispatch, onSuccess, password, username]);
 
   return (
     <div className={classNames(styles.loginForm, {}, [className])}>
