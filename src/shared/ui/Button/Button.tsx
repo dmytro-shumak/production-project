@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes, FC, ReactNode } from "react";
+import { memo, type ButtonHTMLAttributes, type ReactNode } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import styles from "./Button.module.css";
 
@@ -23,29 +23,31 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize;
 }
 
-export const Button: FC<Props> = ({
-  className,
-  children,
-  disabled,
-  theme = ButtonTheme.Primary,
-  square = false,
-  size = ButtonSize.M,
-  ...buttonProps
-}) => (
-  <button
-    className={classNames(
-      styles.button,
-      {
-        [styles.square]: square,
-        [styles.disabled]: disabled,
-      },
-      [className, styles[theme], styles[size]],
-    )}
-    disabled={disabled}
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    {...buttonProps}
-    type="button"
-  >
-    {children}
-  </button>
+export const Button = memo<Props>(
+  ({
+    className,
+    children,
+    disabled,
+    theme = ButtonTheme.Primary,
+    square = false,
+    size = ButtonSize.M,
+    ...buttonProps
+  }) => (
+    <button
+      className={classNames(
+        styles.button,
+        {
+          [styles.square]: square,
+          [styles.disabled]: disabled,
+        },
+        [className, styles[theme], styles[size]],
+      )}
+      disabled={disabled}
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...buttonProps}
+      type="button"
+    >
+      {children}
+    </button>
+  ),
 );

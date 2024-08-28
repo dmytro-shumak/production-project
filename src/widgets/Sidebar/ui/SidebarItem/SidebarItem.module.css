@@ -1,0 +1,9 @@
+.icon {
+  fill: var(--inverted-primary-color);
+}
+
+.collapsed .links a span {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}

@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from "react";
+import { memo, type ReactNode } from "react";
 import { Link, type LinkProps } from "react-router-dom";
 import { classNames } from "shared/lib/classNames/classNames";
 import styles from "./AppLink.module.css";
@@ -10,19 +10,15 @@ interface Props extends LinkProps {
   theme?: AppLinkTheme;
 }
 
-export const AppLink: FC<Props> = ({
-  className,
-  children,
-  to,
-  theme = AppLinkTheme.Primary,
-  ...linkProps
-}) => (
-  <Link
-    className={classNames("", {}, [className, styles[theme]])}
-    to={to}
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    {...linkProps}
-  >
-    {children}
-  </Link>
+export const AppLink = memo<Props>(
+  ({ className, children, to, theme = AppLinkTheme.Primary, ...linkProps }) => (
+    <Link
+      className={classNames("", {}, [className, styles[theme]])}
+      to={to}
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...linkProps}
+    >
+      {children}
+    </Link>
+  ),
 );

@@ -90,5 +90,6 @@ module.exports = {
     "i18next/no-literal-string": "warn",
     "consistent-return": "off",
     "no-restricted-syntax": "off",
+    "react/prop-types": "off",
   },
 };

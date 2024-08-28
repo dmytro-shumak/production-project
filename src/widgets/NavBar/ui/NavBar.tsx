@@ -1,18 +1,18 @@
+import { getUserAuthData, logout } from "entities/User";
 import { LoginModal } from "features/AuthByUsername";
-import { useCallback, useState, type FC } from "react";
+import { memo, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { useAppSelector } from "shared/lib";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "shared/ui";
-import { useAppSelector } from "shared/lib";
-import { getUserAuthData, logout } from "entities/User";
-import { useDispatch } from "react-redux";
 import styles from "./NavBar.module.css";
 
 interface Props {
   className?: string;
 }
 
-export const NavBar: FC<Props> = ({ className }) => {
+export const NavBar = memo(({ className }: Props) => {
   const { t } = useTranslation();
   const authData = useAppSelector(getUserAuthData);
   const dispatch = useDispatch();
@@ -54,4 +54,4 @@ export const NavBar: FC<Props> = ({ className }) => {
       <LoginModal isOpen={isModalOpen} onClose={closeModal} />
     </nav>
   );
-};
+});

@@ -36,10 +36,6 @@
   gap: 5px;
 }
 
-.icon {
-  fill: var(--inverted-primary-color);
-}
-
 .links a span {
   transition: opacity 0.3s;
   display: block;

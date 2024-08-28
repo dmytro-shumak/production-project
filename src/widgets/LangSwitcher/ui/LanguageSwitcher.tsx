@@ -1,4 +1,4 @@
-import { type FC } from "react";
+import { memo, type FC } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Button, ButtonSize, ButtonTheme } from "shared/ui";
@@ -9,7 +9,7 @@ interface Props {
   collapsed?: boolean;
 }
 
-export const LanguageSwitcher: FC<Props> = ({ className, collapsed }) => {
+export const LanguageSwitcher: FC<Props> = memo(({ className, collapsed }) => {
   const { i18n, t } = useTranslation();
 
   const changeLanguage = (language: string) => {
@@ -49,4 +49,4 @@ export const LanguageSwitcher: FC<Props> = ({ className, collapsed }) => {
       </Button>
     </div>
   );
-};
+});
