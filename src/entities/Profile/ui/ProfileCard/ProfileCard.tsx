@@ -20,12 +20,16 @@ export const ProfileCard: FC<Props> = ({ className }) => {
   const error = useAppSelector(getProfileError);
   const loading = useAppSelector(getProfileLoading);
 
+  if (error || loading) {
+    return null;
+  }
+
   return (
     <div className={classNames(styles.profileCard, {}, [className])}>
       <div className={styles.header}>
         <Text title={t("Profile")} />
         <Button theme={ButtonTheme.Outline} className={styles.editBtn}>
-          {t("edit")}
+          {t("Edit")}
         </Button>
       </div>
       <div className={styles.data}>
