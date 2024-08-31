@@ -1,5 +1,10 @@
-import { profileReducer } from "entities/Profile";
-import type { FC } from "react";
+import {
+  ProfileCard,
+  fetchProfileData,
+  profileReducer,
+} from "entities/Profile";
+import { useEffect, type FC } from "react";
+import { useAppDispatch } from "shared/lib";
 import { classNames } from "shared/lib/classNames/classNames";
 import {
   useAsyncReducer,
@@ -16,8 +21,17 @@ interface Props {
 
 const ProfilePage: FC<Props> = ({ className }) => {
   useAsyncReducer(initialReducer, true);
+  const dispatch = useAppDispatch();
 
-  return <div className={classNames("", {}, [className])}>Profile</div>;
+  useEffect(() => {
+    dispatch(fetchProfileData());
+  }, [dispatch]);
+
+  return (
+    <div className={classNames("", {}, [className])}>
+      <ProfileCard />
+    </div>
+  );
 };
 
 export default ProfilePage;

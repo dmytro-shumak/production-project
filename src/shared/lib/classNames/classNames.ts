@@ -1,7 +1,7 @@
 export const classNames = (
   classes: string,
   mods: Record<string, boolean> = {},
-  additionalClasses: string[] = [],
+  additionalClasses: (string | undefined)[] = [],
 ): string =>
   [
     classes,

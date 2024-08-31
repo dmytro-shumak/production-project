@@ -16,7 +16,6 @@ export const loginByUsername = createAsyncThunk<
   const { rejectWithValue, dispatch, extra } = thinkApi;
   try {
     const response = await extra.api.post("/login", authData);
-    extra.navigate("/about");
 
     if (!response.data) {
       throw new Error("failed to login");
