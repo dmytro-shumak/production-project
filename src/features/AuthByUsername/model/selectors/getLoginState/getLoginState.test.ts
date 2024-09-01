@@ -12,10 +12,10 @@ describe("get login state", () => {
       },
     };
     const loginState = getLoginState(state as ReducerSchema);
-    expect(loginState.isLoading).toEqual(false);
-    expect(loginState.error).toEqual(undefined);
-    expect(loginState.password).toEqual("password");
-    expect(loginState.username).toEqual("username");
+    expect(loginState?.isLoading).toEqual(false);
+    expect(loginState?.error).toEqual(undefined);
+    expect(loginState?.password).toEqual("password");
+    expect(loginState?.username).toEqual("username");
   });
   test("should return empty state", () => {
     const state: DeepPartial<ReducerSchema> = {};

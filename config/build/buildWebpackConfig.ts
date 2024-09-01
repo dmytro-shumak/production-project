@@ -24,6 +24,7 @@ export const buildWebpackConfig = (option: BuildOptions): Configuration => {
       rules: buildLoaders(option),
     },
     optimization: {
+      // emitOnErrors: true,
       minimizer: [
         // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
         `...`,

@@ -1,4 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { AxiosError } from "axios";
 import { setAuthData, type User } from "entities/User";
 import type { ThunkConfig } from "shared/config/redux";
 import { LocalStorageKeys } from "shared/constants/localStorage";
@@ -29,8 +30,8 @@ export const loginByUsername = createAsyncThunk<
     if (error instanceof Error) {
       return rejectWithValue(error.message);
     }
-    if (typeof error?.response?.data?.message === "string") {
-      return rejectWithValue(error.response.data.message);
+    if (error instanceof AxiosError) {
+      return rejectWithValue(error.response?.data?.message);
     }
 
     return rejectWithValue(String(error));

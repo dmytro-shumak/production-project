@@ -7,7 +7,7 @@ import { classNames } from "shared/lib";
 import styles from "./SidebarItem.module.css";
 
 interface Props {
-  item?: SidebarItemType;
+  item: SidebarItemType;
   collapsed?: boolean;
 }
 

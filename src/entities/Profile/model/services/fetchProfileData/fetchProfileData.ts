@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import type { ThunkConfig } from "shared/config/redux";
+import { AxiosError } from "axios";
 import type { Profile } from "../../types/profile";
 
 export const fetchProfileData = createAsyncThunk<Profile, void, ThunkConfig>(
@@ -17,8 +18,8 @@ export const fetchProfileData = createAsyncThunk<Profile, void, ThunkConfig>(
       if (error instanceof Error) {
         return rejectWithValue(error.message);
       }
-      if (typeof error?.response?.data?.message === "string") {
-        return rejectWithValue(error.response.data.message);
+      if (error instanceof AxiosError) {
+        return rejectWithValue(error.response?.data?.message);
       }
 
       return rejectWithValue(String(error));

@@ -11,8 +11,6 @@ export type ReducersList = {
   [name in ReducerSchemaKey]?: Reducer;
 };
 
-type ReducersListEntry = [ReducerSchemaKey, Reducer];
-
 export function useAsyncReducer(
   reducers: ReducersList,
   removeAfterUnmount = true,
@@ -21,15 +19,15 @@ export function useAsyncReducer(
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    Object.entries(reducers).forEach(([key, reducer]: ReducersListEntry) => {
-      store.reducerManager?.add(key, reducer);
+    Object.entries(reducers).forEach(([key, reducer]) => {
+      store.reducerManager?.add(key as ReducerSchemaKey, reducer);
       dispatch({ type: `@INIT ${key} reducer` });
     });
 
     return () => {
       if (removeAfterUnmount) {
-        Object.entries(reducers).forEach(([key]: ReducersListEntry) => {
-          store.reducerManager?.remove(key);
+        Object.entries(reducers).forEach(([key]) => {
+          store.reducerManager?.remove(key as ReducerSchemaKey);
           dispatch({ type: `@DESTROY ${key} reducer` });
         });
       }

@@ -10,8 +10,8 @@ export const buildDevServer = ({
   historyApiFallback: true,
   hot: true,
   onListening(devServer) {
-    const address = devServer.server.address();
-    if (typeof address === "object" && "port" in address) {
+    const address = devServer.server?.address();
+    if (address !== null && typeof address === "object" && "port" in address) {
       // open the app in the same tab
       openBrowser(`http://localhost:${address.port}`);
     }
