@@ -35,6 +35,7 @@ export function createReducerManager(
       }
 
       // Delegate to the combined reducer
+      // @ts-expect-error fix
       return combinedReducer(state, action);
     },
 

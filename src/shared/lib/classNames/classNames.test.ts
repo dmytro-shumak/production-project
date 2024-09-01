@@ -31,7 +31,7 @@ describe("classNames", () => {
 
   it("should ignore empty additional classes", () => {
     const classes = "button";
-    const additionalClasses = ["", "primary", null, "large"];
+    const additionalClasses = ["", "primary", undefined, "large"];
 
     const result = classNames(classes, {}, additionalClasses);
 

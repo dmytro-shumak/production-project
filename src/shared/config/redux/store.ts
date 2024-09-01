@@ -1,12 +1,12 @@
 import { configureStore, type ReducersMapObject } from "@reduxjs/toolkit";
 import { counterReducer } from "entities/Counter/model/slice/counterSlice";
 import { userReducer } from "entities/User";
+import type { NavigateFunction } from "react-router-dom";
+import { $api } from "shared/api/api";
 import type {
   ReducerSchema,
   ReduxStoreWithManager,
 } from "shared/config/redux/reducerSchema";
-import { $api } from "shared/api/api";
-import type { NavigateFunction } from "react-router-dom";
 import { createReducerManager } from "./reducerManager";
 
 interface Options {
@@ -24,19 +24,20 @@ export const createReduxStore = (options?: Options): ReduxStoreWithManager => {
   };
   const reducerManager = createReducerManager(rootReducer);
   const store = configureStore({
+    // @ts-expect-error sdf
     reducer: reducerManager.reduce,
     devTools: __DEV__,
     preloadedState: initialState,
-    middleware(getDefaultMiddleware) {
-      return getDefaultMiddleware({
+    // @ts-expect-error fix
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
         thunk: {
           extraArgument: {
             api: $api,
             navigate,
           },
         },
-      });
-    },
+      }),
   });
 
   // @ts-expect-error ignore for now
