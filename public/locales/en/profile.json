@@ -2,5 +2,7 @@
   "Profile": "Profile",
   "Edit": "Edit",
   "YourFirstName": "Your First Name",
-  "YourLastName": "Your Last Name"
+  "YourLastName": "Your Last Name",
+  "TryToRefreshPage": "Try To Refresh Page",
+  "ErrorOccurred": "Unexpected Error Occurred"
 }

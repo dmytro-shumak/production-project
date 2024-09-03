@@ -1,15 +1,19 @@
 import {
   ProfileCard,
   fetchProfileData,
+  getProfileData,
+  getProfileError,
+  getProfileLoading,
   profileReducer,
 } from "entities/Profile";
 import { useEffect, type FC } from "react";
-import { useAppDispatch } from "shared/lib";
+import { useAppDispatch, useAppSelector } from "shared/lib";
 import { classNames } from "shared/lib/classNames/classNames";
 import {
   useAsyncReducer,
   type ReducersList,
 } from "shared/lib/hooks/useAsyncReducer/useAsyncReducer";
+import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 
 const initialReducer: ReducersList = {
   profile: profileReducer,
@@ -22,6 +26,9 @@ interface Props {
 const ProfilePage: FC<Props> = ({ className }) => {
   useAsyncReducer(initialReducer, true);
   const dispatch = useAppDispatch();
+  const data = useAppSelector(getProfileData);
+  const error = useAppSelector(getProfileError);
+  const loading = useAppSelector(getProfileLoading);
 
   useEffect(() => {
     dispatch(fetchProfileData());
@@ -29,7 +36,8 @@ const ProfilePage: FC<Props> = ({ className }) => {
 
   return (
     <div className={classNames("", {}, [className])}>
-      <ProfileCard />
+      <ProfilePageHeader />
+      <ProfileCard data={data} isLoading={loading} error={error} />
     </div>
   );
 };
