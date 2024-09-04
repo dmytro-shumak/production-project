@@ -9,13 +9,15 @@ import {
 import { classNames } from "shared/lib/classNames/classNames";
 import styles from "./Input.module.css";
 
-interface Props extends InputHTMLAttributes<HTMLInputElement> {
+interface Props
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, "readOnly"> {
   className?: string;
   label?: string;
+  readOnly?: boolean;
 }
 
 export const Input = memo(
-  ({ className, label, autoFocus, ...otherProps }: Props) => {
+  ({ className, label, autoFocus, readOnly, ...otherProps }: Props) => {
     const id = useId();
     const ref = useRef<HTMLInputElement>(null);
     useEffect(() => {
@@ -25,13 +27,25 @@ export const Input = memo(
     }, [autoFocus]);
 
     return (
-      <div className={classNames(styles.container, {}, [className])}>
+      <div
+        className={classNames(
+          styles.container,
+          { [styles.readOnly]: readOnly },
+          [className],
+        )}
+      >
         {label && (
           <label className={styles.label} htmlFor={id}>
             {label}
           </label>
         )}
-        <input {...otherProps} className={styles.input} ref={ref} id={id} />
+        <input
+          {...otherProps}
+          className={styles.input}
+          ref={ref}
+          id={id}
+          readOnly={readOnly}
+        />
       </div>
     );
   },

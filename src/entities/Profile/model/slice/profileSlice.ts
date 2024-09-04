@@ -12,7 +12,11 @@ const initialState: ProfileSchema = {
 const profileSlice = createSlice({
   name: "profile",
   initialState,
-  reducers: {},
+  reducers: {
+    setReadOnly: (state, action: PayloadAction<boolean>) => {
+      state.readonly = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchProfileData.pending, (state) => {
       state.error = undefined;

@@ -46,8 +46,16 @@ export const ProfileCard: FC<Props> = ({
   return (
     <div className={classNames(styles.profileCard, {}, [className])}>
       <div className={styles.data}>
-        <Input value={data?.firstName} placeholder={t("YourFirstName")} />
-        <Input value={data?.lastName} placeholder={t("YourLastName")} />
+        <Input
+          value={data?.firstName}
+          placeholder={t("YourFirstName")}
+          label={t("YourFirstName")}
+        />
+        <Input
+          value={data?.lastName}
+          placeholder={t("YourLastName")}
+          label={t("YourLastName")}
+        />
       </div>
     </div>
   );

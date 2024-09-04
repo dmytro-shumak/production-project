@@ -4,8 +4,10 @@
 }
 
 
-.data input {
-  margin-top: 10px;
+.data {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
 }
 
 .loader {
