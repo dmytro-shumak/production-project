@@ -27,13 +27,7 @@ export const Input = memo(
     }, [autoFocus]);
 
     return (
-      <div
-        className={classNames(
-          styles.container,
-          { [styles.readOnly]: readOnly },
-          [className],
-        )}
-      >
+      <div className={classNames(styles.container, {}, [className])}>
         {label && (
           <label className={styles.label} htmlFor={id}>
             {label}
@@ -41,7 +35,7 @@ export const Input = memo(
         )}
         <input
           {...otherProps}
-          className={styles.input}
+          className={classNames(styles.input, { [styles.readOnly]: readOnly })}
           ref={ref}
           id={id}
           readOnly={readOnly}

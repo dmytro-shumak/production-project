@@ -4,6 +4,7 @@ import {
   getProfileData,
   getProfileError,
   getProfileLoading,
+  getProfileReadOnly,
   profileReducer,
 } from "entities/Profile";
 import { useEffect, type FC } from "react";
@@ -29,6 +30,7 @@ const ProfilePage: FC<Props> = ({ className }) => {
   const data = useAppSelector(getProfileData);
   const error = useAppSelector(getProfileError);
   const loading = useAppSelector(getProfileLoading);
+  const readOnly = useAppSelector(getProfileReadOnly);
 
   useEffect(() => {
     dispatch(fetchProfileData());
@@ -37,7 +39,12 @@ const ProfilePage: FC<Props> = ({ className }) => {
   return (
     <div className={classNames("", {}, [className])}>
       <ProfilePageHeader />
-      <ProfileCard data={data} isLoading={loading} error={error} />
+      <ProfileCard
+        data={data}
+        isLoading={loading}
+        error={error}
+        readOnly={readOnly}
+      />
     </div>
   );
 };
