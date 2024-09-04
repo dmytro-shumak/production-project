@@ -1,8 +1,8 @@
 import {
   ProfileCard,
   fetchProfileData,
-  getProfileData,
   getProfileError,
+  getProfileForm,
   getProfileLoading,
   getProfileReadOnly,
   profileReducer,
@@ -27,7 +27,7 @@ interface Props {
 const ProfilePage: FC<Props> = ({ className }) => {
   useAsyncReducer(initialReducer, true);
   const dispatch = useAppDispatch();
-  const data = useAppSelector(getProfileData);
+  const formData = useAppSelector(getProfileForm);
   const error = useAppSelector(getProfileError);
   const loading = useAppSelector(getProfileLoading);
   const readOnly = useAppSelector(getProfileReadOnly);
@@ -40,7 +40,7 @@ const ProfilePage: FC<Props> = ({ className }) => {
     <div className={classNames("", {}, [className])}>
       <ProfilePageHeader />
       <ProfileCard
-        data={data}
+        data={formData}
         isLoading={loading}
         error={error}
         readOnly={readOnly}

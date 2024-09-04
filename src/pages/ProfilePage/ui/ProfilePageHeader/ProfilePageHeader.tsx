@@ -19,21 +19,32 @@ export const ProfilePageHeader: FC<Props> = ({ className }) => {
 
   const onEdit = useCallback(
     (readOnly: boolean) => {
-      dispatch(profileActions.setReadOnly(readOnly));
+      if (readOnly) {
+        dispatch(profileActions.cancelEdit());
+      } else {
+        dispatch(profileActions.setReadOnly(readOnly));
+      }
     },
     [dispatch],
   );
+
+  const onSave = useCallback(() => {}, []);
 
   return (
     <div className={classNames(styles.profilePageHeader, {}, [className])}>
       <Text title={t("Profile")} />
       <Button
-        theme={ButtonTheme.Outline}
+        theme={ButtonTheme.OutlineRed}
         className={styles.editBtn}
         onClick={() => onEdit(!readOnly)}
       >
         {readOnly ? t("Edit") : t("Cancel")}
       </Button>
+      {readOnly && (
+        <Button theme={ButtonTheme.Outline} onClick={onSave}>
+          {t("Save")}
+        </Button>
+      )}
     </div>
   );
 };

@@ -41,6 +41,20 @@ export const ProfileCard: FC<Props> = ({
     [dispatch],
   );
 
+  const handleChangeAge = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      dispatch(profileActions.updateProfile({ age: +e.target.value }));
+    },
+    [dispatch],
+  );
+
+  const handleChangeCity = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      dispatch(profileActions.updateProfile({ city: e.target.value }));
+    },
+    [dispatch],
+  );
+
   if (isLoading) {
     return (
       <div className={classNames(styles.profileCard, {}, [className])}>
@@ -77,6 +91,21 @@ export const ProfileCard: FC<Props> = ({
           placeholder={t("YourLastName")}
           label={t("YourLastName")}
           onChange={handleChangeLastName}
+          readOnly={readOnly}
+        />
+        <Input
+          value={data?.age}
+          placeholder={t("YourAge")}
+          label={t("YourAge")}
+          type="number"
+          onChange={handleChangeAge}
+          readOnly={readOnly}
+        />
+        <Input
+          value={data?.city}
+          placeholder={t("YourCity")}
+          label={t("YourCity")}
+          onChange={handleChangeCity}
           readOnly={readOnly}
         />
       </div>
