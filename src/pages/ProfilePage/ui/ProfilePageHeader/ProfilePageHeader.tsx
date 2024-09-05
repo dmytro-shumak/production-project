@@ -4,7 +4,11 @@ import { Button, ButtonTheme } from "shared/ui";
 import { Text } from "shared/ui/Text/Text";
 import { useTranslation } from "react-i18next";
 import { useAppDispatch, useAppSelector } from "shared/lib";
-import { getProfileReadOnly, profileActions } from "entities/Profile";
+import {
+  getProfileReadOnly,
+  profileActions,
+  updateProfileData,
+} from "entities/Profile";
 import styles from "./ProfilePageHeader.module.css";
 
 interface Props {
@@ -28,19 +32,21 @@ export const ProfilePageHeader: FC<Props> = ({ className }) => {
     [dispatch],
   );
 
-  const onSave = useCallback(() => {}, []);
+  const onSave = useCallback(() => {
+    dispatch(updateProfileData());
+  }, [dispatch]);
 
   return (
     <div className={classNames(styles.profilePageHeader, {}, [className])}>
       <Text title={t("Profile")} />
       <Button
-        theme={ButtonTheme.OutlineRed}
+        theme={readOnly ? ButtonTheme.Outline : ButtonTheme.OutlineRed}
         className={styles.editBtn}
         onClick={() => onEdit(!readOnly)}
       >
         {readOnly ? t("Edit") : t("Cancel")}
       </Button>
-      {readOnly && (
+      {!readOnly && (
         <Button theme={ButtonTheme.Outline} onClick={onSave}>
           {t("Save")}
         </Button>
