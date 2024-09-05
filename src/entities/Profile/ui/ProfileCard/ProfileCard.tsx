@@ -5,6 +5,7 @@ import { Input } from "shared/ui/Input/Input";
 import { Loader } from "shared/ui/Loader";
 import { Text, TextAlign, TextTheme } from "shared/ui/Text/Text";
 import { useAppDispatch } from "shared/lib";
+import { Avatar } from "shared/ui";
 import { profileActions } from "../../model/slice/profileSlice";
 import type { Profile } from "../../model/types/profile";
 import styles from "./ProfileCard.module.css";
@@ -55,6 +56,20 @@ export const ProfileCard: FC<Props> = ({
     [dispatch],
   );
 
+  const handleChangeUsername = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      dispatch(profileActions.updateProfile({ username: e.target.value }));
+    },
+    [dispatch],
+  );
+
+  const handleChangeAvatar = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      dispatch(profileActions.updateProfile({ avatar: e.target.value }));
+    },
+    [dispatch],
+  );
+
   if (isLoading) {
     return (
       <div className={classNames(styles.profileCard, {}, [className])}>
@@ -77,8 +92,19 @@ export const ProfileCard: FC<Props> = ({
   }
 
   return (
-    <div className={classNames(styles.profileCard, {}, [className])}>
+    <div
+      className={classNames(
+        styles.profileCard,
+        { [styles.editing]: !readOnly },
+        [className],
+      )}
+    >
       <div className={styles.data}>
+        {data?.avatar && (
+          <div className={styles.avatarWrapper}>
+            <Avatar src={data?.avatar} alt="avatar" size={100} />
+          </div>
+        )}
         <Input
           value={data?.firstName}
           placeholder={t("YourFirstName")}
@@ -106,6 +132,20 @@ export const ProfileCard: FC<Props> = ({
           placeholder={t("YourCity")}
           label={t("YourCity")}
           onChange={handleChangeCity}
+          readOnly={readOnly}
+        />
+        <Input
+          value={data?.username}
+          placeholder={t("YourUsername")}
+          label={t("YourUsername")}
+          onChange={handleChangeUsername}
+          readOnly={readOnly}
+        />
+        <Input
+          value={data?.avatar}
+          placeholder={t("YourUrlAvatar")}
+          label={t("YourUrlAvatar")}
+          onChange={handleChangeAvatar}
           readOnly={readOnly}
         />
       </div>
