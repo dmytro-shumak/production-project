@@ -1,11 +1,12 @@
 import { useCallback, type ChangeEvent, type FC } from "react";
 import { useTranslation } from "react-i18next";
+import { useAppDispatch } from "shared/lib";
 import { classNames } from "shared/lib/classNames/classNames";
+import { Avatar } from "shared/ui";
 import { Input } from "shared/ui/Input/Input";
 import { Loader } from "shared/ui/Loader";
 import { Text, TextAlign, TextTheme } from "shared/ui/Text/Text";
-import { useAppDispatch } from "shared/lib";
-import { Avatar } from "shared/ui";
+import { CurrencySelect } from "entities/Currency";
 import { profileActions } from "../../model/slice/profileSlice";
 import type { Profile } from "../../model/types/profile";
 import styles from "./ProfileCard.module.css";
@@ -148,6 +149,7 @@ export const ProfileCard: FC<Props> = ({
           onChange={handleChangeAvatar}
           readOnly={readOnly}
         />
+        <CurrencySelect />
       </div>
     </div>
   );
