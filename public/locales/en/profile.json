@@ -10,5 +10,10 @@
   "YourUsername": "Your Username",
   "YourUrlAvatar": "Your URL Avatar",
   "ChooseCurrency": "Choose Currency",
-  "ChooseCountry": "Choose Country"
+  "ChooseCountry": "Choose Country",
+  "IncorrectAge": "Incorrect Age",
+  "IncorrectCountry": "Incorrect Country",
+  "IncorrectUserData": "Incorrect User Data",
+  "NoData": "No Data",
+  "ServerError": "Server Error"
 }
