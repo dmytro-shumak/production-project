@@ -13,7 +13,7 @@ interface Props {
 
 export const CountrySelect: FC<Props> = memo(
   ({ className, onChange, value, readOnly }) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation("profile");
 
     const onChangeHandler = useCallback(
       (value: string) => {

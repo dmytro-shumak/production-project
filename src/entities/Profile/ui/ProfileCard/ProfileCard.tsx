@@ -81,13 +81,10 @@ export const ProfileCard: FC<Props> = ({
 
   const handleChangeCountry = useCallback(
     (country: Country) => {
-      console.log("HERE", country);
       dispatch(profileActions.updateProfile({ country }));
     },
     [dispatch],
   );
-
-  console.log("data", data);
 
   if (isLoading) {
     return (
