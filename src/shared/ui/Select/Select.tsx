@@ -12,11 +12,12 @@ interface Props {
   label?: string;
   options?: SelectOption[];
   value?: string;
+  readOnly?: boolean;
   onChange?: (value: string) => void;
 }
 
 export const Select: FC<Props> = memo(
-  ({ className, label, options, onChange, value }) => {
+  ({ className, label, options, onChange, value, readOnly }) => {
     const onChangeHandler = useCallback(
       (e: ChangeEvent<HTMLSelectElement>) => {
         onChange?.(e.target.value);
@@ -28,6 +29,7 @@ export const Select: FC<Props> = memo(
       <div className={classNames(styles.selectWrapper, {}, [className])}>
         {label && <span className={styles.label}>{label}</span>}
         <select
+          disabled={readOnly}
           className={styles.select}
           onChange={onChangeHandler}
           value={value}

@@ -22,7 +22,7 @@ const profileSlice = createSlice({
       state.form = state.data;
     },
     updateProfile: (state, action: PayloadAction<Profile>) => {
-      state.form = { ...state.data, ...action.payload };
+      state.form = { ...state.form, ...action.payload };
     },
   },
   extraReducers: (builder) => {

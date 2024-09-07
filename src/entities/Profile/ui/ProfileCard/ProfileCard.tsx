@@ -6,7 +6,8 @@ import { Avatar } from "shared/ui";
 import { Input } from "shared/ui/Input/Input";
 import { Loader } from "shared/ui/Loader";
 import { Text, TextAlign, TextTheme } from "shared/ui/Text/Text";
-import { CurrencySelect } from "entities/Currency";
+import { Currency, CurrencySelect } from "entities/Currency";
+import { Country, CountrySelect } from "entities/Country";
 import { profileActions } from "../../model/slice/profileSlice";
 import type { Profile } from "../../model/types/profile";
 import styles from "./ProfileCard.module.css";
@@ -70,6 +71,23 @@ export const ProfileCard: FC<Props> = ({
     },
     [dispatch],
   );
+
+  const handleChangeCurrency = useCallback(
+    (currency: Currency) => {
+      dispatch(profileActions.updateProfile({ currency }));
+    },
+    [dispatch],
+  );
+
+  const handleChangeCountry = useCallback(
+    (country: Country) => {
+      console.log("HERE", country);
+      dispatch(profileActions.updateProfile({ country }));
+    },
+    [dispatch],
+  );
+
+  console.log("data", data);
 
   if (isLoading) {
     return (
@@ -149,7 +167,16 @@ export const ProfileCard: FC<Props> = ({
           onChange={handleChangeAvatar}
           readOnly={readOnly}
         />
-        <CurrencySelect />
+        <CurrencySelect
+          value={data?.currency}
+          onChange={handleChangeCurrency}
+          readOnly={readOnly}
+        />
+        <CountrySelect
+          value={data?.country}
+          onChange={handleChangeCountry}
+          readOnly={readOnly}
+        />
       </div>
     </div>
   );
