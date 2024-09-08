@@ -1,5 +1,6 @@
 import type { Preview } from "@storybook/react";
 import { Theme } from "app/providers/theme";
+import { store, type ReducerSchema } from "shared/config/redux";
 import { RouterDecorator } from "shared/config/storybook/RouterDecorator";
 import { StoreDecorator } from "shared/config/storybook/StoreDecorator";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator";
@@ -22,7 +23,7 @@ const preview: Preview = {
     },
   },
   decorators: [
-    StoreDecorator,
+    StoreDecorator(store as unknown as ReducerSchema),
     withI18nextDecorator,
     RouterDecorator,
     ThemeDecorator(Theme.Light),

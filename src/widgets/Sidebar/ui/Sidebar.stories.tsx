@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Theme } from "app/providers/theme";
+import { StoreDecorator } from "shared/config/storybook/StoreDecorator";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator";
 import { Sidebar } from "widgets/Sidebar/ui/Sidebar";
 
@@ -23,12 +24,36 @@ type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Light: Story = {
+  decorators: [
+    StoreDecorator({
+      user: { authData: {} },
+    }),
+  ],
   parameters: {
     layout: "fullscreen",
   },
 };
 
 export const Dark: Story = {
+  decorators: [
+    ThemeDecorator(Theme.Dark),
+    StoreDecorator({
+      user: { authData: {} },
+    }),
+  ],
+  parameters: {
+    backgrounds: { default: "dark" },
+    layout: "fullscreen",
+  },
+};
+
+export const LightNoAuth: Story = {
+  parameters: {
+    layout: "fullscreen",
+  },
+};
+
+export const DarkNoAuth: Story = {
   decorators: [ThemeDecorator(Theme.Dark)],
   parameters: {
     backgrounds: { default: "dark" },
