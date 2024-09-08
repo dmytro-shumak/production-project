@@ -36,6 +36,7 @@ const config: Config = {
 
   globals: {
     __DEV__: true,
+    __PROJECT: "jest",
   },
 
   // The root directory that Jest should scan for tests and modules within

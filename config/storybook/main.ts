@@ -57,6 +57,7 @@ const config: StorybookConfig = {
       config.plugins.push(
         new DefinePlugin({
           __DEV__: true,
+          __PROJECT__: JSON.stringify("storybook"),
         }),
       );
     }

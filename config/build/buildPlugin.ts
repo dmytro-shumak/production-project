@@ -14,6 +14,7 @@ import type { BuildOptions } from "./types/config";
 export const buildPlugins = ({
   paths,
   isDev,
+  project,
 }: BuildOptions): WebpackPluginInstance[] => {
   const plugins: WebpackPluginInstance[] = [
     new HtmlWebpackPlugin({
@@ -27,6 +28,7 @@ export const buildPlugins = ({
     }),
     new DefinePlugin({
       __DEV__: isDev,
+      __PROJECT__: JSON.stringify(project),
     }),
     new HotModuleReplacementPlugin(),
   ];

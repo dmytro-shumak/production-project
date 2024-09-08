@@ -1,4 +1,5 @@
 declare const __DEV__: boolean;
+declare const __PROJECT__: 'storybook' | 'frontend' | 'jest';
 
 declare module '*.css' {
   interface IClassNames {

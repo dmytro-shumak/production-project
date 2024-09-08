@@ -14,6 +14,7 @@ module.exports = {
   ],
   globals: {
     __DEV__: true,
+    __PROJECT__: true,
   },
   extends: [
     "plugin:react/recommended",
