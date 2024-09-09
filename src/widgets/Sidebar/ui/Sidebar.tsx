@@ -5,6 +5,7 @@ import { LangSwitcher } from "widgets/LangSwitcher";
 import { SidebarItemsList } from "widgets/Sidebar/model/item";
 import { SidebarItem } from "widgets/Sidebar/ui/SidebarItem/SidebarItem";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
+import { Theme, useTheme } from "app/providers/theme";
 import styles from "./Sidebar.module.css";
 
 interface Props {
@@ -13,6 +14,7 @@ interface Props {
 
 export const Sidebar: FC<Props> = memo(({ className }) => {
   const [collapsed, setCollapsed] = useState(true);
+  const { theme } = useTheme();
 
   const handleToggle = () => {
     setCollapsed((prev) => !prev);
@@ -29,6 +31,7 @@ export const Sidebar: FC<Props> = memo(({ className }) => {
         square
         size={ButtonSize.L}
         className={styles.button}
+        style={{ color: theme === Theme.Orange ? "#e58e13" : "#fff" }}
       >
         {collapsed ? ">" : "<"}
       </Button>

@@ -50,7 +50,6 @@ const ProfilePage: FC<Props> = ({ className }) => {
   );
 
   useEffect(() => {
-    console.log("__PROJECT__", __PROJECT__);
     if (__PROJECT__ !== "storybook") {
       dispatch(fetchProfileData());
     }

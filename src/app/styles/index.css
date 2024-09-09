@@ -2,6 +2,7 @@
 @import url("./variables/global.css");
 @import url("./themes/dark.css");
 @import url("./themes/light.css");
+@import url("./themes/orange.css");
 
 body {
   font: var(--font-md);

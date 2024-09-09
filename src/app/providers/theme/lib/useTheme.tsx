@@ -13,11 +13,27 @@ interface useThemeResult {
 export const useTheme = (): useThemeResult => {
   const { theme, setTheme } = useContext(ThemeContext);
 
+  console.log("THEME", theme);
+
   const toggleTheme = () => {
-    const newTheme = theme === Theme.Light ? Theme.Dark : Theme.Light;
+    let newTheme: Theme;
+    switch (theme) {
+      case Theme.Dark:
+        newTheme = Theme.Light;
+        break;
+      case Theme.Light:
+        newTheme = Theme.Orange;
+        break;
+      case Theme.Orange:
+        newTheme = Theme.Dark;
+        break;
+      default:
+        newTheme = Theme.Light;
+        break;
+    }
     setTheme?.(newTheme);
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
   };
 
-  return { theme: Theme.Light, toggleTheme };
+  return { theme: theme || Theme.Light, toggleTheme };
 };

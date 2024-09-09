@@ -13,6 +13,7 @@ const App = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
+    console.log("theme", theme);
     document.body.className = theme;
   }, [theme]);
 
