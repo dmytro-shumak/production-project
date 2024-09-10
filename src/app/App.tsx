@@ -1,8 +1,8 @@
 import { useTheme } from "app/providers/theme";
 import { AppRouter } from "app/router";
-import { initAuthData } from "entities/User";
+import { getUserInitiated, initAuthData } from "entities/User";
 import { Suspense, useEffect } from "react";
-import { useAppDispatch } from "shared/lib";
+import { useAppDispatch, useAppSelector } from "shared/lib";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Loader } from "shared/ui/Loader";
 import { NavBar } from "widgets/NavBar";
@@ -11,9 +11,9 @@ import { Sidebar } from "widgets/Sidebar";
 const App = () => {
   const { theme } = useTheme();
   const dispatch = useAppDispatch();
+  const initiated = useAppSelector(getUserInitiated);
 
   useEffect(() => {
-    console.log("theme", theme);
     document.body.className = theme;
   }, [theme]);
 
@@ -27,7 +27,7 @@ const App = () => {
         <NavBar />
         <div className="content-page">
           <Sidebar />
-          <AppRouter />
+          {initiated && <AppRouter />}
         </div>
       </Suspense>
     </div>
