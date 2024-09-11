@@ -1,4 +1,6 @@
 import { AboutPage } from "pages/AboutPage";
+import { ArticleDetailedPage } from "pages/ArticleDetailedPage";
+import { ArticlesPage } from "pages/ArticlesPage";
 import { MainPage } from "pages/MainPage";
 import { NotFoundPage } from "pages/NotFoundPage";
 import { ProfilePage } from "pages/ProfilePage";
@@ -12,6 +14,8 @@ export enum AppRoutes {
   MAIN = "main",
   ABOUT = "about",
   PROFILE = "profile",
+  ARTICLES = "articles",
+  ARTICLE_DETAILS = "article_details",
   NOT_FOUND = "not_found",
 }
 
@@ -19,6 +23,8 @@ export const RoutesPath: Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: "/",
   [AppRoutes.ABOUT]: "/about",
   [AppRoutes.PROFILE]: "/profile",
+  [AppRoutes.ARTICLES]: "/articles",
+  [AppRoutes.ARTICLE_DETAILS]: "/articles/:id",
   [AppRoutes.NOT_FOUND]: "*",
 };
 
@@ -34,6 +40,16 @@ export const routesConfig: Record<AppRoutes, AppRoutesProps> = {
   [AppRoutes.PROFILE]: {
     path: RoutesPath.profile,
     element: <ProfilePage />,
+    authOnly: true, // Add authOnly prop to restrict access to the profile page to authenticated users.
+  },
+  [AppRoutes.ARTICLES]: {
+    path: RoutesPath.articles,
+    element: <ArticlesPage />,
+    authOnly: true, // Add authOnly prop to restrict access to the profile page to authenticated users.
+  },
+  [AppRoutes.ARTICLE_DETAILS]: {
+    path: RoutesPath.article_details,
+    element: <ArticleDetailedPage />,
     authOnly: true, // Add authOnly prop to restrict access to the profile page to authenticated users.
   },
   [AppRoutes.NOT_FOUND]: {
