@@ -1,6 +1,7 @@
 import { memo, type FC } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
+import { ArticleDetails } from "entities/Article";
 import styles from "./ArticleDetailedPage.module.css";
 
 interface Props {
@@ -8,10 +9,10 @@ interface Props {
 }
 
 const ArticleDetailedPage: FC<Props> = ({ className }) => {
-  const { t } = useTranslation("article");
+  // const { t } = useTranslation("article");
   return (
     <div className={classNames(styles.articleDetailedPage, {}, [className])}>
-      article detailed page
+      <ArticleDetails />
     </div>
   );
 };
