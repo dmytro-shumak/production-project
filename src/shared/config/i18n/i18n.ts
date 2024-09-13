@@ -7,7 +7,7 @@ import Backend from "i18next-http-backend";
 // have a look at the Quick start guide
 // for passing in lng and translations on init
 
-const ns = ["translation", "about", "profile"];
+const ns = ["translation", "about", "profile", "article-details"];
 const supportedLngs = ["en", "ru", "ua"];
 const resources = ns.reduce((acc: Resource, n) => {
   supportedLngs.forEach((lng) => {

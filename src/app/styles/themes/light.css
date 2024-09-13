@@ -5,4 +5,8 @@ body.app-light-theme {
   --secondary-color: #0452ff;
   --inverted-primary-color: #049604;
   --inverted-secondary-color: #04ff04;
+
+  /* skeleton */
+  --skeleton-shadow: #fff;
+  --skeleton-color: rgba(0,0,0,0.2);
 }

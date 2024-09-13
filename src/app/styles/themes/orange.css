@@ -5,4 +5,8 @@ body.app-orange-theme {
   --secondary-color: #bb7c2a;
   --inverted-primary-color: #ae1e7c;
   --inverted-secondary-color: #e58e13;
+
+  /* skeleton */
+  --skeleton-shadow: #2b2be8;
+  --skeleton-color: #1515ad;
 }

@@ -5,4 +5,8 @@ body.app-dark-theme {
   --secondary-color:  #1c821c;
   --inverted-primary-color: #041c65;
   --inverted-secondary-color: #0452ff;
+
+  /* skeleton */
+  --skeleton-shadow: #2b2be8;
+  --skeleton-color: #1515ad;
 }
