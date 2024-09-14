@@ -1,31 +1,35 @@
-import { memo, useEffect, type FC } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { memo, useCallback, useEffect, type FC } from "react";
+import { useTranslation } from "react-i18next";
+import CalendarIcon from "shared/assets/icons/calendar.svg";
+import EyeIcon from "shared/assets/icons/eye.svg";
 import {
   useAppDispatch,
   useAppSelector,
   useAsyncReducer,
   type ReducersList,
 } from "shared/lib";
+import { classNames } from "shared/lib/classNames/classNames";
 import {
+  Avatar,
+  Icon,
+  Skeleton,
   Text,
   TextAlign,
   TextSize,
   TextTheme,
-  Avatar,
-  Skeleton,
-  Icon,
 } from "shared/ui";
-import { useTranslation } from "react-i18next";
-import EyeIcon from "shared/assets/icons/eye.svg";
-import CalendarIcon from "shared/assets/icons/calendar.svg";
 import {
   getArticleDetailsData,
   getArticleDetailsError,
   getArticleDetailsIsLoading,
 } from "../../model/selectors/articleDetails";
 import { fetchArticleById } from "../../model/services/fetchArticleById/fetchArticleById";
-import styles from "./ArticleDetails.module.css";
 import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice";
+import { ArticleBlockType, type ArticleBlock } from "../../model/types/article";
+import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
+import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
+import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
+import styles from "./ArticleDetails.module.css";
 
 interface Props {
   className?: string;
@@ -48,6 +52,21 @@ export const ArticleDetails: FC<Props> = memo(({ className, id }) => {
   useEffect(() => {
     dispatch(fetchArticleById(id));
   }, [dispatch, id]);
+
+  const renderBlock = useCallback((block: ArticleBlock) => {
+    switch (block.type) {
+      case ArticleBlockType.CODE:
+        return <ArticleCodeBlockComponent className={styles.block} />;
+      case ArticleBlockType.IMAGE:
+        return <ArticleImageBlockComponent className={styles.block} />;
+      case ArticleBlockType.TEXT:
+        return (
+          <ArticleTextBlockComponent className={styles.block} block={block} />
+        );
+      default:
+        return null;
+    }
+  }, []);
 
   if (isLoading) {
     return (
@@ -95,6 +114,7 @@ export const ArticleDetails: FC<Props> = memo(({ className, id }) => {
         <Icon Svg={CalendarIcon} />
         <Text text={article?.createdAt} />
       </div>
+      {article?.blocks.map(renderBlock)}
     </div>
   );
 });

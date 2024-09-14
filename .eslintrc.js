@@ -91,5 +91,6 @@ module.exports = {
     "consistent-return": "off",
     "no-restricted-syntax": "off",
     "react/prop-types": "off",
+    "react/no-array-index-key": "off",
   },
 };
