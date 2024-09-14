@@ -6,9 +6,17 @@ import {
   useAsyncReducer,
   type ReducersList,
 } from "shared/lib";
-import { Text, TextAlign, TextTheme } from "shared/ui/Text/Text";
+import {
+  Text,
+  TextAlign,
+  TextSize,
+  TextTheme,
+  Avatar,
+  Skeleton,
+} from "shared/ui";
 import { useTranslation } from "react-i18next";
-import { Skeleton } from "shared/ui";
+import EyeIcon from "shared/assets/icons/eye.svg";
+import CalendarIcon from "shared/assets/icons/calendar.svg";
 import {
   getArticleDetailsData,
   getArticleDetailsError,
@@ -31,7 +39,7 @@ export const ArticleDetails: FC<Props> = memo(({ className, id }) => {
   const { t } = useTranslation("article-details");
   const dispatch = useAppDispatch();
   const isLoading = useAppSelector(getArticleDetailsIsLoading);
-  const data = useAppSelector(getArticleDetailsData);
+  const article = useAppSelector(getArticleDetailsData);
   const error = useAppSelector(getArticleDetailsError);
 
   useAsyncReducer(reducer, true);
@@ -69,7 +77,23 @@ export const ArticleDetails: FC<Props> = memo(({ className, id }) => {
 
   return (
     <div className={classNames(styles.articleDetails, {}, [className])}>
-      ArticleDetails
+      <div className={styles.avatarWrapper}>
+        <Avatar size={200} src={article?.img} className={styles.avatar} />
+      </div>
+      <Text
+        title={article?.title}
+        text={article?.subtitle}
+        className={styles.title}
+        size={TextSize.L}
+      />
+      <div className={styles.articleInfo}>
+        <EyeIcon />
+        <Text text={String(article?.views)} />
+      </div>
+      <div className={styles.articleInfo}>
+        <CalendarIcon />
+        <Text text={article?.createdAt} />
+      </div>
     </div>
   );
 });

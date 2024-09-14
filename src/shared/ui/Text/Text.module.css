@@ -1,11 +1,13 @@
 .title {
-  font-size: var((--font-size-lg));
   color: var(--primary-color);
 }
 
 .text {
-  font-size: var(--font-size-md);
   color: var(--secondary-color);
+}
+
+.sizeL .text {
+  font-size: var(--font-size-lg);
 }
 
 .error .title {
@@ -27,3 +29,18 @@
 .right {
   text-align: right;
 }
+
+.sizeM .title {
+  font-size: var(--font-size-lg);
+}
+
+.sizeM .text {
+  font-size: var(--font-size-md);
+}
+
+.sizeL .title {
+  font-size: var(--font-size-xl);
+};
+
+
+

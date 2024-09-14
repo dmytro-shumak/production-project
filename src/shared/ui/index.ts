@@ -5,3 +5,4 @@ export { Select } from "./Select/Select";
 export { Skeleton } from "./Skeleton/Skeleton";
 
 export * from "./Button/Button";
+export * from "./Text/Text";
