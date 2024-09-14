@@ -13,6 +13,7 @@ import {
   TextTheme,
   Avatar,
   Skeleton,
+  Icon,
 } from "shared/ui";
 import { useTranslation } from "react-i18next";
 import EyeIcon from "shared/assets/icons/eye.svg";
@@ -87,11 +88,11 @@ export const ArticleDetails: FC<Props> = memo(({ className, id }) => {
         size={TextSize.L}
       />
       <div className={styles.articleInfo}>
-        <EyeIcon />
+        <Icon Svg={EyeIcon} />
         <Text text={String(article?.views)} />
       </div>
       <div className={styles.articleInfo}>
-        <CalendarIcon />
+        <Icon Svg={CalendarIcon} />
         <Text text={article?.createdAt} />
       </div>
     </div>

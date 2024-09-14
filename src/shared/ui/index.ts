@@ -3,6 +3,7 @@ export { AppLinkTheme } from "./AppLink/types";
 export { Avatar } from "./Avatar/Avatar";
 export { Select } from "./Select/Select";
 export { Skeleton } from "./Skeleton/Skeleton";
+export { Icon } from "./Icon/Icon";
 
 export * from "./Button/Button";
 export * from "./Text/Text";
