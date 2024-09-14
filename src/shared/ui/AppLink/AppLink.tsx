@@ -13,7 +13,7 @@ interface Props extends LinkProps {
 export const AppLink = memo<Props>(
   ({ className, children, to, theme = AppLinkTheme.Primary, ...linkProps }) => (
     <Link
-      className={classNames("", {}, [className, styles[theme]])}
+      className={classNames(styles.appLink, {}, [className, styles[theme]])}
       to={to}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...linkProps}

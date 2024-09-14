@@ -13,3 +13,7 @@
 .invertedSecondary {
   color: var(--inverted-secondary-color);
 }
+
+.appLink:hover {
+  transform: scale(1.2);
+}

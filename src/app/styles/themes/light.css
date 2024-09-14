@@ -9,4 +9,8 @@ body.app-light-theme {
   /* skeleton */
   --skeleton-shadow: #fff;
   --skeleton-color: rgba(0,0,0,0.2);
+
+  /* code */
+  --code-bg: #C4C4C433;
+
 }

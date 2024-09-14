@@ -56,9 +56,13 @@ export const ArticleDetails: FC<Props> = memo(({ className, id }) => {
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
       case ArticleBlockType.CODE:
-        return <ArticleCodeBlockComponent className={styles.block} />;
+        return (
+          <ArticleCodeBlockComponent className={styles.block} block={block} />
+        );
       case ArticleBlockType.IMAGE:
-        return <ArticleImageBlockComponent className={styles.block} />;
+        return (
+          <ArticleImageBlockComponent className={styles.block} block={block} />
+        );
       case ArticleBlockType.TEXT:
         return (
           <ArticleTextBlockComponent className={styles.block} block={block} />
