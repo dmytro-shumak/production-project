@@ -3,12 +3,16 @@ import type { ReducersMapObject } from "@reduxjs/toolkit";
 import type { StoryFn } from "@storybook/react";
 import { StoreProvider } from "app/providers/StoreProvider";
 import "app/styles/index.css";
+import { articleDetailsReducer } from "entities/Article/model/slice/articleDetailsSlice";
+import { profileReducer } from "entities/Profile";
 import { loginReducer } from "features/AuthByUsername";
 import type { ReducerSchema } from "shared/config/redux";
 import type { DeepPartial } from "shared/lib";
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<ReducerSchema>> = {
   loginForm: loginReducer,
+  articleDetails: articleDetailsReducer,
+  profile: profileReducer
 };
 
 export const StoreDecorator =

@@ -50,22 +50,36 @@ export const ArticleDetails: FC<Props> = memo(({ className, id }) => {
   useAsyncReducer(reducer, true);
 
   useEffect(() => {
-    dispatch(fetchArticleById(id));
+    if (__PROJECT__ !== "storybook") {
+      dispatch(fetchArticleById(id));
+    }
   }, [dispatch, id]);
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
       case ArticleBlockType.CODE:
         return (
-          <ArticleCodeBlockComponent className={styles.block} block={block} />
+          <ArticleCodeBlockComponent
+            className={styles.block}
+            block={block}
+            key={block.id}
+          />
         );
       case ArticleBlockType.IMAGE:
         return (
-          <ArticleImageBlockComponent className={styles.block} block={block} />
+          <ArticleImageBlockComponent
+            className={styles.block}
+            block={block}
+            key={block.id}
+          />
         );
       case ArticleBlockType.TEXT:
         return (
-          <ArticleTextBlockComponent className={styles.block} block={block} />
+          <ArticleTextBlockComponent
+            className={styles.block}
+            block={block}
+            key={block.id}
+          />
         );
       default:
         return null;
