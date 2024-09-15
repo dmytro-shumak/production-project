@@ -1,6 +1,6 @@
 import { memo, type FC } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
-// import styles from "./ArticlesPage.module.css";
+import styles from "./ArticlesPage.module.css";
 
 interface Props {
   className?: string;
@@ -8,7 +8,7 @@ interface Props {
 
 const ArticlesPage: FC<Props> = ({ className }) => {
   return (
-    <div className={classNames("styles.articlesPage", {}, [className])}>
+    <div className={classNames(styles.articlesPage, {}, [className])}>
       articlesPage
     </div>
   );
