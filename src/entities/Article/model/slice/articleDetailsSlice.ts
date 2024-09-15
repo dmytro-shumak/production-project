@@ -30,6 +30,6 @@ const articleDetailsSlice = createSlice({
   },
 });
 
-export const articleDetailsAction = articleDetailsSlice.actions;
+export const articleDetailsActions = articleDetailsSlice.actions;
 
 export const articleDetailsReducer = articleDetailsSlice.reducer;
