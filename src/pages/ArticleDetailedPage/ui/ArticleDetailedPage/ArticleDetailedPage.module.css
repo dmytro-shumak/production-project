@@ -1,3 +1,7 @@
 .articleDetailedPage {
   position: relative;
 }
+
+.commentTitle {
+  margin-top: 40px;
+}

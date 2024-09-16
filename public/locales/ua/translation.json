@@ -10,5 +10,6 @@
   "Login": "Увійти",
   "Value": "Значення",
   "Increment": "Інкремент",
-  "Decrement": "Декремент"
+  "Decrement": "Декремент",
+  "CommentsEmpty": "Comments Empty"
 }

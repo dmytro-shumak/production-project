@@ -10,5 +10,6 @@
   "Login": "Login",
   "Value": "Value",
   "Increment": "Increment",
-  "Decrement": "Decrement"
+  "Decrement": "Decrement",
+  "CommentsEmpty": "Comments Empty"
 }
