@@ -1,5 +1,5 @@
 import { AboutPage } from "pages/AboutPage";
-import { ArticleDetailedPage } from "pages/ArticleDetailedPage";
+import { ArticleDetailsPage } from "pages/ArticleDetailsPage";
 import { ArticlesPage } from "pages/ArticlesPage";
 import { MainPage } from "pages/MainPage";
 import { NotFoundPage } from "pages/NotFoundPage";
@@ -49,7 +49,7 @@ export const routesConfig: Record<AppRoutes, AppRoutesProps> = {
   },
   [AppRoutes.ARTICLE_DETAILS]: {
     path: RoutesPath.article_details,
-    element: <ArticleDetailedPage />,
+    element: <ArticleDetailsPage />,
     authOnly: true, // Add authOnly prop to restrict access to the profile page to authenticated users.
   },
   [AppRoutes.NOT_FOUND]: {
