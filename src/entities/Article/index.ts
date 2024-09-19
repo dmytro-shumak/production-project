@@ -1,4 +1,5 @@
 export { ArticleDetails } from "./ui/ArticleDetails/ArticleDetails";
+export { getArticleDetailsData } from "./model/selectors/articleDetails";
 
 export type {
   ArticleBlockType,

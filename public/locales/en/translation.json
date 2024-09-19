@@ -11,5 +11,6 @@
   "Value": "Value",
   "Increment": "Increment",
   "Decrement": "Decrement",
-  "CommentsEmpty": "Comments Empty"
+  "CommentsEmpty": "Comments Empty",
+  "EnterTextComment": "Enter Text Comment"
 }
