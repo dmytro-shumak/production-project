@@ -38,7 +38,7 @@ export const routesConfig: Record<AppRoutes, AppRoutesProps> = {
     element: <AboutPage />,
   },
   [AppRoutes.PROFILE]: {
-    path: RoutesPath.profile,
+    path: `${RoutesPath.profile}/:id`,
     element: <ProfilePage />,
     authOnly: true, // Add authOnly prop to restrict access to the profile page to authenticated users.
   },

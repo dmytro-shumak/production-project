@@ -18,6 +18,8 @@ import {
 import { Text, TextTheme } from "shared/ui/Text/Text";
 import { ValidateProfileError } from "entities/Profile/model/types/profile";
 import { useTranslation } from "react-i18next";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { useParams } from "react-router-dom";
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 
 const initialReducer: ReducersList = {
@@ -32,6 +34,8 @@ const ProfilePage: FC<Props> = ({ className }) => {
   useAsyncReducer(initialReducer, true);
   const dispatch = useAppDispatch();
   const { t } = useTranslation("profile");
+  const { id } = useParams();
+
   const formData = useAppSelector(getProfileForm);
   const error = useAppSelector(getProfileError);
   const loading = useAppSelector(getProfileLoading);
@@ -49,11 +53,11 @@ const ProfilePage: FC<Props> = ({ className }) => {
     [t],
   );
 
-  useEffect(() => {
-    if (__PROJECT__ !== "storybook") {
-      dispatch(fetchProfileData());
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id));
     }
-  }, [dispatch]);
+  });
 
   return (
     <div className={classNames("", {}, [className])}>

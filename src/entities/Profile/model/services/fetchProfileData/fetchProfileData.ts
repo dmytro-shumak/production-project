@@ -3,13 +3,13 @@ import type { ThunkConfig, ThunkExtraArg } from "shared/config/redux";
 import { AxiosError } from "axios";
 import type { Profile } from "../../types/profile";
 
-export const fetchProfileData = createAsyncThunk<Profile, void, ThunkConfig>(
+export const fetchProfileData = createAsyncThunk<Profile, string, ThunkConfig>(
   "profile/fetchProfileData",
-  async (_, thunkApi) => {
+  async (profileId, thunkApi) => {
     const { rejectWithValue } = thunkApi;
     const extra = thunkApi.extra as ThunkExtraArg;
     try {
-      const response = await extra.api.get<Profile>("/profile");
+      const response = await extra.api.get<Profile>(`/profile/${profileId}`);
       if (!response.data) {
         throw new Error("failed to login");
       }

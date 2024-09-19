@@ -110,14 +110,28 @@
       "avatar": "https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&q=70&fm=webp"
     }
   ],
-  "profile": {
-    "firstName": "Dmytro",
-    "lastName": "Shum",
-    "age": 21,
-    "currency": "SEK",
-    "country": "Switzerland",
-    "city": "Los Angeles",
-    "username": "user",
-    "avatar": "https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&q=70&fm=webp"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstName": "Dmytro",
+      "lastName": "Shum",
+      "age": 21,
+      "currency": "SEK",
+      "country": "Switzerland",
+      "city": "Los Angeles",
+      "username": "user",
+      "avatar": "https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&q=70&fm=webp"
+    },
+    {
+      "id": "2",
+      "firstName": "Alex",
+      "lastName": "Lesn",
+      "age": 28,
+      "currency": "UAH",
+      "country": "Ukraine",
+      "city": "Los Angeles",
+      "username": "anonymous",
+      "avatar": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png"
+    }
+  ]
 }
