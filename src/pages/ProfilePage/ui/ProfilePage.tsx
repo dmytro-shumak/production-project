@@ -8,18 +8,18 @@ import {
   getProfileValidateErrors,
   profileReducer,
 } from "entities/Profile";
-import { useEffect, useMemo, type FC } from "react";
+import { ValidateProfileError } from "entities/Profile/model/types/profile";
+import { useMemo, type FC } from "react";
+import { useTranslation } from "react-i18next";
+import { useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "shared/lib";
 import { classNames } from "shared/lib/classNames/classNames";
 import {
   useAsyncReducer,
   type ReducersList,
 } from "shared/lib/hooks/useAsyncReducer/useAsyncReducer";
-import { Text, TextTheme } from "shared/ui/Text/Text";
-import { ValidateProfileError } from "entities/Profile/model/types/profile";
-import { useTranslation } from "react-i18next";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { useParams } from "react-router-dom";
+import { Text, TextTheme } from "shared/ui/Text/Text";
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 
 const initialReducer: ReducersList = {
@@ -62,7 +62,7 @@ const ProfilePage: FC<Props> = ({ className }) => {
   return (
     <div className={classNames("", {}, [className])}>
       <ProfilePageHeader />
-      {validateErrors?.length &&
+      {validateErrors?.length !== 0 &&
         validateErrors?.map((err) => (
           <Text
             theme={TextTheme.ERROR}

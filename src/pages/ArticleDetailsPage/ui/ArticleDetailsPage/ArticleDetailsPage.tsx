@@ -15,6 +15,7 @@ import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEf
 import { fetchCommentsByArticleId } from "pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { AddCommentForm, sendComment } from "features/addCommentForm";
 import { getUserAuthData } from "entities/User";
+import { getArticleCommentIsLoading } from "pages/ArticleDetailsPage/model/selectors/comment";
 import {
   articleDetailsCommentsReducer,
   getArticleComments,
@@ -35,6 +36,7 @@ const ArticleDetailsPage: FC<Props> = ({ className }) => {
   const comments = useAppSelector(getArticleComments.selectAll);
   const userData = useAppSelector(getUserAuthData);
   const article = useAppSelector(getArticleDetailsData);
+  const isLoading = useAppSelector(getArticleCommentIsLoading);
   const dispatch = useAppDispatch();
 
   useAsyncReducer(reducers, true);
@@ -64,7 +66,7 @@ const ArticleDetailsPage: FC<Props> = ({ className }) => {
       <ArticleDetails id={id} />
       <Text title={t("Comments")} className={styles.commentTitle} />
       <AddCommentForm onSendComment={onSendComment} />
-      <CommentList comments={comments} />
+      <CommentList comments={comments} isLoading={isLoading} />
     </div>
   );
 };

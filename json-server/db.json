@@ -126,6 +126,36 @@
       "userId": "1",
       "text": "dfgdfgdfg",
       "id": "FuUrQdE"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "fgsdfg",
+      "id": "h8qFI43"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "еуче",
+      "id": "864VSyG"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "sdfgsdfg",
+      "id": "w-qMtHX"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "asdf",
+      "id": "NBq5Duz"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "second user",
+      "id": "3Z-3qHB"
     }
   ],
   "users": [
@@ -134,6 +164,12 @@
       "username": "user",
       "password": "password",
       "avatar": "https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&q=70&fm=webp"
+    },
+    {
+      "id": "2",
+      "username": "username",
+      "password": "password",
+      "avatar": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png"
     }
   ],
   "profile": [
@@ -150,7 +186,7 @@
     },
     {
       "id": "2",
-      "firstName": "Alex",
+      "firstName": "Alex13",
       "lastName": "Lesn",
       "age": 28,
       "currency": "UAH",

@@ -5,10 +5,12 @@ import { Text } from "shared/ui/Text/Text";
 import { useTranslation } from "react-i18next";
 import { useAppDispatch, useAppSelector } from "shared/lib";
 import {
+  getProfileData,
   getProfileReadOnly,
   profileActions,
   updateProfileData,
 } from "entities/Profile";
+import { getUserAuthData } from "entities/User";
 import styles from "./ProfilePageHeader.module.css";
 
 interface Props {
@@ -17,6 +19,10 @@ interface Props {
 
 export const ProfilePageHeader: FC<Props> = ({ className }) => {
   const { t } = useTranslation("profile");
+
+  const authData = useAppSelector(getUserAuthData);
+  const profileData = useAppSelector(getProfileData);
+  const canEdit = authData?.id === profileData?.id;
 
   const readOnly = useAppSelector(getProfileReadOnly);
   const dispatch = useAppDispatch();
@@ -39,17 +45,21 @@ export const ProfilePageHeader: FC<Props> = ({ className }) => {
   return (
     <div className={classNames(styles.profilePageHeader, {}, [className])}>
       <Text title={t("Profile")} />
-      <Button
-        theme={readOnly ? ButtonTheme.Outline : ButtonTheme.OutlineRed}
-        className={styles.editBtn}
-        onClick={() => onEdit(!readOnly)}
-      >
-        {readOnly ? t("Edit") : t("Cancel")}
-      </Button>
-      {!readOnly && (
-        <Button theme={ButtonTheme.Outline} onClick={onSave}>
-          {t("Save")}
-        </Button>
+      {canEdit && (
+        <>
+          <Button
+            theme={readOnly ? ButtonTheme.Outline : ButtonTheme.OutlineRed}
+            className={styles.editBtn}
+            onClick={() => onEdit(!readOnly)}
+          >
+            {readOnly ? t("Edit") : t("Cancel")}
+          </Button>
+          {!readOnly && (
+            <Button theme={ButtonTheme.Outline} onClick={onSave}>
+              {t("Save")}
+            </Button>
+          )}
+        </>
       )}
     </div>
   );
