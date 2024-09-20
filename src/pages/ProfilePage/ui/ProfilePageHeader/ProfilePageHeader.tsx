@@ -1,16 +1,15 @@
-import { useCallback, type FC } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
-import { Button, ButtonTheme } from "shared/ui";
-import { Text } from "shared/ui/Text/Text";
-import { useTranslation } from "react-i18next";
-import { useAppDispatch, useAppSelector } from "shared/lib";
 import {
-  getProfileData,
   getProfileReadOnly,
   profileActions,
   updateProfileData,
 } from "entities/Profile";
-import { getUserAuthData } from "entities/User";
+import { useCallback, type FC } from "react";
+import { useTranslation } from "react-i18next";
+import { useAppDispatch, useAppSelector } from "shared/lib";
+import { classNames } from "shared/lib/classNames/classNames";
+import { Button, ButtonTheme } from "shared/ui";
+import { Text } from "shared/ui/Text/Text";
+import { canEditProfileSelector } from "../../model/selectors/canEditProfile/canEditProfile";
 import styles from "./ProfilePageHeader.module.css";
 
 interface Props {
@@ -20,9 +19,7 @@ interface Props {
 export const ProfilePageHeader: FC<Props> = ({ className }) => {
   const { t } = useTranslation("profile");
 
-  const authData = useAppSelector(getUserAuthData);
-  const profileData = useAppSelector(getProfileData);
-  const canEdit = authData?.id === profileData?.id;
+  const canEditProfile = useAppSelector(canEditProfileSelector);
 
   const readOnly = useAppSelector(getProfileReadOnly);
   const dispatch = useAppDispatch();
@@ -45,7 +42,7 @@ export const ProfilePageHeader: FC<Props> = ({ className }) => {
   return (
     <div className={classNames(styles.profilePageHeader, {}, [className])}>
       <Text title={t("Profile")} />
-      {canEdit && (
+      {canEditProfile && (
         <>
           <Button
             theme={readOnly ? ButtonTheme.Outline : ButtonTheme.OutlineRed}
