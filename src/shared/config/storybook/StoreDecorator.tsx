@@ -6,13 +6,15 @@ import "app/styles/index.css";
 import { articleDetailsReducer } from "entities/Article/model/slice/articleDetailsSlice";
 import { profileReducer } from "entities/Profile";
 import { loginReducer } from "features/AuthByUsername";
+import { articleDetailsCommentsReducer } from "pages/ArticleDetailsPage/model/slices/articleDetailsComments";
 import type { ReducerSchema } from "shared/config/redux";
 import type { DeepPartial } from "shared/lib";
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<ReducerSchema>> = {
   loginForm: loginReducer,
   articleDetails: articleDetailsReducer,
-  profile: profileReducer
+  profile: profileReducer,
+  articleDetailsComments: articleDetailsCommentsReducer
 };
 
 export const StoreDecorator =
