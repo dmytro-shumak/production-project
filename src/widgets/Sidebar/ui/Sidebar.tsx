@@ -1,11 +1,12 @@
+import { Theme, useTheme } from "app/providers/theme";
 import { memo, useState, type FC } from "react";
+import { useAppSelector } from "shared/lib";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Button, ButtonSize } from "shared/ui";
 import { LangSwitcher } from "widgets/LangSwitcher";
-import { SidebarItemsList } from "widgets/Sidebar/model/item";
 import { SidebarItem } from "widgets/Sidebar/ui/SidebarItem/SidebarItem";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
-import { Theme, useTheme } from "app/providers/theme";
+import { getSideBarItems } from "../model/selectors/getSidebarItems";
 import styles from "./Sidebar.module.css";
 
 interface Props {
@@ -15,6 +16,7 @@ interface Props {
 export const Sidebar: FC<Props> = memo(({ className }) => {
   const [collapsed, setCollapsed] = useState(true);
   const { theme } = useTheme();
+  const sidebarItemsList = useAppSelector(getSideBarItems);
 
   const handleToggle = () => {
     setCollapsed((prev) => !prev);
@@ -36,7 +38,7 @@ export const Sidebar: FC<Props> = memo(({ className }) => {
         {collapsed ? ">" : "<"}
       </Button>
       <ul className={styles.links}>
-        {SidebarItemsList.map((sidebarItem) => (
+        {sidebarItemsList.map((sidebarItem) => (
           <SidebarItem
             item={sidebarItem}
             key={sidebarItem.path}
