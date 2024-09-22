@@ -3,15 +3,17 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { ArticleView, type Article } from "../../model/types/article";
 import styles from "./ArticleList.module.css";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
+import { ArticleListSkeleton } from "./ArticleListSkeleton";
 
 interface Props {
   className?: string;
   articles: Article[];
   view?: ArticleView;
+  isLoading?: boolean;
 }
 
 export const ArticleList = memo(
-  ({ className, articles, view = ArticleView.GRID }: Props) => {
+  ({ className, articles, view = ArticleView.GRID, isLoading }: Props) => {
     const renderArticle = useCallback(
       (article: Article) => {
         return (
@@ -20,6 +22,19 @@ export const ArticleList = memo(
       },
       [view],
     );
+
+    if (isLoading) {
+      return (
+        <div
+          className={classNames(styles.articleList, {}, [
+            className,
+            styles[view],
+          ])}
+        >
+          <ArticleListSkeleton view={view} />
+        </div>
+      );
+    }
 
     return (
       <div

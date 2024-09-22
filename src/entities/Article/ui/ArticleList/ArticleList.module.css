@@ -11,3 +11,35 @@
   flex-wrap: wrap;
   gap: 30px;
 }
+
+.text {
+  margin-top: 8px;
+}
+
+.img {
+  margin-top: 16px;
+}
+
+.textBlock {
+  margin-top: 10px;
+}
+
+.footerWrapper {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.date {
+  margin-left: auto;
+}
+
+.avatar {
+  margin-right: 5px;
+}
