@@ -13,4 +13,6 @@ body.app-light-theme {
   /* code */
   --code-bg: #C4C4C433;
 
+  /* card */
+  --card-bg: #d5d5d7;
 }

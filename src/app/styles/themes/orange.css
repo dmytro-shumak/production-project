@@ -12,4 +12,7 @@ body.app-orange-theme {
 
   /* code */
   --code-bg: #ddb319;
+
+    /* card */
+    --card-bg: #d5d5d7;
 }

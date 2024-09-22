@@ -12,4 +12,7 @@ body.app-dark-theme {
 
   /* code */
   --code-bg: #101083;
+
+  /* card */
+  --card-bg: #0d0d6b
 }
