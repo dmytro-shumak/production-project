@@ -1,7 +1,7 @@
 import { getUserAuthData } from "entities/User";
 import type { ReactNode } from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import { RoutesPath } from "shared/config/route-config/routeConfig";
+import { RoutesPath } from "shared/config/routeConfig/routeConfig";
 import { useAppSelector } from "shared/lib";
 
 export function RequireAuth({ children }: { children: ReactNode }) {

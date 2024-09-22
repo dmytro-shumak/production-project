@@ -1,8 +1,10 @@
-import { memo, useRef } from "react";
+import { memo, useCallback, useRef } from "react";
 import EyeIcon from "shared/assets/icons/eye.svg";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Avatar, Button, ButtonTheme, Card, Icon, Text } from "shared/ui";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import { RoutesPath } from "shared/config/routeConfig/routeConfig";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import {
   ArticleBlockType,
@@ -21,6 +23,12 @@ interface Props {
 export const ArticleListItem = memo(({ className, article, view }: Props) => {
   const { t } = useTranslation("article");
   const ref = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
+
+  const onOpenArticle = useCallback(() => {
+    navigate(`${RoutesPath.article_details}/${article.id}`);
+  }, [article.id, navigate]);
+
   const types = (
     <Text text={article.type.join(", ")} className={styles.types} />
   );
@@ -58,7 +66,9 @@ export const ArticleListItem = memo(({ className, article, view }: Props) => {
             />
           )}
           <div className={styles.footer}>
-            <Button theme={ButtonTheme.Outline}>{t("ReadMore")}</Button>
+            <Button theme={ButtonTheme.Outline} onClick={onOpenArticle}>
+              {t("ReadMore")}
+            </Button>
             {views}
           </div>
         </Card>
@@ -74,7 +84,7 @@ export const ArticleListItem = memo(({ className, article, view }: Props) => {
       ])}
       ref={ref}
     >
-      <Card>
+      <Card onClick={onOpenArticle}>
         <div className={styles.imageWrapper}>
           <img src={article.img} alt={article.title} className={styles.img} />
           <Text text={article.createdAt} className={styles.date} />

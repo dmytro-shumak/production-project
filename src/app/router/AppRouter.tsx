@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import {
   routesConfig,
   type AppRoutesProps,
-} from "shared/config/route-config/routeConfig";
+} from "shared/config/routeConfig/routeConfig";
 import { Loader } from "shared/ui/Loader";
 
 export const AppRouter = () => {

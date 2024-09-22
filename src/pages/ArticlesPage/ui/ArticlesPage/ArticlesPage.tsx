@@ -87,7 +87,7 @@ const ArticlesPage: FC<Props> = ({ className }) => {
   return (
     <div className={classNames(styles.articlesPage, {}, [className])}>
       <ArticleList
-        view={ArticleView.LIST}
+        view={ArticleView.GRID}
         articles={new Array(16)
           .fill(0)
           .map((_item, index) => ({ ...articles, id: String(index) }))}
