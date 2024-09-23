@@ -1,7 +1,24 @@
 import { memo, type FC } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { ArticleList, ArticleView, type Article } from "entities/Article";
+import {
+  useAppDispatch,
+  useAppSelector,
+  useAsyncReducer,
+  useInitialEffect,
+  type ReducersList,
+} from "shared/lib";
+import { fetchArticleList } from "pages/ArticlesPage/model/services/fetchArticleList/fetchArticleList";
+import { useSelector } from "react-redux";
 import styles from "./ArticlesPage.module.css";
+import {
+  articlePageReducer,
+  getArticles,
+} from "../../model/slices/articlePageSlice";
+import {
+  getArticlePageIsLoading,
+  getArticlePageView,
+} from "../../model/selectors/articlePageSelector";
 
 interface Props {
   className?: string;
@@ -83,16 +100,25 @@ const articles = {
   ],
 } as Article;
 
+const reducer: ReducersList = {
+  articlePage: articlePageReducer,
+};
+
 const ArticlesPage: FC<Props> = ({ className }) => {
+  useAsyncReducer(reducer);
+
+  const dispatch = useAppDispatch();
+  const articles = useAppSelector(getArticles.selectAll);
+  const isLoading = useAppSelector(getArticlePageIsLoading);
+  const view = useAppSelector(getArticlePageView);
+
+  useInitialEffect(() => {
+    dispatch(fetchArticleList());
+  });
+
   return (
     <div className={classNames(styles.articlesPage, {}, [className])}>
-      <ArticleList
-        view={ArticleView.LIST}
-        isLoading
-        articles={new Array(16)
-          .fill(0)
-          .map((_item, index) => ({ ...articles, id: String(index) }))}
-      />
+      <ArticleList view={view} isLoading={isLoading} articles={articles} />
     </div>
   );
 };
