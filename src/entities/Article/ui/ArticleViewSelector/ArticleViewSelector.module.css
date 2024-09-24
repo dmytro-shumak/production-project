@@ -1,3 +1,3 @@
-.selected path{
-  fill: red;
+.notSelected path{
+  fill-opacity: 0.3;
 }
