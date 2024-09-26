@@ -6,3 +6,4 @@ export {
 } from "./useAsyncReducer/useAsyncReducer";
 export { useHover } from "./useHover/useHover";
 export { useInitialEffect } from "./useInitialEffect/useInitialEffect";
+export { useInfiniteScroll } from "./useInfiniteScroll/useInfiniteScroll";
