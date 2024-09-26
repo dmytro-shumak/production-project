@@ -15,7 +15,7 @@ import {
 } from "shared/lib";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { Button, ButtonTheme, Text } from "shared/ui";
+import { Button, ButtonTheme, Page, Text } from "shared/ui";
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import {
   articleDetailsCommentsReducer,
@@ -68,7 +68,7 @@ const ArticleDetailsPage: FC<Props> = ({ className }) => {
   }
 
   return (
-    <div className={classNames(styles.articleDetailsPage, {}, [className])}>
+    <Page className={classNames(styles.articleDetailsPage, {}, [className])}>
       <Button theme={ButtonTheme.Outline} onClick={onBackToList}>
         {t("BackToList")}
       </Button>
@@ -76,7 +76,7 @@ const ArticleDetailsPage: FC<Props> = ({ className }) => {
       <Text title={t("Comments")} className={styles.commentTitle} />
       <AddCommentForm onSendComment={onSendComment} />
       <CommentList comments={comments} isLoading={isLoading} />
-    </div>
+    </Page>
   );
 };
 

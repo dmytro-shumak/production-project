@@ -7,6 +7,7 @@ export { Icon } from "./Icon/Icon";
 export { Button } from "./Button/Button";
 export { Code } from "./Code/Code";
 export { Card } from "./Card/Card";
+export { Page } from "./Page/Page";
 
 export * from "./Button/Button";
 export * from "./Text/Text";

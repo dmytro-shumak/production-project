@@ -1,13 +1,14 @@
 import { type FC } from "react";
 import { useTranslation } from "react-i18next";
+import { Page } from "shared/ui";
 
 const AboutPage: FC = () => {
   const { t } = useTranslation("about");
 
   return (
-    <div>
+    <Page>
       <h1>{t("AboutUs")}</h1>
-    </div>
+    </Page>
   );
 };
 

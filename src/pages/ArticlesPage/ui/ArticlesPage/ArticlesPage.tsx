@@ -13,6 +13,7 @@ import {
   type ReducersList,
 } from "shared/lib";
 import { classNames } from "shared/lib/classNames/classNames";
+import { Page } from "shared/ui";
 import {
   getArticlePageIsLoading,
   getArticlePageView,
@@ -48,15 +49,15 @@ const ArticlesPage: FC<Props> = ({ className }) => {
   );
 
   useInitialEffect(() => {
-    dispatch(fetchArticleList());
     dispatch(articlePageActions.initState());
+    dispatch(fetchArticleList({ page: 1 }));
   });
 
   return (
-    <div className={classNames(styles.articlesPage, {}, [className])}>
+    <Page className={classNames(styles.articlesPage, {}, [className])}>
       <ArticleViewSelector view={view} onViewClick={onChangeView} />
       <ArticleList view={view} isLoading={isLoading} articles={articles} />
-    </div>
+    </Page>
   );
 };
 
