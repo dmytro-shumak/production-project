@@ -4,6 +4,7 @@ import {
   ArticleViewSelector,
 } from "entities/Article";
 import { fetchArticleList } from "pages/ArticlesPage/model/services/fetchArticleList/fetchArticleList";
+import { fetchNextArticlesPage } from "pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import { memo, useCallback, type FC } from "react";
 import {
   useAppDispatch,
@@ -48,13 +49,20 @@ const ArticlesPage: FC<Props> = ({ className }) => {
     [dispatch],
   );
 
+  const onLoadNextPart = useCallback(() => {
+    dispatch(fetchNextArticlesPage());
+  }, [dispatch]);
+
   useInitialEffect(() => {
     dispatch(articlePageActions.initState());
     dispatch(fetchArticleList({ page: 1 }));
   });
 
   return (
-    <Page className={classNames(styles.articlesPage, {}, [className])}>
+    <Page
+      className={classNames(styles.articlesPage, {}, [className])}
+      onScrollEnd={onLoadNextPart}
+    >
       <ArticleViewSelector view={view} onViewClick={onChangeView} />
       <ArticleList view={view} isLoading={isLoading} articles={articles} />
     </Page>
