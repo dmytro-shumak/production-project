@@ -15,7 +15,8 @@ import {
 } from "shared/lib";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { Button, ButtonTheme, Page, Text } from "shared/ui";
+import { Button, ButtonTheme, Text } from "shared/ui";
+import { Page } from "widgets/Page";
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import {
   articleDetailsCommentsReducer,

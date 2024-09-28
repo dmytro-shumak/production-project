@@ -12,7 +12,7 @@ import {
   type ReducersList,
 } from "shared/lib";
 import { classNames } from "shared/lib/classNames/classNames";
-import { Page } from "shared/ui";
+import { Page } from "widgets/Page";
 import {
   getArticlePageIsLoading,
   getArticlePageView,

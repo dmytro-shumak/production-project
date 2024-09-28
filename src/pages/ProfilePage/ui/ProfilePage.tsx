@@ -20,7 +20,7 @@ import {
 } from "shared/lib/hooks/useAsyncReducer/useAsyncReducer";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { Text, TextTheme } from "shared/ui/Text/Text";
-import { Page } from "shared/ui";
+import { Page } from "widgets/Page";
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 
 const initialReducer: ReducersList = {

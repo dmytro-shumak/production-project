@@ -1,5 +1,5 @@
 import { getUserAuthData, logout } from "entities/User";
-import { LoginModal } from "features/AuthByUsername";
+import { LoginModal } from "features/authByUsername";
 import { memo, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
