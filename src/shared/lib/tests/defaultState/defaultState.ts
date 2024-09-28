@@ -8,4 +8,5 @@ export const defaultState: RootState = {
     username: "",
   },
   user: {},
+  scrollRestoration: { scroll: {} },
 };

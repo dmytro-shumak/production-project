@@ -93,5 +93,6 @@ module.exports = {
     "react/prop-types": "off",
     "react/no-array-index-key": "off",
     "no-console": ["warn", { allow: ["warn", "error"] }],
+    "@typescript-eslint/no-explicit-any": ["error", { ignoreRestArgs: true }],
   },
 };

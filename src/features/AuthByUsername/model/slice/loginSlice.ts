@@ -9,7 +9,7 @@ const initialState: LoginSchema = {
   error: undefined,
 };
 
-export const loginLogin = createSlice({
+export const loginSlice = createSlice({
   name: "login",
   initialState,
   reducers: {
@@ -35,6 +35,6 @@ export const loginLogin = createSlice({
   },
 });
 
-export const { setPassword, setUsername } = loginLogin.actions;
+export const { setPassword, setUsername } = loginSlice.actions;
 
-export const loginReducer = loginLogin.reducer;
+export const loginReducer = loginSlice.reducer;

@@ -6,6 +6,7 @@ import type {
   ReducerSchema,
   ReduxStoreWithManager,
 } from "shared/config/redux/reducerSchema";
+import { scrollRestorationReducer } from "features/scrollRestoration";
 import { createReducerManager } from "./reducerManager";
 
 interface Options {
@@ -19,6 +20,7 @@ export const createReduxStore = (options?: Options): ReduxStoreWithManager => {
     ...asyncReducers,
     counter: counterReducer,
     user: userReducer,
+    scrollRestoration: scrollRestorationReducer,
   };
   const reducerManager = createReducerManager(rootReducer);
   const store = configureStore({
