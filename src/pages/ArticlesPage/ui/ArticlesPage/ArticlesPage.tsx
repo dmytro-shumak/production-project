@@ -3,8 +3,6 @@ import {
   ArticleView,
   ArticleViewSelector,
 } from "entities/Article";
-import { fetchArticleList } from "pages/ArticlesPage/model/services/fetchArticleList/fetchArticleList";
-import { fetchNextArticlesPage } from "pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import { memo, useCallback, type FC } from "react";
 import {
   useAppDispatch,
@@ -19,6 +17,8 @@ import {
   getArticlePageIsLoading,
   getArticlePageView,
 } from "../../model/selectors/articlePageSelector";
+import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
+import { initializeArticlePage } from "../../model/services/initializeArticlePage/initializeArticlePage";
 import {
   articlePageActions,
   articlePageReducer,
@@ -35,7 +35,7 @@ const reducer: ReducersList = {
 };
 
 const ArticlesPage: FC<Props> = ({ className }) => {
-  useAsyncReducer(reducer);
+  useAsyncReducer(reducer, false);
 
   const dispatch = useAppDispatch();
   const articles = useAppSelector(getArticles.selectAll);
@@ -54,8 +54,7 @@ const ArticlesPage: FC<Props> = ({ className }) => {
   }, [dispatch]);
 
   useInitialEffect(() => {
-    dispatch(articlePageActions.initState());
-    dispatch(fetchArticleList({ page: 1 }));
+    dispatch(initializeArticlePage());
   });
 
   return (
