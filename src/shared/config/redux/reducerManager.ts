@@ -4,8 +4,8 @@ import {
   type ReducersMapObject,
   type UnknownAction,
 } from "@reduxjs/toolkit";
-import type { ReducerSchema } from "shared/config/redux/reducerSchema";
 import type { RootState } from "shared/config/redux/store";
+import type { ReducerSchema } from "./reducerSchema";
 
 export function createReducerManager(
   initialReducers: ReducersMapObject<ReducerSchema>,

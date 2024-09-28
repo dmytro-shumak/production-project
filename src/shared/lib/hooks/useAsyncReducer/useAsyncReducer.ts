@@ -19,7 +19,12 @@ export function useAsyncReducer(
   const dispatch = useAppDispatch();
 
   useEffect(() => {
+    const mountedReducers = store.reducerManager?.getReducerMap();
     Object.entries(reducers).forEach(([key, reducer]) => {
+      if (mountedReducers && mountedReducers[key as ReducerSchemaKey]) {
+        // do not mount reducer if it already exists
+        return;
+      }
       store.reducerManager?.add(key as ReducerSchemaKey, reducer);
       dispatch({ type: `@INIT ${key} reducer` });
     });
