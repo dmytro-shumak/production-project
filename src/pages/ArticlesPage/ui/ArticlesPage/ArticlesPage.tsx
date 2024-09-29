@@ -1,8 +1,4 @@
-import {
-  ArticleList,
-  ArticleView,
-  ArticleViewSelector,
-} from "entities/Article";
+import { ArticleList } from "entities/Article";
 import { memo, useCallback, type FC } from "react";
 import {
   useAppDispatch,
@@ -20,10 +16,10 @@ import {
 import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import { initializeArticlePage } from "../../model/services/initializeArticlePage/initializeArticlePage";
 import {
-  articlePageActions,
   articlePageReducer,
   getArticles,
 } from "../../model/slices/articlePageSlice";
+import { ArticlePageFilters } from "../ArticlePageFilters/ArticlePageFilters";
 import styles from "./ArticlesPage.module.css";
 
 interface Props {
@@ -42,13 +38,6 @@ const ArticlesPage: FC<Props> = ({ className }) => {
   const isLoading = useAppSelector(getArticlePageIsLoading);
   const view = useAppSelector(getArticlePageView);
 
-  const onChangeView = useCallback(
-    (view: ArticleView) => {
-      dispatch(articlePageActions.setView(view));
-    },
-    [dispatch],
-  );
-
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPage());
   }, [dispatch]);
@@ -62,8 +51,13 @@ const ArticlesPage: FC<Props> = ({ className }) => {
       className={classNames(styles.articlesPage, {}, [className])}
       onScrollEnd={onLoadNextPart}
     >
-      <ArticleViewSelector view={view} onViewClick={onChangeView} />
-      <ArticleList view={view} isLoading={isLoading} articles={articles} />
+      <ArticlePageFilters />
+      <ArticleList
+        view={view}
+        isLoading={isLoading}
+        articles={articles}
+        className={styles.list}
+      />
     </Page>
   );
 };

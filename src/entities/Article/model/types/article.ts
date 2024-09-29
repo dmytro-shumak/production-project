@@ -73,3 +73,9 @@ export enum ArticleView {
   GRID = "grid",
   LIST = "list",
 }
+
+export enum ArticleSortField {
+  VIEWS = "views",
+  TITLE = "title",
+  CREATED_AT = "createdAt",
+}

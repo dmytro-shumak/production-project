@@ -12,5 +12,8 @@
   "Increment": "Increment",
   "Decrement": "Decrement",
   "CommentsEmpty": "Comments Empty",
-  "EnterTextComment": "Enter Text Comment"
+  "EnterTextComment": "Enter Text Comment",
+  "SortBy": "Sort By",
+  "SortType": "Sort Type",
+  "Search": "Search"
 }
