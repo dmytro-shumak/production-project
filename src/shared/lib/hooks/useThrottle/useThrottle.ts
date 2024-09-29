@@ -5,6 +5,7 @@ export const useThrottle = (
   delay: number = 1000,
 ) => {
   const lastRun = useRef(Date.now());
+
   return (...args: any[]) => {
     if (Date.now() - lastRun.current >= delay) {
       callback(...args);

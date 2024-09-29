@@ -1,46 +1,54 @@
-import { memo, useCallback, type ChangeEvent, type FC } from "react";
+import { useCallback, type ChangeEvent } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
+import { typedMemo } from "shared/types";
 import styles from "./Select.module.css";
 
-interface SelectOption {
-  value: string;
+export interface SelectOption<T extends string> {
+  value: T;
   content: string;
 }
 
-interface Props {
+interface Props<T extends string> {
   className?: string;
   label?: string;
-  options?: SelectOption[];
-  value?: string;
+  options?: SelectOption<T>[];
+  value?: T;
   readOnly?: boolean;
-  onChange?: (value: string) => void;
+  onChange?: (value: T) => void;
 }
 
-export const Select: FC<Props> = memo(
-  ({ className, label, options, onChange, value, readOnly }) => {
-    const onChangeHandler = useCallback(
-      (e: ChangeEvent<HTMLSelectElement>) => {
-        onChange?.(e.target.value);
-      },
-      [onChange],
-    );
+const Select = <T extends string>({
+  className,
+  label,
+  options,
+  onChange,
+  value,
+  readOnly,
+}: Props<T>) => {
+  const onChangeHandler = useCallback(
+    (e: ChangeEvent<HTMLSelectElement>) => {
+      onChange?.(e.target.value as T);
+    },
+    [onChange],
+  );
 
-    return (
-      <div className={classNames(styles.selectWrapper, {}, [className])}>
-        {label && <span className={styles.label}>{label}</span>}
-        <select
-          disabled={readOnly}
-          className={styles.select}
-          onChange={onChangeHandler}
-          value={value}
-        >
-          {options?.map((opt) => (
-            <option key={opt.value} value={opt.value}>
-              {opt.content}
-            </option>
-          ))}
-        </select>
-      </div>
-    );
-  },
-);
+  return (
+    <div className={classNames(styles.selectWrapper, {}, [className])}>
+      {label && <span className={styles.label}>{label}</span>}
+      <select
+        disabled={readOnly}
+        className={styles.select}
+        onChange={onChangeHandler}
+        value={value}
+      >
+        {options?.map((opt) => (
+          <option key={opt.value} value={opt.value}>
+            {opt.content}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+};
+
+export const MemoSelect = typedMemo(Select);
