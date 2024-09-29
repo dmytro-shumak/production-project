@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Select } from "shared/ui/Select/Select";
+import { MemoSelect as Select } from "shared/ui/Select/Select";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
