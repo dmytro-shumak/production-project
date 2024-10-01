@@ -4,6 +4,7 @@ import "app/styles/index.css";
 
 export const ThemeDecorator = (theme: Theme) => (StoryComponent: StoryFn) => {
   document.body.className = theme;
+
   return (
     <div
       className="app"

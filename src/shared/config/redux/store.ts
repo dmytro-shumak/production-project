@@ -41,6 +41,7 @@ export const createReduxStore = (options?: Options): ReduxStoreWithManager => {
 
   // @ts-expect-error ignore for now
   store.reducerManager = reducerManager;
+
   return store;
 };
 

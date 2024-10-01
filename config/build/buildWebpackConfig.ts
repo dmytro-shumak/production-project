@@ -8,6 +8,7 @@ import type { BuildOptions } from "./types/config";
 
 export const buildWebpackConfig = (option: BuildOptions): Configuration => {
   const { mode, paths, isDev } = option;
+
   return {
     mode,
     performance: {

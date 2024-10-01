@@ -21,6 +21,7 @@ export const Counter: FC = () => {
   const decrement = () => {
     dispatch(counterDecrement());
   };
+
   return (
     <div>
       <h1 data-testid="value-title">

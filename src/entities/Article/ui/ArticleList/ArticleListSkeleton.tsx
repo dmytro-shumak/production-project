@@ -18,6 +18,7 @@ export const ArticleListSkeleton = memo(
         </Card>
       ));
     }
+
     return new Array(3).fill(0).map((_item, index) => (
       <Card key={index}>
         <div className={styles.header}>

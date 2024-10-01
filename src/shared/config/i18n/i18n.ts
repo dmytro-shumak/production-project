@@ -17,6 +17,7 @@ const resources = ns.reduce((acc: Resource, n) => {
       [n]: require(`../../../../public/locales/${lng}/${n}.json`),
     };
   });
+
   return acc;
 }, {});
 

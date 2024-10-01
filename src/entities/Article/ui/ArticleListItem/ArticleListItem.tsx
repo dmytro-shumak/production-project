@@ -43,6 +43,7 @@ export const ArticleListItem = memo(({ className, article, view }: Props) => {
     const textBlock = article.blocks.find(
       (block) => block.type === ArticleBlockType.TEXT,
     ) as ArticleTextBlock;
+
     return (
       <div
         className={classNames(styles.articleListItem, {}, [
