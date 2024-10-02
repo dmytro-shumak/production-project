@@ -5,13 +5,14 @@ import {
   ArticleViewSelector,
 } from "entities/Article";
 import { articlePageActions } from "pages/ArticlesPage/model/slices/articlePageSlice";
-import { memo, useCallback, type ChangeEvent } from "react";
+import { memo, useCallback, useEffect, type ChangeEvent } from "react";
 import { useTranslation } from "react-i18next";
-import { useAppDispatch, useAppSelector } from "shared/lib";
+import { useAppDispatch, useAppSelector, useDebounce } from "shared/lib";
 import { classNames } from "shared/lib/classNames/classNames";
 import type { SortOrder } from "shared/types";
 import { Card } from "shared/ui";
 import { Input } from "shared/ui/Input/Input";
+import { fetchArticleList } from "pages/ArticlesPage/model/services/fetchArticleList/fetchArticleList";
 import {
   getArticlePageOrder,
   getArticlePageSearch,
@@ -33,6 +34,12 @@ export const ArticlePageFilters = memo(({ className }: Props) => {
   const sort = useAppSelector(getArticlePageSort);
   const search = useAppSelector(getArticlePageSearch);
 
+  const debouncedSearch = useDebounce(search, 500);
+
+  const fetchData = useCallback(() => {
+    dispatch(fetchArticleList({ replace: true }));
+  }, [dispatch]);
+
   const onChangeView = useCallback(
     (view: ArticleView) => {
       dispatch(articlePageActions.setView(view));
@@ -43,23 +50,35 @@ export const ArticlePageFilters = memo(({ className }: Props) => {
   const onChangeSort = useCallback(
     (view: ArticleSortField) => {
       dispatch(articlePageActions.setSort(view));
+      dispatch(articlePageActions.setPage(1));
+      fetchData();
     },
-    [dispatch],
+    [dispatch, fetchData],
   );
 
   const onChangeOrder = useCallback(
     (view: SortOrder) => {
       dispatch(articlePageActions.setOrder(view));
+      dispatch(articlePageActions.setPage(1));
+      fetchData();
     },
-    [dispatch],
+    [dispatch, fetchData],
   );
 
   const onChangeSearch = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
       dispatch(articlePageActions.setSearch(e.target.value));
+      // dispatch(articlePageActions.setPage(1));
+      // fetchData();
     },
-    [dispatch],
+    [dispatch, fetchData],
   );
+
+  useEffect(() => {
+    // dispatch(articlePageActions.setSearch(e.target.value));
+    dispatch(articlePageActions.setPage(1));
+    fetchData();
+  }, [debouncedSearch, dispatch, fetchData]);
 
   return (
     <div className={classNames("", {}, [className])}>

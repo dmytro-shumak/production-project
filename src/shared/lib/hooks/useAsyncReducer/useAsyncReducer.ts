@@ -5,7 +5,7 @@ import type {
   ReducerSchemaKey,
   ReduxStoreWithManager,
 } from "shared/config/redux";
-import { useAppDispatch } from "shared/lib/hooks/redux";
+import { useAppDispatch } from "shared/lib/hooks/redux/redux";
 
 export type ReducersList = {
   [name in ReducerSchemaKey]?: Reducer;
