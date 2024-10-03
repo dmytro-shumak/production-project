@@ -6,7 +6,8 @@ export { Skeleton } from "./Skeleton/Skeleton";
 export { Icon } from "./Icon/Icon";
 export { Button } from "./Button/Button";
 export { Code } from "./Code/Code";
-export { Card } from "./Card/Card";
 
+export * from "./Card/Card";
 export * from "./Button/Button";
 export * from "./Text/Text";
+export * from "./Tabs/Tabs";
