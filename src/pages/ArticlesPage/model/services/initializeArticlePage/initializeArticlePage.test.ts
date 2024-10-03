@@ -6,6 +6,8 @@ import { initializeArticlePage } from "./initializeArticlePage";
 jest.mock("../fetchArticleList/fetchArticleList");
 jest.spyOn(articlePageActions, "initState");
 
+const searchParams = new URLSearchParams();
+
 describe("initializeArticlePage.test", () => {
   test("success", async () => {
     const thunk = new TestAsyncThunk(initializeArticlePage, {
@@ -19,7 +21,7 @@ describe("initializeArticlePage.test", () => {
       },
     });
 
-    await thunk.callThunk();
+    await thunk.callThunk(searchParams);
 
     expect(thunk.dispatch).toHaveBeenCalledTimes(4);
     expect(fetchArticleList).toHaveBeenCalledWith();
@@ -39,7 +41,7 @@ describe("initializeArticlePage.test", () => {
       },
     });
 
-    await thunk.callThunk();
+    await thunk.callThunk(searchParams);
 
     expect(thunk.dispatch).toHaveBeenCalledTimes(2);
     expect(fetchArticleList).not.toHaveBeenCalled();

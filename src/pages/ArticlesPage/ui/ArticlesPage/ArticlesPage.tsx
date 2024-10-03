@@ -9,6 +9,7 @@ import {
 } from "shared/lib";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Page } from "widgets/Page";
+import { useSearchParams } from "react-router-dom";
 import {
   getArticlePageIsLoading,
   getArticlePageView,
@@ -37,13 +38,14 @@ const ArticlesPage: FC<Props> = ({ className }) => {
   const articles = useAppSelector(getArticles.selectAll);
   const isLoading = useAppSelector(getArticlePageIsLoading);
   const view = useAppSelector(getArticlePageView);
+  const [searchParams] = useSearchParams();
 
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPage());
   }, [dispatch]);
 
   useInitialEffect(() => {
-    dispatch(initializeArticlePage());
+    dispatch(initializeArticlePage(searchParams));
   });
 
   return (

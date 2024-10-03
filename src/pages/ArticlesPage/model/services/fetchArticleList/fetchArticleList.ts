@@ -6,6 +6,7 @@ import type {
   ThunkConfig,
   ThunkExtraArg,
 } from "shared/config/redux";
+import { addQueryParams } from "shared/lib";
 import {
   getArticlePageLimit,
   getArticlePageNum,
@@ -29,10 +30,11 @@ export const fetchArticleList = createAsyncThunk<
   const limit = getArticlePageLimit(getState());
   const order = getArticlePageOrder(getState());
   const sort = getArticlePageSort(getState());
-  const search = getArticlePageSearch(getState());
+  const search = getArticlePageSearch(getState()) ?? "";
   const page = getArticlePageNum(getState());
 
   try {
+    addQueryParams({ sort, order, search });
     const response = await extra.api.get<Article[]>(`/articles`, {
       params: {
         _expand: "user",

@@ -14,9 +14,13 @@ const articlesAdapter = createEntityAdapter({
   selectId: (article: Article) => article.id,
 });
 
+const searchParams = new URLSearchParams(document.location.search);
+
 export const getArticles = articlesAdapter.getSelectors<ReducerSchema>(
   (state) => state.articlePage || articlesAdapter.getInitialState(),
 );
+
+console.log('searchParams.get("search")', searchParams.get("search"));
 
 const articlePageSlice = createSlice({
   name: "articlePageSlice ",
@@ -29,9 +33,12 @@ const articlePageSlice = createSlice({
     page: 1,
     hasMore: true,
     _initialized: false,
-    sort: ArticleSortField.CREATED_AT,
-    search: "",
-    order: "asc",
+    sort:
+      (searchParams.get("sort") as ArticleSortField) ??
+      ArticleSortField.CREATED_AT,
+    limit: 9,
+    search: searchParams.get("search") ?? "",
+    order: (searchParams.get("order") as SortOrder) ?? "asc",
   }),
   reducers: {
     setView: (state, action: PayloadAction<ArticleView>) => {
@@ -71,7 +78,7 @@ const articlePageSlice = createSlice({
     builder.addCase(fetchArticleList.fulfilled, (state, action) => {
       state.isLoading = false;
 
-      state.hasMore = action.payload.length > 0;
+      state.hasMore = action.payload.length > state?.limit;
 
       if (action.meta.arg?.replace) {
         articlesAdapter.setAll(state, action.payload);
