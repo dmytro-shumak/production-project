@@ -8,3 +8,5 @@ export { useHover } from "./useHover/useHover";
 export { useInitialEffect } from "./useInitialEffect/useInitialEffect";
 export { useInfiniteScroll } from "./useInfiniteScroll/useInfiniteScroll";
 export { useDebounce } from "./useDebounce/useDebounce";
+export { useDebouncedCallback } from "./useDebounceCallback/useDebounceCallback";
+export { useUpdateEffect } from "./useUpdateEffect/useUpdateEffect";
