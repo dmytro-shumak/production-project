@@ -51,20 +51,7 @@ module.exports = {
     "react/function-component-definition": "off",
     "no-shadow": "off",
     "import/extensions": "off",
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        devDependencies: [
-          "**/*.test.{ts,tsx}",
-          "**/*.spec.{ts,tsx}",
-          "**/*.stories.{ts,tsx}",
-          "**/storybook/**",
-          "config/**",
-          "**/tests/**",
-          "json-server/**",
-        ],
-      },
-    ],
+    "import/no-extraneous-dependencies": ["off"],
     "no-underscore-dangle": "off",
     "no-trailing-spaces": "error",
     "arrow-body-style": ["off"],

@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
-import type { Article } from "entities/Article";
+import { ArticleType, type Article } from "entities/Article";
 import type {
   ReducerSchema,
   ThunkConfig,
@@ -13,6 +13,7 @@ import {
   getArticlePageOrder,
   getArticlePageSearch,
   getArticlePageSort,
+  getArticlePageType,
 } from "../../selectors/articlePageSelector";
 
 interface FetchArticleListArgs {
@@ -32,9 +33,10 @@ export const fetchArticleList = createAsyncThunk<
   const sort = getArticlePageSort(getState());
   const search = getArticlePageSearch(getState()) ?? "";
   const page = getArticlePageNum(getState());
+  const type = getArticlePageType(getState());
 
   try {
-    addQueryParams({ sort, order, search });
+    addQueryParams({ sort, order, search, type });
     const response = await extra.api.get<Article[]>(`/articles`, {
       params: {
         _expand: "user",
@@ -43,6 +45,7 @@ export const fetchArticleList = createAsyncThunk<
         _sort: sort,
         _order: order,
         q: search,
+        type: type === ArticleType.ALL ? undefined : type,
       },
     });
     if (!response.data) {

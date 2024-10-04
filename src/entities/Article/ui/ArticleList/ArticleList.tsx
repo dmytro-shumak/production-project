@@ -1,5 +1,7 @@
 import { memo, useCallback } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
+import { Text, TextSize } from "shared/ui";
+import { useTranslation } from "react-i18next";
 import { ArticleView, type Article } from "../../model/types/article";
 import styles from "./ArticleList.module.css";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
@@ -14,6 +16,8 @@ interface Props {
 
 export const ArticleList = memo(
   ({ className, articles, view = ArticleView.GRID, isLoading }: Props) => {
+    const { t } = useTranslation();
+
     const renderArticle = useCallback(
       (article: Article) => {
         return (
@@ -30,6 +34,9 @@ export const ArticleList = memo(
           styles[view],
         ])}
       >
+        {!isLoading && !articles.length && (
+          <Text title={t("ArticlesNotFound")} size={TextSize.L} />
+        )}
         {articles.length > 0 ? articles.map(renderArticle) : null}
         {isLoading && <ArticleListSkeleton view={view} />}
       </div>

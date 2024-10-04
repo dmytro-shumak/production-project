@@ -398,7 +398,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": ["IT", "BUSINESS"],
       "blocks": [
         {
           "id": "1",
@@ -420,7 +420,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": ["MUSIC"],
       "blocks": [
         {
           "id": "1",
@@ -442,7 +442,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": ["IT"],
+      "type": ["ARTICLE"],
       "blocks": [
         {
           "id": "1",

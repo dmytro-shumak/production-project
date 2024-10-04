@@ -1,6 +1,8 @@
 import {
   ArticleSortField,
   ArticleSortSelector,
+  ArticleType,
+  ArticleTypeTabs,
   ArticleView,
   ArticleViewSelector,
 } from "entities/Article";
@@ -21,6 +23,7 @@ import {
   getArticlePageOrder,
   getArticlePageSearch,
   getArticlePageSort,
+  getArticlePageType,
   getArticlePageView,
 } from "../../model/selectors/articlePageSelector";
 import styles from "./ArticlePageFilters.module.css";
@@ -37,6 +40,7 @@ export const ArticlePageFilters = memo(({ className }: Props) => {
   const order = useAppSelector(getArticlePageOrder);
   const sort = useAppSelector(getArticlePageSort);
   const search = useAppSelector(getArticlePageSearch);
+  const type = useAppSelector(getArticlePageType);
 
   const fetchData = useCallback(() => {
     dispatch(fetchArticleList({ replace: true }));
@@ -78,6 +82,15 @@ export const ArticlePageFilters = memo(({ className }: Props) => {
     [debouncedFetchData, dispatch],
   );
 
+  const onChangeType = useCallback(
+    (value: ArticleType) => {
+      dispatch(articlePageActions.setType(value));
+      dispatch(articlePageActions.setPage(1));
+      fetchData();
+    },
+    [dispatch, fetchData],
+  );
+
   return (
     <div className={classNames("", {}, [className])}>
       <div className={styles.sortWrapper}>
@@ -96,6 +109,11 @@ export const ArticlePageFilters = memo(({ className }: Props) => {
           value={search}
         />
       </Card>
+      <ArticleTypeTabs
+        onChangeType={onChangeType}
+        value={type}
+        className={styles.tabs}
+      />
     </div>
   );
 });
