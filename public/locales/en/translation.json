@@ -15,5 +15,10 @@
   "EnterTextComment": "Enter Text Comment",
   "SortBy": "Sort By",
   "SortType": "Sort Type",
-  "Search": "Search"
+  "Search": "Search",
+  "All": "All",
+  "IT": "IT",
+  "Article": "Article",
+  "Business": "Business",
+  "Music": "Music"
 }
