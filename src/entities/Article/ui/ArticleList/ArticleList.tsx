@@ -1,4 +1,4 @@
-import { memo, useCallback } from "react";
+import { memo, useCallback, type HTMLAttributeAnchorTarget } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Text, TextSize } from "shared/ui";
 import { useTranslation } from "react-i18next";
@@ -12,19 +12,31 @@ interface Props {
   articles: Article[];
   view?: ArticleView;
   isLoading?: boolean;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticleList = memo(
-  ({ className, articles, view = ArticleView.GRID, isLoading }: Props) => {
+  ({
+    className,
+    articles,
+    view = ArticleView.GRID,
+    isLoading,
+    target,
+  }: Props) => {
     const { t } = useTranslation();
 
     const renderArticle = useCallback(
       (article: Article) => {
         return (
-          <ArticleListItem article={article} view={view} key={article.id} />
+          <ArticleListItem
+            article={article}
+            view={view}
+            key={article.id}
+            target={target}
+          />
         );
       },
-      [view],
+      [target, view],
     );
 
     return (

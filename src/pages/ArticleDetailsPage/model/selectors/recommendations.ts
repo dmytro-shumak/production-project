@@ -1,6 +1,7 @@
 import type { RootState } from "shared/config/redux";
 
 export const getArticleCommentIsLoading = (state: RootState) =>
-  state.articleDetailsComments?.isLoading;
+  state.articleDetailsPage?.recommendations?.isLoading;
+
 export const getArticleCommentError = (state: RootState) =>
-  state.articleDetailsComments?.error;
+  state.articleDetailsPage?.recommendations?.error;
