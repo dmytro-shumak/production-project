@@ -13,7 +13,7 @@ body {
   background: var(--bg-color);
   min-height: 100vh;
 }
- 
+
 .content-page {
   display: flex;
 }
@@ -24,4 +24,19 @@ body {
   padding: 20px;
   height: calc(100vh - var(--navbar-height));
   overflow-y: auto;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: var(--bg-color);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--inverted-primary-color);
+  border-radius: 20px;
+  border: 2px solid var(--primary-color);
 }
