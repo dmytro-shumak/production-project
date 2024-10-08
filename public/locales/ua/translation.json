@@ -11,5 +11,14 @@
   "Value": "Значення",
   "Increment": "Інкремент",
   "Decrement": "Декремент",
-  "CommentsEmpty": "Comments Empty"
+  "CommentsEmpty": "Коментарі відсутні",
+  "EnterTextComment": "Введіть текст коментаря",
+  "SortBy": "Сортувати за",
+  "SortType": "Тип сортування",
+  "Search": "Пошук",
+  "All": "Усі",
+  "IT": "IT",
+  "Article": "Стаття",
+  "Business": "Бізнес",
+  "Music": "Музика"
 }
