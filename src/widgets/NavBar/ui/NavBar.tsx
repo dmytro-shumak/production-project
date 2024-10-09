@@ -5,7 +5,15 @@ import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { useAppSelector } from "shared/lib";
 import { classNames } from "shared/lib/classNames/classNames";
-import { Button, ButtonTheme } from "shared/ui";
+import {
+  AppLink,
+  AppLinkTheme,
+  Button,
+  ButtonTheme,
+  Text,
+  TextTheme,
+} from "shared/ui";
+import { RoutesPath } from "shared/config/routeConfig/routeConfig";
 import styles from "./NavBar.module.css";
 
 interface Props {
@@ -34,6 +42,14 @@ export const NavBar = memo(({ className }: Props) => {
   if (authData) {
     return (
       <nav className={classNames(styles.navBar, {}, [className])}>
+        <Text
+          className={styles.appName}
+          title={t("My app")}
+          theme={TextTheme.INVERTED}
+        />
+        <AppLink to={RoutesPath.article_create} theme={AppLinkTheme.Secondary}>
+          {t("CreateArticle")}
+        </AppLink>
         <ul className={styles.links}>
           <Button theme={ButtonTheme.Outline} onClick={onLogout}>
             {t("Logout")}

@@ -9,7 +9,9 @@ export const fetchArticleById = createAsyncThunk<Article, string, ThunkConfig>(
     const { rejectWithValue } = thunkApi;
     const extra = thunkApi.extra as ThunkExtraArg;
     try {
-      const response = await extra.api.get<Article>(`/articles/${articleId}`);
+      const response = await extra.api.get<Article>(`/articles/${articleId}`, {
+        params: { _expand: "user" },
+      });
       if (!response.data) {
         throw new Error("failed to login");
       }

@@ -4,6 +4,7 @@ import styles from "./Text.module.css";
 
 export enum TextTheme {
   ERROR = "error",
+  INVERTED = "inverted",
 }
 
 export enum TextAlign {
