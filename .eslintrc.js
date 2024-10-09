@@ -82,5 +82,6 @@ module.exports = {
     "no-console": ["warn", { allow: ["warn", "error"] }],
     "@typescript-eslint/no-explicit-any": ["error", { ignoreRestArgs: true }],
     "newline-before-return": "error",
+    "no-unused-expressions": ["error", { allowShortCircuit: true }],
   },
 };
