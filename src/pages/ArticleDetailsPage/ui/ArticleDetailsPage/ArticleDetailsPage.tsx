@@ -8,8 +8,7 @@ import { getUserAuthData } from "entities/User";
 import { AddCommentForm, sendComment } from "features/addCommentForm";
 import { memo, useCallback, type FC } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate, useParams } from "react-router-dom";
-import { RoutesPath } from "shared/config/routeConfig/routeConfig";
+import { useParams } from "react-router-dom";
 import {
   useAppDispatch,
   useAppSelector,
@@ -18,8 +17,9 @@ import {
 } from "shared/lib";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { Button, ButtonTheme, Text, TextSize } from "shared/ui";
+import { Text, TextSize } from "shared/ui";
 import { Page } from "widgets/Page";
+import { ArticleDetailsPageHeader } from "pages/ArticleDetailsPage/ui/ArticleDetailsPage/ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 import { getArticleCommentIsLoading } from "../../model/selectors/comments";
 import { fetchArticleRecommendations } from "../../model/services/fetchArticleRecommendations/fetchArticleRecommendations";
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
@@ -47,7 +47,6 @@ const ArticleDetailsPage: FC<Props> = ({ className }) => {
   const article = useAppSelector(getArticleDetailsData);
   const isLoading = useAppSelector(getArticleCommentIsLoading);
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
 
   useAsyncReducer(reducers, true);
 
@@ -68,19 +67,13 @@ const ArticleDetailsPage: FC<Props> = ({ className }) => {
     [article?.id, dispatch, id, userData?.id],
   );
 
-  const onBackToList = useCallback(() => {
-    navigate(RoutesPath.articles);
-  }, [navigate]);
-
   if (!id) {
     return null;
   }
 
   return (
     <Page className={classNames(styles.articleDetailsPage, {}, [className])}>
-      <Button theme={ButtonTheme.Outline} onClick={onBackToList}>
-        {t("BackToList")}
-      </Button>
+      <ArticleDetailsPageHeader />
       <ArticleDetails id={id} />
       <Text
         title={t("Recommendations")}
