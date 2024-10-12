@@ -1,5 +1,4 @@
 import { memo, useCallback, useMemo } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { Tabs, type TabItem } from "shared/ui";
 import { ArticleType } from "../../model/types/article";
@@ -35,7 +34,7 @@ export const ArticleTypeTabs = memo(
 
     return (
       <Tabs
-        className={classNames("", {}, [className])}
+        className={className}
         tabs={tabs}
         value={value}
         onTabChange={onTabChange}
