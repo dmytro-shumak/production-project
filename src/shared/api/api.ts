@@ -1,7 +1,10 @@
 import axios from "axios";
 import { LocalStorageKeys } from "shared/constants/localStorage";
 
-const baseUrl = __DEV__ ? "http://localhost:8000" : "https://production.com";
+// TODO: add env variables
+const baseUrl = __DEV__
+  ? "http://localhost:8000"
+  : "https://production-project-server-ikwwmqk84-shumak69s-projects.vercel.app/";
 
 export const $api = axios.create({
   baseURL: baseUrl,
