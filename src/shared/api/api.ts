@@ -4,7 +4,7 @@ import { LocalStorageKeys } from "shared/constants/localStorage";
 // TODO: add env variables
 const baseUrl = __DEV__
   ? "http://localhost:8000"
-  : "https://production-project-server-ikwwmqk84-shumak69s-projects.vercel.app/";
+  : "https://production-project-server-bjs6die6f-shumak69s-projects.vercel.app";
 
 export const $api = axios.create({
   baseURL: baseUrl,
