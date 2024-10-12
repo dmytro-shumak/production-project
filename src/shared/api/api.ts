@@ -8,7 +8,12 @@ const baseUrl = __DEV__
 
 export const $api = axios.create({
   baseURL: baseUrl,
-  headers: {
-    authorization: localStorage.getItem(LocalStorageKeys.USER),
-  },
+});
+
+$api.interceptors.request.use((config) => {
+  if (config.headers) {
+    config.headers.Authorization = localStorage.getItem(LocalStorageKeys.USER);
+  }
+
+  return config;
 });
