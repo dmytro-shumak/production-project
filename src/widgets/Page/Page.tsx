@@ -51,6 +51,7 @@ export const Page = ({ className, children, onScrollEnd }: Props) => {
     <section
       className={classNames(styles.page, {}, [className])}
       ref={wrapperRef}
+      id="pageContainer"
       onScroll={onScroll}
     >
       {children}

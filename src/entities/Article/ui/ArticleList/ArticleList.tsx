@@ -1,6 +1,7 @@
-import { memo, useCallback, type HTMLAttributeAnchorTarget } from "react";
+import { memo, type HTMLAttributeAnchorTarget, type LegacyRef } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Text, TextSize } from "shared/ui";
+import { List, type ListRowProps, WindowScroller } from "react-virtualized";
 import { useTranslation } from "react-i18next";
 import { ArticleView, type Article } from "../../model/types/article";
 import styles from "./ArticleList.module.css";
@@ -25,33 +26,101 @@ export const ArticleList = memo(
   }: Props) => {
     const { t } = useTranslation();
 
-    const renderArticle = useCallback(
-      (article: Article) => {
-        return (
-          <ArticleListItem
-            article={article}
-            view={view}
-            key={article.id}
-            target={target}
-          />
-        );
-      },
-      [target, view],
+    const isBig = view === ArticleView.LIST;
+
+    const gridItemCount = Math.floor(
+      Number(document.getElementById("pageContainer")?.clientWidth) / 300,
     );
 
+    const itemsPerRow = isBig ? 1 : gridItemCount;
+    const rowCount = isBig
+      ? articles.length
+      : Math.ceil(articles.length / itemsPerRow);
+
+    const rowRender = ({ index, key, style }: ListRowProps) => {
+      const items = [];
+      const fromIndex = index * itemsPerRow;
+      const toIndex = Math.min(fromIndex + itemsPerRow, articles.length);
+
+      for (let i = fromIndex; i < toIndex; i += 1) {
+        items.push(
+          <ArticleListItem
+            article={articles[i]}
+            view={view}
+            target={target}
+            key={`str${i}`}
+            className={styles.card}
+          />,
+        );
+      }
+
+      return (
+        <div key={key} style={style} className={styles.row}>
+          {items}
+        </div>
+      );
+    };
+
+    if (isLoading) {
+      return (
+        <div
+          className={classNames(styles.articleList, {}, [
+            className,
+            styles[view],
+          ])}
+        >
+          <ArticleListSkeleton view={view} />
+        </div>
+      );
+    }
+
+    if (!isLoading && !articles.length) {
+      return (
+        <div
+          className={classNames(styles.articleList, {}, [
+            className,
+            styles[view],
+          ])}
+        >
+          <Text title={t("ArticlesNotFound")} size={TextSize.L} />;
+        </div>
+      );
+    }
+
     return (
-      <div
-        className={classNames(styles.articleList, {}, [
-          className,
-          styles[view],
-        ])}
+      <WindowScroller
+        scrollElement={document.getElementById("pageContainer") as Element}
       >
-        {!isLoading && !articles.length && (
-          <Text title={t("ArticlesNotFound")} size={TextSize.L} />
+        {({
+          height,
+          width,
+          registerChild,
+          onChildScroll,
+          isScrolling,
+          scrollTop,
+        }) => (
+          <div
+            ref={registerChild as LegacyRef<HTMLDivElement>}
+            className={classNames(styles.articleList, {}, [
+              className,
+              styles[view],
+            ])}
+          >
+            <List
+              height={height ?? 700}
+              rowCount={rowCount}
+              rowHeight={isBig ? 700 : 330}
+              rowRenderer={rowRender}
+              width={width ? width - 80 : 700}
+              autoHeight
+              onScroll={onChildScroll}
+              isScrolling={isScrolling}
+              scrollTop={scrollTop}
+            />
+            {/* {isLoading && getSkeletons(view)} */}
+          </div>
         )}
-        {articles.length > 0 ? articles.map(renderArticle) : null}
-        {isLoading && <ArticleListSkeleton view={view} />}
-      </div>
+      </WindowScroller>
     );
   },
 );
