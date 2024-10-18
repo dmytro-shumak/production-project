@@ -33,7 +33,13 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint", "i18next", "react-hooks"],
+  plugins: [
+    "react",
+    "@typescript-eslint",
+    "i18next",
+    "react-hooks",
+    "production-shumak-plugin",
+  ],
   rules: {
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
@@ -83,5 +89,6 @@ module.exports = {
     "@typescript-eslint/no-explicit-any": ["error", { ignoreRestArgs: true }],
     "newline-before-return": "error",
     "no-unused-expressions": ["error", { allowShortCircuit: true }],
+    "production-shumak-plugin/path-checker": "error",
   },
 };
