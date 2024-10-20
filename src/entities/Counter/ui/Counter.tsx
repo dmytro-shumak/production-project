@@ -1,9 +1,9 @@
 import { type FC } from "react";
-import { useDispatch } from "react-redux";
-import { Button } from "shared/ui";
-import { useAppSelector } from "shared/lib";
-import { getCounterValue } from "entities/Counter/model/selectors/getCounterValue/getCounterValue";
 import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { useAppSelector } from "shared/lib";
+import { Button } from "shared/ui";
+import { getCounterValue } from "../model/selectors/getCounterValue/getCounterValue";
 import {
   counterDecrement,
   counterIncrement,

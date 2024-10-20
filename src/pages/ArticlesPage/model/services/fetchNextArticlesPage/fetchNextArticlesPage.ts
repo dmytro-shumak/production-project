@@ -1,10 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import type { ReducerSchema, ThunkConfig } from "shared/config/redux";
 import {
   getArticlePageHasMore,
   getArticlePageIsLoading,
   getArticlePageNum,
-} from "pages/ArticlesPage/model/selectors/articlePageSelector";
-import type { ReducerSchema, ThunkConfig } from "shared/config/redux";
+} from "../../selectors/articlePageSelector";
 import { articlePageActions } from "../../slices/articlePageSlice";
 import { fetchArticleList } from "../fetchArticleList/fetchArticleList";
 

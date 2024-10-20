@@ -1,7 +1,7 @@
 import type { AsyncThunkAction, Dispatch } from "@reduxjs/toolkit";
 import axios, { type AxiosStatic } from "axios";
 import type { ReducerSchema } from "shared/config/redux";
-import type { DeepPartial } from "shared/lib/types";
+import type { DeepPartial } from "../types";
 
 type ActionCreator<Returned, ThunkArg, RejectedValue> = (
   arg: ThunkArg,

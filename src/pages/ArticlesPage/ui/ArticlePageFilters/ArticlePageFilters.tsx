@@ -6,8 +6,6 @@ import {
   ArticleView,
   ArticleViewSelector,
 } from "entities/Article";
-import { fetchArticleList } from "pages/ArticlesPage/model/services/fetchArticleList/fetchArticleList";
-import { articlePageActions } from "pages/ArticlesPage/model/slices/articlePageSlice";
 import { memo, useCallback, type ChangeEvent } from "react";
 import { useTranslation } from "react-i18next";
 import {
@@ -26,6 +24,8 @@ import {
   getArticlePageType,
   getArticlePageView,
 } from "../../model/selectors/articlePageSelector";
+import { fetchArticleList } from "../../model/services/fetchArticleList/fetchArticleList";
+import { articlePageActions } from "../../model/slices/articlePageSlice";
 import styles from "./ArticlePageFilters.module.css";
 
 interface Props {

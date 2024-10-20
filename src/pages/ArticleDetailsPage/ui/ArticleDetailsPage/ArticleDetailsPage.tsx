@@ -19,7 +19,6 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { Text, TextSize } from "shared/ui";
 import { Page } from "widgets/Page";
-import { ArticleDetailsPageHeader } from "pages/ArticleDetailsPage/ui/ArticleDetailsPage/ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 import { getArticleCommentIsLoading } from "../../model/selectors/comments";
 import { fetchArticleRecommendations } from "../../model/services/fetchArticleRecommendations/fetchArticleRecommendations";
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
@@ -27,6 +26,7 @@ import { articleDetailsPageReducer } from "../../model/slices";
 import { getArticleComments } from "../../model/slices/articleDetailsComments";
 import { getArticleRecommendations } from "../../model/slices/articleDetailsRecommendations";
 import styles from "./ArticleDetailsPage.module.css";
+import { ArticleDetailsPageHeader } from "./ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 
 interface Props {
   className?: string;

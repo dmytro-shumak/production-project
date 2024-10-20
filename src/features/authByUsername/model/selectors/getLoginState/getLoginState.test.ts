@@ -1,6 +1,6 @@
-import { getLoginState } from "features/authByUsername/model/selectors/getLoginState/getLoginState";
 import type { ReducerSchema } from "shared/config/redux";
 import type { DeepPartial } from "shared/lib";
+import { getLoginState } from "./getLoginState";
 
 describe("get login state", () => {
   test("should return login state", () => {

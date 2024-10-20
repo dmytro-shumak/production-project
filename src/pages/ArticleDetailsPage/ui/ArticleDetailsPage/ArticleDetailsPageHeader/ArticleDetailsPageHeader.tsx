@@ -1,4 +1,4 @@
-import { getCanEditArticle } from "pages/ArticleDetailsPage/model/selectors/article";
+import { getArticleDetailsData } from "entities/Article";
 import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
@@ -6,7 +6,7 @@ import { RoutesPath } from "shared/config/routeConfig/routeConfig";
 import { useAppSelector } from "shared/lib";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "shared/ui";
-import { getArticleDetailsData } from "entities/Article";
+import { getCanEditArticle } from "../../../model/selectors/article";
 import styles from "./ArticleDetailsPageHeader.module.css";
 
 interface Props {

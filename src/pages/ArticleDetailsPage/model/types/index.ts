@@ -1,5 +1,5 @@
-import type { ArticleDetailsCommentsSchema } from "pages/ArticleDetailsPage/model/types/ArticleDetailsCommentsSchema";
-import type { ArticleDetailsRecommendationsSchema } from "pages/ArticleDetailsPage/model/types/ArticleDetailsRecommendationsSchema";
+import type { ArticleDetailsCommentsSchema } from "./ArticleDetailsCommentsSchema";
+import type { ArticleDetailsRecommendationsSchema } from "./ArticleDetailsRecommendationsSchema";
 
 export interface ArticleDetailsPageSchema {
   comments?: ArticleDetailsCommentsSchema;

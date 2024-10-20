@@ -12,7 +12,7 @@ import type { LoginSchema } from "features/authByUsername/model/types/loginSchem
 import type { ScrollRestorationSchema } from "features/scrollRestoration";
 import type { ArticleDetailsPageSchema } from "pages/ArticleDetailsPage";
 import type { ArticlePageSchema } from "pages/ArticlesPage";
-import type { createReducerManager } from "shared/config/redux/reducerManager";
+import type { createReducerManager } from "./reducerManager";
 
 export interface ReducerSchema {
   counter: CounterState;

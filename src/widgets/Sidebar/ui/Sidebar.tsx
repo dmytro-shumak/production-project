@@ -4,8 +4,8 @@ import { useAppSelector } from "shared/lib";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Button, ButtonSize } from "shared/ui";
 import { LangSwitcher } from "widgets/LangSwitcher";
-import { SidebarItem } from "widgets/Sidebar/ui/SidebarItem/SidebarItem";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
+import { SidebarItem } from "./SidebarItem/SidebarItem";
 import { getSideBarItems } from "../model/selectors/getSidebarItems";
 import styles from "./Sidebar.module.css";
 

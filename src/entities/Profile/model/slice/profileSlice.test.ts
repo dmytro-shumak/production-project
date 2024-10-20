@@ -1,12 +1,9 @@
-import {
-  ValidateProfileError,
-  type ProfileSchema,
-} from "entities/Profile/model/types/profile";
-import type { DeepPartial } from "shared/lib";
+import type { UnknownAction } from "@reduxjs/toolkit";
 import { Country } from "entities/Country";
 import { Currency } from "entities/Currency";
-import { updateProfileData } from "entities/Profile/model/services/updateProfileData/updateProfileData";
-import type { UnknownAction } from "@reduxjs/toolkit";
+import type { DeepPartial } from "shared/lib";
+import { updateProfileData } from "../services/updateProfileData/updateProfileData";
+import { ValidateProfileError, type ProfileSchema } from "../types/profile";
 import { profileActions, profileReducer } from "./profileSlice";
 
 const data = {

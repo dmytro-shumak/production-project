@@ -3,7 +3,7 @@ import {
   counterIncrement,
   counterReducer,
   type CounterState,
-} from "entities/Counter/model/slice/counterSlice";
+} from "./counterSlice";
 
 describe("counterSlice", () => {
   test("increment", () => {

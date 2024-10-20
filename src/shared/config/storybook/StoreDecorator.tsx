@@ -6,8 +6,8 @@ import { articleDetailsReducer } from "entities/Article/model/slice/articleDetai
 import { profileReducer } from "entities/Profile";
 import { loginReducer } from "features/authByUsername";
 import { articleDetailsPageReducer } from "pages/ArticleDetailsPage/model/slices";
-import type { ReducerSchema } from "shared/config/redux";
 import type { DeepPartial } from "shared/lib";
+import type { ReducerSchema } from "../redux";
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<ReducerSchema>> = {
   loginForm: loginReducer,

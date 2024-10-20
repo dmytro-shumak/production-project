@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Theme } from "app/providers/theme";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator";
-import { AppLink } from "shared/ui/AppLink/AppLink";
-import { AppLinkTheme } from "shared/ui/AppLink/types";
+import { AppLink } from "../AppLink/AppLink";
+import { AppLinkTheme } from "../AppLink/types";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {

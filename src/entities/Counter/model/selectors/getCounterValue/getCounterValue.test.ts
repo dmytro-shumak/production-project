@@ -1,6 +1,6 @@
-import { getCounterValue } from "entities/Counter/model/selectors/getCounterValue/getCounterValue";
 import type { RootState } from "shared/config/redux/store";
 import { defaultState } from "shared/lib";
+import { getCounterValue } from "./getCounterValue";
 
 describe("getCounterValue", () => {
   test("should return counter value", () => {

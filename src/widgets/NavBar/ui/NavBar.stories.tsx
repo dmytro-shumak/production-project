@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Theme } from "app/providers/theme";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator";
-import { NavBar } from "widgets/NavBar/ui/NavBar";
+import { NavBar } from "./NavBar";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Theme } from "app/providers/theme";
-import { ProfilePage } from "pages/ProfilePage";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator";
+import ProfilePage from "./ProfilePage";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
