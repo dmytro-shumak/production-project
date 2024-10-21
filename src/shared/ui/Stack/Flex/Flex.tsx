@@ -1,4 +1,4 @@
-import { memo, type ReactNode } from "react";
+import { memo, type ElementType, type ReactNode } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import styles from "./Flex.module.css";
 
@@ -7,6 +7,7 @@ export type FlexAlign = "start" | "end" | "center";
 export type FlexDirection = "row" | "column";
 
 export interface FlexProps {
+  tag?: ElementType;
   className?: string;
   justify?: FlexJustify;
   align?: FlexAlign;
@@ -35,6 +36,7 @@ const directionClasses: Record<FlexDirection, string> = {
 
 export const Flex = memo(
   ({
+    tag: Component = "div",
     className,
     children,
     align = "center",
@@ -43,7 +45,7 @@ export const Flex = memo(
     gap = 8,
   }: FlexProps) => {
     return (
-      <div
+      <Component
         className={classNames(styles.flex, {}, [
           className,
           justifyClasses[justify],
@@ -53,7 +55,7 @@ export const Flex = memo(
         style={{ gap }}
       >
         {children}
-      </div>
+      </Component>
     );
   },
 );

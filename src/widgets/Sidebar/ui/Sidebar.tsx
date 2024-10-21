@@ -2,7 +2,7 @@ import { Theme, useTheme } from "app/providers/theme";
 import { memo, useState, type FC } from "react";
 import { useAppSelector } from "shared/lib";
 import { classNames } from "shared/lib/classNames/classNames";
-import { Button, ButtonSize } from "shared/ui";
+import { Button, ButtonSize, VStack } from "shared/ui";
 import { LangSwitcher } from "widgets/LangSwitcher";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 import { SidebarItem } from "./SidebarItem/SidebarItem";
@@ -37,7 +37,7 @@ export const Sidebar: FC<Props> = memo(({ className }) => {
       >
         {collapsed ? ">" : "<"}
       </Button>
-      <ul className={styles.links}>
+      <VStack className={styles.links} tag="ul" align="center">
         {sidebarItemsList.map((sidebarItem) => (
           <SidebarItem
             item={sidebarItem}
@@ -45,7 +45,7 @@ export const Sidebar: FC<Props> = memo(({ className }) => {
             collapsed={collapsed}
           />
         ))}
-      </ul>
+      </VStack>
       <div className={styles.switchers}>
         <ThemeSwitcher />
         <LangSwitcher collapsed={collapsed} />
