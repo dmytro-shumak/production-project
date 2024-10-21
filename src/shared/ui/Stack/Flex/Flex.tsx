@@ -6,6 +6,15 @@ export type FlexJustify = "start" | "end" | "center" | "between";
 export type FlexAlign = "start" | "end" | "center";
 export type FlexDirection = "row" | "column";
 
+export interface FlexProps {
+  className?: string;
+  justify?: FlexJustify;
+  align?: FlexAlign;
+  direction?: FlexDirection;
+  gap?: string | number;
+  children?: ReactNode;
+}
+
 const justifyClasses: Record<FlexJustify, string> = {
   start: styles.justifyStart,
   end: styles.justifyEnd,
@@ -24,15 +33,6 @@ const directionClasses: Record<FlexDirection, string> = {
   column: styles.directionColumn,
 };
 
-interface Props {
-  className?: string;
-  justify?: FlexJustify;
-  align?: FlexAlign;
-  direction?: FlexDirection;
-  gap?: string | number;
-  children?: ReactNode;
-}
-
 export const Flex = memo(
   ({
     className,
@@ -41,7 +41,7 @@ export const Flex = memo(
     direction = "row",
     justify = "center",
     gap = 8,
-  }: Props) => {
+  }: FlexProps) => {
     return (
       <div
         className={classNames(styles.flex, {}, [
