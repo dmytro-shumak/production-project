@@ -7,10 +7,9 @@ import { useCallback, type FC } from "react";
 import { useTranslation } from "react-i18next";
 import { useAppDispatch, useAppSelector } from "shared/lib";
 import { classNames } from "shared/lib/classNames/classNames";
-import { Button, ButtonTheme } from "shared/ui";
+import { Button, ButtonTheme, HStack } from "shared/ui";
 import { Text } from "shared/ui/Text/Text";
 import { canEditProfileSelector } from "../../model/selectors/canEditProfile/canEditProfile";
-import styles from "./ProfilePageHeader.module.css";
 
 interface Props {
   className?: string;
@@ -40,24 +39,32 @@ export const ProfilePageHeader: FC<Props> = ({ className }) => {
   }, [dispatch]);
 
   return (
-    <div className={classNames(styles.profilePageHeader, {}, [className])}>
+    <HStack justify="between" className={classNames("", {}, [className])}>
       <Text title={t("Profile")} />
       {canEditProfile && (
-        <>
-          <Button
-            theme={readOnly ? ButtonTheme.Outline : ButtonTheme.OutlineRed}
-            className={styles.editBtn}
-            onClick={() => onEdit(!readOnly)}
-          >
-            {readOnly ? t("Edit") : t("Cancel")}
-          </Button>
-          {!readOnly && (
-            <Button theme={ButtonTheme.Outline} onClick={onSave}>
-              {t("Save")}
+        <HStack gap={8}>
+          {readOnly ? (
+            <Button
+              theme={ButtonTheme.Outline}
+              onClick={() => onEdit(!readOnly)}
+            >
+              {t("Edit")}
             </Button>
+          ) : (
+            <>
+              <Button
+                theme={ButtonTheme.OutlineRed}
+                onClick={() => onEdit(!readOnly)}
+              >
+                {t("Cancel")}
+              </Button>
+              <Button theme={ButtonTheme.Outline} onClick={onSave}>
+                {t("Save")}
+              </Button>
+            </>
           )}
-        </>
+        </HStack>
       )}
-    </div>
+    </HStack>
   );
 };

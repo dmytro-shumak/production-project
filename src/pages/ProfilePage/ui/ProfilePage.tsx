@@ -21,6 +21,7 @@ import {
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 import { Page } from "widgets/Page";
+import { VStack } from "shared/ui";
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 
 const initialReducer: ReducersList = {
@@ -62,21 +63,23 @@ const ProfilePage: FC<Props> = ({ className }) => {
 
   return (
     <Page className={classNames("", {}, [className])}>
-      <ProfilePageHeader />
-      {validateErrors?.length !== 0 &&
-        validateErrors?.map((err) => (
-          <Text
-            theme={TextTheme.ERROR}
-            text={validateErrorTranslate[err]}
-            key={err}
-          />
-        ))}
-      <ProfileCard
-        data={formData}
-        isLoading={loading}
-        error={error}
-        readOnly={readOnly}
-      />
+      <VStack gap={16} align="stretch">
+        <ProfilePageHeader />
+        {validateErrors?.length !== 0 &&
+          validateErrors?.map((err) => (
+            <Text
+              theme={TextTheme.ERROR}
+              text={validateErrorTranslate[err]}
+              key={err}
+            />
+          ))}
+        <ProfileCard
+          data={formData}
+          isLoading={loading}
+          error={error}
+          readOnly={readOnly}
+        />
+      </VStack>
     </Page>
   );
 };

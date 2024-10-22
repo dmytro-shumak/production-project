@@ -18,6 +18,10 @@
   justify-content: space-between;
 }
 
+.justifyStretch {
+  justify-content: stretch;
+}
+
 .alignStart {
   align-items: flex-start;
 }
@@ -28,6 +32,10 @@
 
 .alignEnd {
   align-items: flex-end;
+}
+
+.alignStretch {
+  align-items: stretch;
 }
 
 .directionRow {

@@ -2,8 +2,8 @@ import { memo, type ElementType, type ReactNode } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import styles from "./Flex.module.css";
 
-export type FlexJustify = "start" | "end" | "center" | "between";
-export type FlexAlign = "start" | "end" | "center";
+export type FlexJustify = "start" | "end" | "center" | "between" | "stretch";
+export type FlexAlign = "start" | "end" | "center" | "stretch";
 export type FlexDirection = "row" | "column";
 
 export interface FlexProps {
@@ -21,12 +21,14 @@ const justifyClasses: Record<FlexJustify, string> = {
   end: styles.justifyEnd,
   center: styles.justifyCenter,
   between: styles.justifyBetween,
+  stretch: styles.justifyStretch,
 };
 
 const alignClasses: Record<FlexAlign, string> = {
   start: styles.alignStart,
   end: styles.alignEnd,
   center: styles.alignCenter,
+  stretch: styles.alignStretch,
 };
 
 const directionClasses: Record<FlexDirection, string> = {
