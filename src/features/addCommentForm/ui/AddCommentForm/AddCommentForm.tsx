@@ -1,7 +1,7 @@
 import { memo, useCallback, useState, type ChangeEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
-import { Button, ButtonTheme } from "shared/ui";
+import { Button, ButtonTheme, HStack } from "shared/ui";
 import { Input } from "shared/ui/Input/Input";
 import styles from "./AddCommentForm.module.css";
 
@@ -28,7 +28,11 @@ const AddCommentForm = memo(
     }, [onSendComment, text]);
 
     return (
-      <div className={classNames(styles.addCommentForm, {}, [className])}>
+      <HStack
+        justify="between"
+        align="center"
+        className={classNames(styles.addCommentForm, {}, [className])}
+      >
         <Input
           placeholder={t("EnterTextComment")}
           value={text}
@@ -38,7 +42,7 @@ const AddCommentForm = memo(
         <Button theme={ButtonTheme.Primary} onClick={handleSendComment}>
           {t("Submit")}
         </Button>
-      </div>
+      </HStack>
     );
   },
 );

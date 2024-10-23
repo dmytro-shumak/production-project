@@ -2,7 +2,7 @@ import { useCallback, type ChangeEvent, type FC } from "react";
 import { useTranslation } from "react-i18next";
 import { useAppDispatch } from "shared/lib";
 import { classNames } from "shared/lib/classNames/classNames";
-import { Avatar } from "shared/ui";
+import { Avatar, HStack, VStack } from "shared/ui";
 import { Input } from "shared/ui/Input/Input";
 import { Loader } from "shared/ui/Loader";
 import { Text, TextAlign, TextTheme } from "shared/ui/Text/Text";
@@ -115,11 +115,11 @@ export const ProfileCard: FC<Props> = ({
         [className],
       )}
     >
-      <div className={styles.data}>
+      <VStack gap={10} align="stretch">
         {data?.avatar && (
-          <div className={styles.avatarWrapper}>
+          <HStack align="center">
             <Avatar src={data?.avatar} alt="avatar" size={100} />
-          </div>
+          </HStack>
         )}
         <Input
           value={data?.firstName}
@@ -174,7 +174,7 @@ export const ProfileCard: FC<Props> = ({
           onChange={handleChangeCountry}
           readOnly={readOnly}
         />
-      </div>
+      </VStack>
     </div>
   );
 };

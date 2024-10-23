@@ -17,7 +17,7 @@ import {
 } from "shared/lib";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { Text, TextSize } from "shared/ui";
+import { Text, TextSize, VStack } from "shared/ui";
 import { Page } from "widgets/Page";
 import { getArticleCommentIsLoading } from "../../model/selectors/comments";
 import { fetchArticleRecommendations } from "../../model/services/fetchArticleRecommendations/fetchArticleRecommendations";
@@ -90,8 +90,10 @@ const ArticleDetailsPage: FC<Props> = ({ className }) => {
         className={styles.commentTitle}
         size={TextSize.L}
       />
-      <AddCommentForm onSendComment={onSendComment} />
-      <CommentList comments={comments} isLoading={isLoading} />
+      <VStack gap={20} align="stretch">
+        <AddCommentForm onSendComment={onSendComment} />
+        <CommentList comments={comments} isLoading={isLoading} />
+      </VStack>
     </Page>
   );
 };

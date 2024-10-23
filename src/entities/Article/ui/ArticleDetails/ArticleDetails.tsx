@@ -11,6 +11,7 @@ import {
 import { classNames } from "shared/lib/classNames/classNames";
 import {
   Avatar,
+  HStack,
   Icon,
   Skeleton,
   Text,
@@ -115,23 +116,23 @@ export const ArticleDetails: FC<Props> = memo(({ className, id }) => {
 
   return (
     <div className={classNames(styles.articleDetails, {}, [className])}>
-      <div className={styles.avatarWrapper}>
+      <HStack justify="center">
         <Avatar size={200} src={article?.img} className={styles.avatar} />
-      </div>
+      </HStack>
       <Text
         title={article?.title}
         text={article?.subtitle}
         className={styles.title}
         size={TextSize.L}
       />
-      <div className={styles.articleInfo}>
+      <HStack justify="start" gap={6}>
         <Icon Svg={EyeIcon} />
         <Text text={String(article?.views)} />
-      </div>
-      <div className={styles.articleInfo}>
+      </HStack>
+      <HStack justify="start" gap={6}>
         <Icon Svg={CalendarIcon} />
         <Text text={article?.createdAt} />
-      </div>
+      </HStack>
       {article?.blocks.map(renderBlock)}
     </div>
   );

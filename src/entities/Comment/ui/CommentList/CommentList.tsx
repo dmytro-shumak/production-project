@@ -1,10 +1,9 @@
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
-import { Skeleton, Text } from "shared/ui";
+import { Skeleton, Text, VStack } from "shared/ui";
 import type { Comment } from "../../model/types/comment";
 import { CommentItem } from "../CommentItem/CommentItem";
-import styles from "./CommentList.module.css";
 
 interface Props {
   className?: string;
@@ -17,16 +16,20 @@ export const CommentList = memo(({ className, comments, isLoading }: Props) => {
 
   if (isLoading) {
     return (
-      <div>
-        <Skeleton className={styles.skeleton} height={86} />
-        <Skeleton className={styles.skeleton} height={86} />
-        <Skeleton className={styles.skeleton} height={86} />
-      </div>
+      <VStack gap={20}>
+        <Skeleton height={86} />
+        <Skeleton height={86} />
+        <Skeleton height={86} />
+      </VStack>
     );
   }
 
   return (
-    <div className={classNames("", {}, [className])}>
+    <VStack
+      gap={20}
+      align="stretch"
+      className={classNames("", {}, [className])}
+    >
       {comments?.length ? (
         comments.map((comment) => (
           <CommentItem comment={comment} key={comment.id} />
@@ -34,6 +37,6 @@ export const CommentList = memo(({ className, comments, isLoading }: Props) => {
       ) : (
         <Text text={t("CommentsEmpty")} />
       )}
-    </div>
+    </VStack>
   );
 });

@@ -1,9 +1,6 @@
 .addCommentForm {
   border: 1px solid var(--primary-color);
-  display: flex;
   padding: 20px;
-  justify-content: space-between;
-  align-items: center;
   margin-top: 15px;
   column-gap: 15px;
 }
