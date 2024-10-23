@@ -87,3 +87,19 @@ export const SizeL: Story = {
     size: TextSize.L,
   },
 };
+
+export const SizeM: Story = {
+  args: {
+    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    text: "Hic aliquid architecto cumque quidem harum, rerum omnis nemo quaerat dolores. At velit, dignissimos fugit temporibus exercitationem nulla reprehenderit atque vitae eaque!",
+    size: TextSize.M,
+  },
+};
+
+export const SizeS: Story = {
+  args: {
+    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    text: "Hic aliquid architecto cumque quidem harum, rerum omnis nemo quaerat dolores. At velit, dignissimos fugit temporibus exercitationem nulla reprehenderit atque vitae eaque!",
+    size: TextSize.S,
+  },
+};

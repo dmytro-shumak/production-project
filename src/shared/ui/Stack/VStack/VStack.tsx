@@ -1,7 +1,11 @@
+import { type ElementType } from "react";
 import { Flex, type FlexProps } from "../Flex/Flex";
 
-type Props = Omit<FlexProps, "direction">;
+// TODO: fix ts error when adding Omit
+// type VStackProps<T extends ElementType = "div"> = FlexProps<T>;
 
-export const VStack = ({ align = "stretch", ...restProps }: Props) => {
-  return <Flex {...restProps} align={align} direction="column" />;
+export const VStack = <T extends ElementType = "div">(props: FlexProps<T>) => {
+  const align = props || "stretch";
+
+  return <Flex {...props} align={align} direction="column" />;
 };

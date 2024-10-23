@@ -50,3 +50,11 @@
   font-size: var(--font-size-xl);
 }
 
+.sizeS .text {
+  font-size: var(--font-size-sm);
+}
+
+.sizeS .title {
+  font-size: var(--font-size-sm);
+}
+

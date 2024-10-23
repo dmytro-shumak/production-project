@@ -1,4 +1,4 @@
-import { memo, type ElementType, type ReactNode } from "react";
+import { type ComponentProps, type ElementType, type ReactNode } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import styles from "./Flex.module.css";
 
@@ -6,15 +6,19 @@ export type FlexJustify = "start" | "end" | "center" | "between" | "stretch";
 export type FlexAlign = "start" | "end" | "center" | "stretch";
 export type FlexDirection = "row" | "column";
 
-export interface FlexProps {
-  tag?: ElementType;
-  className?: string;
+export interface FlexOwnProps {
   justify?: FlexJustify;
   align?: FlexAlign;
   direction?: FlexDirection;
   gap?: string | number;
   children?: ReactNode;
+  className?: string;
 }
+
+export type FlexProps<T extends ElementType = "div"> = FlexOwnProps &
+  Omit<ComponentProps<T>, keyof FlexOwnProps> & {
+    tag?: T;
+  };
 
 const justifyClasses: Record<FlexJustify, string> = {
   start: styles.justifyStart,
@@ -36,28 +40,30 @@ const directionClasses: Record<FlexDirection, string> = {
   column: styles.directionColumn,
 };
 
-export const Flex = memo(
-  ({
-    tag: Component = "div",
-    className,
-    children,
-    align = "center",
-    direction = "row",
-    justify = "center",
-    gap = 8,
-  }: FlexProps) => {
-    return (
-      <Component
-        className={classNames(styles.flex, {}, [
-          className,
-          justifyClasses[justify],
-          alignClasses[align],
-          directionClasses[direction],
-        ])}
-        style={{ gap }}
-      >
-        {children}
-      </Component>
-    );
-  },
-);
+export const Flex = <T extends ElementType = "div">({
+  tag,
+  className,
+  children,
+  align = "center",
+  direction = "row",
+  justify = "center",
+  gap = 8,
+  ...restProps
+}: FlexProps<T>) => {
+  const Component = tag || "div";
+
+  return (
+    <Component
+      className={classNames(styles.flex, {}, [
+        className,
+        justifyClasses[justify],
+        alignClasses[align],
+        directionClasses[direction],
+      ])}
+      style={{ gap }}
+      {...restProps} // Spreading the rest of the props here
+    >
+      {children}
+    </Component>
+  );
+};
