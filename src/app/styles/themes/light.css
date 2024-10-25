@@ -8,10 +8,10 @@ body.app-light-theme {
 
   /* skeleton */
   --skeleton-shadow: #fff;
-  --skeleton-color: rgba(0,0,0,0.2);
+  --skeleton-color: rgba(0, 0, 0, 0.2);
 
   /* code */
-  --code-bg: #C4C4C433;
+  --code-bg: #c4c4c433;
 
   /* card */
   --card-bg: #d5d5d7;
