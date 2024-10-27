@@ -1,7 +1,6 @@
 import { memo, useCallback, type FC } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
-import { Select } from "shared/ui";
 import { useTranslation } from "react-i18next";
+import { ListBox } from "shared/ui";
 import { Country } from "../../model/constants/country";
 
 interface Props {
@@ -10,6 +9,11 @@ interface Props {
   onChange?: (value: Country) => void;
   readOnly?: boolean;
 }
+
+const options = Object.keys(Country).map((country) => ({
+  content: country,
+  value: country,
+}));
 
 export const CountrySelect: FC<Props> = memo(
   ({ className, onChange, value, readOnly }) => {
@@ -23,15 +27,13 @@ export const CountrySelect: FC<Props> = memo(
     );
 
     return (
-      <Select
-        className={classNames("", {}, [className])}
+      <ListBox
+        className={className}
         onChange={onChangeHandler}
         value={value}
+        defaultValue={t("ChooseCurrency")}
+        items={options}
         label={t("ChooseCountry")}
-        options={Object.keys(Country).map((country) => ({
-          content: country,
-          value: country,
-        }))}
         readOnly={readOnly}
       />
     );
