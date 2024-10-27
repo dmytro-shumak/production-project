@@ -5,7 +5,7 @@ import { Flex, type FlexProps } from "../Flex/Flex";
 // type VStackProps<T extends ElementType = "div"> = FlexProps<T>;
 
 export const VStack = <T extends ElementType = "div">(props: FlexProps<T>) => {
-  const align = props || "stretch";
+  const align = props?.align || "stretch";
 
   return <Flex {...props} align={align} direction="column" />;
 };
