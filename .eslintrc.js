@@ -6,7 +6,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["*.test.tsx", "*.test.ts"], // Add other patterns if needed
+      files: ["*.test.tsx", "*.test.ts", "*.stories.tsx"], // Add other patterns if needed
       rules: {
         "i18next/no-literal-string": "off",
       },
