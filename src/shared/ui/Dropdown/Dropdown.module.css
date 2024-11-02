@@ -33,3 +33,7 @@
 .item:hover {
   background-color: var(--inverted-primary-color);
 }
+
+.link:hover {
+  opacity: 1;
+}
