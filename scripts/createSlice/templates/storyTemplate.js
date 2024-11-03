@@ -1,19 +1,29 @@
-module.exports = (layer, componentName) => `import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+module.exports = (layer, componentName) => `import type { Meta, StoryObj } from "@storybook/react";
+import { Theme } from "app/providers/theme";
+import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator";
+import { ${componentName} } from "./${componentName}";
 
-import { ${componentName} } from './${componentName}';
+const meta = {
+  title: "${layer}/${componentName}",
+  component: ${componentName},
+  parameters: {
+    layout: "fullscreen",
+  },
+  tags: ["autodocs"],
+  // More on argTypes: https://storybook.js.org/docs/api/argtypes
+  argTypes: {},
+} satisfies Meta<typeof ${componentName}>;
 
-export default {
-    title: '${layer}/${componentName}',
-    component: ${componentName},
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
-} as ComponentMeta<typeof ${componentName}>;
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-const Template: ComponentStory<typeof ${componentName}> = (args) => <${componentName} {...args} />;
+// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+export const Light: Story = {};
 
-export const Normal = Template.bind({});
-Normal.args = {
-   
-};`;
+export const Dark: Story = {
+  decorators: [ThemeDecorator(Theme.Dark)],
+  parameters: {
+    backgrounds: { default: "dark" },
+  },
+};
+`;
