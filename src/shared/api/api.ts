@@ -2,7 +2,7 @@ import axios from "axios";
 import { LocalStorageKeys } from "shared/constants/localStorage";
 
 // TODO: add env variables
-const baseUrl = __DEV__
+export const baseUrl = __DEV__
   ? "http://localhost:8000"
   : "https://production-project-server-one-psi.vercel.app/";
 

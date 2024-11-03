@@ -1,3 +1,4 @@
+import type { rtkApi } from "shared/api";
 import type { RootState } from "shared/config/redux/store";
 
 export const defaultState: RootState = {
@@ -9,4 +10,5 @@ export const defaultState: RootState = {
   },
   user: {},
   scrollRestoration: { scroll: {} },
+  api: {} as ReturnType<typeof rtkApi.reducer>,
 };

@@ -12,12 +12,14 @@ import type { LoginSchema } from "features/authByUsername/model/types/loginSchem
 import type { ScrollRestorationSchema } from "features/scrollRestoration";
 import type { ArticleDetailsPageSchema } from "pages/ArticleDetailsPage";
 import type { ArticlePageSchema } from "pages/ArticlesPage";
+import type { rtkApi } from "shared/api";
 import type { createReducerManager } from "./reducerManager";
 
 export interface ReducerSchema {
   counter: CounterState;
   user: UserSchema;
   scrollRestoration: ScrollRestorationSchema;
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
   loginForm?: LoginSchema;
   profile?: ProfileSchema;
   articleDetails?: ArticleDetailsSchema;

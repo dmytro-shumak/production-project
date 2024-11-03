@@ -4,7 +4,7 @@ import { baseUrl } from "./api";
 
 // Define a service using a base URL and expected endpoints
 export const rtkApi = createApi({
-  reducerPath: "pokemonApi",
+  reducerPath: "api",
   baseQuery: fetchBaseQuery({
     baseUrl,
     prepareHeaders: (headers) => {

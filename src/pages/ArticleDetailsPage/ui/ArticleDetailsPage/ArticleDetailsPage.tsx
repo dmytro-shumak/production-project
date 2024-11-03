@@ -1,11 +1,8 @@
-import {
-  ArticleDetails,
-  ArticleList,
-  getArticleDetailsData,
-} from "entities/Article";
+import { ArticleDetails, getArticleDetailsData } from "entities/Article";
 import { CommentList } from "entities/Comment";
 import { getUserAuthData } from "entities/User";
 import { AddCommentForm, sendComment } from "features/addCommentForm";
+import { ArticleRecommendationsList } from "features/articleRecommendationsList";
 import { memo, useCallback, type FC } from "react";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
@@ -20,11 +17,9 @@ import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEf
 import { Text, TextSize, VStack } from "shared/ui";
 import { Page } from "widgets/Page";
 import { getArticleCommentIsLoading } from "../../model/selectors/comments";
-import { fetchArticleRecommendations } from "../../model/services/fetchArticleRecommendations/fetchArticleRecommendations";
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { articleDetailsPageReducer } from "../../model/slices";
 import { getArticleComments } from "../../model/slices/articleDetailsComments";
-import { getArticleRecommendations } from "../../model/slices/articleDetailsRecommendations";
 import styles from "./ArticleDetailsPage.module.css";
 import { ArticleDetailsPageHeader } from "./ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 
@@ -40,9 +35,6 @@ const ArticleDetailsPage: FC<Props> = ({ className }) => {
   const { t } = useTranslation("article-details");
   const { id } = useParams();
   const comments = useAppSelector(getArticleComments.selectAll);
-  const recommendationArticle = useAppSelector(
-    getArticleRecommendations.selectAll,
-  );
   const userData = useAppSelector(getUserAuthData);
   const article = useAppSelector(getArticleDetailsData);
   const isLoading = useAppSelector(getArticleCommentIsLoading);
@@ -52,7 +44,6 @@ const ArticleDetailsPage: FC<Props> = ({ className }) => {
 
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
-    dispatch(fetchArticleRecommendations());
   });
 
   const onSendComment = useCallback(
@@ -80,16 +71,7 @@ const ArticleDetailsPage: FC<Props> = ({ className }) => {
         className={styles.commentTitle}
         size={TextSize.L}
       />
-      <ArticleList
-        articles={recommendationArticle}
-        className={styles.recommendations}
-        target="_blank"
-      />
-      <Text
-        title={t("Comments")}
-        className={styles.commentTitle}
-        size={TextSize.L}
-      />
+      <ArticleRecommendationsList />
       <VStack gap={20} align="stretch">
         <AddCommentForm onSendComment={onSendComment} />
         <CommentList comments={comments} isLoading={isLoading} />

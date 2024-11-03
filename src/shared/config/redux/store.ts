@@ -3,6 +3,7 @@ import { counterReducer } from "entities/Counter/model/slice/counterSlice";
 import { userReducer } from "entities/User";
 import { $api } from "shared/api/api";
 import { scrollRestorationReducer } from "features/scrollRestoration";
+import { rtkApi } from "shared/api";
 import type {
   ReducerSchema,
   ReduxStoreWithManager,
@@ -21,6 +22,7 @@ export const createReduxStore = (options?: Options): ReduxStoreWithManager => {
     counter: counterReducer,
     user: userReducer,
     scrollRestoration: scrollRestorationReducer,
+    [rtkApi.reducerPath]: rtkApi.reducer,
   };
   const reducerManager = createReducerManager(rootReducer);
   const store = configureStore({
@@ -36,7 +38,7 @@ export const createReduxStore = (options?: Options): ReduxStoreWithManager => {
             api: $api,
           },
         },
-      }),
+      }).concat(rtkApi.middleware),
   });
 
   // @ts-expect-error ignore for now
