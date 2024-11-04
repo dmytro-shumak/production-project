@@ -1,25 +1,17 @@
-import { ArticleList } from "entities/Article";
 import { memo, useCallback, type FC } from "react";
+import { useSearchParams } from "react-router-dom";
 import {
   useAppDispatch,
-  useAppSelector,
   useAsyncReducer,
   useInitialEffect,
   type ReducersList,
 } from "shared/lib";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Page } from "widgets/Page";
-import { useSearchParams } from "react-router-dom";
-import {
-  getArticlePageIsLoading,
-  getArticlePageView,
-} from "../../model/selectors/articlePageSelector";
+import { ArticleInfiniteList } from "../../ui/ArticleInfiniteList/ArticleInfiniteList";
 import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import { initializeArticlePage } from "../../model/services/initializeArticlePage/initializeArticlePage";
-import {
-  articlePageReducer,
-  getArticles,
-} from "../../model/slices/articlePageSlice";
+import { articlePageReducer } from "../../model/slices/articlePageSlice";
 import { ArticlePageFilters } from "../ArticlePageFilters/ArticlePageFilters";
 import styles from "./ArticlesPage.module.css";
 
@@ -35,9 +27,6 @@ const ArticlesPage: FC<Props> = ({ className }) => {
   useAsyncReducer(reducer, false);
 
   const dispatch = useAppDispatch();
-  const articles = useAppSelector(getArticles.selectAll);
-  const isLoading = useAppSelector(getArticlePageIsLoading);
-  const view = useAppSelector(getArticlePageView);
   const [searchParams] = useSearchParams();
 
   const onLoadNextPart = useCallback(() => {
@@ -54,12 +43,7 @@ const ArticlesPage: FC<Props> = ({ className }) => {
       onScrollEnd={onLoadNextPart}
     >
       <ArticlePageFilters />
-      <ArticleList
-        view={view}
-        isLoading={isLoading}
-        articles={articles}
-        className={styles.list}
-      />
+      <ArticleInfiniteList />
     </Page>
   );
 };
