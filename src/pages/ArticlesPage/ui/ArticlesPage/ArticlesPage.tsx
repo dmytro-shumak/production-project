@@ -43,7 +43,7 @@ const ArticlesPage: FC<Props> = ({ className }) => {
       onScrollEnd={onLoadNextPart}
     >
       <ArticlePageFilters />
-      <ArticleInfiniteList />
+      <ArticleInfiniteList className={styles.list} />
     </Page>
   );
 };

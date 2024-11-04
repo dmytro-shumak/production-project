@@ -25,7 +25,7 @@ const articleDetailsCommentsSlice = createSlice({
     ids: ["1", "2"],
     entities: {
       "1": { id: "1", text: "test", user: { id: "1", username: "username" } },
-      "2": { id: "1", text: "test", user: { id: "1", username: "username" } },
+      "2": { id: "2", text: "test", user: { id: "1", username: "username" } },
     },
   }),
   reducers: {},

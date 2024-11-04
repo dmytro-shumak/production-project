@@ -9,7 +9,6 @@ import { VStack } from "shared/ui";
 import { getArticleCommentIsLoading } from "../../model/selectors/comments";
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { getArticleComments } from "../../model/slices/articleDetailsComments";
-import styles from "./ArticleDetailsComments.module.css";
 
 interface Props {
   className?: string;
@@ -40,7 +39,7 @@ export const ArticleDetailsComments = memo(({ className, id }: Props) => {
   });
 
   return (
-    <div className={classNames(styles.articleDetailsComments, {}, [className])}>
+    <div className={classNames("", {}, [className])}>
       <VStack gap={20} align="stretch">
         <AddCommentForm onSendComment={onSendComment} />
         <CommentList comments={comments} isLoading={isLoading} />

@@ -7,7 +7,6 @@ import {
   getArticlePageView,
 } from "../../model/selectors/articlePageSelector";
 import { getArticles } from "../../model/slices/articlePageSlice";
-import styles from "./ArticleInfiniteList.module.css";
 
 interface Props {
   className?: string;
@@ -19,7 +18,7 @@ export const ArticleInfiniteList = memo(({ className }: Props) => {
   const view = useAppSelector(getArticlePageView);
 
   return (
-    <div className={classNames(styles.articleInfiniteList, {}, [className])}>
+    <div className={classNames("", {}, [className])}>
       <ArticleList
         view={view}
         isLoading={isLoading}
