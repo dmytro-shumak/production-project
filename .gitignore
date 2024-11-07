@@ -5,6 +5,7 @@
 node_modules/
 /build/
 dist/
+reports
 
 # Ignore environment-specific files
 .env.local
