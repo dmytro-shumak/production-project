@@ -14,6 +14,7 @@ interface Props {
   view?: ArticleView;
   isLoading?: boolean;
   target?: HTMLAttributeAnchorTarget;
+  virtualized?: boolean;
 }
 
 export const ArticleList = memo(
@@ -23,6 +24,7 @@ export const ArticleList = memo(
     view = ArticleView.GRID,
     isLoading,
     target,
+    virtualized = true,
   }: Props) => {
     const { t } = useTranslation();
 
@@ -106,18 +108,31 @@ export const ArticleList = memo(
               styles[view],
             ])}
           >
-            <List
-              height={height ?? 700}
-              rowCount={rowCount}
-              rowHeight={isBig ? 700 : 330}
-              rowRenderer={rowRender}
-              width={width ? width - 80 : 700}
-              autoHeight
-              onScroll={onChildScroll}
-              isScrolling={isScrolling}
-              scrollTop={scrollTop}
-            />
-            {/* {isLoading && getSkeletons(view)} */}
+            {virtualized ? (
+              <List
+                height={height ?? 700}
+                rowCount={rowCount}
+                rowHeight={isBig ? 700 : 330}
+                rowRenderer={rowRender}
+                width={width ? width - 80 : 700}
+                autoHeight
+                onScroll={onChildScroll}
+                isScrolling={isScrolling}
+                scrollTop={scrollTop}
+              />
+            ) : (
+              [
+                articles.map((article) => (
+                  <ArticleListItem
+                    article={article}
+                    view={view}
+                    target={target}
+                    key={article.id}
+                    className={styles.card}
+                  />
+                )),
+              ]
+            )}
           </div>
         )}
       </WindowScroller>

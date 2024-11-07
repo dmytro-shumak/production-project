@@ -23,13 +23,13 @@ export const ArticleRecommendationsList = memo(
       return <Text title={t("Loading...")} />;
     }
 
-    if (error) {
+    if (error || !articles) {
       return <Text title={t("Error occurred")} text={JSON.stringify(error)} />;
     }
 
     return (
       <VStack gap={8} className={classNames("", {}, [className])}>
-        <ArticleList articles={articles} target="_blank" />
+        <ArticleList articles={articles} target="_blank" virtualized={false} />
         <Text title={t("Comments")} size={TextSize.L} />
       </VStack>
     );
