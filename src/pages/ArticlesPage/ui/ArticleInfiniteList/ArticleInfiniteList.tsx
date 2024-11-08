@@ -24,6 +24,7 @@ export const ArticleInfiniteList = memo(({ className }: Props) => {
         isLoading={isLoading}
         articles={articles}
         className={className}
+        virtualized={false} // TODO:remove this
       />
     </div>
   );
