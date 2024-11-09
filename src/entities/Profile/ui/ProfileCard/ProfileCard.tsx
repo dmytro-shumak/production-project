@@ -127,6 +127,7 @@ export const ProfileCard: FC<Props> = ({
           label={t("YourFirstName")}
           onChange={handleChangeFirstName}
           readOnly={readOnly}
+          data-testid="ProfileCard.firstName"
         />
         <Input
           value={data?.lastName}
@@ -134,6 +135,7 @@ export const ProfileCard: FC<Props> = ({
           label={t("YourLastName")}
           onChange={handleChangeLastName}
           readOnly={readOnly}
+          data-testid="ProfileCard.lastName"
         />
         <Input
           value={data?.age}

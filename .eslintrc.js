@@ -9,6 +9,7 @@ module.exports = {
       files: ["*.test.tsx", "*.test.ts", "*.stories.tsx"], // Add other patterns if needed
       rules: {
         "i18next/no-literal-string": "off",
+        "class-methods-use-this": "off",
       },
     },
   ],
