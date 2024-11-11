@@ -74,7 +74,7 @@ export const NavBar = memo(({ className }: Props) => {
       <nav className={classNames(styles.navBar, {}, [className])}>
         <Text
           className={styles.appName}
-          title={t("My app")}
+          title={t("MyApp")}
           theme={TextTheme.INVERTED}
         />
         <AppLink to={RoutesPath.article_create} theme={AppLinkTheme.Secondary}>

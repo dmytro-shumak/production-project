@@ -20,5 +20,12 @@
   "IT": "IT",
   "Article": "Article",
   "Business": "Business",
-  "Music": "Music"
+  "Music": "Music",
+  "Profile": "Profile",
+  "Logout": "Logout",
+  "Main": "Main",
+  "About": "About",
+  "MyApp": "My App",
+  "CreateArticle": "Create Article",
+  "Articles": "Articles"
 }
