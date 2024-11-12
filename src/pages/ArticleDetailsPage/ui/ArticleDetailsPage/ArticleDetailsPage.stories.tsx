@@ -92,6 +92,8 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+// TODO: fix storybook
+
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Light: Story = {
   decorators: [
