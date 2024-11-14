@@ -12,8 +12,8 @@ import {
   Icon,
   Text,
 } from "shared/ui";
+import { ArticleBlockType } from "../../model/constants/article";
 import {
-  ArticleBlockType,
   ArticleView,
   type Article,
   type ArticleTextBlock,

@@ -26,11 +26,12 @@ import {
 } from "../../model/selectors/articleDetails";
 import { fetchArticleById } from "../../model/services/fetchArticleById/fetchArticleById";
 import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice";
-import { ArticleBlockType, type ArticleBlock } from "../../model/types/article";
+import { type ArticleBlock } from "../../model/types/article";
 import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import styles from "./ArticleDetails.module.css";
+import { ArticleBlockType } from "../../model/constants/article";
 
 interface Props {
   className?: string;

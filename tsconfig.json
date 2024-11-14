@@ -15,6 +15,7 @@
     "baseUrl": "./",
     "noEmitOnError": false,
     "strict": true,
+    "isolatedModules": true,
     "types": ["node", "jest"],
     "paths": {
       "*": ["./src/*"]

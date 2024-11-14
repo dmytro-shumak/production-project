@@ -5,8 +5,9 @@ import type {
   ThunkExtraArg,
 } from "shared/config/redux";
 import { getProfileForm } from "../../selectors/getProfileForm/getProfileForm";
-import { ValidateProfileError, type Profile } from "../../types/profile";
+import { type Profile } from "../../types/profile";
 import { validateProfileData } from "../validateProfileData/validateProfileData";
+import { ValidateProfileError } from "../../constants/profile";
 
 export const updateProfileData = createAsyncThunk<
   Profile,

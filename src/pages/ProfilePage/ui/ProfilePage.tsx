@@ -1,5 +1,6 @@
 import {
   ProfileCard,
+  ValidateProfileError,
   fetchProfileData,
   getProfileError,
   getProfileForm,
@@ -8,7 +9,6 @@ import {
   getProfileValidateErrors,
   profileReducer,
 } from "entities/Profile";
-import { ValidateProfileError } from "entities/Profile/model/types/profile";
 import { useMemo, type FC } from "react";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";

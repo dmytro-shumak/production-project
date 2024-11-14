@@ -14,3 +14,5 @@ export { getProfileLoading } from "./model/selectors/getProfileLoading/getProfil
 export { getProfileReadOnly } from "./model/selectors/getProfileReadOnly/getProfileReadOnly";
 export { getProfileForm } from "./model/selectors/getProfileForm/getProfileForm";
 export { getProfileValidateErrors } from "./model/selectors/getProfileValidateErrors/getProfileValidateErrors";
+
+export * from "./model/constants/profile";

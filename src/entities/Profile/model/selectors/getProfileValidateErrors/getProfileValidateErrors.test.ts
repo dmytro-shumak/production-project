@@ -1,6 +1,6 @@
 import type { ReducerSchema } from "shared/config/redux";
 import type { DeepPartial } from "shared/lib";
-import { ValidateProfileError } from "../../types/profile";
+import { ValidateProfileError } from "../../constants/profile";
 import { getProfileValidateErrors } from "./getProfileValidateErrors";
 
 describe("get profile validate  errors", () => {

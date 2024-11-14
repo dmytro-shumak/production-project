@@ -1,6 +1,6 @@
 import { Country } from "entities/Country";
 import { Currency } from "entities/Currency";
-import { ValidateProfileError } from "../../types/profile";
+import { ValidateProfileError } from "../../constants/profile";
 import { validateProfileData } from "./validateProfileData";
 
 const data = {
