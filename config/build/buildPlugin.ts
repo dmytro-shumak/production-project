@@ -9,6 +9,7 @@ import {
   type WebpackPluginInstance,
 } from "webpack";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
+import CircularDependencyPlugin from "circular-dependency-plugin";
 import type { BuildOptions } from "./types/config";
 
 export const buildPlugins = ({
@@ -31,6 +32,10 @@ export const buildPlugins = ({
       __PROJECT__: JSON.stringify(project),
     }),
     new HotModuleReplacementPlugin(),
+    new CircularDependencyPlugin({
+      exclude: /node_modules/,
+      failOnError: true,
+    }),
   ];
 
   if (isDev) {
