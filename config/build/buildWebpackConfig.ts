@@ -2,7 +2,7 @@ import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
 import type { Configuration } from "webpack";
 import { buildDevServer } from "./buildDevServer";
 import { buildLoaders } from "./buildLoaders";
-import { buildPlugins } from "./buildPlugin";
+import { buildPlugins } from "./buildPlugins";
 import { buildResolve } from "./buildResolve";
 import type { BuildOptions } from "./types/config";
 
