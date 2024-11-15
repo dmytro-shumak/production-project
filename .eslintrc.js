@@ -91,5 +91,6 @@ module.exports = {
     "newline-before-return": "error",
     "no-unused-expressions": ["error", { allowShortCircuit: true }],
     "production-shumak-plugin/path-checker": "error",
+    "func-names": ["error", "never"],
   },
 };
