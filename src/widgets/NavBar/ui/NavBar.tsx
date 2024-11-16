@@ -17,11 +17,14 @@ import {
   Button,
   ButtonTheme,
   Dropdown,
+  HStack,
+  Icon,
   Text,
   TextTheme,
   type DropdownItem,
 } from "shared/ui";
 import { RoutesPath } from "shared/config/routeConfig/routeConfig";
+import NotificationIcon from "shared/assets/icons/notification.svg";
 import styles from "./NavBar.module.css";
 
 interface Props {
@@ -80,12 +83,16 @@ export const NavBar = memo(({ className }: Props) => {
         <AppLink to={RoutesPath.article_create} theme={AppLinkTheme.Secondary}>
           {t("CreateArticle")}
         </AppLink>
-        <Dropdown
-          anchor="bottom end"
-          className={styles.dropdown}
-          button={<Avatar size={30} src={authData.avatar} />}
-          items={items}
-        />
+        <HStack gap={16} className={styles.actions}>
+          <Button theme={ButtonTheme.Clear}>
+            <Icon Svg={NotificationIcon} inverted />
+          </Button>
+          <Dropdown
+            anchor="bottom end"
+            button={<Avatar size={30} src={authData.avatar} />}
+            items={items}
+          />
+        </HStack>
         <LoginModal isOpen={isModalOpen} onClose={closeModal} />
       </nav>
     );

@@ -5,8 +5,15 @@ import styles from "./Icon.module.css";
 interface Props {
   className?: string;
   Svg: FunctionComponent<SVGAttributes<SVGElement>>;
+  inverted?: boolean;
 }
 
-export const Icon = memo(({ className, Svg }: Props) => {
-  return <Svg className={classNames(styles.icon, {}, [className])} />;
+export const Icon = memo(({ className, Svg, inverted }: Props) => {
+  return (
+    <Svg
+      className={classNames(inverted ? styles.inverted : styles.icon, {}, [
+        className,
+      ])}
+    />
+  );
 });
