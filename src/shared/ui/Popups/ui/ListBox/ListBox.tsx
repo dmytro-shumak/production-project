@@ -5,9 +5,9 @@ import {
   ListboxOptions,
 } from "@headlessui/react";
 import { memo, type ReactNode } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
-import { HStack } from "../Stack";
-import { Button } from "../Button/Button";
+import { classNames } from "shared/lib";
+import { HStack } from "../../../Stack";
+import { Button } from "../../../Button";
 import styles from "./ListBox.module.css";
 
 export interface ListBoxItem {

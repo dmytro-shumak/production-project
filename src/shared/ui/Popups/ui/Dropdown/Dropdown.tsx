@@ -3,7 +3,7 @@ import { classNames } from "shared/lib";
 import type { ReactNode } from "react";
 import type { AnchorProps } from "@headlessui/react/dist/internal/floating";
 import styles from "./Dropdown.module.css";
-import { AppLink } from "../AppLink/AppLink";
+import { AppLink } from "../../../AppLink";
 
 export interface DropdownItem {
   disabled?: boolean;
