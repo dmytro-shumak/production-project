@@ -19,6 +19,7 @@ import {
   Dropdown,
   HStack,
   Icon,
+  Popover,
   Text,
   TextTheme,
   type DropdownItem,
@@ -84,9 +85,16 @@ export const NavBar = memo(({ className }: Props) => {
           {t("CreateArticle")}
         </AppLink>
         <HStack gap={16} className={styles.actions}>
-          <Button theme={ButtonTheme.Clear}>
-            <Icon Svg={NotificationIcon} inverted />
-          </Button>
+          <Popover
+            anchor="bottom end"
+            button={
+              <Button theme={ButtonTheme.Clear}>
+                <Icon Svg={NotificationIcon} inverted />
+              </Button>
+            }
+          >
+            sjdfnjksdfn
+          </Popover>
           <Dropdown
             anchor="bottom end"
             button={<Avatar size={30} src={authData.avatar} />}

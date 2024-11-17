@@ -3,15 +3,6 @@
   position: relative;
 }
 
-.btn {
-  background: none;
-  outline: none;
-  margin: 0;
-  padding: 0;
-  border: none;
-  cursor: pointer;
-}
-
 .menuItems {
   background-color: var(--card-bg);
   position: absolute;

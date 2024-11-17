@@ -3,6 +3,7 @@ import { classNames } from "shared/lib";
 import type { ReactNode } from "react";
 import type { AnchorProps } from "@headlessui/react/dist/internal/floating";
 import styles from "./Dropdown.module.css";
+import popupStyles from "../../styles/popup.module.css";
 import { AppLink } from "../../../AppLink";
 
 export interface DropdownItem {
@@ -28,7 +29,7 @@ export const Dropdown = ({
 }: Props) => {
   return (
     <Menu as="div" className={classNames(styles.menu, {}, [className])}>
-      <MenuButton className={styles.btn}>{button}</MenuButton>
+      <MenuButton className={popupStyles.btn}>{button}</MenuButton>
       <MenuItems anchor={anchor} className={styles.menuItems}>
         {items.map((item, index) => {
           if (item.href) {
