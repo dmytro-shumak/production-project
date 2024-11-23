@@ -26,6 +26,7 @@ import {
 } from "shared/ui";
 import { RoutesPath } from "shared/config/routeConfig/routeConfig";
 import NotificationIcon from "shared/assets/icons/notification.svg";
+import { NotificationList } from "entities/Notifications";
 import styles from "./NavBar.module.css";
 
 interface Props {
@@ -93,7 +94,7 @@ export const NavBar = memo(({ className }: Props) => {
               </Button>
             }
           >
-            sjdfnjksdfn
+            <NotificationList className={styles.notifications} />
           </Popover>
           <Dropdown
             anchor="bottom end"
