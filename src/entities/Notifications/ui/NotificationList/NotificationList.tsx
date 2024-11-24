@@ -10,7 +10,9 @@ interface Props {
 }
 
 export const NotificationList = memo(({ className }: Props) => {
-  const { data: notifications, isLoading } = useNotifications(null);
+  const { data: notifications, isLoading } = useNotifications(null, {
+    pollingInterval: 5000,
+  });
 
   return (
     <VStack

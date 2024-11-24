@@ -5,9 +5,11 @@ import {
   logout,
 } from "entities/User";
 import { LoginModal } from "features/authByUsername";
+import { NotificationButton } from "features/notificationButton";
 import { memo, useCallback, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
+import { RoutesPath } from "shared/config/routeConfig/routeConfig";
 import { useAppSelector } from "shared/lib";
 import { classNames } from "shared/lib/classNames/classNames";
 import {
@@ -18,15 +20,10 @@ import {
   ButtonTheme,
   Dropdown,
   HStack,
-  Icon,
-  Popover,
   Text,
   TextTheme,
   type DropdownItem,
 } from "shared/ui";
-import { RoutesPath } from "shared/config/routeConfig/routeConfig";
-import NotificationIcon from "shared/assets/icons/notification.svg";
-import { NotificationList } from "entities/Notifications";
 import styles from "./NavBar.module.css";
 
 interface Props {
@@ -86,17 +83,7 @@ export const NavBar = memo(({ className }: Props) => {
           {t("CreateArticle")}
         </AppLink>
         <HStack gap={16} className={styles.actions}>
-          <Popover
-            anchor="bottom end"
-            menuClassName={styles.notificationMenu}
-            button={
-              <Button theme={ButtonTheme.Clear}>
-                <Icon Svg={NotificationIcon} inverted />
-              </Button>
-            }
-          >
-            <NotificationList className={styles.notifications} />
-          </Popover>
+          <NotificationButton />
           <Dropdown
             anchor="bottom end"
             button={<Avatar size={30} src={authData.avatar} />}
