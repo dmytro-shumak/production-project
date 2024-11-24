@@ -15,7 +15,7 @@ export const NotificationButton = memo(({ className }: Props) => {
     <Popover
       anchor="bottom end"
       menuClassName={styles.notificationMenu}
-      className={classNames('', {}, [className])}
+      className={classNames("", {}, [className])}
       button={
         <Button theme={ButtonTheme.Clear}>
           <Icon Svg={NotificationIcon} inverted />
