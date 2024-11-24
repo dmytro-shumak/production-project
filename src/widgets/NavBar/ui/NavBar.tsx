@@ -88,6 +88,7 @@ export const NavBar = memo(({ className }: Props) => {
         <HStack gap={16} className={styles.actions}>
           <Popover
             anchor="bottom end"
+            menuClassName={styles.notificationMenu}
             button={
               <Button theme={ButtonTheme.Clear}>
                 <Icon Svg={NotificationIcon} inverted />
