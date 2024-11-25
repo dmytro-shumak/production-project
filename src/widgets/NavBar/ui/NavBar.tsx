@@ -48,6 +48,11 @@ export const NavBar = memo(({ className }: Props) => {
           {t("CreateArticle")}
         </AppLink>
         <HStack gap={16} className={styles.actions}>
+          {/* eslint-disable-next-line react/button-has-type */}
+          {/* <button onClick={() => setIsOpen((prev) => !prev)}> CLick</button> */}
+          {/* <Drawer isOpen={isOpen} onClose={() => setIsOpen((prev) => !prev)}>
+            <NotificationList />
+          </Drawer> */}
           <NotificationButton />
           <AvatarDropdown />
         </HStack>
