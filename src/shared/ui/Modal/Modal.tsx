@@ -6,6 +6,7 @@ import {
   type ReactNode,
 } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
+import { Overlay } from "../Overlay";
 import { Portal } from "../Portal/Portal";
 import styles from "./Modal.module.css";
 
@@ -49,11 +50,11 @@ export const Modal: FC<Props> = ({ className, children, isOpen, onClose }) => {
           className,
         ])}
       >
-        <div className={styles.overlay} onClick={handleOverlayClick}>
+        <Overlay onClick={handleOverlayClick}>
           <div className={styles.content} onClick={handleContentClick}>
             {children}
           </div>
-        </div>
+        </Overlay>
       </div>
     </Portal>
   );
