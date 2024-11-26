@@ -1,11 +1,6 @@
-import {
-  useCallback,
-  useEffect,
-  type FC,
-  type MouseEvent,
-  type ReactNode,
-} from "react";
+import { type FC, type ReactNode } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
+import { useModal } from "shared/lib/hooks";
 import { Overlay } from "../Overlay";
 import { Portal } from "../Portal/Portal";
 import styles from "./Modal.module.css";
@@ -18,30 +13,7 @@ interface Props {
 }
 
 export const Modal: FC<Props> = ({ className, children, isOpen, onClose }) => {
-  const handleOverlayClick = () => {
-    onClose?.();
-  };
-
-  const handleContentClick = (e: MouseEvent) => {
-    e.stopPropagation();
-  };
-
-  const onKeyDown = useCallback(
-    (e: KeyboardEvent) => {
-      if (e.code === "Escape") {
-        onClose?.();
-      }
-    },
-    [onClose],
-  );
-
-  useEffect(() => {
-    window.addEventListener("keydown", onKeyDown);
-
-    return () => {
-      window.removeEventListener("keydown", onKeyDown);
-    };
-  }, [onKeyDown]);
+  const { contentClick } = useModal({ isOpen, onClose });
 
   return (
     <Portal portalContainer={document.body}>
@@ -50,8 +22,8 @@ export const Modal: FC<Props> = ({ className, children, isOpen, onClose }) => {
           className,
         ])}
       >
-        <Overlay onClick={handleOverlayClick}>
-          <div className={styles.content} onClick={handleContentClick}>
+        <Overlay onClick={onClose}>
+          <div className={styles.content} onClick={contentClick}>
             {children}
           </div>
         </Overlay>
