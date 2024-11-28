@@ -9,8 +9,8 @@ import {
   useAppSelector,
   useInfiniteScroll,
   useInitialEffect,
+  classNames,
 } from "shared/lib";
-import { classNames } from "shared/lib";
 import { useThrottle } from "shared/lib/hooks/useThrottle/useThrottle";
 import styles from "./Page.module.css";
 

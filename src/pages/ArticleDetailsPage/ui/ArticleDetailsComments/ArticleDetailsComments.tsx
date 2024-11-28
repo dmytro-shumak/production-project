@@ -3,8 +3,12 @@ import { CommentList } from "entities/Comment";
 import { getUserAuthData } from "entities/User";
 import { AddCommentForm, sendComment } from "features/addCommentForm";
 import { memo, useCallback } from "react";
-import { useAppDispatch, useAppSelector, useInitialEffect } from "shared/lib";
-import { classNames } from "shared/lib";
+import {
+  useAppDispatch,
+  useAppSelector,
+  useInitialEffect,
+  classNames,
+} from "shared/lib";
 import { VStack } from "shared/ui";
 import { getArticleCommentIsLoading } from "../../model/selectors/comments";
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";

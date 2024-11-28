@@ -1,7 +1,6 @@
 import { useCallback, type ChangeEvent, type FC } from "react";
 import { useTranslation } from "react-i18next";
-import { useAppDispatch } from "shared/lib";
-import { classNames } from "shared/lib";
+import { useAppDispatch, classNames } from "shared/lib";
 import { Avatar, HStack, VStack } from "shared/ui";
 import { Input } from "shared/ui/Input/Input";
 import { Loader } from "shared/ui/Loader";

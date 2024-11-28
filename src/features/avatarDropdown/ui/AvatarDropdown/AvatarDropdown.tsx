@@ -8,8 +8,7 @@ import { memo, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { RoutesPath } from "shared/config/routeConfig/routeConfig";
-import { useAppSelector } from "shared/lib";
-import { classNames } from "shared/lib";
+import { useAppSelector, classNames } from "shared/lib";
 import { Avatar, Dropdown, type DropdownItem } from "shared/ui";
 
 interface Props {
