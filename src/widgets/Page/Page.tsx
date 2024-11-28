@@ -10,7 +10,7 @@ import {
   useInfiniteScroll,
   useInitialEffect,
 } from "shared/lib";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib";
 import { useThrottle } from "shared/lib/hooks/useThrottle/useThrottle";
 import styles from "./Page.module.css";
 

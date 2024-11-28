@@ -1,5 +1,5 @@
 import { type FC, type ReactNode } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib";
 import { useModal } from "shared/lib/hooks";
 import { Overlay } from "../Overlay";
 import { Portal } from "../Portal/Portal";

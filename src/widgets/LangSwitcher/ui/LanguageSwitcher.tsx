@@ -1,6 +1,6 @@
 import { memo, type FC } from "react";
 import { useTranslation } from "react-i18next";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib";
 import { Button, ButtonSize, ButtonTheme } from "shared/ui";
 import styles from "./LanguageSwitcher.module.css";
 

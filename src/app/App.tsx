@@ -3,7 +3,7 @@ import { AppRouter } from "app/router";
 import { getUserInitiated, initAuthData } from "entities/User";
 import { Suspense, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "shared/lib";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib";
 import { Loader } from "shared/ui/Loader";
 import { NavBar } from "widgets/NavBar";
 import { Sidebar } from "widgets/Sidebar";

@@ -13,7 +13,7 @@ import {
   useAppSelector,
   useDebouncedCallback,
 } from "shared/lib";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib";
 import type { SortOrder } from "shared/types";
 import { Card } from "shared/ui";
 import { Input } from "shared/ui/Input/Input";

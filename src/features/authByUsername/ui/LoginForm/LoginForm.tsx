@@ -1,7 +1,7 @@
 import { useCallback, type ChangeEvent, type FC } from "react";
 import { useTranslation } from "react-i18next";
 import { useAppDispatch, useAppSelector, useAsyncReducer } from "shared/lib";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib";
 import { Button, ButtonTheme } from "shared/ui";
 import { Input } from "shared/ui/Input/Input";
 import { Text, TextTheme } from "shared/ui/Text/Text";

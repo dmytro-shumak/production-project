@@ -1,5 +1,5 @@
 import { memo, useCallback, useState } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib";
 import NotificationIcon from "shared/assets/icons/notification.svg";
 
 import { Button, ButtonTheme, Icon, Popover } from "shared/ui";

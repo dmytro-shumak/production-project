@@ -1,5 +1,5 @@
 import { memo, type HTMLAttributeAnchorTarget, type LegacyRef } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib";
 import { Text, TextSize } from "shared/ui";
 import { List, type ListRowProps, WindowScroller } from "react-virtualized";
 import { useTranslation } from "react-i18next";

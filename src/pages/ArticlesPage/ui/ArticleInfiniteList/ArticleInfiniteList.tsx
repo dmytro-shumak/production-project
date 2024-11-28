@@ -1,7 +1,7 @@
 import { ArticleList } from "entities/Article";
 import { memo } from "react";
 import { useAppSelector } from "shared/lib";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib";
 import {
   getArticlePageIsLoading,
   getArticlePageView,

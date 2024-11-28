@@ -1,7 +1,7 @@
 import { memo } from "react";
 import GridIcon from "shared/assets/icons/grid.svg";
 import ListIcon from "shared/assets/icons/list.svg";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib";
 import { Button, ButtonTheme, Icon } from "shared/ui";
 import { ArticleView } from "../../model/types/article";
 import styles from "./ArticleViewSelector.module.css";

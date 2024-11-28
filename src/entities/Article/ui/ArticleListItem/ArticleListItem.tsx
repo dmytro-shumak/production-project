@@ -2,7 +2,7 @@ import { memo, type HTMLAttributeAnchorTarget } from "react";
 import { useTranslation } from "react-i18next";
 import EyeIcon from "shared/assets/icons/eye.svg";
 import { RoutesPath } from "shared/config/routeConfig/routeConfig";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib";
 import {
   AppLink,
   Avatar,

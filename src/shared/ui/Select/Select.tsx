@@ -1,5 +1,5 @@
 import { useCallback, type ChangeEvent } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib";
 import { typedMemo } from "shared/types";
 import styles from "./Select.module.css";
 

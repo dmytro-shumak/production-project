@@ -1,5 +1,5 @@
 import { type ComponentProps, type ElementType, type ReactNode } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib";
 import styles from "./Flex.module.css";
 
 export type FlexJustify = "start" | "end" | "center" | "between" | "stretch";

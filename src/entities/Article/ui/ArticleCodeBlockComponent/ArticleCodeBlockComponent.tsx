@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib";
 import { Code } from "shared/ui";
 import type { ArticleCodeBlock } from "../../model/types/article";
 import styles from "./ArticleCodeBlockComponent.module.css";

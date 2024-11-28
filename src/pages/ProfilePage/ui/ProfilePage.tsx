@@ -13,7 +13,7 @@ import { useMemo, type FC } from "react";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "shared/lib";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib";
 import {
   useAsyncReducer,
   type ReducersList,

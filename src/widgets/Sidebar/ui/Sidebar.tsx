@@ -1,7 +1,7 @@
 import { Theme, useTheme } from "app/providers/theme";
 import { memo, useState, type FC } from "react";
 import { useAppSelector } from "shared/lib";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib";
 import { Button, ButtonSize, VStack } from "shared/ui";
 import { LangSwitcher } from "widgets/LangSwitcher";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";

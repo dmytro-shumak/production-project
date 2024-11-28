@@ -1,7 +1,6 @@
 import { memo, useCallback, useEffect, type ReactNode } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames, useModal } from "shared/lib";
 import { useTheme } from "app/providers/theme";
-import { useModal } from "shared/lib";
 import { useDrag } from "@use-gesture/react";
 import { a, useSpring, config } from "@react-spring/web";
 import { Overlay } from "../Overlay";

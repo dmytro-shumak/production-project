@@ -6,7 +6,7 @@ import {
 import { useCallback, type FC } from "react";
 import { useTranslation } from "react-i18next";
 import { useAppDispatch, useAppSelector } from "shared/lib";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib";
 import { Button, ButtonTheme, HStack } from "shared/ui";
 import { Text } from "shared/ui/Text/Text";
 import { canEditProfileSelector } from "../../model/selectors/canEditProfile/canEditProfile";

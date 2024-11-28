@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib";
 import { AppLink, Avatar, Text } from "shared/ui";
 import { RoutesPath } from "shared/config/routeConfig/routeConfig";
 import styles from "./CommentItem.module.css";

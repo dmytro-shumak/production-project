@@ -8,7 +8,7 @@ import {
   useAsyncReducer,
   type ReducersList,
 } from "shared/lib";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib";
 import {
   Avatar,
   HStack,

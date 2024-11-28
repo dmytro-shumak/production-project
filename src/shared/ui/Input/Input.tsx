@@ -6,7 +6,7 @@ import {
   useRef,
   type InputHTMLAttributes,
 } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib";
 import styles from "./Input.module.css";
 
 interface Props

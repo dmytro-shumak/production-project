@@ -6,7 +6,7 @@ import { memo, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { RoutesPath } from "shared/config/routeConfig/routeConfig";
 import { useAppSelector } from "shared/lib";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib";
 import {
   AppLink,
   AppLinkTheme,
