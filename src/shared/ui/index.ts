@@ -1,8 +1,8 @@
 export { AppLink } from "./AppLink/AppLink";
 export { AppLinkTheme } from "./AppLink/types";
-export { Avatar } from "./Avatar/Avatar";
-export { MemoSelect as Select, type SelectOption } from "./Select/Select";
-export { Skeleton } from "./Skeleton/Skeleton";
+export * from "./Avatar";
+export * from "./Select";
+export * from "./Skeleton";
 export { Icon } from "./Icon/Icon";
 export { Button } from "./Button/Button";
 export { Code } from "./Code/Code";
