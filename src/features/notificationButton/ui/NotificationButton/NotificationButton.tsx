@@ -6,6 +6,7 @@ import { Button, ButtonTheme, Icon, Popover } from "shared/ui";
 import { NotificationList } from "entities/Notifications";
 import { Drawer } from "shared/ui/Drawer";
 import { BrowserView, MobileView } from "react-device-detect";
+import { AnimationProvier } from "shared/lib/components";
 import styles from "./NotificationButton.module.css";
 
 interface Props {
@@ -44,9 +45,11 @@ export const NotificationButton = memo(({ className }: Props) => {
 
       <MobileView>
         {button}
-        <Drawer isOpen={isOpen} onClose={handleCloseDrawer}>
-          <NotificationList />
-        </Drawer>
+        <AnimationProvier>
+          <Drawer isOpen={isOpen} onClose={handleCloseDrawer}>
+            <NotificationList />
+          </Drawer>
+        </AnimationProvier>
       </MobileView>
     </div>
   );

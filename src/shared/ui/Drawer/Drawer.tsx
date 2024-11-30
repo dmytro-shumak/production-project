@@ -1,8 +1,7 @@
 import { memo, useCallback, useEffect, type ReactNode } from "react";
 import { classNames, useModal } from "shared/lib";
 import { useTheme } from "app/providers/theme";
-import { useDrag } from "@use-gesture/react";
-import { a, useSpring, config } from "@react-spring/web";
+import { useAnimationLibs } from "shared/lib/components";
 import { Overlay } from "../Overlay";
 import { Portal } from "../Portal/Portal";
 import styles from "./Drawer.module.css";
@@ -17,9 +16,10 @@ interface Props {
 const height = window.innerHeight - 100;
 
 // TODO: improve first animation
-export const Drawer = memo(
+const DrawerContent = memo(
   ({ children, className, isOpen, onClose }: Props) => {
-    const [{ y }, api] = useSpring(() => ({ y: 0 }));
+    const { Gesture, Spring } = useAnimationLibs();
+    const [{ y }, api] = Spring.useSpring(() => ({ y: 0 }));
     const { theme } = useTheme();
 
     const openDrawer = useCallback(() => {
@@ -30,7 +30,7 @@ export const Drawer = memo(
       api.start({
         y: height,
         immediate: false,
-        config: { ...config.stiff, velocity },
+        config: { ...Spring.config.stiff, velocity },
         onResolve: onClose,
       });
     };
@@ -41,7 +41,7 @@ export const Drawer = memo(
       }
     }, [isOpen, openDrawer]);
 
-    const bind = useDrag(
+    const bind = Gesture.useDrag(
       ({
         last,
         velocity: [, vy],
@@ -87,7 +87,7 @@ export const Drawer = memo(
           )}
         >
           <Overlay onClick={onClose} className={styles.overlay} />
-          <a.div
+          <Spring.a.div
             className={styles.sheet}
             style={{
               display,
@@ -97,9 +97,19 @@ export const Drawer = memo(
             {...bind()}
           >
             {children}
-          </a.div>
+          </Spring.a.div>
         </div>
       </Portal>
     );
   },
 );
+
+export const Drawer = memo((props: Props) => {
+  const { isLoaded } = useAnimationLibs();
+
+  if (!isLoaded) {
+    return null;
+  }
+
+  return <DrawerContent {...props} />;
+});
