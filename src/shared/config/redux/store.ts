@@ -1,9 +1,9 @@
 import { configureStore, type ReducersMapObject } from "@reduxjs/toolkit";
-import { counterReducer } from "entities/Counter/model/slice/counterSlice";
-import { userReducer } from "entities/User";
-import { $api } from "shared/api/api";
-import { scrollRestorationReducer } from "features/scrollRestoration";
-import { rtkApi } from "shared/api";
+import { counterReducer } from "@/entities/Counter/model/slice/counterSlice";
+import { userReducer } from "@/entities/User";
+import { $api } from "@/shared/api/api";
+import { scrollRestorationReducer } from "@/features/scrollRestoration";
+import { rtkApi } from "@/shared/api";
 import type {
   ReducerSchema,
   ReduxStoreWithManager,

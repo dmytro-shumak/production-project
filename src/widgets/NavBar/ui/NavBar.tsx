@@ -1,11 +1,11 @@
-import { getUserAuthData } from "entities/User";
-import { LoginModal } from "features/authByUsername";
-import { AvatarDropdown } from "features/avatarDropdown";
-import { NotificationButton } from "features/notificationButton";
 import { memo, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { RoutesPath } from "shared/config/routeConfig/routeConfig";
-import { useAppSelector, classNames } from "shared/lib";
+import { getUserAuthData } from "@/entities/User";
+import { LoginModal } from "@/features/authByUsername";
+import { AvatarDropdown } from "@/features/avatarDropdown";
+import { NotificationButton } from "@/features/notificationButton";
+import { RoutesPath } from "@/shared/config/routeConfig/routeConfig";
+import { useAppSelector, classNames } from "@/shared/lib";
 import {
   AppLink,
   AppLinkTheme,
@@ -14,7 +14,7 @@ import {
   HStack,
   Text,
   TextTheme,
-} from "shared/ui";
+} from "@/shared/ui";
 import styles from "./NavBar.module.css";
 
 interface Props {

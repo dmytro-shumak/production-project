@@ -1,6 +1,6 @@
 import { memo, type ReactNode } from "react";
 import { Link, type LinkProps } from "react-router-dom";
-import { classNames } from "shared/lib";
+import { classNames } from "@/shared/lib";
 import styles from "./AppLink.module.css";
 import { AppLinkTheme } from "./types";
 

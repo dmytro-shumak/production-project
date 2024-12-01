@@ -1,6 +1,6 @@
 import { memo, useCallback, type FC } from "react";
 import { useTranslation } from "react-i18next";
-import { ListBox } from "shared/ui";
+import { ListBox } from "@/shared/ui";
 import { Country } from "../../model/constants/country";
 
 interface Props {

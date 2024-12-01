@@ -1,8 +1,8 @@
-import { ArticleList } from "entities/Article";
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
-import { classNames } from "shared/lib";
-import { Text, TextSize, VStack } from "shared/ui";
+import { ArticleList } from "@/entities/Article";
+import { classNames } from "@/shared/lib";
+import { Text, TextSize, VStack } from "@/shared/ui";
 import { useArticleRecommendationListQuery } from "./api/articleRecommendationsApi";
 
 interface ArticleRecommendationsListProps {

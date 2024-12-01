@@ -5,9 +5,9 @@ import {
   useAsyncReducer,
   useInitialEffect,
   type ReducersList,
-} from "shared/lib";
-import { classNames } from "shared/lib";
-import { Page } from "widgets/Page";
+} from "@/shared/lib";
+import { classNames } from "@/shared/lib";
+import { Page } from "@/widgets/Page";
 import { ArticleInfiniteList } from "../../ui/ArticleInfiniteList/ArticleInfiniteList";
 import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import { initializeArticlePage } from "../../model/services/initializeArticlePage/initializeArticlePage";

@@ -4,7 +4,7 @@ import { useStore } from "react-redux";
 import type {
   ReducerSchemaKey,
   ReduxStoreWithManager,
-} from "shared/config/redux";
+} from "@/shared/config/redux";
 import { useAppDispatch } from "../redux/redux";
 
 export type ReducersList = {

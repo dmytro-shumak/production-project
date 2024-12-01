@@ -1,6 +1,6 @@
 import type { FC } from "react";
-import LoaderIcon from "shared/assets/icons/loader.svg";
-import { classNames } from "shared/lib";
+import LoaderIcon from "@/shared/assets/icons/loader.svg";
+import { classNames } from "@/shared/lib";
 import styles from "./Loader.module.css";
 
 interface Props {

@@ -1,3 +1,5 @@
+import { memo, useCallback, type ChangeEvent } from "react";
+import { useTranslation } from "react-i18next";
 import {
   ArticleSortField,
   ArticleSortSelector,
@@ -5,18 +7,16 @@ import {
   ArticleTypeTabs,
   ArticleView,
   ArticleViewSelector,
-} from "entities/Article";
-import { memo, useCallback, type ChangeEvent } from "react";
-import { useTranslation } from "react-i18next";
+} from "@/entities/Article";
 import {
   useAppDispatch,
   useAppSelector,
   useDebouncedCallback,
   classNames,
-} from "shared/lib";
-import type { SortOrder } from "shared/types";
-import { Card } from "shared/ui";
-import { Input } from "shared/ui/Input/Input";
+} from "@/shared/lib";
+import type { SortOrder } from "@/shared/types";
+import { Card } from "@/shared/ui";
+import { Input } from "@/shared/ui/Input/Input";
 import {
   getArticlePageOrder,
   getArticlePageSearch,

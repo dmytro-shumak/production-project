@@ -1,5 +1,5 @@
 import axios from "axios";
-import { LocalStorageKeys } from "shared/constants/localStorage";
+import { LocalStorageKeys } from "@/shared/constants/localStorage";
 
 // TODO: add env variables
 export const baseUrl = __DEV__

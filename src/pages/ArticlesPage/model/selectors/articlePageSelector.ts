@@ -1,5 +1,5 @@
-import { ArticleSortField, ArticleType, ArticleView } from "entities/Article";
-import type { RootState } from "shared/config/redux";
+import { ArticleSortField, ArticleType, ArticleView } from "@/entities/Article";
+import type { RootState } from "@/shared/config/redux";
 
 export const getArticlePageIsLoading = (state: RootState) =>
   state.articlePage?.isLoading;

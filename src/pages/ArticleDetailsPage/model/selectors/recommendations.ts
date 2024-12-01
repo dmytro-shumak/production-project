@@ -1,4 +1,4 @@
-import type { RootState } from "shared/config/redux";
+import type { RootState } from "@/shared/config/redux";
 
 export const getArticleCommentIsLoading = (state: RootState) =>
   state.articleDetailsPage?.recommendations?.isLoading;

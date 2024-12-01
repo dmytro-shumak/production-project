@@ -1,7 +1,7 @@
 import type { UnknownAction } from "@reduxjs/toolkit";
-import { Country } from "entities/Country";
-import { Currency } from "entities/Currency";
-import type { DeepPartial } from "shared/lib";
+import { Country } from "@/entities/Country";
+import { Currency } from "@/entities/Currency";
+import type { DeepPartial } from "@/shared/lib";
 import { updateProfileData } from "../services/updateProfileData/updateProfileData";
 import { type ProfileSchema } from "../types/profile";
 import { profileActions, profileReducer } from "./profileSlice";

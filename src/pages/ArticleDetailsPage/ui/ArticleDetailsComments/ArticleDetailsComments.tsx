@@ -1,15 +1,15 @@
-import { getArticleDetailsData } from "entities/Article";
-import { CommentList } from "entities/Comment";
-import { getUserAuthData } from "entities/User";
-import { AddCommentForm, sendComment } from "features/addCommentForm";
 import { memo, useCallback } from "react";
+import { getArticleDetailsData } from "@/entities/Article";
+import { CommentList } from "@/entities/Comment";
+import { getUserAuthData } from "@/entities/User";
+import { AddCommentForm, sendComment } from "@/features/addCommentForm";
 import {
   useAppDispatch,
   useAppSelector,
   useInitialEffect,
   classNames,
-} from "shared/lib";
-import { VStack } from "shared/ui";
+} from "@/shared/lib";
+import { VStack } from "@/shared/ui";
 import { getArticleCommentIsLoading } from "../../model/selectors/comments";
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { getArticleComments } from "../../model/slices/articleDetailsComments";

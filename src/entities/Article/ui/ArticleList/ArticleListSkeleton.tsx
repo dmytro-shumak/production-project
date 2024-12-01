@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { Card, Skeleton } from "shared/ui";
+import { Card, Skeleton } from "@/shared/ui";
 import styles from "./ArticleList.module.css";
 import { ArticleView } from "../../model/types/article";
 

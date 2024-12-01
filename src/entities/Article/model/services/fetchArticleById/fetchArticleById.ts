@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import type { ThunkConfig, ThunkExtraArg } from "shared/config/redux";
 import { AxiosError } from "axios";
+import type { ThunkConfig, ThunkExtraArg } from "@/shared/config/redux";
 import type { Article } from "../../types/article";
 
 export const fetchArticleById = createAsyncThunk<Article, string, ThunkConfig>(

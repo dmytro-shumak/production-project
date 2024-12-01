@@ -2,9 +2,9 @@
 import type { ReducersMapObject } from "@reduxjs/toolkit";
 import type { FC, ReactNode } from "react";
 import { Provider } from "react-redux";
-import type { ReducerSchema } from "shared/config/redux";
-import { createReduxStore } from "shared/config/redux/store";
-import type { DeepPartial } from "shared/lib";
+import type { ReducerSchema } from "@/shared/config/redux";
+import { createReduxStore } from "@/shared/config/redux/store";
+import type { DeepPartial } from "@/shared/lib";
 
 interface Props {
   children?: ReactNode;

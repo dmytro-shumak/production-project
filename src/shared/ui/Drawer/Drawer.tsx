@@ -1,7 +1,7 @@
 import { memo, useCallback, useEffect, type ReactNode } from "react";
-import { classNames, useModal } from "shared/lib";
-import { useTheme } from "app/providers/theme";
-import { useAnimationLibs } from "shared/lib/components";
+import { classNames, useModal } from "@/shared/lib";
+import { useTheme } from "@/app/providers/theme";
+import { useAnimationLibs } from "@/shared/lib/components";
 import { Overlay } from "../Overlay";
 import { Portal } from "../Portal/Portal";
 import styles from "./Drawer.module.css";

@@ -4,8 +4,8 @@ import {
   PopoverPanel,
 } from "@headlessui/react";
 import { memo, type ReactNode } from "react";
-import { classNames } from "shared/lib";
 import type { AnchorProps } from "@headlessui/react/dist/internal/floating";
+import { classNames } from "@/shared/lib";
 import styles from "./Popover.module.css";
 import popupStyles from "../../styles/popup.module.css";
 

@@ -1,17 +1,17 @@
+import { useRef, type ReactNode, type UIEvent } from "react";
+import { useLocation } from "react-router-dom";
 import {
   getScrollRestorationByPath,
   scrollRestorationActions,
-} from "features/scrollRestoration";
-import { useRef, type ReactNode, type UIEvent } from "react";
-import { useLocation } from "react-router-dom";
+} from "@/features/scrollRestoration";
 import {
   useAppDispatch,
   useAppSelector,
   useInfiniteScroll,
   useInitialEffect,
   classNames,
-} from "shared/lib";
-import { useThrottle } from "shared/lib/hooks/useThrottle/useThrottle";
+} from "@/shared/lib";
+import { useThrottle } from "@/shared/lib/hooks/useThrottle/useThrottle";
 import styles from "./Page.module.css";
 
 interface Props {

@@ -1,7 +1,7 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
-import { classNames } from "shared/lib";
 import type { ReactNode } from "react";
 import type { AnchorProps } from "@headlessui/react/dist/internal/floating";
+import { classNames } from "@/shared/lib";
 import styles from "./Dropdown.module.css";
 import popupStyles from "../../styles/popup.module.css";
 import { AppLink } from "../../../AppLink";

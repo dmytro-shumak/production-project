@@ -1,8 +1,8 @@
 import { memo, type HTMLAttributeAnchorTarget, type LegacyRef } from "react";
-import { classNames } from "shared/lib";
-import { Text, TextSize } from "shared/ui";
 import { List, type ListRowProps, WindowScroller } from "react-virtualized";
 import { useTranslation } from "react-i18next";
+import { classNames } from "@/shared/lib";
+import { Text, TextSize } from "@/shared/ui";
 import { ArticleView, type Article } from "../../model/types/article";
 import styles from "./ArticleList.module.css";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";

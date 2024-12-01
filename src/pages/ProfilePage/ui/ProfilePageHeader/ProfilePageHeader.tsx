@@ -1,13 +1,13 @@
+import { useCallback, type FC } from "react";
+import { useTranslation } from "react-i18next";
 import {
   getProfileReadOnly,
   profileActions,
   updateProfileData,
-} from "entities/Profile";
-import { useCallback, type FC } from "react";
-import { useTranslation } from "react-i18next";
-import { useAppDispatch, useAppSelector, classNames } from "shared/lib";
-import { Button, ButtonTheme, HStack } from "shared/ui";
-import { Text } from "shared/ui/Text/Text";
+} from "@/entities/Profile";
+import { useAppDispatch, useAppSelector, classNames } from "@/shared/lib";
+import { Button, ButtonTheme, HStack } from "@/shared/ui";
+import { Text } from "@/shared/ui/Text/Text";
 import { canEditProfileSelector } from "../../model/selectors/canEditProfile/canEditProfile";
 
 interface Props {

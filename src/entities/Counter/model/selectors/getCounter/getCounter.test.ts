@@ -1,5 +1,5 @@
-import type { RootState } from "shared/config/redux/store";
-import { defaultState } from "shared/lib";
+import type { RootState } from "@/shared/config/redux/store";
+import { defaultState } from "@/shared/lib";
 import { getCounter } from "./getCounter";
 
 describe("getCounter", () => {

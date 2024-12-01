@@ -1,14 +1,14 @@
 import { memo, useCallback, useEffect, type FC } from "react";
 import { useTranslation } from "react-i18next";
-import CalendarIcon from "shared/assets/icons/calendar.svg";
-import EyeIcon from "shared/assets/icons/eye.svg";
+import CalendarIcon from "@/shared/assets/icons/calendar.svg";
+import EyeIcon from "@/shared/assets/icons/eye.svg";
 import {
   useAppDispatch,
   useAppSelector,
   useAsyncReducer,
   type ReducersList,
-} from "shared/lib";
-import { classNames } from "shared/lib";
+} from "@/shared/lib";
+import { classNames } from "@/shared/lib";
 import {
   Avatar,
   HStack,
@@ -18,7 +18,7 @@ import {
   TextAlign,
   TextSize,
   TextTheme,
-} from "shared/ui";
+} from "@/shared/ui";
 import {
   getArticleDetailsData,
   getArticleDetailsError,

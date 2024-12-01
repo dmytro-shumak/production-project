@@ -8,10 +8,10 @@ import {
   ArticleType,
   ArticleView,
   type Article,
-} from "entities/Article";
-import type { ReducerSchema } from "shared/config/redux";
-import { LocalStorageKeys } from "shared/constants/localStorage";
-import type { SortOrder } from "shared/types";
+} from "@/entities/Article";
+import type { ReducerSchema } from "@/shared/config/redux";
+import { LocalStorageKeys } from "@/shared/constants/localStorage";
+import type { SortOrder } from "@/shared/types";
 import { fetchArticleList } from "../services/fetchArticleList/fetchArticleList";
 import type { ArticlePageSchema } from "../types/articlePageSchema";
 

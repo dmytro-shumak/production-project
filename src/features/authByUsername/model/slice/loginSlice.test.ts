@@ -1,4 +1,4 @@
-import type { DeepPartial } from "shared/lib";
+import type { DeepPartial } from "@/shared/lib";
 import type { LoginSchema } from "../types";
 import { loginReducer, setPassword, setUsername } from "./loginSlice";
 

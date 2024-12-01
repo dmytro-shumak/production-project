@@ -1,5 +1,5 @@
 import { memo, type FunctionComponent, type SVGAttributes } from "react";
-import { classNames } from "shared/lib";
+import { classNames } from "@/shared/lib";
 import styles from "./Icon.module.css";
 
 interface Props {

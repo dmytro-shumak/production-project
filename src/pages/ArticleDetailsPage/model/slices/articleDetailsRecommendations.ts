@@ -1,6 +1,6 @@
 import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
-import type { Article } from "entities/Article";
-import type { ReducerSchema } from "shared/config/redux";
+import type { Article } from "@/entities/Article";
+import type { ReducerSchema } from "@/shared/config/redux";
 import { fetchArticleRecommendations } from "../services/fetchArticleRecommendations/fetchArticleRecommendations";
 import type { ArticleDetailsRecommendationsSchema } from "../types/ArticleDetailsRecommendationsSchema";
 

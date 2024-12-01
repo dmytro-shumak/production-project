@@ -3,7 +3,7 @@ import type {
   ReducerSchema,
   ThunkConfig,
   ThunkExtraArg,
-} from "shared/config/redux";
+} from "@/shared/config/redux";
 import { getProfileForm } from "../../selectors/getProfileForm/getProfileForm";
 import { type Profile } from "../../types/profile";
 import { validateProfileData } from "../validateProfileData/validateProfileData";

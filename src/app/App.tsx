@@ -1,11 +1,11 @@
-import { useTheme } from "app/providers/theme";
-import { AppRouter } from "app/router";
-import { getUserInitiated, initAuthData } from "entities/User";
 import { Suspense, useEffect } from "react";
-import { useAppDispatch, useAppSelector, classNames } from "shared/lib";
-import { Loader } from "shared/ui/Loader";
-import { NavBar } from "widgets/NavBar";
-import { Sidebar } from "widgets/Sidebar";
+import { useTheme } from "@/app/providers/theme";
+import { AppRouter } from "@/app/router";
+import { getUserInitiated, initAuthData } from "@/entities/User";
+import { useAppDispatch, useAppSelector, classNames } from "@/shared/lib";
+import { Loader } from "@/shared/ui/Loader";
+import { NavBar } from "@/widgets/NavBar";
+import { Sidebar } from "@/widgets/Sidebar";
 
 const App = () => {
   const { theme } = useTheme();

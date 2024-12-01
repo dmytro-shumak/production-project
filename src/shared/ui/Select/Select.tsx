@@ -1,6 +1,6 @@
 import { useCallback, type ChangeEvent } from "react";
-import { classNames } from "shared/lib";
-import { typedMemo } from "shared/types";
+import { classNames } from "@/shared/lib";
+import { typedMemo } from "@/shared/types";
 import styles from "./Select.module.css";
 
 export interface SelectOption<T extends string> {

@@ -1,9 +1,9 @@
-import { Theme, useTheme } from "app/providers/theme";
 import { memo, useState, type FC } from "react";
-import { useAppSelector, classNames } from "shared/lib";
-import { Button, ButtonSize, VStack } from "shared/ui";
-import { LangSwitcher } from "widgets/LangSwitcher";
-import { ThemeSwitcher } from "widgets/ThemeSwitcher";
+import { Theme, useTheme } from "@/app/providers/theme";
+import { useAppSelector, classNames } from "@/shared/lib";
+import { Button, ButtonSize, VStack } from "@/shared/ui";
+import { LangSwitcher } from "@/widgets/LangSwitcher";
+import { ThemeSwitcher } from "@/widgets/ThemeSwitcher";
 import { SidebarItem } from "./SidebarItem/SidebarItem";
 import { getSideBarItems } from "../model/selectors/getSidebarItems";
 import styles from "./Sidebar.module.css";

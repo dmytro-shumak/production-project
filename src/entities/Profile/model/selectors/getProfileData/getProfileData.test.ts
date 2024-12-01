@@ -1,7 +1,7 @@
-import { Country } from "entities/Country";
-import { Currency } from "entities/Currency";
-import type { ReducerSchema } from "shared/config/redux";
-import type { DeepPartial } from "shared/lib";
+import { Country } from "@/entities/Country";
+import { Currency } from "@/entities/Currency";
+import type { ReducerSchema } from "@/shared/config/redux";
+import type { DeepPartial } from "@/shared/lib";
 import { getProfileData } from "./getProfileData";
 
 describe("get profile data", () => {

@@ -1,8 +1,8 @@
 import { memo, type HTMLAttributeAnchorTarget } from "react";
 import { useTranslation } from "react-i18next";
-import EyeIcon from "shared/assets/icons/eye.svg";
-import { RoutesPath } from "shared/config/routeConfig/routeConfig";
-import { classNames } from "shared/lib";
+import EyeIcon from "@/shared/assets/icons/eye.svg";
+import { RoutesPath } from "@/shared/config/routeConfig/routeConfig";
+import { classNames } from "@/shared/lib";
 import {
   AppLink,
   Avatar,
@@ -11,7 +11,7 @@ import {
   Card,
   Icon,
   Text,
-} from "shared/ui";
+} from "@/shared/ui";
 import { ArticleBlockType } from "../../model/constants/article";
 import {
   ArticleView,

@@ -1,12 +1,12 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
-import { ArticleType, type Article } from "entities/Article";
+import { ArticleType, type Article } from "@/entities/Article";
 import type {
   ReducerSchema,
   ThunkConfig,
   ThunkExtraArg,
-} from "shared/config/redux";
-import { addQueryParams } from "shared/lib";
+} from "@/shared/config/redux";
+import { addQueryParams } from "@/shared/lib";
 import {
   getArticlePageLimit,
   getArticlePageNum,

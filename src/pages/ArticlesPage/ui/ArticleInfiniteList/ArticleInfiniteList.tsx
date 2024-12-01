@@ -1,6 +1,6 @@
-import { ArticleList } from "entities/Article";
 import { memo } from "react";
-import { useAppSelector, classNames } from "shared/lib";
+import { ArticleList } from "@/entities/Article";
+import { useAppSelector, classNames } from "@/shared/lib";
 import {
   getArticlePageIsLoading,
   getArticlePageView,

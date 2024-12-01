@@ -1,5 +1,5 @@
 import { createSelector } from "@reduxjs/toolkit";
-import type { ReducerSchema } from "shared/config/redux";
+import type { ReducerSchema } from "@/shared/config/redux";
 import { UserRole } from "../../constants/user";
 
 export const getUserRoles = (state: ReducerSchema) =>

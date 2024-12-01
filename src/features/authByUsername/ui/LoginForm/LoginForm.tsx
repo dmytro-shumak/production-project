@@ -5,10 +5,10 @@ import {
   useAppSelector,
   useAsyncReducer,
   classNames,
-} from "shared/lib";
-import { Button, ButtonTheme } from "shared/ui";
-import { Input } from "shared/ui/Input/Input";
-import { Text, TextTheme } from "shared/ui/Text/Text";
+} from "@/shared/lib";
+import { Button, ButtonTheme } from "@/shared/ui";
+import { Input } from "@/shared/ui/Input/Input";
+import { Text, TextTheme } from "@/shared/ui/Text/Text";
 import { getLoginState } from "../../model/selectors/getLoginState/getLoginState";
 import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
 import {

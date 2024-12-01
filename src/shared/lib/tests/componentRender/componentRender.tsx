@@ -1,11 +1,11 @@
 import type { ReducersMapObject } from "@reduxjs/toolkit";
 import { render } from "@testing-library/react";
-import { StoreProvider } from "app/providers/StoreProvider";
 import type { ReactElement } from "react";
 import { I18nextProvider } from "react-i18next";
 import { MemoryRouter } from "react-router-dom";
-import i18nTest from "shared/config/i18n/18nTest";
-import type { ReducerSchema } from "shared/config/redux";
+import { StoreProvider } from "@/app/providers/StoreProvider";
+import i18nTest from "@/shared/config/i18n/18nTest";
+import type { ReducerSchema } from "@/shared/config/redux";
 import type { DeepPartial } from "../../types";
 
 export interface ComponentRenderOptions {
