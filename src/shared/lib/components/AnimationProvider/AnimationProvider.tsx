@@ -25,7 +25,7 @@ const getAsyncAnimationModules = () => {
   ]);
 };
 
-export const AnimationProvier = ({ children }: { children: ReactNode }) => {
+export const AnimationProvider = ({ children }: { children: ReactNode }) => {
   const SpringRef = useRef<SpringType>();
   const GestureRef = useRef<GestureType>();
   const [isLoaded, setIsLoaded] = useState(false);

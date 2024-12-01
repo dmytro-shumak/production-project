@@ -1,12 +1,11 @@
 import { memo, useCallback, useState } from "react";
 import { BrowserView, MobileView } from "react-device-detect";
-import { classNames } from "@/shared/lib";
 import NotificationIcon from "@/shared/assets/icons/notification.svg";
+import { classNames } from "@/shared/lib";
 
-import { Button, ButtonTheme, Icon, Popover } from "@/shared/ui";
 import { NotificationList } from "@/entities/Notifications";
+import { Button, ButtonTheme, Icon, Popover } from "@/shared/ui";
 import { Drawer } from "@/shared/ui/Drawer";
-import { AnimationProvier } from "@/shared/lib/components";
 import styles from "./NotificationButton.module.css";
 
 interface Props {
@@ -45,11 +44,9 @@ export const NotificationButton = memo(({ className }: Props) => {
 
       <MobileView>
         {button}
-        <AnimationProvier>
-          <Drawer isOpen={isOpen} onClose={handleCloseDrawer}>
-            <NotificationList />
-          </Drawer>
-        </AnimationProvier>
+        <Drawer isOpen={isOpen} onClose={handleCloseDrawer}>
+          <NotificationList />
+        </Drawer>
       </MobileView>
     </div>
   );
