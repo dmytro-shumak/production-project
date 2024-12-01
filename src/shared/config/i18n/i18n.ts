@@ -14,7 +14,7 @@ const resources = ns.reduce((acc: Resource, n) => {
     if (!acc[lng]) acc[lng] = {};
     acc[lng] = {
       ...acc[lng],
-      [n]: require(`../../../../public/locales/${lng}/${n}.json`),
+      [n]: import(`../../../../public/locales/${lng}/${n}.json`),
     };
   });
 

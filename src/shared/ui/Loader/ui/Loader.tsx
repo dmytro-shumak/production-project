@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import LoaderIcon from "@/shared/assets/icons/loader.svg";
+import LoaderIcon from "@/shared/assets/icons/loader.svg?react";
 import { classNames } from "@/shared/lib";
 import styles from "./Loader.module.css";
 

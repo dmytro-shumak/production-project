@@ -1,7 +1,7 @@
 import { memo, useCallback, useEffect, type FC } from "react";
 import { useTranslation } from "react-i18next";
-import CalendarIcon from "@/shared/assets/icons/calendar.svg";
-import EyeIcon from "@/shared/assets/icons/eye.svg";
+import CalendarIcon from "@/shared/assets/icons/calendar.svg?react";
+import EyeIcon from "@/shared/assets/icons/eye.svg?react";
 import {
   useAppDispatch,
   useAppSelector,
