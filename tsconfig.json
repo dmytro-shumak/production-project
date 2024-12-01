@@ -18,7 +18,7 @@
     "isolatedModules": true,
     "types": ["node", "jest"],
     "paths": {
-      "*": ["./src/*"]
+      "@/*": ["./src/*"]
     }
   },
   "ts-node": {
