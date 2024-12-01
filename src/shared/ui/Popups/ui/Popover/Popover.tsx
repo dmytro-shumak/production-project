@@ -21,7 +21,9 @@ export const Popover = memo(
   ({ button, className, menuClassName, children, anchor }: Props) => {
     return (
       <HPopover className={classNames(styles.popover, {}, [className])}>
-        <PopoverButton className={popupStyles.btn}>{button}</PopoverButton>
+        <PopoverButton as="div" className={popupStyles.btn}>
+          {button}
+        </PopoverButton>
 
         <PopoverPanel
           className={classNames(styles.menu, {}, [menuClassName])}
