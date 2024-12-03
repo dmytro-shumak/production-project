@@ -13,3 +13,4 @@ export * from "./Text/Text";
 export * from "./Tabs/Tabs";
 export * from "./Stack";
 export * from "./Popups";
+export * from "./StarRating";

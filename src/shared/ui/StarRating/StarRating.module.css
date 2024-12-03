@@ -1,0 +1,8 @@
+.starIcon path {
+  fill: none;
+  cursor: pointer;
+}
+
+.active path {
+  fill: var(--primary-color);
+}
