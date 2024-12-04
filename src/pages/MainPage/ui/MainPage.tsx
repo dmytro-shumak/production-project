@@ -2,7 +2,7 @@ import { type FC } from "react";
 import { useTranslation } from "react-i18next";
 import { Counter } from "@/entities/Counter";
 import { Page } from "@/widgets/Page";
-import { StarRating } from "@/shared/ui";
+import { RatingCard } from "@/entities/Rating";
 
 const MainPage: FC = () => {
   const { t } = useTranslation();
@@ -10,7 +10,11 @@ const MainPage: FC = () => {
   return (
     <Page>
       <h1>{t("MainPage")}</h1>
-      <StarRating />
+      <RatingCard
+        title="Do you like the article?"
+        feedbackTitle="feedback title"
+        hasFeedback
+      />
       <Counter />
     </Page>
   );

@@ -7,12 +7,19 @@ import styles from "./Modal.module.css";
 
 interface Props {
   className?: string;
+  contentClassName?: string;
   children?: ReactNode;
   isOpen: boolean;
   onClose?: () => void;
 }
 
-export const Modal: FC<Props> = ({ className, children, isOpen, onClose }) => {
+export const Modal: FC<Props> = ({
+  className,
+  contentClassName,
+  children,
+  isOpen,
+  onClose,
+}) => {
   const { contentClick } = useModal({ isOpen, onClose });
 
   return (
@@ -23,7 +30,10 @@ export const Modal: FC<Props> = ({ className, children, isOpen, onClose }) => {
         ])}
       >
         <Overlay onClick={onClose}>
-          <div className={styles.content} onClick={contentClick}>
+          <div
+            className={classNames(styles.content, {}, [contentClassName])}
+            onClick={contentClick}
+          >
             {children}
           </div>
         </Overlay>
