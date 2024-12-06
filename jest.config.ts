@@ -19,7 +19,8 @@ const config: Config = {
 
   moduleNameMapper: {
     "\\.(css|less)$": "identity-obj-proxy",
-    "\\.svg$": path.resolve(__dirname, "config/jest/svgTransform.tsx"),
+    "\\.svg\\?react$": path.resolve(__dirname, "config/jest/svgTransform.tsx"),
+    "^@/(.*)$": "<rootDir>/src/$1",
   },
 
   // An array of file extensions your modules use
@@ -39,18 +40,18 @@ const config: Config = {
     __PROJECT: "jest",
   },
 
-  reporters: [
-    "default",
-    [
-      "jest-html-reporters",
-      {
-        publicPath: "<rootDir>/reports/unit",
-        filename: "report.html",
-        openReport: true,
-        inlineSource: true,
-      },
-    ],
-  ],
+  // reporters: [
+  //   "default",
+  //   [
+  //     "jest-html-reporters",
+  //     {
+  //       publicPath: "<rootDir>/reports/unit",
+  //       filename: "report.html",
+  //       openReport: true,
+  //       inlineSource: true,
+  //     },
+  //   ],
+  // ],
 
   // The root directory that Jest should scan for tests and modules within
   // rootDir: '../../src',
