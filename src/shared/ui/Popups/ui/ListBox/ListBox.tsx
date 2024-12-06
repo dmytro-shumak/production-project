@@ -46,7 +46,7 @@ export const ListBox = memo(
           onChange={onChange}
           className={classNames(styles.listBox, {}, [className])}
         >
-          <ListboxButton disabled={readOnly}>
+          <ListboxButton disabled={readOnly} as="div">
             <Button disabled={readOnly}>{value ?? defaultValue}</Button>
           </ListboxButton>
           <ListboxOptions
