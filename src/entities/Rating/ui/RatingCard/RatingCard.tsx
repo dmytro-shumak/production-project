@@ -1,8 +1,6 @@
-import { Fragment, memo, useCallback, useState, type ChangeEvent } from "react";
-import { useTranslation } from "react-i18next";
+import { memo, useCallback, useState, type ChangeEvent } from "react";
 import { BrowserView, MobileView } from "react-device-detect";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import styles from "./RatingCard.module.css";
+import { useTranslation } from "react-i18next";
 import {
   Button,
   ButtonTheme,
@@ -12,15 +10,17 @@ import {
   Text,
   VStack,
 } from "@/shared/ui";
-import { Modal } from "@/shared/ui/Modal/Modal";
-import { Input } from "@/shared/ui/Input/Input";
 import { Drawer } from "@/shared/ui/Drawer";
+import { Input } from "@/shared/ui/Input/Input";
+import { Modal } from "@/shared/ui/Modal/Modal";
+import styles from "./RatingCard.module.css";
 
 interface Props {
   className?: string;
   title?: string;
   feedbackTitle?: string;
   hasFeedback?: boolean;
+  rate?: number;
   onCancel?: (starCount: number) => void;
   onAccept?: (starCount: number, feedback?: string) => void;
 }
@@ -32,11 +32,12 @@ export const RatingCard = memo(
     hasFeedback,
     onAccept,
     onCancel,
+    rate = 0,
     title,
   }: Props) => {
     const { t } = useTranslation();
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [starsCount, setStarsCount] = useState(0);
+    const [starsCount, setStarsCount] = useState(rate);
     const [feedback, setFeedback] = useState("");
 
     const handleSelectStars = useCallback(
@@ -80,10 +81,14 @@ export const RatingCard = memo(
     );
 
     return (
-      <Card className={classNames("", {}, [className])}>
+      <Card className={className}>
         <VStack align="center" gap={8}>
           <Text title={title} />
-          <StarRating size={40} onSelect={handleSelectStars} />
+          <StarRating
+            size={40}
+            onSelect={handleSelectStars}
+            selectedStars={starsCount}
+          />
         </VStack>
         <BrowserView>
           <Modal isOpen={isModalOpen} contentClassName={styles.modalContent}>

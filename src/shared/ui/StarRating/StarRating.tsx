@@ -15,7 +15,7 @@ const stars = [1, 2, 3, 4, 5];
 
 export const StarRating = memo(
   ({ className, onSelect, selectedStars = 0, size = 30 }: Props) => {
-    const [hoveredStars, setHoveredStars] = useState<number>(0);
+    const [hoveredStars, setHoveredStars] = useState<number>(selectedStars);
     const [isSelected, setIsSelected] = useState(Boolean(selectedStars));
 
     const handleMouseEnter = (starsCount: number) => () => {

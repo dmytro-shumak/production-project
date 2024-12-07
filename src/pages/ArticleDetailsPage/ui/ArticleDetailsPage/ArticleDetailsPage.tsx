@@ -11,6 +11,7 @@ import { articleDetailsPageReducer } from "../../model/slices";
 import { ArticleDetailsComments } from "../../ui/ArticleDetailsComments/ArticleDetailsComments";
 import styles from "./ArticleDetailsPage.module.css";
 import { ArticleDetailsPageHeader } from "./ArticleDetailsPageHeader/ArticleDetailsPageHeader";
+import { ArticleRating } from "@/features/articleRating";
 
 interface Props {
   className?: string;
@@ -34,6 +35,7 @@ const ArticleDetailsPage: FC<Props> = ({ className }) => {
     <Page className={classNames(styles.articleDetailsPage, {}, [className])}>
       <ArticleDetailsPageHeader />
       <ArticleDetails id={id} />
+      <ArticleRating articleId={id} />
       <VStack gap={16}>
         <Text
           title={t("Recommendations")}
