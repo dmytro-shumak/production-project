@@ -22,6 +22,7 @@ import { Text, TextTheme } from "@/shared/ui/Text/Text";
 import { Page } from "@/widgets/Page";
 import { VStack } from "@/shared/ui";
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
+import { ProfileRating } from "@/features/profileRating";
 
 const initialReducer: ReducersList = {
   profile: profileReducer,
@@ -60,6 +61,10 @@ const ProfilePage: FC<Props> = ({ className }) => {
     }
   });
 
+  if (!id) {
+    return null;
+  }
+
   return (
     <Page className={classNames("", {}, [className])}>
       <VStack gap={16} align="stretch">
@@ -78,6 +83,7 @@ const ProfilePage: FC<Props> = ({ className }) => {
           error={error}
           readOnly={readOnly}
         />
+        <ProfileRating profileId={id} />
       </VStack>
     </Page>
   );

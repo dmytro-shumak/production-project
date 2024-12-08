@@ -902,22 +902,29 @@
       "userId": "1",
       "rate": 4,
       "id": "Z_TBxFb"
+    },
+    {
+      "articleId": "5",
+      "userId": "2",
+      "rate": 4,
+      "feedback": "",
+      "id": "vTiv8A7"
     }
   ],
   "profile-ratings": [
     {
-      "id": "1",
-      "rate": 4,
-      "feedback": "Хорошая статья",
+      "profileId": "1",
       "userId": "1",
-      "profileId": "1"
+      "rate": 3,
+      "feedback": "bhj",
+      "id": 1
     },
     {
-      "id": "2",
-      "rate": 4,
-      "feedback": "Хорошая статья",
-      "userId": "1",
-      "profileId": "2"
+      "profileId": "1",
+      "userId": "2",
+      "rate": 2,
+      "feedback": "",
+      "id": 2
     }
   ]
 }
