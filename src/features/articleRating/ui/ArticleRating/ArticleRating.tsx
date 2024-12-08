@@ -1,7 +1,7 @@
-import { memo } from "react";
+import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { RatingCard } from "@/entities/Rating";
-import { useGetArticleRating } from "../../api/articleRating";
+import { useGetArticleRating, useRateArticle } from "../../api/articleRating";
 import { useAppSelector } from "@/shared/lib";
 import { getUserAuthData } from "@/entities/User";
 import { Skeleton } from "@/shared/ui";
@@ -10,8 +10,7 @@ interface Props {
   className?: string;
   articleId: string;
 }
-
-export const ArticleRating = memo(({ className, articleId }: Props) => {
+const ArticleRating = memo(({ className, articleId }: Props) => {
   const { t } = useTranslation();
 
   const auth = useAppSelector(getUserAuthData);
@@ -21,6 +20,24 @@ export const ArticleRating = memo(({ className, articleId }: Props) => {
     userId: auth?.id ?? "",
   });
 
+  const [rateRatingMutation] = useRateArticle();
+
+  const handleArticleMutation = useCallback(
+    (starsCount: number, feedback?: string) => {
+      try {
+        rateRatingMutation({
+          articleId,
+          userId: auth?.id ?? "",
+          rate: starsCount,
+          feedback,
+        });
+      } catch (error) {
+        console.error(error);
+      }
+    },
+    [articleId, auth?.id, rateRatingMutation],
+  );
+
   if (isLoading) {
     return <Skeleton width="100%" height={108} />;
   }
@@ -29,6 +46,8 @@ export const ArticleRating = memo(({ className, articleId }: Props) => {
 
   return (
     <RatingCard
+      onAccept={handleArticleMutation}
+      onCancel={handleArticleMutation}
       rate={rating?.rate}
       className={className}
       title={t("RateArticle")}
@@ -37,3 +56,5 @@ export const ArticleRating = memo(({ className, articleId }: Props) => {
     />
   );
 });
+
+export default ArticleRating;
