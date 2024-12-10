@@ -74,6 +74,7 @@ export const LoginForm: FC<Props> = ({ className, isOpen, onSuccess }) => {
       />
       <Input
         label="Password"
+        type="password"
         onChange={handleChangePassword}
         value={password}
       />
