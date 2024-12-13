@@ -1,10 +1,16 @@
 import { useCallback, type ChangeEvent, type FC } from "react";
 import { useTranslation } from "react-i18next";
 import { useAppDispatch, classNames } from "@/shared/lib";
-import { Avatar, HStack, VStack } from "@/shared/ui";
+import {
+  Avatar,
+  HStack,
+  VStack,
+  Text,
+  TextAlign,
+  TextTheme,
+} from "@/shared/ui";
 import { Input } from "@/shared/ui/Input/Input";
 import { Loader } from "@/shared/ui/Loader";
-import { Text, TextAlign, TextTheme } from "@/shared/ui/Text/Text";
 import { Currency, CurrencySelect } from "@/entities/Currency";
 import { Country, CountrySelect } from "@/entities/Country";
 import { profileActions } from "../../model/slice/profileSlice";

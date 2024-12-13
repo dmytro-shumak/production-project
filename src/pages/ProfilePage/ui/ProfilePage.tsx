@@ -18,9 +18,8 @@ import {
   type ReducersList,
 } from "@/shared/lib/hooks/useAsyncReducer/useAsyncReducer";
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { Text, TextTheme } from "@/shared/ui/Text/Text";
+import { Text, TextTheme, VStack } from "@/shared/ui";
 import { Page } from "@/widgets/Page";
-import { VStack } from "@/shared/ui";
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 import { ProfileRating } from "@/features/profileRating";
 

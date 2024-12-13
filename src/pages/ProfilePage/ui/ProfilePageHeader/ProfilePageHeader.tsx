@@ -6,8 +6,7 @@ import {
   updateProfileData,
 } from "@/entities/Profile";
 import { useAppDispatch, useAppSelector, classNames } from "@/shared/lib";
-import { Button, ButtonTheme, HStack } from "@/shared/ui";
-import { Text } from "@/shared/ui/Text/Text";
+import { Button, ButtonTheme, HStack, Text } from "@/shared/ui";
 import { canEditProfileSelector } from "../../model/selectors/canEditProfile/canEditProfile";
 
 interface Props {
