@@ -10,8 +10,8 @@ import {
   useInfiniteScroll,
   useInitialEffect,
   classNames,
+  useThrottle,
 } from "@/shared/lib";
-import { useThrottle } from "@/shared/lib/hooks/useThrottle/useThrottle";
 import styles from "./Page.module.css";
 
 interface Props {

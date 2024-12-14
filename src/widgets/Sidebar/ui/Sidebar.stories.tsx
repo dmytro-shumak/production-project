@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Theme } from "@/app/providers/theme";
-import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator";
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator";
+import { StoreDecorator, ThemeDecorator } from "@/shared/config";
 import { Sidebar } from "./Sidebar";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export

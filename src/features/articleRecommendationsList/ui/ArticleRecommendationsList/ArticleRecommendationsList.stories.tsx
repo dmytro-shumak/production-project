@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Theme } from "@/app/providers/theme";
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator";
+import { ThemeDecorator } from "@/shared/config";
 import { ArticleType, type Article } from "@/entities/Article";
 import { baseUrl } from "@/shared/api";
 import { ArticleRecommendationsList } from "./ArticleRecommendationsList";

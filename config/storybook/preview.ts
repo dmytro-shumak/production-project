@@ -2,7 +2,7 @@ import type { Preview } from "@storybook/react";
 import { store, type ReducerSchema } from "@/shared/config/redux";
 import { RouterDecorator } from "@/shared/config/storybook/RouterDecorator";
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator";
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator";
+import { ThemeDecorator } from "@/shared/config";
 import { Theme } from "@/app/providers/theme";
 import { withI18nextDecorator } from "@/shared/config/storybook/withI18nextDecorator";
 

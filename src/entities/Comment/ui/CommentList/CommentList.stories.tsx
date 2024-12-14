@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator";
+import { ThemeDecorator } from "@/shared/config";
 import { Theme } from "@/app/providers/theme";
 import { CommentList } from "./CommentList";
 

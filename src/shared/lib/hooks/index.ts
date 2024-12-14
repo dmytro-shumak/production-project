@@ -11,3 +11,4 @@ export { useDebounce } from "./useDebounce/useDebounce";
 export { useDebouncedCallback } from "./useDebounceCallback/useDebounceCallback";
 export { useUpdateEffect } from "./useUpdateEffect/useUpdateEffect";
 export * from "./useModal/useModal";
+export * from "./useThrottle";
