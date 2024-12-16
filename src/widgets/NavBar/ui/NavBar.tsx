@@ -4,7 +4,7 @@ import { getUserAuthData } from "@/entities/User";
 import { LoginModal } from "@/features/authByUsername";
 import { AvatarDropdown } from "@/features/avatarDropdown";
 import { NotificationButton } from "@/features/notificationButton";
-import { RoutesPath } from "@/shared/config/routeConfig/routeConfig";
+import { RoutesPath } from "@/shared/config";
 import { useAppSelector, classNames } from "@/shared/lib";
 import {
   AppLink,

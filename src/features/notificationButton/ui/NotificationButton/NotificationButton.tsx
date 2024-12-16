@@ -4,8 +4,7 @@ import NotificationIcon from "@/shared/assets/icons/notification.svg?react";
 import { classNames } from "@/shared/lib";
 
 import { NotificationList } from "@/entities/Notifications";
-import { Button, ButtonTheme, Icon, Popover } from "@/shared/ui";
-import { Drawer } from "@/shared/ui/Drawer";
+import { Button, ButtonTheme, Icon, Popover, Drawer } from "@/shared/ui";
 import styles from "./NotificationButton.module.css";
 
 interface Props {

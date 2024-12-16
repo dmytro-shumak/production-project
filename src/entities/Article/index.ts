@@ -1,6 +1,6 @@
 export { ArticleDetails } from "./ui/ArticleDetails/ArticleDetails";
 export { getArticleDetailsData } from "./model/selectors/articleDetails";
-
+export * from "./model";
 export {
   type Article,
   ArticleSortField,

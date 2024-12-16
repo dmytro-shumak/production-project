@@ -12,12 +12,13 @@ import {
   getProfileValidateErrors,
   profileReducer,
 } from "@/entities/Profile";
-import { useAppDispatch, useAppSelector, classNames } from "@/shared/lib";
 import {
-  useAsyncReducer,
-  type ReducersList,
-} from "@/shared/lib/hooks/useAsyncReducer/useAsyncReducer";
-import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
+  useAppDispatch,
+  useAppSelector,
+  classNames,
+  useInitialEffect,
+} from "@/shared/lib";
+import { useAsyncReducer, type ReducersList } from "@/shared/lib";
 import { Text, TextTheme, VStack } from "@/shared/ui";
 import { Page } from "@/widgets/Page";
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";

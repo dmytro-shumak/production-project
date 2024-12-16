@@ -1,4 +1,4 @@
-import type { RootState } from "@/shared/config/redux/store";
+import type { RootState } from "@/shared/config";
 import { defaultState } from "@/shared/lib";
 import { getCounterValue } from "./getCounterValue";
 
