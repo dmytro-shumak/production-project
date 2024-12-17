@@ -10,6 +10,7 @@ export * from "./Icon";
 export * from "./Input";
 export * from "./Stack";
 export * from "./Popups";
+export * from "./Loader";
 export * from "./Text";
 export { Button } from "./Button/Button";
 export { Code } from "./Code/Code";

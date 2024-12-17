@@ -91,7 +91,10 @@ module.exports = {
     "newline-before-return": "error",
     "no-unused-expressions": ["error", { allowShortCircuit: true }],
     "production-shumak-plugin/path-checker": ["error", { alias: "@" }],
-    "production-shumak-plugin/public-api-imports": ["error", { alias: "@" }],
+    "production-shumak-plugin/public-api-imports": [
+      "error",
+      { alias: "@", exclude: ["shared/assets/**"] },
+    ],
     "func-names": ["error", "never"],
   },
 };
