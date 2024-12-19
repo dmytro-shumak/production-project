@@ -4,7 +4,7 @@ import type { ReactElement } from "react";
 import { I18nextProvider } from "react-i18next";
 import { MemoryRouter } from "react-router-dom";
 import { StoreProvider } from "@/app/providers/StoreProvider";
-import i18nTest from "@/shared/config/i18n/18nTest";
+import { i18nTest } from "@/shared/config";
 import type { ReducerSchema } from "@/shared/config";
 import type { DeepPartial } from "../../types";
 

@@ -9,10 +9,10 @@ import {
   StarRating,
   Text,
   VStack,
+  Input,
+  Modal,
 } from "@/shared/ui";
 import { Drawer } from "@/shared/ui/Drawer";
-import { Input } from "@/shared/ui/Input/Input";
-import { Modal } from "@/shared/ui/Modal/Modal";
 import styles from "./RatingCard.module.css";
 
 interface Props {

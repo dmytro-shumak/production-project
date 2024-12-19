@@ -1,5 +1,5 @@
 import type { rtkApi } from "@/shared/api";
-import type { RootState } from "@/shared/config/redux/store";
+import type { RootState } from "@/shared/config";
 
 export const defaultState: RootState = {
   counter: { value: 0 },
