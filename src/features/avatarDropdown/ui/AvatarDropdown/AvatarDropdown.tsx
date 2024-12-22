@@ -7,7 +7,7 @@ import {
   isUserManager,
   logout,
 } from "@/entities/User";
-import { RoutesPath } from "@/shared/config/routeConfig/routeConfig";
+import { RoutesPath } from "@/shared/const/router";
 import { useAppSelector, classNames } from "@/shared/lib";
 import { Avatar, Dropdown, type DropdownItem } from "@/shared/ui";
 

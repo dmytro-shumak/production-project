@@ -1,8 +1,8 @@
 import { useMemo, type ReactNode } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { UserRole, getUserAuthData, getUserRoles } from "@/entities/User";
-import { RoutesPath } from "@/shared/config/routeConfig/routeConfig";
 import { useAppSelector } from "@/shared/lib";
+import { RoutesPath } from "@/shared/const/router";
 
 interface Props {
   children: ReactNode;

@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { classNames } from "@/shared/lib";
 import { AppLink, Avatar, Text } from "@/shared/ui";
-import { RoutesPath } from "@/shared/config/routeConfig/routeConfig";
+import { RoutesPath } from "@/shared/const/router";
 import styles from "./CommentItem.module.css";
 import type { Comment } from "../../model/types/comment";
 
