@@ -1,9 +1,10 @@
 import { memo } from "react";
-import { Theme, useTheme } from "@/app/providers/theme";
 import DarkIcon from "@/shared/assets/icons/theme-dark.svg?react";
 import LightIcon from "@/shared/assets/icons/theme-light.svg?react";
 import { classNames } from "@/shared/lib";
 import { Button, ButtonTheme } from "@/shared/ui";
+import { useTheme } from "@/shared/lib/hooks";
+import { Theme } from "@/shared/const";
 
 interface Props {
   className?: string;

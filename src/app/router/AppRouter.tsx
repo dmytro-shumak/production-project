@@ -1,8 +1,8 @@
 import { Suspense, useCallback } from "react";
 import { Route, Routes } from "react-router-dom";
-import { RequireAuth } from "@/app/router/RequireAuth";
+import { RequireAuth } from "./RequireAuth";
 import { Loader } from "@/shared/ui/Loader";
-import { routesConfig } from "@/app/router/config/routeConfig";
+import { routesConfig } from "./config/routeConfig";
 import type { AppRoutesProps } from "@/shared/types";
 
 export const AppRouter = () => {

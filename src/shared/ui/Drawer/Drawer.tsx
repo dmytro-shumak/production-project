@@ -1,6 +1,6 @@
 import { memo, useCallback, useEffect, type ReactNode } from "react";
 import { classNames, useModal } from "@/shared/lib";
-import { useTheme } from "@/app/providers/theme";
+import { useTheme } from "@/shared/lib/hooks";
 import { AnimationProvider, useAnimationLibs } from "@/shared/lib/components";
 import { Overlay } from "../Overlay";
 import { Portal } from "../Portal/Portal";

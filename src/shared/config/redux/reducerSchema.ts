@@ -1,3 +1,4 @@
+/* eslint-disable production-shumak-plugin/layer-imports */
 import type {
   EnhancedStore,
   ThunkDispatch,

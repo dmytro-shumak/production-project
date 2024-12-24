@@ -1,10 +1,5 @@
 import { createContext, type Dispatch, type SetStateAction } from "react";
-
-export enum Theme {
-  Light = "app-light-theme",
-  Dark = "app-dark-theme",
-  Orange = "app-orange-theme",
-}
+import type { Theme } from "../../const";
 
 export interface ThemeContextProps {
   theme?: Theme;
@@ -12,5 +7,3 @@ export interface ThemeContextProps {
 }
 
 export const ThemeContext = createContext<ThemeContextProps>({});
-
-export const LOCAL_STORAGE_THEME_KEY = "theme";

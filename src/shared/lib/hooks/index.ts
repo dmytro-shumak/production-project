@@ -10,4 +10,5 @@ export { useInfiniteScroll } from "./useInfiniteScroll/useInfiniteScroll";
 export { useDebounce } from "./useDebounce/useDebounce";
 export { useDebouncedCallback } from "./useDebounceCallback/useDebounceCallback";
 export { useUpdateEffect } from "./useUpdateEffect/useUpdateEffect";
+export { useTheme } from "./useTheme/useTheme";
 export * from "./useModal/useModal";

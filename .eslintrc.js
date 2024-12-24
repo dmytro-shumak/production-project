@@ -92,6 +92,13 @@ module.exports = {
     "no-unused-expressions": ["error", { allowShortCircuit: true }],
     "production-shumak-plugin/path-checker": ["error", { alias: "@" }],
     "production-shumak-plugin/public-api-imports": ["error", { alias: "@" }],
+    "production-shumak-plugin/layer-imports": [
+      "error",
+      {
+        alias: "@",
+        ignoreImportPatterns: ["**/StoreProvider"],
+      },
+    ],
     "func-names": ["error", "never"],
   },
 };

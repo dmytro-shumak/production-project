@@ -1,6 +1,6 @@
 import { Suspense, useEffect } from "react";
-import { useTheme } from "@/app/providers/theme";
-import { AppRouter } from "@/app/router";
+import { useTheme } from "@/shared/lib/hooks";
+import { AppRouter } from "./router";
 import { getUserInitiated, initAuthData } from "@/entities/User";
 import { useAppDispatch, useAppSelector, classNames } from "@/shared/lib";
 import { Loader } from "@/shared/ui/Loader";
