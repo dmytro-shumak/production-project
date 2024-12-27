@@ -9,7 +9,7 @@ import {
   TextAlign,
   TextTheme,
 } from "@/shared/ui";
-import { Input } from "@/shared/ui/Input/Input";
+import { Input } from "@/shared/ui/Input";
 import { Loader } from "@/shared/ui/Loader";
 import { Currency, CurrencySelect } from "@/entities/Currency";
 import { Country, CountrySelect } from "@/entities/Country";

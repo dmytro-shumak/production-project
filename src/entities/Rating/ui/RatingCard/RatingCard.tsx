@@ -11,8 +11,8 @@ import {
   VStack,
 } from "@/shared/ui";
 import { Drawer } from "@/shared/ui/Drawer";
-import { Input } from "@/shared/ui/Input/Input";
-import { Modal } from "@/shared/ui/Modal/Modal";
+import { Input } from "@/shared/ui/Input";
+import { Modal } from "@/shared/ui/Modal";
 import styles from "./RatingCard.module.css";
 
 interface Props {
