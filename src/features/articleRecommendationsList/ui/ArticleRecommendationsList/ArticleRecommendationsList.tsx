@@ -1,9 +1,11 @@
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
+
+import { useArticleRecommendationListQuery } from "./api/articleRecommendationsApi";
+
 import { ArticleList } from "@/entities/Article";
 import { classNames } from "@/shared/lib";
 import { Text, TextSize, VStack } from "@/shared/ui";
-import { useArticleRecommendationListQuery } from "./api/articleRecommendationsApi";
 
 interface ArticleRecommendationsListProps {
   className?: string;

@@ -1,8 +1,11 @@
 import { memo, useState } from "react";
-import { classNames } from "@/shared/lib";
-import styles from "./StarRating.module.css";
+
 import { Icon } from "../Icon/Icon";
+
+import styles from "./StarRating.module.css";
+
 import StarIcon from "@/shared/assets/icons/star.svg?react";
+import { classNames } from "@/shared/lib";
 
 interface Props {
   className?: string;

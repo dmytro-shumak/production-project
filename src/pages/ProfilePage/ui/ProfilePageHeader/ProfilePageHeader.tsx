@@ -1,5 +1,8 @@
 import { useCallback, type FC } from "react";
 import { useTranslation } from "react-i18next";
+
+import { canEditProfileSelector } from "../../model/selectors/canEditProfile/canEditProfile";
+
 import {
   getProfileReadOnly,
   profileActions,
@@ -7,7 +10,6 @@ import {
 } from "@/entities/Profile";
 import { useAppDispatch, useAppSelector, classNames } from "@/shared/lib";
 import { Button, ButtonTheme, HStack, Text } from "@/shared/ui";
-import { canEditProfileSelector } from "../../model/selectors/canEditProfile/canEditProfile";
 
 interface Props {
   className?: string;

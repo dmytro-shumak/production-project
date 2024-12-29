@@ -1,7 +1,9 @@
 import { memo, useCallback, type FC } from "react";
 import { useTranslation } from "react-i18next";
-import { ListBox } from "@/shared/ui";
+
 import { Currency } from "../../model/constants/currency";
+
+import { ListBox } from "@/shared/ui";
 
 interface Props {
   className?: string;

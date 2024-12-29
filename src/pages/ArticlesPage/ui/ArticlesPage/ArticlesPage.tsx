@@ -1,19 +1,22 @@
 import { memo, useCallback, type FC } from "react";
 import { useSearchParams } from "react-router-dom";
+
+import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
+import { initializeArticlePage } from "../../model/services/initializeArticlePage/initializeArticlePage";
+import { articlePageReducer } from "../../model/slices/articlePageSlice";
+import { ArticleInfiniteList } from "../../ui/ArticleInfiniteList/ArticleInfiniteList";
+import { ArticlePageFilters } from "../ArticlePageFilters/ArticlePageFilters";
+
+import styles from "./ArticlesPage.module.css";
+
+import { classNames } from "@/shared/lib";
 import {
   useAppDispatch,
   useAsyncReducer,
   useInitialEffect,
   type ReducersList,
 } from "@/shared/lib";
-import { classNames } from "@/shared/lib";
 import { Page } from "@/widgets/Page";
-import { ArticleInfiniteList } from "../../ui/ArticleInfiniteList/ArticleInfiniteList";
-import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
-import { initializeArticlePage } from "../../model/services/initializeArticlePage/initializeArticlePage";
-import { articlePageReducer } from "../../model/slices/articlePageSlice";
-import { ArticlePageFilters } from "../ArticlePageFilters/ArticlePageFilters";
-import styles from "./ArticlesPage.module.css";
 
 interface Props {
   className?: string;

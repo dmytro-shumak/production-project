@@ -1,17 +1,20 @@
 import { memo, type FC } from "react";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
-import { ArticleRecommendationsList } from "@/features/articleRecommendationsList";
+
+import { articleDetailsPageReducer } from "../../model/slices";
+import { ArticleDetailsComments } from "../../ui/ArticleDetailsComments/ArticleDetailsComments";
+
+import styles from "./ArticleDetailsPage.module.css";
+import { ArticleDetailsPageHeader } from "./ArticleDetailsPageHeader/ArticleDetailsPageHeader";
+
 import { ArticleDetails } from "@/entities/Article";
+import { ArticleRating } from "@/features/articleRating";
+import { ArticleRecommendationsList } from "@/features/articleRecommendationsList";
 import { useAsyncReducer, type ReducersList } from "@/shared/lib";
 import { classNames } from "@/shared/lib";
 import { Text, TextSize, VStack } from "@/shared/ui";
 import { Page } from "@/widgets/Page";
-import { articleDetailsPageReducer } from "../../model/slices";
-import { ArticleDetailsComments } from "../../ui/ArticleDetailsComments/ArticleDetailsComments";
-import styles from "./ArticleDetailsPage.module.css";
-import { ArticleDetailsPageHeader } from "./ArticleDetailsPageHeader/ArticleDetailsPageHeader";
-import { ArticleRating } from "@/features/articleRating";
 
 interface Props {
   className?: string;

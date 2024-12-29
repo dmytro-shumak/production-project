@@ -1,5 +1,6 @@
-import type { StorybookConfig } from "@storybook/react-webpack5";
 import path from "path";
+
+import type { StorybookConfig } from "@storybook/react-webpack5";
 import { DefinePlugin } from "webpack";
 
 const config: StorybookConfig = {

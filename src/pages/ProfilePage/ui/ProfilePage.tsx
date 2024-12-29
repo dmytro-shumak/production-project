@@ -1,6 +1,9 @@
 import { useMemo, type FC } from "react";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
+
+import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
+
 import {
   ProfileCard,
   ValidateProfileError,
@@ -12,6 +15,7 @@ import {
   getProfileValidateErrors,
   profileReducer,
 } from "@/entities/Profile";
+import { ProfileRating } from "@/features/profileRating";
 import { useAppDispatch, useAppSelector, classNames } from "@/shared/lib";
 import {
   useAsyncReducer,
@@ -20,8 +24,6 @@ import {
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { Text, TextTheme, VStack } from "@/shared/ui";
 import { Page } from "@/widgets/Page";
-import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
-import { ProfileRating } from "@/features/profileRating";
 
 const initialReducer: ReducersList = {
   profile: profileReducer,

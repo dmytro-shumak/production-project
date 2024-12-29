@@ -1,6 +1,8 @@
 import { memo } from "react";
-import { classNames } from "@/shared/lib";
+
 import styles from "./Skeleton.module.css";
+
+import { classNames } from "@/shared/lib";
 
 interface Props {
   className?: string;

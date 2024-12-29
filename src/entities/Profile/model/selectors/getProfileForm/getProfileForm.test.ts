@@ -1,8 +1,9 @@
+import { getProfileForm } from "./getProfileForm";
+
 import { Country } from "@/entities/Country";
 import { Currency } from "@/entities/Currency";
 import type { ReducerSchema } from "@/shared/config/redux";
 import type { DeepPartial } from "@/shared/lib";
-import { getProfileForm } from "./getProfileForm";
 
 describe("get profile form", () => {
   test("should return profile form", () => {

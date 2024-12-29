@@ -1,8 +1,10 @@
 import type { FC } from "react";
 import { useTranslation } from "react-i18next";
+
+import styles from "./PageError.module.css";
+
 import { classNames } from "@/shared/lib";
 import { Button, ButtonTheme } from "@/shared/ui";
-import styles from "./PageError.module.css";
 
 interface Props {
   className?: string;

@@ -1,6 +1,8 @@
-import type { DeepPartial } from "@/shared/lib";
 import type { LoginSchema } from "../types";
+
 import { loginReducer, setPassword, setUsername } from "./loginSlice";
+
+import type { DeepPartial } from "@/shared/lib";
 
 describe("loginSlice", () => {
   test("should set username", () => {

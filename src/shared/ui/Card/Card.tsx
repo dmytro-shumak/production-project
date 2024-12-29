@@ -1,6 +1,8 @@
 import { type HTMLAttributes, type ReactNode } from "react";
-import { classNames } from "@/shared/lib";
+
 import styles from "./Card.module.css";
+
+import { classNames } from "@/shared/lib";
 
 export enum CardTheme {
   Normal = "normal",

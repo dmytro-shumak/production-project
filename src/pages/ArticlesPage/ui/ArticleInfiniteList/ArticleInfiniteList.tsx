@@ -1,11 +1,13 @@
 import { memo } from "react";
-import { ArticleList } from "@/entities/Article";
-import { useAppSelector, classNames } from "@/shared/lib";
+
 import {
   getArticlePageIsLoading,
   getArticlePageView,
 } from "../../model/selectors/articlePageSelector";
 import { getArticles } from "../../model/slices/articlePageSlice";
+
+import { ArticleList } from "@/entities/Article";
+import { useAppSelector, classNames } from "@/shared/lib";
 
 interface Props {
   className?: string;

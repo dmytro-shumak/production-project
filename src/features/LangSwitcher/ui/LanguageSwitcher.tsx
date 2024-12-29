@@ -1,8 +1,10 @@
 import { memo, type FC } from "react";
 import { useTranslation } from "react-i18next";
+
+import styles from "./LanguageSwitcher.module.css";
+
 import { classNames } from "@/shared/lib";
 import { Button, ButtonSize, ButtonTheme } from "@/shared/ui";
-import styles from "./LanguageSwitcher.module.css";
 
 interface Props {
   className?: string;

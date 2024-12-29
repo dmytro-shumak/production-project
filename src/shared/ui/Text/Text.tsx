@@ -1,6 +1,8 @@
 import { memo } from "react";
-import { classNames } from "@/shared/lib";
+
 import styles from "./Text.module.css";
+
+import { classNames } from "@/shared/lib";
 
 export enum TextTheme {
   ERROR = "error",

@@ -4,8 +4,10 @@ import {
   type SVGAttributes,
   type SVGProps,
 } from "react";
-import { classNames } from "@/shared/lib";
+
 import styles from "./Icon.module.css";
+
+import { classNames } from "@/shared/lib";
 
 interface Props extends SVGProps<SVGElement> {
   className?: string;

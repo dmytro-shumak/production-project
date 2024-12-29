@@ -1,9 +1,11 @@
 import { memo, useCallback, useState, type ChangeEvent } from "react";
 import { useTranslation } from "react-i18next";
+
+import styles from "./AddCommentForm.module.css";
+
 import { classNames } from "@/shared/lib";
 import { Button, ButtonTheme, HStack } from "@/shared/ui";
 import { Input } from "@/shared/ui/Input";
-import styles from "./AddCommentForm.module.css";
 
 export interface AddCommentFormProps {
   className?: string;

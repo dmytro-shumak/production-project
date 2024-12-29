@@ -40,6 +40,7 @@ module.exports = {
     "i18next",
     "react-hooks",
     "production-shumak-plugin",
+    "import",
   ],
   rules: {
     "no-unused-vars": "off",
@@ -100,5 +101,20 @@ module.exports = {
       },
     ],
     "func-names": ["error", "never"],
+    "import/order": [
+      "error",
+      {
+        groups: [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+        ],
+        "newlines-between": "always",
+        alphabetize: { order: "asc", caseInsensitive: true },
+      },
+    ],
   },
 };

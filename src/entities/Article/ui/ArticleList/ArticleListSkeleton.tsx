@@ -1,7 +1,10 @@
 import { memo } from "react";
-import { Card, Skeleton } from "@/shared/ui";
-import styles from "./ArticleList.module.css";
+
 import { ArticleView } from "../../model/types/article";
+
+import styles from "./ArticleList.module.css";
+
+import { Card, Skeleton } from "@/shared/ui";
 
 interface Props {
   view?: ArticleView;

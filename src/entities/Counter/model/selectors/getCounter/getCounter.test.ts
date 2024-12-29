@@ -1,6 +1,7 @@
+import { getCounter } from "./getCounter";
+
 import type { RootState } from "@/shared/config/redux/store";
 import { defaultState } from "@/shared/lib";
-import { getCounter } from "./getCounter";
 
 describe("getCounter", () => {
   test("should return counter", () => {

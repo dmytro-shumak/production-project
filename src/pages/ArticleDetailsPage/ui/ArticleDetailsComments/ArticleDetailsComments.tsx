@@ -1,4 +1,9 @@
 import { memo, useCallback } from "react";
+
+import { getArticleCommentIsLoading } from "../../model/selectors/comments";
+import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
+import { getArticleComments } from "../../model/slices/articleDetailsComments";
+
 import { getArticleDetailsData } from "@/entities/Article";
 import { CommentList } from "@/entities/Comment";
 import { getUserAuthData } from "@/entities/User";
@@ -10,9 +15,6 @@ import {
   classNames,
 } from "@/shared/lib";
 import { VStack } from "@/shared/ui";
-import { getArticleCommentIsLoading } from "../../model/selectors/comments";
-import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
-import { getArticleComments } from "../../model/slices/articleDetailsComments";
 
 interface Props {
   className?: string;

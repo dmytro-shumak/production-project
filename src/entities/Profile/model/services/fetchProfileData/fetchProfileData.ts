@@ -1,7 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
-import type { ThunkConfig, ThunkExtraArg } from "@/shared/config/redux";
+
 import type { Profile } from "../../types/profile";
+
+import type { ThunkConfig, ThunkExtraArg } from "@/shared/config/redux";
 
 export const fetchProfileData = createAsyncThunk<Profile, string, ThunkConfig>(
   "profile/fetchProfileData",

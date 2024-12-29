@@ -1,10 +1,11 @@
 import type { Preview } from "@storybook/react";
+
 import { store, type ReducerSchema } from "@/shared/config/redux";
 import { RouterDecorator } from "@/shared/config/storybook/RouterDecorator";
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator";
-import { Theme } from "@/shared/const";
 import { withI18nextDecorator } from "@/shared/config/storybook/withI18nextDecorator";
+import { Theme } from "@/shared/const";
 
 const preview: Preview = {
   parameters: {

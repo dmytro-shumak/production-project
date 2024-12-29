@@ -1,6 +1,9 @@
 import { memo, useCallback, useState, type ChangeEvent } from "react";
 import { BrowserView, MobileView } from "react-device-detect";
 import { useTranslation } from "react-i18next";
+
+import styles from "./RatingCard.module.css";
+
 import {
   Button,
   ButtonTheme,
@@ -13,7 +16,6 @@ import {
 import { Drawer } from "@/shared/ui/Drawer";
 import { Input } from "@/shared/ui/Input";
 import { Modal } from "@/shared/ui/Modal";
-import styles from "./RatingCard.module.css";
 
 interface Props {
   className?: string;

@@ -3,6 +3,10 @@ import {
   createSlice,
   type PayloadAction,
 } from "@reduxjs/toolkit";
+
+import { fetchArticleList } from "../services/fetchArticleList/fetchArticleList";
+import type { ArticlePageSchema } from "../types/articlePageSchema";
+
 import {
   ArticleSortField,
   ArticleType,
@@ -12,8 +16,6 @@ import {
 import type { ReducerSchema } from "@/shared/config/redux";
 import { LocalStorageKeys } from "@/shared/constants/localStorage";
 import type { SortOrder } from "@/shared/types";
-import { fetchArticleList } from "../services/fetchArticleList/fetchArticleList";
-import type { ArticlePageSchema } from "../types/articlePageSchema";
 
 const articlesAdapter = createEntityAdapter({
   selectId: (article: Article) => article.id,

@@ -1,7 +1,9 @@
-import { TestAsyncThunk } from "@/shared/lib/tests/TestAsyncThunk";
 import { articlePageActions } from "../../slices/articlePageSlice";
 import { fetchArticleList } from "../fetchArticleList/fetchArticleList";
+
 import { initializeArticlePage } from "./initializeArticlePage";
+
+import { TestAsyncThunk } from "@/shared/lib/tests/TestAsyncThunk";
 
 jest.mock("../fetchArticleList/fetchArticleList");
 jest.spyOn(articlePageActions, "initState");

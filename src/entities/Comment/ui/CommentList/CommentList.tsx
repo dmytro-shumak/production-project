@@ -1,9 +1,11 @@
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
-import { classNames } from "@/shared/lib";
-import { Skeleton, Text, VStack } from "@/shared/ui";
+
 import type { Comment } from "../../model/types/comment";
 import { CommentItem } from "../CommentItem/CommentItem";
+
+import { classNames } from "@/shared/lib";
+import { Skeleton, Text, VStack } from "@/shared/ui";
 
 interface Props {
   className?: string;

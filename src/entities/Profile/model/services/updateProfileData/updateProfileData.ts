@@ -1,13 +1,15 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+
+import { ValidateProfileError } from "../../constants/profile";
+import { getProfileForm } from "../../selectors/getProfileForm/getProfileForm";
+import { type Profile } from "../../types/profile";
+import { validateProfileData } from "../validateProfileData/validateProfileData";
+
 import type {
   ReducerSchema,
   ThunkConfig,
   ThunkExtraArg,
 } from "@/shared/config/redux";
-import { getProfileForm } from "../../selectors/getProfileForm/getProfileForm";
-import { type Profile } from "../../types/profile";
-import { validateProfileData } from "../validateProfileData/validateProfileData";
-import { ValidateProfileError } from "../../constants/profile";
 
 export const updateProfileData = createAsyncThunk<
   Profile,

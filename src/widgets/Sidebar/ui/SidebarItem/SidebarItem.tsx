@@ -1,12 +1,14 @@
-import { memo } from "react";
-
 import { t } from "i18next";
+import { memo } from "react";
 import { useSelector } from "react-redux";
-import { AppLink, AppLinkTheme } from "@/shared/ui";
-import { classNames } from "@/shared/lib";
-import { getUserAuthData } from "@/entities/User";
+
 import type { SidebarItemType } from "../../model/types/sidebar";
+
 import styles from "./SidebarItem.module.css";
+
+import { getUserAuthData } from "@/entities/User";
+import { classNames } from "@/shared/lib";
+import { AppLink, AppLinkTheme } from "@/shared/ui";
 
 interface Props {
   item: SidebarItemType;

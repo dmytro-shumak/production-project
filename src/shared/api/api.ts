@@ -1,4 +1,5 @@
 import axios from "axios";
+
 import { LocalStorageKeys } from "@/shared/constants/localStorage";
 
 // TODO: add env variables

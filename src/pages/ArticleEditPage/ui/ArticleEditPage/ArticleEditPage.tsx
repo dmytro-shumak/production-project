@@ -1,8 +1,10 @@
 import { memo } from "react";
 import { useParams } from "react-router-dom";
+
+import styles from "./ArticleEditPage.module.css";
+
 import { classNames } from "@/shared/lib";
 import { Page } from "@/widgets/Page";
-import styles from "./ArticleEditPage.module.css";
 
 interface Props {
   className?: string;

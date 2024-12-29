@@ -1,6 +1,8 @@
 import { useMemo, type CSSProperties, type FC } from "react";
-import { classNames } from "@/shared/lib";
+
 import styles from "./Avatar.module.css";
+
+import { classNames } from "@/shared/lib";
 
 interface Props {
   className?: string;

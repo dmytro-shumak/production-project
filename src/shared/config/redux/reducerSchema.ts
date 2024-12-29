@@ -5,6 +5,9 @@ import type {
   UnknownAction,
 } from "@reduxjs/toolkit";
 import type { AxiosInstance } from "axios";
+
+import type { createReducerManager } from "./reducerManager";
+
 import type { ArticleDetailsSchema } from "@/entities/Article";
 import type { CounterState } from "@/entities/Counter";
 import type { ProfileSchema } from "@/entities/Profile";
@@ -14,7 +17,6 @@ import type { ScrollRestorationSchema } from "@/features/scrollRestoration";
 import type { ArticleDetailsPageSchema } from "@/pages/ArticleDetailsPage";
 import type { ArticlePageSchema } from "@/pages/ArticlesPage";
 import type { rtkApi } from "@/shared/api";
-import type { createReducerManager } from "./reducerManager";
 
 export interface ReducerSchema {
   counter: CounterState;

@@ -1,6 +1,7 @@
+import type { ValidateProfileError } from "../constants/profile";
+
 import type { Country } from "@/entities/Country";
 import type { Currency } from "@/entities/Currency";
-import type { ValidateProfileError } from "../constants/profile";
 
 export interface Profile {
   id?: string;

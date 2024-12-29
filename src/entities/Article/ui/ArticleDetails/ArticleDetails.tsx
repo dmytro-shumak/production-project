@@ -1,24 +1,7 @@
 import { memo, useCallback, useEffect, type FC } from "react";
 import { useTranslation } from "react-i18next";
-import CalendarIcon from "@/shared/assets/icons/calendar.svg?react";
-import EyeIcon from "@/shared/assets/icons/eye.svg?react";
-import {
-  useAppDispatch,
-  useAppSelector,
-  useAsyncReducer,
-  type ReducersList,
-} from "@/shared/lib";
-import { classNames } from "@/shared/lib";
-import {
-  Avatar,
-  HStack,
-  Icon,
-  Skeleton,
-  Text,
-  TextAlign,
-  TextSize,
-  TextTheme,
-} from "@/shared/ui";
+
+import { ArticleBlockType } from "../../model/constants/article";
 import {
   getArticleDetailsData,
   getArticleDetailsError,
@@ -30,8 +13,28 @@ import { type ArticleBlock } from "../../model/types/article";
 import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
+
 import styles from "./ArticleDetails.module.css";
-import { ArticleBlockType } from "../../model/constants/article";
+
+import CalendarIcon from "@/shared/assets/icons/calendar.svg?react";
+import EyeIcon from "@/shared/assets/icons/eye.svg?react";
+import { classNames } from "@/shared/lib";
+import {
+  useAppDispatch,
+  useAppSelector,
+  useAsyncReducer,
+  type ReducersList,
+} from "@/shared/lib";
+import {
+  Avatar,
+  HStack,
+  Icon,
+  Skeleton,
+  Text,
+  TextAlign,
+  TextSize,
+  TextTheme,
+} from "@/shared/ui";
 
 interface Props {
   className?: string;

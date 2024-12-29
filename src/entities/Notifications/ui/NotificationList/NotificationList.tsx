@@ -1,9 +1,12 @@
 import { memo } from "react";
-import { classNames } from "@/shared/lib";
-import { Skeleton, VStack } from "@/shared/ui";
-import styles from "./NotificationList.module.css";
+
 import { useNotifications } from "../../api/notification";
 import { NotificationItem } from "../NotificationItem/NotificationItem";
+
+import styles from "./NotificationList.module.css";
+
+import { classNames } from "@/shared/lib";
+import { Skeleton, VStack } from "@/shared/ui";
 
 interface Props {
   className?: string;

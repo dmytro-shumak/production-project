@@ -1,12 +1,15 @@
 import { memo, type HTMLAttributeAnchorTarget, type LegacyRef } from "react";
-import { List, type ListRowProps, WindowScroller } from "react-virtualized";
 import { useTranslation } from "react-i18next";
+import { List, type ListRowProps, WindowScroller } from "react-virtualized";
+
+import { ArticleView, type Article } from "../../model/types/article";
+import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
+
+import styles from "./ArticleList.module.css";
+import { ArticleListSkeleton } from "./ArticleListSkeleton";
+
 import { classNames } from "@/shared/lib";
 import { Text, TextSize } from "@/shared/ui";
-import { ArticleView, type Article } from "../../model/types/article";
-import styles from "./ArticleList.module.css";
-import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
-import { ArticleListSkeleton } from "./ArticleListSkeleton";
 
 interface Props {
   className?: string;

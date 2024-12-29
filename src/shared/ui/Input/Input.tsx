@@ -6,8 +6,10 @@ import {
   useRef,
   type InputHTMLAttributes,
 } from "react";
-import { classNames } from "@/shared/lib";
+
 import styles from "./Input.module.css";
+
+import { classNames } from "@/shared/lib";
 
 interface Props
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "readOnly"> {

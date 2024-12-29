@@ -1,7 +1,8 @@
+import { fetchArticleById } from "./fetchArticleById";
+
 import { Country } from "@/entities/Country";
 import { Currency } from "@/entities/Currency";
 import { TestAsyncThunk } from "@/shared/lib/tests/TestAsyncThunk";
-import { fetchArticleById } from "./fetchArticleById";
 
 const data = {
   age: 18,

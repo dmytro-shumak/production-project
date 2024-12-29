@@ -1,4 +1,5 @@
 import { type ElementType } from "react";
+
 import { Flex, type FlexProps } from "../Flex/Flex";
 
 // TODO: fix ts error when adding Omit

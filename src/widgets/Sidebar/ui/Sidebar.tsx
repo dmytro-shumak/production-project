@@ -1,13 +1,16 @@
 import { memo, useState, type FC } from "react";
-import { useTheme } from "@/shared/lib/hooks";
-import { useAppSelector, classNames } from "@/shared/lib";
-import { Button, ButtonSize, VStack } from "@/shared/ui";
+
+import { getSideBarItems } from "../model/selectors/getSidebarItems";
+
+import styles from "./Sidebar.module.css";
+import { SidebarItem } from "./SidebarItem/SidebarItem";
+
 import { LangSwitcher } from "@/features/LangSwitcher";
 import { ThemeSwitcher } from "@/features/ThemeSwitcher";
-import { SidebarItem } from "./SidebarItem/SidebarItem";
-import { getSideBarItems } from "../model/selectors/getSidebarItems";
-import styles from "./Sidebar.module.css";
 import { Theme } from "@/shared/const";
+import { useAppSelector, classNames } from "@/shared/lib";
+import { useTheme } from "@/shared/lib/hooks";
+import { Button, ButtonSize, VStack } from "@/shared/ui";
 
 interface Props {
   className?: string;

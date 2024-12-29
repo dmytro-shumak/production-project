@@ -1,8 +1,11 @@
 import { memo, useCallback } from "react";
+
+import { Button, ButtonTheme } from "../Button/Button";
+
+import styles from "./Code.module.css";
+
 import CopyIcon from "@/shared/assets/icons/copy.svg?react";
 import { classNames } from "@/shared/lib";
-import { Button, ButtonTheme } from "../Button/Button";
-import styles from "./Code.module.css";
 
 interface Props {
   className?: string;

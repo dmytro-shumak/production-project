@@ -3,11 +3,14 @@ import {
   PopoverButton,
   PopoverPanel,
 } from "@headlessui/react";
-import { memo, type ReactNode } from "react";
 import type { AnchorProps } from "@headlessui/react/dist/internal/floating";
-import { classNames } from "@/shared/lib";
-import styles from "./Popover.module.css";
+import { memo, type ReactNode } from "react";
+
 import popupStyles from "../../styles/popup.module.css";
+
+import styles from "./Popover.module.css";
+
+import { classNames } from "@/shared/lib";
 
 interface Props {
   className?: string;

@@ -1,5 +1,6 @@
 import openBrowser from "react-dev-utils/openBrowser";
 import type { Configuration as DevServerConfiguration } from "webpack-dev-server";
+
 import type { BuildOptions } from "./types/config";
 
 export const buildDevServer = ({

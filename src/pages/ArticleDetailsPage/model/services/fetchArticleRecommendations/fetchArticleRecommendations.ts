@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
+
 import { type Article } from "@/entities/Article";
 import type { ThunkConfig, ThunkExtraArg } from "@/shared/config/redux";
 

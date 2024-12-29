@@ -1,15 +1,18 @@
 /* eslint-disable production-shumak-plugin/layer-imports */
 import { configureStore, type ReducersMapObject } from "@reduxjs/toolkit";
-import { counterReducer } from "@/entities/Counter";
-import { userReducer } from "@/entities/User";
-import { $api } from "@/shared/api/api";
-import { scrollRestorationReducer } from "@/features/scrollRestoration";
-import { rtkApi } from "@/shared/api";
+
 import type {
   ReducerSchema,
   ReduxStoreWithManager,
 } from "../redux/reducerSchema";
+
 import { createReducerManager } from "./reducerManager";
+
+import { counterReducer } from "@/entities/Counter";
+import { userReducer } from "@/entities/User";
+import { scrollRestorationReducer } from "@/features/scrollRestoration";
+import { rtkApi } from "@/shared/api";
+import { $api } from "@/shared/api/api";
 
 interface Options {
   initialState?: ReducersMapObject<ReducerSchema>;

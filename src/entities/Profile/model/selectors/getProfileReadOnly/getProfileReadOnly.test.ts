@@ -1,6 +1,7 @@
+import { getProfileReadOnly } from "./getProfileReadOnly";
+
 import type { ReducerSchema } from "@/shared/config/redux";
 import type { DeepPartial } from "@/shared/lib";
-import { getProfileReadOnly } from "./getProfileReadOnly";
 
 describe("get profile data", () => {
   test("should return profile data", () => {

@@ -1,10 +1,13 @@
 import { memo, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { classNames } from "@/shared/lib";
-import { Select, type SelectOption } from "@/shared/ui";
-import type { SortOrder } from "@/shared/types";
+
 import { ArticleSortField } from "../../model/types/article";
+
 import styles from "./ArticleSortSelector.module.css";
+
+import { classNames } from "@/shared/lib";
+import type { SortOrder } from "@/shared/types";
+import { Select, type SelectOption } from "@/shared/ui";
 
 interface Props {
   className?: string;

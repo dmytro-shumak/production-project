@@ -1,10 +1,13 @@
 import { memo, useCallback, useEffect, type ReactNode } from "react";
-import { classNames, useModal } from "@/shared/lib";
-import { useTheme } from "@/shared/lib/hooks";
-import { AnimationProvider, useAnimationLibs } from "@/shared/lib/components";
+
 import { Overlay } from "../Overlay";
 import { Portal } from "../Portal/Portal";
+
 import styles from "./Drawer.module.css";
+
+import { classNames, useModal } from "@/shared/lib";
+import { AnimationProvider, useAnimationLibs } from "@/shared/lib/components";
+import { useTheme } from "@/shared/lib/hooks";
 
 interface Props {
   className?: string;

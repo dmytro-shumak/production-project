@@ -1,5 +1,6 @@
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import type { RuleSetRule } from "webpack";
+
 import { buildBabelLoader } from "./loaders/buildBabelLoader";
 import type { BuildOptions } from "./types/config";
 

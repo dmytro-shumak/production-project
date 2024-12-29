@@ -1,9 +1,13 @@
 import { memo, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
+
+import styles from "./NavBar.module.css";
+
 import { getUserAuthData } from "@/entities/User";
 import { LoginModal } from "@/features/authByUsername";
 import { AvatarDropdown } from "@/features/avatarDropdown";
 import { NotificationButton } from "@/features/notificationButton";
+import { RoutesPath } from "@/shared/const/router";
 import { useAppSelector, classNames } from "@/shared/lib";
 import {
   AppLink,
@@ -14,8 +18,6 @@ import {
   Text,
   TextTheme,
 } from "@/shared/ui";
-import styles from "./NavBar.module.css";
-import { RoutesPath } from "@/shared/const/router";
 
 interface Props {
   className?: string;

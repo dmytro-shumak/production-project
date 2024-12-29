@@ -1,9 +1,11 @@
 import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { RatingCard } from "@/entities/Rating";
+
 import { useGetArticleRating, useRateArticle } from "../../api/articleRating";
-import { useAppSelector } from "@/shared/lib";
+
+import { RatingCard } from "@/entities/Rating";
 import { getUserAuthData } from "@/entities/User";
+import { useAppSelector } from "@/shared/lib";
 import { Skeleton } from "@/shared/ui";
 
 interface Props {

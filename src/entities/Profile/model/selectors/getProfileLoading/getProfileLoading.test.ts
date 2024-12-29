@@ -1,6 +1,7 @@
+import { getProfileLoading } from "./getProfileLoading";
+
 import type { ReducerSchema } from "@/shared/config/redux";
 import type { DeepPartial } from "@/shared/lib";
-import { getProfileLoading } from "./getProfileLoading";
 
 describe("get profile loading", () => {
   test("should return profile loading", () => {

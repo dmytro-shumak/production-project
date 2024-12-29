@@ -1,5 +1,13 @@
 import { useCallback, type ChangeEvent, type FC } from "react";
 import { useTranslation } from "react-i18next";
+
+import { profileActions } from "../../model/slice/profileSlice";
+import type { Profile } from "../../model/types/profile";
+
+import styles from "./ProfileCard.module.css";
+
+import { Country, CountrySelect } from "@/entities/Country";
+import { Currency, CurrencySelect } from "@/entities/Currency";
 import { useAppDispatch, classNames } from "@/shared/lib";
 import {
   Avatar,
@@ -11,11 +19,6 @@ import {
 } from "@/shared/ui";
 import { Input } from "@/shared/ui/Input";
 import { Loader } from "@/shared/ui/Loader";
-import { Currency, CurrencySelect } from "@/entities/Currency";
-import { Country, CountrySelect } from "@/entities/Country";
-import { profileActions } from "../../model/slice/profileSlice";
-import type { Profile } from "../../model/types/profile";
-import styles from "./ProfileCard.module.css";
 
 interface Props {
   className?: string;

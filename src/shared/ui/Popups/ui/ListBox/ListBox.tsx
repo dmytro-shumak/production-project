@@ -5,10 +5,13 @@ import {
   ListboxOptions,
 } from "@headlessui/react";
 import { memo, type ReactNode } from "react";
-import { classNames } from "@/shared/lib";
-import { HStack } from "../../../Stack";
+
 import { Button } from "../../../Button";
+import { HStack } from "../../../Stack";
+
 import styles from "./ListBox.module.css";
+
+import { classNames } from "@/shared/lib";
 
 export interface ListBoxItem {
   value: string;

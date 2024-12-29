@@ -1,5 +1,16 @@
 import { useCallback, type ChangeEvent, type FC } from "react";
 import { useTranslation } from "react-i18next";
+
+import { getLoginState } from "../../model/selectors/getLoginState/getLoginState";
+import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
+import {
+  loginReducer,
+  setPassword,
+  setUsername,
+} from "../../model/slice/loginSlice";
+
+import styles from "./LoginForm.module.css";
+
 import {
   useAppDispatch,
   useAppSelector,
@@ -8,14 +19,6 @@ import {
 } from "@/shared/lib";
 import { Button, ButtonTheme, Text, TextTheme } from "@/shared/ui";
 import { Input } from "@/shared/ui/Input";
-import { getLoginState } from "../../model/selectors/getLoginState/getLoginState";
-import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
-import {
-  loginReducer,
-  setPassword,
-  setUsername,
-} from "../../model/slice/loginSlice";
-import styles from "./LoginForm.module.css";
 
 interface Props {
   className?: string;

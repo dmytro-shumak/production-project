@@ -1,8 +1,10 @@
 import { Suspense, useEffect } from "react";
-import { useTheme } from "@/shared/lib/hooks";
+
 import { AppRouter } from "./router";
+
 import { getUserInitiated, initAuthData } from "@/entities/User";
 import { useAppDispatch, useAppSelector, classNames } from "@/shared/lib";
+import { useTheme } from "@/shared/lib/hooks";
 import { Loader } from "@/shared/ui/Loader";
 import { NavBar } from "@/widgets/NavBar";
 import { Sidebar } from "@/widgets/Sidebar";

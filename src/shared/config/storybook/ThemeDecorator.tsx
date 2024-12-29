@@ -1,4 +1,5 @@
 import type { StoryFn } from "@storybook/react";
+
 // eslint-disable-next-line production-shumak-plugin/layer-imports
 import "@/app/styles/index.css";
 import type { Theme } from "@/shared/const";

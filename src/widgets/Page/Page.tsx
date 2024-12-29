@@ -1,5 +1,8 @@
 import { useRef, type ReactNode, type UIEvent } from "react";
 import { useLocation } from "react-router-dom";
+
+import styles from "./Page.module.css";
+
 import {
   getScrollRestorationByPath,
   scrollRestorationActions,
@@ -12,7 +15,6 @@ import {
   classNames,
 } from "@/shared/lib";
 import { useThrottle } from "@/shared/lib/hooks/useThrottle/useThrottle";
-import styles from "./Page.module.css";
 
 interface Props {
   className?: string;

@@ -1,5 +1,6 @@
 import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
 import type { Configuration } from "webpack";
+
 import { buildDevServer } from "./buildDevServer";
 import { buildLoaders } from "./buildLoaders";
 import { buildPlugins } from "./buildPlugins";

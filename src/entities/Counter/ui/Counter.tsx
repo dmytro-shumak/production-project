@@ -1,13 +1,15 @@
 import { type FC } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
-import { useAppSelector } from "@/shared/lib";
-import { Button } from "@/shared/ui";
+
 import { getCounterValue } from "../model/selectors/getCounterValue/getCounterValue";
 import {
   counterDecrement,
   counterIncrement,
 } from "../model/slice/counterSlice";
+
+import { useAppSelector } from "@/shared/lib";
+import { Button } from "@/shared/ui";
 
 export const Counter: FC = () => {
   const value = useAppSelector(getCounterValue);

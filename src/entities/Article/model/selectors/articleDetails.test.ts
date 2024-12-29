@@ -1,10 +1,11 @@
-import type { ReducerSchema } from "@/shared/config/redux";
-import type { DeepPartial } from "@/shared/lib";
 import {
   getArticleDetailsData,
   getArticleDetailsError,
   getArticleDetailsIsLoading,
 } from "./articleDetails";
+
+import type { ReducerSchema } from "@/shared/config/redux";
+import type { DeepPartial } from "@/shared/lib";
 
 describe("articleDetails", () => {
   test("should return article details", () => {

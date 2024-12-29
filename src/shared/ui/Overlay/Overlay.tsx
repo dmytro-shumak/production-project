@@ -1,6 +1,8 @@
 import { type ReactNode } from "react";
-import { classNames } from "@/shared/lib";
+
 import styles from "./Overlay.module.css";
+
+import { classNames } from "@/shared/lib";
 
 interface Props {
   className?: string;

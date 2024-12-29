@@ -1,5 +1,18 @@
 import { memo, useCallback, type ChangeEvent } from "react";
 import { useTranslation } from "react-i18next";
+
+import {
+  getArticlePageOrder,
+  getArticlePageSearch,
+  getArticlePageSort,
+  getArticlePageType,
+  getArticlePageView,
+} from "../../model/selectors/articlePageSelector";
+import { fetchArticleList } from "../../model/services/fetchArticleList/fetchArticleList";
+import { articlePageActions } from "../../model/slices/articlePageSlice";
+
+import styles from "./ArticlePageFilters.module.css";
+
 import {
   ArticleSortField,
   ArticleSortSelector,
@@ -17,16 +30,6 @@ import {
 import type { SortOrder } from "@/shared/types";
 import { Card } from "@/shared/ui";
 import { Input } from "@/shared/ui/Input";
-import {
-  getArticlePageOrder,
-  getArticlePageSearch,
-  getArticlePageSort,
-  getArticlePageType,
-  getArticlePageView,
-} from "../../model/selectors/articlePageSelector";
-import { fetchArticleList } from "../../model/services/fetchArticleList/fetchArticleList";
-import { articlePageActions } from "../../model/slices/articlePageSlice";
-import styles from "./ArticlePageFilters.module.css";
 
 interface Props {
   className?: string;

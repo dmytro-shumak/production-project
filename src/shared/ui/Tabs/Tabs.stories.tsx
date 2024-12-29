@@ -1,8 +1,10 @@
 import { action } from "@storybook/addon-actions";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Theme } from "@/shared/const";
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator";
+
 import { Tabs } from "./Tabs";
+
+import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator";
+import { Theme } from "@/shared/const";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {

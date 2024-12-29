@@ -1,7 +1,9 @@
 import type { FC } from "react";
+
+import { LoginForm } from "../LoginForm/LoginForm";
+
 import { classNames } from "@/shared/lib";
 import { Modal } from "@/shared/ui/Modal";
-import { LoginForm } from "../LoginForm/LoginForm";
 
 interface Props {
   className?: string;

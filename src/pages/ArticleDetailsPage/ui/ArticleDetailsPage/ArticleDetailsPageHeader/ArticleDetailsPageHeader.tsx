@@ -1,11 +1,13 @@
 import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+
+import { getCanEditArticle } from "../../../model/selectors/article";
+
 import { getArticleDetailsData } from "@/entities/Article";
 import { RoutesPath } from "@/shared/const/router";
 import { useAppSelector, classNames } from "@/shared/lib";
 import { Button, ButtonTheme, HStack } from "@/shared/ui";
-import { getCanEditArticle } from "../../../model/selectors/article";
 
 interface Props {
   className?: string;

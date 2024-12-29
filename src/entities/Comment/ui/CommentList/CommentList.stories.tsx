@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
+
+import { CommentList } from "./CommentList";
+
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator";
 import { Theme } from "@/shared/const";
-import { CommentList } from "./CommentList";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {

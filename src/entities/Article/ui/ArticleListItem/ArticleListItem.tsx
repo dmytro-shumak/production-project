@@ -1,5 +1,16 @@
 import { memo, type HTMLAttributeAnchorTarget } from "react";
 import { useTranslation } from "react-i18next";
+
+import { ArticleBlockType } from "../../model/constants/article";
+import {
+  ArticleView,
+  type Article,
+  type ArticleTextBlock,
+} from "../../model/types/article";
+import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
+
+import styles from "./ArticleListItem.module.css";
+
 import EyeIcon from "@/shared/assets/icons/eye.svg?react";
 import { RoutesPath } from "@/shared/const/router";
 import { classNames } from "@/shared/lib";
@@ -12,14 +23,6 @@ import {
   Icon,
   Text,
 } from "@/shared/ui";
-import { ArticleBlockType } from "../../model/constants/article";
-import {
-  ArticleView,
-  type Article,
-  type ArticleTextBlock,
-} from "../../model/types/article";
-import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
-import styles from "./ArticleListItem.module.css";
 
 interface Props {
   className?: string;
