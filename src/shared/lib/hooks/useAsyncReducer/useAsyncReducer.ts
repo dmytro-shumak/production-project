@@ -13,6 +13,26 @@ export type ReducersList = {
   [name in ReducerSchemaKey]?: Reducer;
 };
 
+/**
+ * Custom hook to manage asynchronous reducers in a Redux store.
+ *
+ * @param {ReducersList} reducers - An object containing the reducers to be added.
+ * @param {boolean} [removeAfterUnmount=true] - Flag to determine if reducers should be removed after the component unmounts.
+ *
+ * @returns {void}
+ *
+ * @example
+ * const reducers = {
+ *   user: userReducer,
+ *   posts: postsReducer,
+ * };
+ * useAsyncReducer(reducers);
+ *
+ * @remarks
+ * This hook uses the `useEffect` hook to add reducers to the Redux store when the component mounts,
+ * and optionally removes them when the component unmounts. It dispatches initialization and destruction
+ * actions to the store for each reducer.
+ */
 export function useAsyncReducer(
   reducers: ReducersList,
   removeAfterUnmount = true,
