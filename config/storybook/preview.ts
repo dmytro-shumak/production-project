@@ -9,18 +9,30 @@ import { Theme } from "@/shared/const";
 
 const preview: Preview = {
   parameters: {
+    // backgrounds: {
+    //   default: "light",
+    //   values: [
+    //     { name: "light", value: "#e8e8ea" },
+    //     { name: "dark", value: "#090949" },
+    //   ],
+    // },
+    // controls: {
+    //   matchers: {
+    //     color: /(background|color)$/i,
+    //     date: /Date$/i,
+    //   },
+    // },
     backgrounds: {
-      default: "light",
-      values: [
-        { name: "light", value: "#e8e8ea" },
-        { name: "dark", value: "#090949" },
-      ],
+      disable: true,
     },
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i,
-      },
+    themes: {
+      default: "light",
+      list: [
+        { name: "light", class: Theme.Light, color: "#e8e8ea" },
+        { name: "dark", class: Theme.Dark, color: "#090949" },
+        { name: "orange", class: Theme.Orange, color: "#fb5998" },
+      ],
+      target: "body",
     },
   },
   decorators: [
