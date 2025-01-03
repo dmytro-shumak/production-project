@@ -5,12 +5,13 @@ import { useStore } from "react-redux";
 import { useAppDispatch } from "../redux/redux";
 
 import type {
+  ReducerSchema,
   ReducerSchemaKey,
   ReduxStoreWithManager,
 } from "@/shared/config/redux";
 
 export type ReducersList = {
-  [name in ReducerSchemaKey]?: Reducer;
+  [name in ReducerSchemaKey]?: Reducer<NonNullable<ReducerSchema[name]>>;
 };
 
 /**

@@ -10,9 +10,9 @@ import { articleDetailsReducer } from "@/entities/Article";
 import { profileReducer } from "@/entities/Profile";
 import { loginReducer } from "@/features/authByUsername";
 import { articleDetailsPageReducer } from "@/pages/ArticleDetailsPage";
-import type { DeepPartial } from "@/shared/lib";
+import type { DeepPartial, ReducersList } from "@/shared/lib";
 
-const defaultAsyncReducers: DeepPartial<ReducersMapObject<ReducerSchema>> = {
+const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,
   articleDetails: articleDetailsReducer,
   profile: profileReducer,
