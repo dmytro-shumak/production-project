@@ -12,7 +12,7 @@ import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleT
 import styles from "./ArticleListItem.module.css";
 
 import EyeIcon from "@/shared/assets/icons/eye.svg?react";
-import { RoutesPath } from "@/shared/const/router";
+import { getRouteArticleDetails } from "@/shared/const/router";
 import { classNames } from "@/shared/lib";
 import {
   AppLink,
@@ -73,10 +73,7 @@ export const ArticleListItem = memo(
               />
             )}
             <div className={styles.footer}>
-              <AppLink
-                to={`${RoutesPath.article_details}/${article.id}`}
-                target={target}
-              >
+              <AppLink to={getRouteArticleDetails(article.id)} target={target}>
                 <Button theme={ButtonTheme.Outline}>{t("ReadMore")}</Button>
               </AppLink>
               {views}
@@ -93,7 +90,7 @@ export const ArticleListItem = memo(
           className,
           styles.grid,
         ])}
-        to={`${RoutesPath.article_details}/${article.id}`}
+        to={getRouteArticleDetails(article.id)}
       >
         <Card>
           <div className={styles.imageWrapper}>

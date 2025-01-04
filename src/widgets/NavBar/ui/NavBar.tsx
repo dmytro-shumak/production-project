@@ -7,8 +7,8 @@ import { getUserAuthData } from "@/entities/User";
 import { LoginModal } from "@/features/authByUsername";
 import { AvatarDropdown } from "@/features/avatarDropdown";
 import { NotificationButton } from "@/features/notificationButton";
-import { RoutesPath } from "@/shared/const/router";
-import { useAppSelector, classNames } from "@/shared/lib";
+import { getRouteArticleCreate } from "@/shared/const/router";
+import { classNames, useAppSelector } from "@/shared/lib";
 import {
   AppLink,
   AppLinkTheme,
@@ -45,7 +45,7 @@ export const NavBar = memo(({ className }: Props) => {
           title={t("MyApp")}
           theme={TextTheme.INVERTED}
         />
-        <AppLink to={RoutesPath.article_create} theme={AppLinkTheme.Secondary}>
+        <AppLink to={getRouteArticleCreate()} theme={AppLinkTheme.Secondary}>
           {t("CreateArticle")}
         </AppLink>
         <HStack gap={16} className={styles.actions}>

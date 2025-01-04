@@ -8,8 +8,8 @@ import {
   isUserManager,
   logout,
 } from "@/entities/User";
-import { RoutesPath } from "@/shared/const/router";
-import { useAppSelector, classNames } from "@/shared/lib";
+import { getRouteAdminPanel, getRouteProfile } from "@/shared/const/router";
+import { classNames, useAppSelector } from "@/shared/lib";
 import { Avatar, Dropdown, type DropdownItem } from "@/shared/ui";
 
 interface Props {
@@ -36,13 +36,13 @@ export const AvatarDropdown = memo(({ className }: Props) => {
         ? [
             {
               content: t("AdminPanel"),
-              href: RoutesPath.admin_panel,
+              href: getRouteAdminPanel(),
             },
           ]
         : []),
       {
         content: t("Profile"),
-        href: `${RoutesPath.profile}/${authData?.id}`,
+        href: authData?.id && getRouteProfile(authData.id),
       },
       { content: t("Logout"), onClick: onLogout },
     ];

@@ -7,19 +7,24 @@ import AboutIcon from "@/shared/assets/icons/about.svg?react";
 import ArticleIcon from "@/shared/assets/icons/article.svg?react";
 import MainIcon from "@/shared/assets/icons/main.svg?react";
 import ProfileIcon from "@/shared/assets/icons/profile.svg?react";
-import { RoutesPath } from "@/shared/const/router";
+import {
+  getRouteAbout,
+  getRouteArticles,
+  getRouteMain,
+  getRouteProfile,
+} from "@/shared/const/router";
 
 export const getSideBarItems = createSelector(
   getUserAuthData,
   (userAuthData) => {
     const sidebarItemsList: SidebarItemType[] = [
       {
-        path: RoutesPath.main,
+        path: getRouteMain(),
         Icon: MainIcon,
         text: "Main",
       },
       {
-        path: RoutesPath.about,
+        path: getRouteAbout(),
         Icon: AboutIcon,
         text: "About",
       },
@@ -27,13 +32,13 @@ export const getSideBarItems = createSelector(
     if (userAuthData) {
       sidebarItemsList.push(
         {
-          path: `${RoutesPath.profile}/${userAuthData.id}`,
+          path: getRouteProfile(userAuthData.id),
           Icon: ProfileIcon,
           text: "Profile",
           authOnly: true, // Add authOnly prop to restrict access to the profile page to authenticated users.
         },
         {
-          path: RoutesPath.articles,
+          path: getRouteArticles(),
           Icon: ArticleIcon,
           text: "Articles",
           authOnly: true, // Add authOnly prop to restrict access to the profile page to authenticated users.
