@@ -13,14 +13,10 @@ import { articlePageActions } from "../../model/slices/articlePageSlice";
 
 import styles from "./ArticlePageFilters.module.css";
 
-import {
-  ArticleSortField,
-  ArticleSortSelector,
-  ArticleType,
-  ArticleTypeTabs,
-  ArticleView,
-  ArticleViewSelector,
-} from "@/entities/Article";
+import { ArticleSortField, ArticleType, ArticleView } from "@/entities/Article";
+import { ArticleSortSelector } from "@/features/articleSortSelector";
+import { ArticleTypeTabs } from "@/features/articleTypeTabs";
+import { ArticleViewSelector } from "@/features/articleViewSelector";
 import {
   useAppDispatch,
   useAppSelector,

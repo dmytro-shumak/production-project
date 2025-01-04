@@ -1,9 +1,8 @@
 import { memo } from "react";
 
-import { ArticleView } from "../../model/types/article";
-
 import styles from "./ArticleViewSelector.module.css";
 
+import { ArticleView } from "@/entities/Article";
 import GridIcon from "@/shared/assets/icons/grid.svg?react";
 import ListIcon from "@/shared/assets/icons/list.svg?react";
 import { classNames } from "@/shared/lib";
