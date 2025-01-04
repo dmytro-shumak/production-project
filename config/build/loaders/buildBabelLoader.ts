@@ -12,6 +12,7 @@ export function buildBabelLoader({ isDev, isTsx }: BuildBabelLoaderProps) {
     use: {
       loader: "babel-loader",
       options: {
+        cacheDirectory: true,
         presets: ["@babel/preset-env"],
         plugins: [
           // [
@@ -28,12 +29,13 @@ export function buildBabelLoader({ isDev, isTsx }: BuildBabelLoaderProps) {
             },
           ],
           "@babel/plugin-transform-runtime",
-          isTsx && [
-            babelRemoveAttributesPlugin,
-            {
-              props: ["data-testid"],
-            },
-          ],
+          isTsx &&
+            !isDev && [
+              babelRemoveAttributesPlugin,
+              {
+                props: ["data-testid"],
+              },
+            ],
           isDev && require.resolve("react-refresh/babel"),
         ].filter(Boolean),
       },

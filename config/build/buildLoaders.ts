@@ -13,6 +13,7 @@ export const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
 
   const cssLoader: RuleSetRule = {
     test: /\.css$/i,
+    exclude: /node_modules/,
     use: [
       isDev ? "style-loader" : MiniCssExtractPlugin.loader,
       {

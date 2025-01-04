@@ -24,10 +24,6 @@ export const buildPlugins = ({
       template: paths.html,
     }),
     new ProgressPlugin(),
-    new MiniCssExtractPlugin({
-      filename: "[name].[contenthash].css",
-      chunkFilename: "[id].[contenthash].css",
-    }),
     new DefinePlugin({
       __DEV__: isDev,
       __PROJECT__: JSON.stringify(project),
@@ -52,6 +48,15 @@ export const buildPlugins = ({
     plugins.push(
       new ReactRefreshWebpackPlugin(),
       new BundleAnalyzerPlugin({ openAnalyzer: false }),
+    );
+  }
+
+  if (!isDev) {
+    plugins.push(
+      new MiniCssExtractPlugin({
+        filename: "[name].[contenthash].css",
+        chunkFilename: "[id].[contenthash].css",
+      }),
     );
   }
 

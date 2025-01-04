@@ -22,7 +22,7 @@ export const buildWebpackConfig = (option: BuildOptions): Configuration => {
       clean: true,
       publicPath: "/",
     },
-    devtool: isDev ? "inline-source-map" : false,
+    devtool: isDev ? "eval-cheap-module-source-map" : false,
     module: {
       rules: buildLoaders(option),
     },
