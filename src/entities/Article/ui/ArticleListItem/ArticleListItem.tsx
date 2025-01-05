@@ -21,8 +21,10 @@ import {
   ButtonTheme,
   Card,
   Icon,
+  Skeleton,
   Text,
 } from "@/shared/ui";
+import { AppImage } from "@/shared/ui/AppImage";
 
 interface Props {
   className?: string;
@@ -65,7 +67,12 @@ export const ArticleListItem = memo(
             </div>
             <Text text={article.title} className={styles.title} />
             {types}
-            <img src={article.img} alt={article.title} className={styles.img} />
+            <AppImage
+              fallback={<Skeleton width="100%" height="250px" />}
+              src={article.img}
+              alt={article.title}
+              className={styles.img}
+            />
             {textBlock && (
               <ArticleTextBlockComponent
                 block={textBlock}
@@ -94,7 +101,12 @@ export const ArticleListItem = memo(
       >
         <Card>
           <div className={styles.imageWrapper}>
-            <img src={article.img} alt={article.title} className={styles.img} />
+            <AppImage
+              fallback={<Skeleton width="100%" height="100%" />}
+              src={article.img}
+              alt={article.title}
+              className={styles.img}
+            />
             <Text text={article.createdAt} className={styles.date} />
           </div>
           <div className={styles.infoWrapper}>
