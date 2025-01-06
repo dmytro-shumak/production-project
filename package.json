@@ -31,6 +31,9 @@
     "prepare": "husky",
     "postinstall": "rm -rf node_modules/.cache"
   },
+  "lint-staged": {
+    "**/*.{ts,tsx}": "eslint"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
