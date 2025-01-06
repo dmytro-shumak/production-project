@@ -8,7 +8,7 @@ const MainPage: FC = () => {
   const { t } = useTranslation();
 
   return (
-    <Page>
+    <Page dataTestid="MainPage">
       <h1>{t("MainPage")}</h1>
       <Counter />
     </Page>

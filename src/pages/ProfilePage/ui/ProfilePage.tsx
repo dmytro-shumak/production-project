@@ -67,7 +67,7 @@ const ProfilePage: FC<Props> = ({ className }) => {
   }
 
   return (
-    <Page className={classNames("", {}, [className])}>
+    <Page className={classNames("", {}, [className])} dataTestid="ProfilePage">
       <VStack gap={16} align="stretch">
         <ProfilePageHeader />
         {validateErrors?.length !== 0 &&

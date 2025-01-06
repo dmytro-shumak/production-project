@@ -1,7 +1,8 @@
 import { Suspense, useCallback } from "react";
 import { Route, Routes } from "react-router-dom";
 
-import { routesConfig } from "./config/routeConfig";
+import { routesConfig } from "../config/routeConfig";
+
 import { RequireAuth } from "./RequireAuth";
 
 import type { AppRoutesProps } from "@/shared/types";

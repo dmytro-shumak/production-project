@@ -4,11 +4,11 @@ import { useTranslation } from "react-i18next";
 import { Page } from "@/widgets/Page";
 
 const AdminPage: FC = () => {
-  const { t } = useTranslation("about");
+  const { t } = useTranslation("admin");
 
   return (
-    <Page>
-      <h1>{t("AboutUs")}</h1>
+    <Page dataTestid="AdminPage">
+      <h1>{t("AdminPage")}</h1>
     </Page>
   );
 };

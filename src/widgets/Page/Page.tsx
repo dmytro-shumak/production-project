@@ -20,9 +20,15 @@ interface Props {
   className?: string;
   onScrollEnd?: () => void;
   children: ReactNode;
+  dataTestid?: string;
 }
 
-export const Page = ({ className, children, onScrollEnd }: Props) => {
+export const Page = ({
+  className,
+  children,
+  onScrollEnd,
+  dataTestid,
+}: Props) => {
   const wrapperRef = useRef<HTMLElement>(null);
   const triggerRef = useRef<HTMLDivElement>(null);
 
@@ -55,6 +61,7 @@ export const Page = ({ className, children, onScrollEnd }: Props) => {
       ref={wrapperRef}
       id="pageContainer"
       onScroll={onScroll}
+      data-testid={dataTestid}
     >
       {children}
       {onScrollEnd ? <div className={styles.trigger} ref={triggerRef} /> : null}

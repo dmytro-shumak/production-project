@@ -38,7 +38,7 @@ const config: Config = {
 
   globals: {
     __DEV__: true,
-    __PROJECT: "jest",
+    __PROJECT__: "jest",
   },
 
   // reporters: [

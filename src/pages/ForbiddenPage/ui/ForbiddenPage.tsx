@@ -7,7 +7,7 @@ const ForbiddenPage: FC = () => {
   const { t } = useTranslation();
 
   return (
-    <Page>
+    <Page dataTestid="ForbiddenPage">
       <h1>{t("AccessForbidden")}</h1>
     </Page>
   );
