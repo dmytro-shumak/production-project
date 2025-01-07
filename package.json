@@ -22,7 +22,7 @@
     "storybook": "storybook dev -p 6006 -c config/storybook",
     "build-storybook": "storybook build -c config/storybook",
     "test:screenshot": "npx loki --requireReference --reactUri file:./storybook-static  --skipStories Loader",
-    "test:ui": "npx loki test --skipStories Loader",
+    "test:ui": "npx loki test --skipStories Loader --chromeRetries=3 --chromeConcurrency=1 ",
     "test:ui:approve": "npx loki approve",
     "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
     "test:ui:json": "node scripts/generate-visual-json-report.js",
