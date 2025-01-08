@@ -4,6 +4,7 @@ import { ArticleView, type Article } from "../../model/types/article";
 
 import { ArticleList } from "./ArticleList";
 
+import { RouterDecorator } from "@/shared/config";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator";
 import { Theme } from "@/shared/const";
 
@@ -17,6 +18,9 @@ const meta = {
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ["autodocs"],
+  decorators: [
+    RouterDecorator({ path: "/article", initialEntries: ["/article"] }),
+  ],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {},
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
@@ -107,6 +111,7 @@ const articles = Array.from({ length: 5 }).map(() => articleItem);
 export const GridLight: Story = {
   args: {
     articles,
+    virtualized: false,
   },
 };
 
@@ -117,12 +122,14 @@ export const GridDark: Story = {
   },
   args: {
     articles,
+    virtualized: false,
   },
 };
 
 export const ListLight: Story = {
   args: {
     articles,
+    virtualized: false,
     view: ArticleView.LIST,
   },
 };
@@ -134,6 +141,7 @@ export const ListDark: Story = {
   },
   args: {
     articles,
+    virtualized: false,
     view: ArticleView.LIST,
   },
 };
