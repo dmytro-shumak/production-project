@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { AppLink } from "../AppLink/AppLink";
 import { AppLinkTheme } from "../AppLink/types";
 
+import { RouterDecorator } from "@/shared/config";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator";
 import { Theme } from "@/shared/const";
 
@@ -16,6 +17,7 @@ const meta = {
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ["autodocs"],
+  decorators: [RouterDecorator()],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {},
   args: {

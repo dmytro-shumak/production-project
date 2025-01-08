@@ -9,7 +9,7 @@ interface RouterDecoratorProps {
 }
 
 export const RouterDecorator =
-  ({ path, initialEntries = ["/"] }: RouterDecoratorProps) =>
+  ({ path = "*", initialEntries = ["/"] }: RouterDecoratorProps = {}) =>
   (StoryComponent: StoryFn) => (
     <MemoryRouter initialEntries={initialEntries}>
       <Routes>

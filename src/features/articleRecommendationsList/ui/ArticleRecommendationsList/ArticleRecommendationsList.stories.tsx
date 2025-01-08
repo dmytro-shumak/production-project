@@ -4,6 +4,7 @@ import { ArticleRecommendationsList } from "./ArticleRecommendationsList";
 
 import { ArticleType, type Article } from "@/entities/Article";
 import { baseUrl } from "@/shared/api";
+import { RouterDecorator } from "@/shared/config";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator";
 import { Theme } from "@/shared/const";
 
@@ -43,6 +44,7 @@ const meta = {
     ],
   },
   tags: ["autodocs"],
+  decorators: [RouterDecorator()],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {},
 } satisfies Meta<typeof ArticleRecommendationsList>;

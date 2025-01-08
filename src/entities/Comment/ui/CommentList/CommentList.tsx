@@ -15,7 +15,6 @@ interface Props {
 
 export const CommentList = memo(({ className, comments, isLoading }: Props) => {
   const { t } = useTranslation("");
-
   if (isLoading) {
     return (
       <VStack gap={20}>

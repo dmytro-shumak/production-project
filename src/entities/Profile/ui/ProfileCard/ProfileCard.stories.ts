@@ -46,12 +46,6 @@ export const WithError: Story = {
   },
 };
 
-export const Loading: Story = {
-  args: {
-    isLoading: true,
-  },
-};
-
 // export const PrimaryDark: Story = {
 //   args: {
 //     isOpen: true,
