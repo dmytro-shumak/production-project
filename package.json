@@ -20,7 +20,7 @@
     "stylelint:fix": "npx stylelint '**/*.css' --fix",
     "test": "jest",
     "storybook": "storybook dev -p 6006 -c config/storybook",
-    "build-storybook": "storybook build -c config/storybook",
+    "storybook:build": "storybook build -c config/storybook",
     "test:screenshot": "npx loki --requireReference --reactUri file:./storybook-static  --skipStories Loader",
     "test:ui": "npx loki test --skipStories Loader --chromeRetries=3 --chromeConcurrency=1 ",
     "test:ui:approve": "npx loki approve",
