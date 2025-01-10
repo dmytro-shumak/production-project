@@ -79,6 +79,12 @@ jobs:
         if: always()
       - name: build storybook
         run: npm run storybook:build
+      - name: unit testing
+        if: always()
+        run: npm run test
+      # - name: move loki report
+      # if: always()
+      # run: mv .loki reports/
       # if: always()
       # TODO: fix loki static        
       # - name: screenshot testing
@@ -94,7 +100,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         if: always()
         with:
-          path: '.loki'
+          path: 'reports'
       - name: Deploy to GitHub Pages
         id: deployment
         if: always()
