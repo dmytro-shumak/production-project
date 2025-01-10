@@ -41,18 +41,18 @@ const config: Config = {
     __PROJECT__: "jest",
   },
 
-  // reporters: [
-  //   "default",
-  //   [
-  //     "jest-html-reporters",
-  //     {
-  //       publicPath: "<rootDir>/reports/unit",
-  //       filename: "report.html",
-  //       openReport: true,
-  //       inlineSource: true,
-  //     },
-  //   ],
-  // ],
+  reporters: [
+    "default",
+    [
+      "jest-html-reporters",
+      {
+        publicPath: "<rootDir>/reports/unit",
+        filename: "report.html",
+        openReport: false,
+        inlineSource: true,
+      },
+    ],
+  ],
 
   // The root directory that Jest should scan for tests and modules within
   // rootDir: '../../src',
