@@ -79,7 +79,7 @@ jobs:
         if: always()
       - name: build storybook
         run: npm run storybook:build
-        if: always()
+      # if: always()
       # TODO: fix loki static        
       # - name: screenshot testing
       #   run: npm run test:screenshot
