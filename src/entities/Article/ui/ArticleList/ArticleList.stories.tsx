@@ -111,7 +111,6 @@ const articles = Array.from({ length: 5 }).map(() => articleItem);
 export const GridLight: Story = {
   args: {
     articles,
-    virtualized: false,
   },
 };
 
@@ -122,14 +121,12 @@ export const GridDark: Story = {
   },
   args: {
     articles,
-    virtualized: false,
   },
 };
 
 export const ListLight: Story = {
   args: {
     articles,
-    virtualized: false,
     view: ArticleView.LIST,
   },
 };
@@ -141,7 +138,6 @@ export const ListDark: Story = {
   },
   args: {
     articles,
-    virtualized: false,
     view: ArticleView.LIST,
   },
 };
