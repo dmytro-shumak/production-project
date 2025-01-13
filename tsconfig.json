@@ -16,7 +16,7 @@
     "noEmitOnError": false,
     "strict": true,
     "isolatedModules": true,
-    "types": ["node", "jest"],
+    "types": ["node", "jest", "@testing-library/jest-dom"],
     "paths": {
       "@/*": ["./src/*"]
     }
