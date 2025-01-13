@@ -1,2 +1,4 @@
 **/*.d.ts
 scripts/
+# TODO: migrate to 9v
+cypress
