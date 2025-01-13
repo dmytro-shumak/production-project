@@ -19,7 +19,7 @@
     "types": ["node", "jest", "@testing-library/jest-dom"],
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
   },
   "ts-node": {
     "compilerOptions": {
@@ -27,4 +27,5 @@
       "verbatimModuleSyntax": false
     }
   },
+  "exclude": ["cypress.config.ts"]
 }

@@ -31,7 +31,7 @@ export const ArticleRecommendationsList = memo(
 
     return (
       <VStack gap={8} className={classNames("", {}, [className])}>
-        <ArticleList articles={articles} target="_blank" virtualized={false} />
+        <ArticleList articles={articles} target="_blank" />
         <Text title={t("Comments")} size={TextSize.L} />
       </VStack>
     );
