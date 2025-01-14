@@ -1,4 +1,7 @@
 /// <reference types="cypress" />
+
+import { login } from "./commands/login";
+
 // ***********************************************
 // This example commands.ts shows you how to
 // create various custom commands and overwrite
@@ -11,7 +14,8 @@
 //
 //
 // -- This is a parent command --
-Cypress.Commands.add("login", (email, password) => {});
+
+Cypress.Commands.add("login", login)
 //
 //
 // -- This is a child command --
@@ -28,7 +32,7 @@ Cypress.Commands.add("login", (email, password) => {});
 declare global {
   namespace Cypress {
     interface Chainable {
-      login(email: string, password: string): Chainable<void>;
+      login(username?: string, password?: string): Chainable<void>;
     }
   }
 }

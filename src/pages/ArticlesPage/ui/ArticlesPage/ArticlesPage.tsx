@@ -42,6 +42,7 @@ const ArticlesPage: FC<Props> = ({ className }) => {
 
   return (
     <Page
+      dataTestid="ArticlesPage"
       className={classNames(styles.articlesPage, {}, [className])}
       onScrollEnd={onLoadNextPart}
     >

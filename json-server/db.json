@@ -90,9 +90,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "2",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -162,10 +160,7 @@
       "views": 256,
       "createdAt": "30.02.2021",
       "userId": "2",
-      "type": [
-        "IT",
-        "Politics"
-      ],
+      "type": ["IT", "Politics"],
       "blocks": [
         {
           "id": "1",
@@ -187,9 +182,7 @@
       "views": 678,
       "createdAt": "26.02.2023",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -211,9 +204,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -235,9 +226,7 @@
       "views": 4,
       "createdAt": "26.07.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -259,9 +248,7 @@
       "views": 5555,
       "createdAt": "2.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -283,9 +270,7 @@
       "views": 49,
       "createdAt": "14.03.2019",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -307,9 +292,7 @@
       "views": 987,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -331,9 +314,7 @@
       "views": 13,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -355,9 +336,7 @@
       "views": 98,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -379,9 +358,7 @@
       "views": 43,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -403,9 +380,7 @@
       "views": 246,
       "createdAt": "26.02.2014",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -427,9 +402,7 @@
       "views": 984,
       "createdAt": "26.07.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -451,10 +424,7 @@
       "views": 432,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT",
-        "Politics"
-      ],
+      "type": ["IT", "Politics"],
       "blocks": [
         {
           "id": "1",
@@ -476,9 +446,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -500,10 +468,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT",
-        "BUSINESS"
-      ],
+      "type": ["IT", "BUSINESS"],
       "blocks": [
         {
           "id": "1",
@@ -525,9 +490,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "MUSIC"
-      ],
+      "type": ["MUSIC"],
       "blocks": [
         {
           "id": "1",
@@ -549,9 +512,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "ARTICLE"
-      ],
+      "type": ["ARTICLE"],
       "blocks": [
         {
           "id": "1",
@@ -573,9 +534,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -597,9 +556,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -621,9 +578,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -645,9 +600,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -669,9 +622,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -801,18 +752,21 @@
       "id": "1",
       "username": "user",
       "password": "password",
-      "roles": [
-        "ADMIN"
-      ],
+      "roles": ["ADMIN"],
       "avatar": "https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&q=70&fm=webp"
     },
     {
       "id": "2",
       "username": "username",
       "password": "password",
-      "roles": [
-        "USER"
-      ],
+      "roles": ["USER"],
+      "avatar": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png"
+    },
+    {
+      "id": "3",
+      "username": "testuser",
+      "password": "123",
+      "roles": ["USER"],
       "avatar": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png"
     }
   ],
@@ -830,6 +784,17 @@
     },
     {
       "id": "2",
+      "firstName": "Alex13",
+      "lastName": "Lesn",
+      "age": 28,
+      "currency": "UAH",
+      "country": "Ukraine",
+      "city": "Los Angeles",
+      "username": "anonymous",
+      "avatar": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png"
+    },
+    {
+      "id": "3",
       "firstName": "Alex13",
       "lastName": "Lesn",
       "age": 28,
