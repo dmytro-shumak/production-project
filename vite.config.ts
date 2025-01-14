@@ -7,6 +7,10 @@ export default defineConfig({
   resolve: {
     alias: [{ find: "@", replacement: "/src" }],
   },
+  server: {
+    host: true,
+    port: 3000,
+  },
   define: {
     __DEV__: JSON.stringify(true),
     __PROJECT__: JSON.stringify("frontend"),

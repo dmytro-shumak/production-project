@@ -1,2 +1,2 @@
 npx lint-staged
-npm run stylelint:fix
+# npm run stylelint:fix
