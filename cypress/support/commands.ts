@@ -1,6 +1,8 @@
 /// <reference types="cypress" />
 
 import { login } from "./commands/login";
+import type { User } from '../../src/entities/User'
+import { getByTestId } from "./commands/common";
 
 // ***********************************************
 // This example commands.ts shows you how to
@@ -16,6 +18,8 @@ import { login } from "./commands/login";
 // -- This is a parent command --
 
 Cypress.Commands.add("login", login)
+Cypress.Commands.add("getByTestId", getByTestId)
+
 //
 //
 // -- This is a child command --
@@ -32,7 +36,8 @@ Cypress.Commands.add("login", login)
 declare global {
   namespace Cypress {
     interface Chainable {
-      login(username?: string, password?: string): Chainable<void>;
+      login(username?: string, password?: string): Chainable<User>;
+      getByTestId(testId: string): ReturnType<typeof getByTestId>
     }
   }
 }

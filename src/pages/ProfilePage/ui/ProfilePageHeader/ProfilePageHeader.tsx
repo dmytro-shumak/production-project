@@ -47,6 +47,7 @@ export const ProfilePageHeader: FC<Props> = ({ className }) => {
             <Button
               theme={ButtonTheme.Outline}
               onClick={() => onEdit(!readOnly)}
+              data-testid="ProfilePageHeader.EditButton"
             >
               {t("Edit")}
             </Button>
@@ -58,7 +59,11 @@ export const ProfilePageHeader: FC<Props> = ({ className }) => {
               >
                 {t("Cancel")}
               </Button>
-              <Button theme={ButtonTheme.Outline} onClick={onSave}>
+              <Button
+                theme={ButtonTheme.Outline}
+                onClick={onSave}
+                data-testid="ProfilePageHeader.SaveButton"
+              >
                 {t("Save")}
               </Button>
             </>

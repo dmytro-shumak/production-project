@@ -1,7 +1,7 @@
 import { LocalStorageKeys } from '../../../src/shared/constants';
 
 export const login = (username: string = "testuser", password: string = "123") => {
-  cy.request({
+  return cy.request({
     method: "POST",
     url: `http://localhost:8000/login`,
     body: {
@@ -10,5 +10,6 @@ export const login = (username: string = "testuser", password: string = "123") =
     },
   }).then(({ body }) => {
     window.localStorage.setItem(LocalStorageKeys.USER, JSON.stringify(body));
+    return body
   });
 };
