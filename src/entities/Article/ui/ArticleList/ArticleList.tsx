@@ -60,6 +60,7 @@ export const ArticleList = memo(
           className,
           styles[view],
         ])}
+        data-testid="ArticleList"
       >
         {articles.map((article) => (
           <ArticleListItem

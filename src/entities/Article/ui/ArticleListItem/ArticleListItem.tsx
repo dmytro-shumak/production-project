@@ -54,6 +54,7 @@ export const ArticleListItem = memo(
 
       return (
         <div
+          data-testid="ArticleItem"
           className={classNames(styles.articleListItem, {}, [
             className,
             styles.list,
@@ -92,6 +93,7 @@ export const ArticleListItem = memo(
 
     return (
       <AppLink
+        data-testid="ArticleItem"
         target={target}
         className={classNames(styles.articleListItem, {}, [
           className,

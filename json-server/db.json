@@ -684,6 +684,58 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Javascript news",
+      "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "fJtRrqN"
+    },
+    {
+      "title": "Javascript news",
+      "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "kME88Q4"
+    },
+    {
+      "title": "Javascript news",
+      "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "E9AjOYn"
+    },
+    {
+      "title": "Javascript news",
+      "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "HCUU8iM"
     }
   ],
   "comments": [
@@ -764,12 +816,6 @@
       "userId": "2",
       "text": "second user",
       "id": "lic_r4N"
-    },
-    {
-      "articleId": "3",
-      "userId": "1",
-      "text": "ывапывап",
-      "id": "VAUYkzE"
     },
     {
       "articleId": "7",
@@ -874,13 +920,6 @@
       "feedback": "Хорошая статья",
       "userId": "1",
       "articleId": "2"
-    },
-    {
-      "userId": "1",
-      "articleId": "3",
-      "rate": 3,
-      "feedback": "",
-      "id": "I7ofk1u"
     },
     {
       "userId": "1",

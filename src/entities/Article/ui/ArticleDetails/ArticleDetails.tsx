@@ -119,7 +119,10 @@ export const ArticleDetails: FC<Props> = memo(({ className, id }) => {
   }
 
   return (
-    <div className={classNames(styles.articleDetails, {}, [className])}>
+    <div
+      className={classNames(styles.articleDetails, {}, [className])}
+      data-testid="ArticleDetails"
+    >
       <HStack justify="center">
         <Avatar size={200} src={article?.img} className={styles.avatar} />
       </HStack>

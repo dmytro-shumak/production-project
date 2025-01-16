@@ -2,7 +2,6 @@ let profileId: string;
 
 describe('Profile page', () => {
   beforeEach(() => {
-    cy.visit('')
     cy.login().then((data) => {
       profileId = data.id;
       cy.visit(`/profile/${data.id}`)

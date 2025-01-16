@@ -3,6 +3,7 @@
 import { login } from "./commands/login";
 import { getByTestId } from "./commands/common";
 import * as profileCommands from './commands/profile'
+import * as articleCommands from './commands/article';
 
 // ***********************************************
 // This example commands.ts shows you how to
@@ -20,6 +21,7 @@ import * as profileCommands from './commands/profile'
 Cypress.Commands.add("login", login)
 Cypress.Commands.add("getByTestId", getByTestId)
 Cypress.Commands.addAll(profileCommands)
+Cypress.Commands.addAll(articleCommands)
 
 //
 //
