@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
 
 import { login } from "./commands/login";
-import type { User } from '../../src/entities/User'
 import { getByTestId } from "./commands/common";
+import * as profileCommands from './commands/profile'
 
 // ***********************************************
 // This example commands.ts shows you how to
@@ -19,6 +19,7 @@ import { getByTestId } from "./commands/common";
 
 Cypress.Commands.add("login", login)
 Cypress.Commands.add("getByTestId", getByTestId)
+Cypress.Commands.addAll(profileCommands)
 
 //
 //
@@ -33,13 +34,5 @@ Cypress.Commands.add("getByTestId", getByTestId)
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 //
-declare global {
-  namespace Cypress {
-    interface Chainable {
-      login(username?: string, password?: string): Chainable<User>;
-      getByTestId(testId: string): ReturnType<typeof getByTestId>
-    }
-  }
-}
 
 export {};
