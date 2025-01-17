@@ -24,4 +24,10 @@ describe("Article details page", () => {
     cy.addComment('text');
     cy.getByTestId('CommentItem').should('have.length', 1)
   });
+  it("Rate article", () => {
+    cy.getByTestId("ArticleDetails");
+    cy.getByTestId("RatingCard").scrollIntoView()
+    cy.setRating(5,'feedback');
+    cy.get('[data-selected=true]').should('have.length', 5)
+  });
 });

@@ -78,12 +78,13 @@ export const RatingCard = memo(
           value={feedback}
           onChange={handleInputChange}
           placeholder={t("YourFeedback")}
+          data-testid="RatingCard.Input"
         />
       </>
     );
 
     return (
-      <Card className={className}>
+      <Card className={className} data-testid="RatingCard">
         <VStack align="center" gap={8}>
           <Text title={starsCount ? t("ThanksForFeedback") : title} />
           <StarRating
@@ -97,10 +98,16 @@ export const RatingCard = memo(
             <VStack gap={32}>
               {modalContent}
               <HStack gap={16} justify="end">
-                <Button onClick={cancelHandle} theme={ButtonTheme.OutlineRed}>
+                <Button
+                  onClick={cancelHandle}
+                  theme={ButtonTheme.OutlineRed}
+                  data-testid="RatingCard.Close"
+                >
                   {t("Close")}
                 </Button>
-                <Button onClick={acceptHandle}>{t("Send")}</Button>
+                <Button onClick={acceptHandle} data-testid="RatingCard.Send">
+                  {t("Send")}
+                </Button>
               </HStack>
             </VStack>
           </Modal>

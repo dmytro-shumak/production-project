@@ -56,6 +56,8 @@ export const StarRating = memo(
             })}
             width={size}
             height={size}
+            data-testid={`StarRating.${starNumber}`}
+            data-selected={selectedStars >= starNumber}
           />
         ))}
       </div>
