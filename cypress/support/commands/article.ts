@@ -1,7 +1,7 @@
 import type { Article } from "../../../src/entities/Article";
 
 const defaultArticle = {
-  title: "Javascript news",
+  title: "Testing article",
   subtitle: "Что нового в JS за 2022 год?",
   img: "https://teknotower.com/wp-content/uploads/2020/11/js.png",
   views: 1022,

@@ -15,4 +15,13 @@ describe("Article details page", () => {
   it("Load article", () => {
     cy.getByTestId("ArticleDetails").should("exist");
   });
+  it("Load recommendation list", () => {
+    cy.getByTestId("ArticleRecommendationsList").should("exist");
+  });
+  it("Send a comment", () => {
+    cy.getByTestId("ArticleDetails");
+    cy.getByTestId("AddCommentForm").scrollIntoView()
+    cy.addComment('text');
+    cy.getByTestId('CommentItem').should('have.length', 1)
+  });
 });

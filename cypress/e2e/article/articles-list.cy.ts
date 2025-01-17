@@ -8,4 +8,13 @@ describe('Article list page', () => {
     cy.getByTestId('ArticleList').should('exist')
     cy.getByTestId('ArticleItem').should('have.length.greaterThan', 3)
   })
+  it('Search articles', () => {
+    let currentArticleId= '';
+    cy.createArticle().then((article) => {
+      currentArticleId = article.id;
+      cy.getByTestId('ArticleSearchInput').type('Testing article');
+      cy.getByTestId('ArticleItem').should('have.length.greaterThan', 0);
+      cy.removeArticle(currentArticleId);
+    });
+  })
 })

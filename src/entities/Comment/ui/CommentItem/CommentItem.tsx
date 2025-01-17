@@ -15,7 +15,10 @@ interface Props {
 
 export const CommentItem = memo(({ className, comment }: Props) => {
   return (
-    <div className={classNames(styles.commentItem, {}, [className])}>
+    <div
+      className={classNames(styles.commentItem, {}, [className])}
+      data-testid="CommentItem"
+    >
       <AppLink className={styles.header} to={getRouteProfile(comment.user.id)}>
         {comment.user.avatar && <Avatar size={30} src={comment.user.avatar} />}
         <Text title={comment.user.username} />
