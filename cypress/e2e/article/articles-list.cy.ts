@@ -4,10 +4,18 @@ describe('Article list page', () => {
       cy.visit('/articles')
     })
   })
+
   it('Load articles', () => {
     cy.getByTestId('ArticleList').should('exist')
     cy.getByTestId('ArticleItem').should('have.length.greaterThan', 3)
   })
+
+  it('Load Fixtures', () => {
+    cy.intercept('GET', '**/articles?*', {fixture: 'articles.json'})
+    cy.getByTestId('ArticleList').should('exist')
+    cy.getByTestId('ArticleItem').should('have.length.greaterThan', 3)
+  })
+
   it('Search articles', () => {
     let currentArticleId= '';
     cy.createArticle().then((article) => {
@@ -16,5 +24,9 @@ describe('Article list page', () => {
       cy.getByTestId('ArticleItem').should('have.length.greaterThan', 0);
       cy.removeArticle(currentArticleId);
     });
+  })
+
+  it.skip('Skip test', () => {
+    cy.get('audio').should('exist')
   })
 })
