@@ -15,8 +15,8 @@
 }
 
 .appName {
-   width: calc(var(--sidebar-width) - 20px);
-   padding-left: 15px;
+  width: calc(var(--sidebar-width) - 20px);
+  padding-left: 15px;
 }
 
 .actions {
