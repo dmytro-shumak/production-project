@@ -1,24 +1,10 @@
-import i18n, { type Resource } from "i18next";
+import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import Backend from "i18next-http-backend";
 import { initReactI18next } from "react-i18next";
 // don't want to use this?
 // have a look at the Quick start guide
 // for passing in lng and translations on init
-
-const ns = ["translation", "about", "profile", "article-details"];
-const supportedLngs = ["en", "ru", "ua"];
-const resources = ns.reduce((acc: Resource, n) => {
-  supportedLngs.forEach((lng) => {
-    if (!acc[lng]) acc[lng] = {};
-    acc[lng] = {
-      ...acc[lng],
-      [n]: import(`../../../../public/locales/${lng}/${n}.json`),
-    };
-  });
-
-  return acc;
-}, {});
 
 i18n
   // load translation using http -> see /public/locales (i.e. https://github.com/i18next/react-i18next/tree/master/example/react/public/locales)
@@ -36,11 +22,9 @@ i18n
     fallbackLng: "en",
     lng: "en",
     // debug: true,
-    ns,
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },
-    resources,
   });
 
 export default i18n;
