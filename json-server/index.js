@@ -1,8 +1,17 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable no-console */
 const fs = require("fs");
-const jsonServer = require("json-server");
+const https = require("node:https");
 const path = require("path");
+
+const jsonServer = require("json-server");
+
+const options = {
+  pfx: fs.readFileSync(path.resolve(__dirname, "test_cert.pfx")),
+  passphrase: "sample",
+  key: fs.readFileSync(path.resolve(__dirname, "private-key.pem")),
+  cert: fs.readFileSync(path.resolve(__dirname, "certificate.pem")),
+};
 
 const server = jsonServer.create();
 
@@ -37,6 +46,7 @@ server.post("/login", (req, res) => {
     return res.status(403).json({ message: "User not found" });
   } catch (e) {
     console.log(e);
+
     return res.status(500).json({ message: e.message });
   }
 });
@@ -51,6 +61,7 @@ server.use((req, res, next) => {
 
 server.use(router);
 
-server.listen(8000, () => {
-  console.log("server is running on 8000 port");
+const httpsServer = https.createServer(options, server);
+httpsServer.listen(8443, () => {
+  console.log("server is running on 443 port");
 });

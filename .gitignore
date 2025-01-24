@@ -34,3 +34,6 @@ storybook-static
 # Ignore loki report files
 .loki/report.json
 .loki/report.html
+
+json-server/private-key.pem
+
