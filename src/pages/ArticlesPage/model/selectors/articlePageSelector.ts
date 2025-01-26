@@ -1,5 +1,6 @@
 import { ArticleSortField, ArticleType, ArticleView } from "@/entities/Article";
 import type { RootState } from "@/shared/config/redux";
+import { buildSelector } from "@/shared/lib/store";
 
 export const getArticlePageIsLoading = (state: RootState) =>
   state.articlePage?.isLoading;
@@ -33,3 +34,7 @@ export const getArticlePageSearch = (state: RootState) =>
 
 export const getArticlePageType = (state: RootState) =>
   state.articlePage?.type ?? ArticleType.ALL;
+
+export const [useArticleItemById] = buildSelector(
+  (state, id: string) => state.articlePage?.entities[id],
+);
