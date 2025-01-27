@@ -13,6 +13,7 @@ import { ArticleRating } from "@/features/articleRating";
 import { ArticleRecommendationsList } from "@/features/articleRecommendationsList";
 import { useAsyncReducer, type ReducersList } from "@/shared/lib";
 import { classNames } from "@/shared/lib";
+import { getFeaturesFlags } from "@/shared/lib/features";
 import { Text, TextSize, VStack } from "@/shared/ui";
 import { Page } from "@/widgets/Page";
 
@@ -27,6 +28,7 @@ const reducers: ReducersList = {
 const ArticleDetailsPage: FC<Props> = ({ className }) => {
   const { t } = useTranslation("article-details");
   const { id } = useParams();
+  const isArticleRatingEnabled = getFeaturesFlags("isArticleRatingEnabled");
 
   useAsyncReducer(reducers, true);
 
@@ -38,7 +40,7 @@ const ArticleDetailsPage: FC<Props> = ({ className }) => {
     <Page className={classNames(styles.articleDetailsPage, {}, [className])}>
       <ArticleDetailsPageHeader />
       <ArticleDetails id={id} />
-      <ArticleRating articleId={id} />
+      {isArticleRatingEnabled && <ArticleRating articleId={id} />}
       <VStack gap={16}>
         <Text
           title={t("Recommendations")}
