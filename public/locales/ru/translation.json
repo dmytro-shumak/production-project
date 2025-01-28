@@ -20,5 +20,10 @@
   "IT": "IT",
   "Article": "Статья",
   "Business": "Бизнесс",
-  "Music": "Музыка"
+  "Music": "Музыка",
+  "CreationDate": "Дате создания",
+  "Title": "Заголовку",
+  "Views": "Просмотрам",
+  "Ascending": "По возрастанию",
+  "Descending": "По убыванию"
 }
