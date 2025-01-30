@@ -3,7 +3,7 @@ import { Suspense, useEffect } from "react";
 import { AppRouter } from "./router";
 
 import { getUserInitiated, initAuthData } from "@/entities/User";
-import { useAppDispatch, useAppSelector, classNames } from "@/shared/lib";
+import { classNames, useAppDispatch, useAppSelector } from "@/shared/lib";
 import { useTheme } from "@/shared/lib/hooks";
 import { Loader } from "@/shared/ui/Loader";
 import { NavBar } from "@/widgets/NavBar";

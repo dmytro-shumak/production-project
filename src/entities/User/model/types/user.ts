@@ -1,5 +1,7 @@
 import type { UserRole } from "../constants/user";
 
+import type { JsonSettings } from "./jsonSettings";
+
 import type { FeaturesFlags } from "@/shared/types/featuresFlags";
 
 export interface User {
@@ -8,6 +10,7 @@ export interface User {
   avatar?: string;
   roles?: UserRole[];
   features?: FeaturesFlags;
+  jsonSettings?: JsonSettings;
 }
 
 export interface UserSchema {
