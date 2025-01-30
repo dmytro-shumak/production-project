@@ -7,3 +7,4 @@ export { getUserAuthData } from "./model/selectors/getUserAuthData/getUserAuthDa
 export { getUserInitiated } from "./model/selectors/getUserInitiated/getUserInitiated";
 
 export * from "./model/constants/user";
+export * from "./model/services/saveJsonSettings";

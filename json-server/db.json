@@ -854,11 +854,6 @@
         "isArticleRatingEnabled": true,
         "isCounterEnabled": true
       },
-      "jsonSettings": {
-        "theme": "app-light-theme",
-        "isFirstVisit": false,
-        "settingsPageHasBeenOpened": false
-      },
       "avatar": "https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&q=70&fm=webp"
     },
     {
@@ -872,12 +867,12 @@
         "isArticleRatingEnabled": false,
         "isCounterEnabled": true
       },
+      "avatar": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
       "jsonSettings": {
         "theme": "app-light-theme",
         "isFirstVisit": false,
         "settingsPageHasBeenOpened": false
-      },
-      "avatar": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png"
+      }
     },
     {
       "id": "3",
@@ -889,11 +884,6 @@
       "features": {
         "isArticleRatingEnabled": false,
         "isCounterEnabled": false
-      },
-      "jsonSettings": {
-        "theme": "app-light-theme",
-        "isFirstVisit": false,
-        "settingsPageHasBeenOpened": false
       },
       "avatar": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png"
     }
