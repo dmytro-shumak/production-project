@@ -8,3 +8,4 @@ export { getUserInitiated } from "./model/selectors/getUserInitiated/getUserInit
 
 export * from "./model/constants/user";
 export * from "./model/services/saveJsonSettings";
+export * from "./model/services/initAuthData";

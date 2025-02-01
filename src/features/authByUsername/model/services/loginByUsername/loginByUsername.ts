@@ -3,7 +3,6 @@ import { AxiosError } from "axios";
 
 import { setAuthData, type User } from "@/entities/User";
 import type { ThunkConfig, ThunkExtraArg } from "@/shared/config/redux";
-import { LocalStorageKeys } from "@/shared/constants/localStorage";
 
 interface LoginByUserName {
   username: string;
@@ -24,7 +23,6 @@ export const loginByUsername = createAsyncThunk<
       throw new Error("failed to login");
     }
 
-    localStorage.setItem(LocalStorageKeys.USER, JSON.stringify(response.data));
     dispatch(setAuthData(response.data));
 
     return response.data;

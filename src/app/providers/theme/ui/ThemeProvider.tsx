@@ -16,14 +16,17 @@ interface Props {
 }
 
 export const ThemeProvider: React.FC<Props> = ({ children, initialTheme }) => {
-  const { theme: defaultTheme = Theme.Light } = useJsonSettings();
-  const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme);
+  const { theme: defaultTheme } = useJsonSettings();
+  const [theme, setTheme] = useState<Theme>(
+    initialTheme || defaultTheme || Theme.Light,
+  );
   const isThemeInitialized = useRef(false);
 
   useEffect(() => {
-    if (isThemeInitialized.current) {
+    if (isThemeInitialized.current || !defaultTheme) {
       return;
     }
+
     setTheme(defaultTheme);
     isThemeInitialized.current = true;
   }, [defaultTheme]);
