@@ -22,6 +22,10 @@ const App = () => {
     dispatch(initAuthData());
   }, [dispatch]);
 
+  if (!initiated) {
+    return <Loader />;
+  }
+
   return (
     <div className={classNames("app", {}, [theme])}>
       <Suspense fallback={<Loader />}>
