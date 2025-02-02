@@ -11,9 +11,8 @@ import { ArticleDetailsPageHeader } from "./ArticleDetailsPageHeader/ArticleDeta
 import { ArticleDetails } from "@/entities/Article";
 import { ArticleRating } from "@/features/articleRating";
 import { ArticleRecommendationsList } from "@/features/articleRecommendationsList";
-import { useAsyncReducer, type ReducersList } from "@/shared/lib";
-import { classNames } from "@/shared/lib";
-import { toggleFeatures } from "@/shared/lib/features";
+import { classNames, useAsyncReducer, type ReducersList } from "@/shared/lib";
+import { ToggleFeatures } from "@/shared/lib/features";
 import { Text, TextSize, VStack } from "@/shared/ui";
 import { Page } from "@/widgets/Page";
 
@@ -35,19 +34,15 @@ const ArticleDetailsPage: FC<Props> = ({ className }) => {
     return null;
   }
 
-  const Rating = toggleFeatures({
-    name: "isArticleRatingEnabled",
-    // TODO: remove this
-    // eslint-disable-next-line react/no-unstable-nested-components
-    on: () => <ArticleRating articleId={id} />,
-    off: () => null,
-  });
-
   return (
     <Page className={classNames(styles.articleDetailsPage, {}, [className])}>
       <ArticleDetailsPageHeader />
       <ArticleDetails id={id} />
-      {Rating}
+      <ToggleFeatures
+        featureName="isArticleRatingEnabled"
+        on={<ArticleRating articleId={id} />}
+        off={null}
+      />
       <VStack gap={16}>
         <Text
           title={t("Recommendations")}
