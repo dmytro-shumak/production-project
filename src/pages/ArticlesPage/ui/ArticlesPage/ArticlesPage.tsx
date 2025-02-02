@@ -9,6 +9,7 @@ import { ArticlePageFilters } from "../ArticlePageFilters/ArticlePageFilters";
 
 import styles from "./ArticlesPage.module.css";
 
+import { ArticlePageGreeting } from "@/features/articlePageGreeting";
 import { classNames } from "@/shared/lib";
 import {
   useAppDispatch,
@@ -48,6 +49,7 @@ const ArticlesPage: FC<Props> = ({ className }) => {
     >
       <ArticlePageFilters />
       <ArticleInfiniteList className={styles.list} />
+      <ArticlePageGreeting />
     </Page>
   );
 };
