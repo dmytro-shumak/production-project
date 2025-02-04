@@ -4,6 +4,7 @@ import { AppRouter } from "./router";
 
 import { getUserInitiated, initAuthData } from "@/entities/User";
 import { classNames, useAppDispatch, useAppSelector } from "@/shared/lib";
+import { ToggleFeatures } from "@/shared/lib/features";
 import { useTheme } from "@/shared/lib/hooks";
 import { Loader } from "@/shared/ui/Loader";
 import { NavBar } from "@/widgets/NavBar";
@@ -27,15 +28,31 @@ const App = () => {
   }
 
   return (
-    <div className={classNames("app", {}, [theme])}>
-      <Suspense fallback={<Loader />}>
-        <NavBar />
-        <div className="content-page">
-          <Sidebar />
-          {initiated && <AppRouter />}
+    <ToggleFeatures
+      featureName="isAppRedesigned"
+      on={
+        <div className={classNames("app-redesigned", {}, [theme])}>
+          <Suspense fallback={<Loader />}>
+            <NavBar />
+            <div className="content-page">
+              <Sidebar />
+              {initiated && <AppRouter />}
+            </div>
+          </Suspense>
         </div>
-      </Suspense>
-    </div>
+      }
+      off={
+        <div className={classNames("app", {}, [theme])}>
+          <Suspense fallback={<Loader />}>
+            <NavBar />
+            <div className="content-page">
+              <Sidebar />
+              {initiated && <AppRouter />}
+            </div>
+          </Suspense>
+        </div>
+      }
+    />
   );
 };
 
