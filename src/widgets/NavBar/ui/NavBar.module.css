@@ -7,6 +7,10 @@
   align-items: center;
 }
 
+.navBarRedesigned {
+  padding: 16px;
+}
+
 .links {
   display: flex;
   align-items: center;

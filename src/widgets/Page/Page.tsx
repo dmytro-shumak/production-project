@@ -14,6 +14,7 @@ import {
   useInitialEffect,
   classNames,
 } from "@/shared/lib";
+import { toggleFeatures } from "@/shared/lib/features";
 import { useThrottle } from "@/shared/lib/hooks/useThrottle/useThrottle";
 
 interface Props {
@@ -57,7 +58,15 @@ export const Page = ({
 
   return (
     <main
-      className={classNames(styles.page, {}, [className])}
+      className={classNames(
+        toggleFeatures({
+          name: "isAppRedesigned",
+          on: () => styles.pageRedesigned,
+          off: () => styles.page,
+        }),
+        {},
+        [className],
+      )}
       ref={wrapperRef}
       id="pageContainer"
       onScroll={onScroll}

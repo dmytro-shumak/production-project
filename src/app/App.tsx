@@ -3,6 +3,7 @@ import { Suspense, useEffect } from "react";
 import { AppRouter } from "./router";
 
 import { getUserInitiated, initAuthData } from "@/entities/User";
+import { MainLayout } from "@/shared/layouts/MainLayout";
 import { classNames, useAppDispatch, useAppSelector } from "@/shared/lib";
 import { ToggleFeatures } from "@/shared/lib/features";
 import { useTheme } from "@/shared/lib/hooks";
@@ -33,11 +34,11 @@ const App = () => {
       on={
         <div className={classNames("app-redesigned", {}, [theme])}>
           <Suspense fallback={<Loader />}>
-            <NavBar />
-            <div className="content-page">
-              <Sidebar />
-              {initiated && <AppRouter />}
-            </div>
+            <MainLayout
+              content={<AppRouter />}
+              sidebar={<Sidebar />}
+              header={<NavBar />}
+            />
           </Suspense>
         </div>
       }
@@ -47,7 +48,7 @@ const App = () => {
             <NavBar />
             <div className="content-page">
               <Sidebar />
-              {initiated && <AppRouter />}
+              <AppRouter />
             </div>
           </Suspense>
         </div>
