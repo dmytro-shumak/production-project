@@ -18,7 +18,7 @@ import {
   classNames,
 } from "@/shared/lib";
 import { Button, ButtonTheme, Text, TextTheme } from "@/shared/ui";
-import { Input } from "@/shared/ui/Input";
+import { Input } from "@/shared/ui/deprecated/Input";
 
 interface Props {
   className?: string;

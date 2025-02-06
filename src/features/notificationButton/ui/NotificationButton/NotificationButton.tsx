@@ -7,7 +7,7 @@ import { NotificationList } from "@/entities/Notifications";
 import NotificationIcon from "@/shared/assets/icons/notification.svg?react";
 import { classNames } from "@/shared/lib";
 import { Button, ButtonTheme, Icon, Popover } from "@/shared/ui";
-import { Drawer } from "@/shared/ui/Drawer";
+import { Drawer } from "@/shared/ui/deprecated/Drawer";
 
 interface Props {
   className?: string;

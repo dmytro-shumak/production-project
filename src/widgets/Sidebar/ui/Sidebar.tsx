@@ -12,7 +12,7 @@ import { useAppSelector, classNames } from "@/shared/lib";
 import { ToggleFeatures } from "@/shared/lib/features";
 import { useTheme } from "@/shared/lib/hooks";
 import { Button, ButtonSize, VStack } from "@/shared/ui";
-import { AppLogo } from "@/shared/ui/AppLogo";
+import { AppLogo } from "@/shared/ui/deprecated/AppLogo";
 
 interface Props {
   className?: string;

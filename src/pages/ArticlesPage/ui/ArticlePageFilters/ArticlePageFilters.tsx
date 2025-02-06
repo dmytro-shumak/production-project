@@ -25,7 +25,7 @@ import {
 } from "@/shared/lib";
 import type { SortOrder } from "@/shared/types";
 import { Card } from "@/shared/ui";
-import { Input } from "@/shared/ui/Input";
+import { Input } from "@/shared/ui/deprecated/Input";
 
 interface Props {
   className?: string;

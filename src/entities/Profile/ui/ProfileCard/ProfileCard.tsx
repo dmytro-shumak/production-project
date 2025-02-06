@@ -17,8 +17,8 @@ import {
   TextAlign,
   TextTheme,
 } from "@/shared/ui";
-import { Input } from "@/shared/ui/Input";
-import { Loader } from "@/shared/ui/Loader";
+import { Input } from "@/shared/ui/deprecated/Input";
+import { Loader } from "@/shared/ui/deprecated/Loader";
 
 interface Props {
   className?: string;

@@ -7,7 +7,7 @@ import { MainLayout } from "@/shared/layouts/MainLayout";
 import { classNames, useAppDispatch, useAppSelector } from "@/shared/lib";
 import { ToggleFeatures } from "@/shared/lib/features";
 import { useTheme } from "@/shared/lib/hooks";
-import { Loader } from "@/shared/ui/Loader";
+import { Loader } from "@/shared/ui/deprecated/Loader";
 import { NavBar } from "@/widgets/NavBar";
 import { Sidebar } from "@/widgets/Sidebar";
 

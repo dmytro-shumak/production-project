@@ -5,7 +5,7 @@ import styles from "./AddCommentForm.module.css";
 
 import { classNames } from "@/shared/lib";
 import { Button, ButtonTheme, HStack } from "@/shared/ui";
-import { Input } from "@/shared/ui/Input";
+import { Input } from "@/shared/ui/deprecated/Input";
 
 export interface AddCommentFormProps {
   className?: string;

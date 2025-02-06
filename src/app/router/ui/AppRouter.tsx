@@ -6,7 +6,7 @@ import { routesConfig } from "../config/routeConfig";
 import { RequireAuth } from "./RequireAuth";
 
 import type { AppRoutesProps } from "@/shared/types";
-import { Loader } from "@/shared/ui/Loader";
+import { Loader } from "@/shared/ui/deprecated/Loader";
 
 export const AppRouter = () => {
   const renderWithWrapper = useCallback((route: AppRoutesProps) => {

@@ -13,9 +13,9 @@ import {
   Text,
   VStack,
 } from "@/shared/ui";
-import { Drawer } from "@/shared/ui/Drawer";
-import { Input } from "@/shared/ui/Input";
-import { Modal } from "@/shared/ui/Modal";
+import { Drawer } from "@/shared/ui/deprecated/Drawer";
+import { Input } from "@/shared/ui/deprecated/Input";
+import { Modal } from "@/shared/ui/deprecated/Modal";
 
 interface Props {
   className?: string;

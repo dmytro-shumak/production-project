@@ -3,7 +3,7 @@ import type { FC } from "react";
 import { LoginForm } from "../LoginForm/LoginForm";
 
 import { classNames } from "@/shared/lib";
-import { Modal } from "@/shared/ui/Modal";
+import { Modal } from "@/shared/ui/deprecated/Modal";
 
 interface Props {
   className?: string;
