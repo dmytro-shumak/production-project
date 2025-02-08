@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 
-import { Button, ButtonSize, ButtonTheme } from "./Button";
+import { Button } from "./Button";
 
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator";
 import { Theme } from "@/shared/const";
@@ -19,7 +19,7 @@ const meta = {
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
     size: {
-      options: Object.values(ButtonSize),
+      options: ["l", "m", "xl"],
     },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
@@ -39,21 +39,21 @@ export const Primary: Story = {
 export const Clear: Story = {
   args: {
     children: "Click me!",
-    theme: ButtonTheme.Clear,
+    variant: "clear",
   },
 };
 
 export const Outline: Story = {
   args: {
     children: "Click me!",
-    theme: ButtonTheme.Outline,
+    variant: "outline",
   },
 };
 
 export const OutlineDark: Story = {
   args: {
     children: "Click me!",
-    theme: ButtonTheme.Outline,
+    variant: "outline",
   },
   decorators: [ThemeDecorator(Theme.Dark)],
   parameters: {
@@ -65,6 +65,6 @@ export const Disabled: Story = {
   args: {
     children: "Click me!",
     disabled: true,
-    theme: ButtonTheme.Outline,
+    variant: "outline",
   },
 };

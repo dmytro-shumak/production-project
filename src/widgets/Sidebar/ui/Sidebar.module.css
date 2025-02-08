@@ -62,6 +62,15 @@
   width: 220px;
   height: 100%;
   border-radius: 32px;
+
+  .switchers {
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 16px;
+  }
 }
 
 
@@ -102,13 +111,14 @@
 
 .sidebarRedesigned.collapsed {
   width: 50px;
+  
+  .switchers {
+    flex-direction: column;
+    align-items: center;
+  }
 } 
 
 .sidebarRedesigned.collapsed .button {
   margin-right: 0;
   transform: rotate(-90deg);
 }
-
-/* .sidebarRedesigned .collapsed {
-  width: 50px;
-} */

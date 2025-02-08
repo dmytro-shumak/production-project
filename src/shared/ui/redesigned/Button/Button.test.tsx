@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 
-import { Button, ButtonTheme } from "./Button";
+import { Button } from "./Button";
 
 describe("Button component", () => {
   test("renders a button with default theme", () => {
@@ -11,14 +11,14 @@ describe("Button component", () => {
   });
 
   test("renders a button with primary theme", () => {
-    render(<Button theme={ButtonTheme.Primary}>Click me</Button>);
+    render(<Button variant="outline">Click me</Button>);
     const buttonElement = screen.getByText(/Click me/i);
     expect(buttonElement).toBeInTheDocument();
-    expect(buttonElement).toHaveClass("button", "primary");
+    expect(buttonElement).toHaveClass("button", "outline");
   });
 
   test("renders a button with clear theme", () => {
-    render(<Button theme={ButtonTheme.Clear}>Click me</Button>);
+    render(<Button variant="clear">Click me</Button>);
     const buttonElement = screen.getByText(/Click me/i);
     expect(buttonElement).toBeInTheDocument();
     expect(buttonElement).toHaveClass("button", "clear");

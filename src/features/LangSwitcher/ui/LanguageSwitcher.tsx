@@ -4,7 +4,13 @@ import { useTranslation } from "react-i18next";
 import styles from "./LanguageSwitcher.module.css";
 
 import { classNames } from "@/shared/lib";
-import { Button, ButtonSize, ButtonTheme } from "@/shared/ui";
+import { ToggleFeatures } from "@/shared/lib/features";
+import {
+  Button as ButtonDecrepated,
+  ButtonSize,
+  ButtonTheme,
+} from "@/shared/ui";
+import { Button } from "@/shared/ui/redesigned/Button";
 
 interface Props {
   className?: string;
@@ -20,35 +26,62 @@ export const LanguageSwitcher: FC<Props> = memo(({ className, collapsed }) => {
 
   const buttonSize = collapsed ? ButtonSize.S : ButtonSize.M;
 
+  const toggleLanguage = () => {
+    // TODO: fix language changing
+    if (i18n.language === "en") {
+      i18n.changeLanguage("ru");
+    }
+    if (i18n.language === "ru") {
+      i18n.changeLanguage("uk");
+    }
+    if (i18n.language === "uk") {
+      i18n.changeLanguage("en");
+    }
+  };
+
   return (
-    <div
-      className={classNames(
-        styles.languageSwitcher,
-        { [styles.collapsed]: collapsed },
-        [className],
-      )}
-    >
-      <Button
-        onClick={() => changeLanguage("en")}
-        theme={ButtonTheme.Clear}
-        size={buttonSize}
-      >
-        {t("English")}
-      </Button>
-      <Button
-        onClick={() => changeLanguage("ru")}
-        theme={ButtonTheme.Clear}
-        size={buttonSize}
-      >
-        {t("Russian")}
-      </Button>
-      <Button
-        onClick={() => changeLanguage("ua")}
-        theme={ButtonTheme.Clear}
-        size={buttonSize}
-      >
-        {t("Ukrainian")}
-      </Button>
-    </div>
+    <ToggleFeatures
+      featureName="isAppRedesigned"
+      on={
+        <Button
+          variant="clear"
+          className={styles.button}
+          onClick={toggleLanguage}
+        >
+          {i18n.language.toUpperCase()}
+        </Button>
+      }
+      off={
+        <div
+          className={classNames(
+            styles.languageSwitcher,
+            { [styles.collapsed]: collapsed },
+            [className],
+          )}
+        >
+          <ButtonDecrepated
+            onClick={() => changeLanguage("en")}
+            theme={ButtonTheme.Clear}
+            size={buttonSize}
+          >
+            {t("English")}
+          </ButtonDecrepated>
+          <ButtonDecrepated
+            onClick={() => changeLanguage("ru")}
+            theme={ButtonTheme.Clear}
+            size={buttonSize}
+          >
+            {t("Russian")}
+          </ButtonDecrepated>
+          <ButtonDecrepated
+            onClick={() => changeLanguage("uk")}
+            theme={ButtonTheme.Clear}
+            size={buttonSize}
+          >
+            {t("Ukrainian")}
+          </ButtonDecrepated>
+        </div>
+      }
+    />
   );
 });

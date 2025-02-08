@@ -8,3 +8,9 @@
 .collapsed {
   flex-direction: column;
 }
+
+
+/* redesigned */
+button.button {
+  color: var(--icon-redesigned)
+}

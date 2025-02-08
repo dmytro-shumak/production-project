@@ -4,40 +4,25 @@ import styles from "./Button.module.css";
 
 import { classNames } from "@/shared/lib";
 
-export enum ButtonTheme {
-  Clear = "clear",
-  Primary = "primary",
-  Outline = "outline",
-  OutlineRed = "outlineRed",
-}
-
-export enum ButtonSize {
-  L = "sizeL",
-  M = "sizeM",
-  S = "sizeS",
-  XL = "sizeXL",
-}
+export type ButtonVariant = "clear" | "outline";
+export type ButtonSize = "m" | "l" | "xl";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   children?: ReactNode;
   square?: boolean;
-  theme?: ButtonTheme;
+  variant?: ButtonVariant;
   size?: ButtonSize;
 }
 
-/**
- * deprecated, use components from redesign folder
- * @deprecated
- */
 export const Button = memo<Props>(
   ({
     className,
     children,
     disabled,
-    theme = ButtonTheme.Primary,
+    variant = "outline",
     square = false,
-    size = ButtonSize.M,
+    size = "m",
     ...buttonProps
   }) => (
     <button
@@ -47,7 +32,7 @@ export const Button = memo<Props>(
           [styles.square]: square,
           [styles.disabled]: disabled,
         },
-        [className, styles[theme], styles[size]],
+        [className, styles[variant], styles[size]],
       )}
       disabled={disabled}
       // eslint-disable-next-line react/jsx-props-no-spreading

@@ -23,18 +23,32 @@ interface ClickableIconProps extends IconBaseProps {
 type Props = NonClickableIconProps | ClickableIconProps;
 
 export const Icon = memo((props: Props) => {
-  const { className, Svg, clickable, ...otherProps } = props;
+  const {
+    className,
+    Svg,
+    clickable,
+    width = 32,
+    height = 32,
+    ...otherProps
+  } = props;
 
   const icon = (
     <Svg
       className={classNames(styles.icon, {}, [className])}
+      width={32}
+      height={32}
       {...otherProps}
       onClick={undefined}
     />
   );
   if (clickable) {
     return (
-      <button onClick={props.onClick} type="button" className={styles.button}>
+      <button
+        onClick={props.onClick}
+        type="button"
+        className={styles.button}
+        style={{ height, width }}
+      >
         {icon}
       </button>
     );
