@@ -8,6 +8,23 @@
   height: 0;
 }
 
+/* redesigned */
 .redesignedIcon {
   flex-shrink: 0;
+}
+
+.itemRedesigned {
+  width: 100%;
+  padding: 0 16px;
+
+  &.collapsed {
+    padding: 0 8px;
+  }
+}
+
+.active {
+  background: linear-gradient(89.97deg, rgba(94, 211, 243, 0.3) 1.15%, rgba(94, 211, 243, 0) 99.97%);
+  border-left: 2px solid var(--accent-redesigned);
+  color: var(--accent-redesigned) !important;
+  padding-left: 14px;
 }
