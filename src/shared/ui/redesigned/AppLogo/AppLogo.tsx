@@ -1,6 +1,6 @@
 import { memo } from "react";
 
-import { HStack } from "../Stack";
+import { HStack } from "../../deprecated/Stack";
 
 import styles from "./AppLogo.module.css";
 
@@ -9,13 +9,10 @@ import { classNames } from "@/shared/lib";
 
 interface Props {
   className?: string;
+  size?: number;
 }
 
-/**
- * deprecated, use components from redesign folder
- * @deprecated
- */
-export const AppLogo = memo(({ className }: Props) => {
+export const AppLogo = memo(({ className, size = 50 }: Props) => {
   return (
     <HStack
       justify="center"
@@ -23,7 +20,12 @@ export const AppLogo = memo(({ className }: Props) => {
     >
       <div className={styles.gradientBig} />
       <div className={styles.gradientSmall} />
-      <AppSvg className={styles.appLogo} />
+      <AppSvg
+        className={styles.appLogo}
+        width={size}
+        height={size}
+        color="pink"
+      />
     </HStack>
   );
 });

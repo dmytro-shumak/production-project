@@ -1,4 +1,4 @@
-export { AppLink } from "./deprecated/AppLink/AppLink";
+export { AppLink as AppLinkDeprecated } from "./deprecated/AppLink/AppLink";
 export { AppLinkTheme } from "./deprecated/AppLink/types";
 export * from "./deprecated/Avatar";
 export * from "./deprecated/Select";

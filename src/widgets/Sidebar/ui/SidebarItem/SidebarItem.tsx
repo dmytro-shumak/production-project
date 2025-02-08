@@ -8,7 +8,10 @@ import styles from "./SidebarItem.module.css";
 
 import { getUserAuthData } from "@/entities/User";
 import { classNames } from "@/shared/lib";
-import { AppLink, AppLinkTheme } from "@/shared/ui";
+import { ToggleFeatures } from "@/shared/lib/features";
+import { AppLinkDeprecated, AppLinkTheme } from "@/shared/ui";
+import { AppLink } from "@/shared/ui/redesigned/AppLink";
+import { Icon } from "@/shared/ui/redesigned/Icon";
 
 interface Props {
   item: SidebarItemType;
@@ -23,15 +26,31 @@ export const SidebarItem = memo<Props>(({ item, collapsed }) => {
   }
 
   return (
-    <li>
-      <AppLink
-        to={item.path}
-        theme={AppLinkTheme.InvertedPrimary}
-        className={classNames("", { [styles.collapsed]: collapsed })}
-      >
-        <item.Icon className={styles.icon} />
-        <span>{t(item.text)}</span>
-      </AppLink>
-    </li>
+    <ToggleFeatures
+      featureName="isAppRedesigned"
+      on={
+        <li>
+          <AppLink
+            to={item.path}
+            className={classNames("", { [styles.collapsed]: collapsed })}
+          >
+            <Icon Svg={item.Icon} className={styles.redesignedIcon} />
+            <span>{t(item.text)}</span>
+          </AppLink>
+        </li>
+      }
+      off={
+        <li>
+          <AppLinkDeprecated
+            to={item.path}
+            theme={AppLinkTheme.InvertedPrimary}
+            className={classNames("", { [styles.collapsed]: collapsed })}
+          >
+            <item.Icon className={styles.icon} />
+            <span>{t(item.text)}</span>
+          </AppLinkDeprecated>
+        </li>
+      }
+    />
   );
 });

@@ -11,7 +11,7 @@ import { getRouteArticleCreate } from "@/shared/const/router";
 import { classNames, useAppSelector } from "@/shared/lib";
 import { ToggleFeatures } from "@/shared/lib/features";
 import {
-  AppLink,
+  AppLinkDeprecated,
   AppLinkTheme,
   Button,
   ButtonTheme,
@@ -58,12 +58,12 @@ export const NavBar = memo(({ className }: Props) => {
               title={t("MyApp")}
               theme={TextTheme.INVERTED}
             />
-            <AppLink
+            <AppLinkDeprecated
               to={getRouteArticleCreate()}
               theme={AppLinkTheme.Secondary}
             >
               {t("CreateArticle")}
-            </AppLink>
+            </AppLinkDeprecated>
             <HStack gap={16} className={styles.actions}>
               {/* eslint-disable-next-line react/button-has-type */}
               {/* <button onClick={() => setIsOpen((prev) => !prev)}> CLick</button> */}

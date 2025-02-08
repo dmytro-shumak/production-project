@@ -16,6 +16,7 @@
   max-width: 1200px;
   justify-self: center;
   padding: 32px;
+  width: 100%;
 }
 
 .rightBar, .sidebar {

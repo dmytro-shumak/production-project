@@ -7,19 +7,21 @@ import { SidebarItem } from "./SidebarItem/SidebarItem";
 
 import { LangSwitcher } from "@/features/LangSwitcher";
 import { ThemeSwitcher } from "@/features/ThemeSwitcher";
+import ArrowIcon from "@/shared/assets/icons/arrow-bottom.svg?react";
 import { Theme } from "@/shared/const";
 import { useAppSelector, classNames } from "@/shared/lib";
 import { ToggleFeatures } from "@/shared/lib/features";
 import { useTheme } from "@/shared/lib/hooks";
 import { Button, ButtonSize, VStack } from "@/shared/ui";
-import { AppLogo } from "@/shared/ui/deprecated/AppLogo";
+import { AppLogo } from "@/shared/ui/redesigned/AppLogo";
+import { Icon } from "@/shared/ui/redesigned/Icon";
 
 interface Props {
   className?: string;
 }
 
 export const Sidebar: FC<Props> = memo(({ className }) => {
-  const [collapsed, setCollapsed] = useState(true);
+  const [collapsed, setCollapsed] = useState(false);
   const { theme } = useTheme();
   const sidebarItemsList = useAppSelector(getSideBarItems);
 
@@ -38,7 +40,22 @@ export const Sidebar: FC<Props> = memo(({ className }) => {
             [className],
           )}
         >
-          <AppLogo className={styles.appLogo} />
+          <AppLogo className={styles.appLogo} size={collapsed ? 30 : 50} />
+          <VStack className={styles.links} tag="ul">
+            {sidebarItemsList.map((sidebarItem) => (
+              <SidebarItem
+                item={sidebarItem}
+                key={sidebarItem.path}
+                collapsed={collapsed}
+              />
+            ))}
+          </VStack>
+          <Icon
+            onClick={handleToggle}
+            className={styles.button}
+            clickable
+            Svg={ArrowIcon}
+          />
         </aside>
       }
       off={

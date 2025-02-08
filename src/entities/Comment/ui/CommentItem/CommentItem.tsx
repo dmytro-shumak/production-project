@@ -6,7 +6,7 @@ import styles from "./CommentItem.module.css";
 
 import { getRouteProfile } from "@/shared/const/router";
 import { classNames } from "@/shared/lib";
-import { AppLink, Avatar, Text } from "@/shared/ui";
+import { AppLinkDeprecated, Avatar, Text } from "@/shared/ui";
 
 interface Props {
   className?: string;
@@ -19,10 +19,13 @@ export const CommentItem = memo(({ className, comment }: Props) => {
       className={classNames(styles.commentItem, {}, [className])}
       data-testid="CommentItem"
     >
-      <AppLink className={styles.header} to={getRouteProfile(comment.user.id)}>
+      <AppLinkDeprecated
+        className={styles.header}
+        to={getRouteProfile(comment.user.id)}
+      >
         {comment.user.avatar && <Avatar size={30} src={comment.user.avatar} />}
         <Text title={comment.user.username} />
-      </AppLink>
+      </AppLinkDeprecated>
       <Text text={comment.text} className={styles.text} />
     </div>
   );

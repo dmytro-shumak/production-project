@@ -7,3 +7,7 @@
   width: 0;
   height: 0;
 }
+
+.redesignedIcon {
+  flex-shrink: 0;
+}

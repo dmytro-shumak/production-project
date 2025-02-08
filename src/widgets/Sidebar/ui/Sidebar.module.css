@@ -29,6 +29,7 @@
 
 .links a {
   display: flex;
+  align-items: center;
   gap: 5px;
 }
 
@@ -53,13 +54,61 @@
   height: 0;
 }
 
+/* redesigned */
+
 .sidebarRedesigned {
+  position: relative;
   background: var(--light-bg-redesigned);
   width: 220px;
   height: 100%;
   border-radius: 32px;
 }
 
+
 .appLogo {
   padding-top: 20px;
 }
+
+.sidebarRedesigned .links{
+  margin-top: 40px;
+  padding: 0 9px;
+}
+
+.sidebarRedesigned .links a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.sidebarRedesigned .links a span {
+  transition: opacity 0.3s;
+  display: block;
+}
+
+
+.sidebarRedesigned .collapsed .links a span {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.sidebarRedesigned .button {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  z-index: 10;
+  transform: rotate(90deg);
+}
+
+.sidebarRedesigned.collapsed {
+  width: 50px;
+} 
+
+.sidebarRedesigned.collapsed .button {
+  margin-right: 0;
+  transform: rotate(-90deg);
+}
+
+/* .sidebarRedesigned .collapsed {
+  width: 50px;
+} */

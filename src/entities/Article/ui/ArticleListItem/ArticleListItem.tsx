@@ -15,7 +15,7 @@ import EyeIcon from "@/shared/assets/icons/eye.svg?react";
 import { getRouteArticleDetails } from "@/shared/const/router";
 import { classNames } from "@/shared/lib";
 import {
-  AppLink,
+  AppLinkDeprecated,
   Avatar,
   Button,
   ButtonTheme,
@@ -81,9 +81,12 @@ export const ArticleListItem = memo(
               />
             )}
             <div className={styles.footer}>
-              <AppLink to={getRouteArticleDetails(article.id)} target={target}>
+              <AppLinkDeprecated
+                to={getRouteArticleDetails(article.id)}
+                target={target}
+              >
                 <Button theme={ButtonTheme.Outline}>{t("ReadMore")}</Button>
-              </AppLink>
+              </AppLinkDeprecated>
               {views}
             </div>
           </Card>
@@ -92,7 +95,7 @@ export const ArticleListItem = memo(
     }
 
     return (
-      <AppLink
+      <AppLinkDeprecated
         data-testid="ArticleItem"
         target={target}
         className={classNames(styles.articleListItem, {}, [
@@ -117,7 +120,7 @@ export const ArticleListItem = memo(
           </div>
           <Text text={article.title} className={styles.title} />
         </Card>
-      </AppLink>
+      </AppLinkDeprecated>
     );
   },
 );
