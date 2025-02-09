@@ -66,7 +66,7 @@ export const AvatarDropdown = memo(({ className }: Props) => {
         <Dropdown
           className={classNames("", {}, [className])}
           anchor="bottom end"
-          button={<Avatar size={48} src={authData.avatar} />}
+          button={<Avatar size={40} src={authData.avatar} />}
           items={items}
         />
       }

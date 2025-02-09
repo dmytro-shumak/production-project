@@ -5,7 +5,14 @@ import type { Notification } from "../../model/types/notification";
 import styles from "./NotificationItem.module.css";
 
 import { classNames } from "@/shared/lib";
-import { Card, CardTheme, Text } from "@/shared/ui";
+import { ToggleFeatures } from "@/shared/lib/features";
+import {
+  Card as CardDeprecated,
+  CardTheme,
+  Text as TextDeprecated,
+} from "@/shared/ui";
+import { Card } from "@/shared/ui/redesigned/Card";
+import { Text } from "@/shared/ui/redesigned/Text";
 
 interface Props {
   className?: string;
@@ -14,12 +21,22 @@ interface Props {
 
 export const NotificationItem = memo(({ className, item }: Props) => {
   const content = (
-    <Card
-      theme={CardTheme.Outlined}
-      className={classNames(styles.notificationItem, {}, [className])}
-    >
-      <Text title={item.title} text={item.description} />
-    </Card>
+    <ToggleFeatures
+      featureName="isAppRedesigned"
+      on={
+        <Card className={classNames(styles.notificationItem, {}, [className])}>
+          <Text title={item.title} text={item.description} />
+        </Card>
+      }
+      off={
+        <CardDeprecated
+          theme={CardTheme.Outlined}
+          className={classNames(styles.notificationItem, {}, [className])}
+        >
+          <TextDeprecated title={item.title} text={item.description} />
+        </CardDeprecated>
+      }
+    />
   );
 
   if (item.href) {

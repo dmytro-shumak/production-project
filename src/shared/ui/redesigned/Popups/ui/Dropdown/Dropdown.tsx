@@ -33,7 +33,10 @@ export const Dropdown = ({
   return (
     <Menu as="div" className={classNames(styles.menu, {}, [className])}>
       <MenuButton className={popupStyles.btn}>{button}</MenuButton>
-      <MenuItems anchor={anchor} className={styles.menuItems}>
+      <MenuItems
+        anchor={anchor}
+        className={classNames(styles.menuItems, {}, [popupStyles.menu])}
+      >
         {items.map((item, index) => {
           if (item.href) {
             return (

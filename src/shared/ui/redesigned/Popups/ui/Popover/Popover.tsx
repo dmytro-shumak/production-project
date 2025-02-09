@@ -29,7 +29,10 @@ export const Popover = memo(
         </PopoverButton>
 
         <PopoverPanel
-          className={classNames(styles.menu, {}, [menuClassName])}
+          className={classNames(styles.menu, {}, [
+            menuClassName,
+            popupStyles.menu,
+          ])}
           anchor={anchor}
         >
           {children}

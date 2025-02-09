@@ -16,6 +16,7 @@ import {
 } from "@/shared/ui";
 import { Drawer } from "@/shared/ui/deprecated/Drawer";
 import { Icon } from "@/shared/ui/redesigned/Icon";
+import { Popover } from "@/shared/ui/redesigned/Popups";
 
 interface Props {
   className?: string;
@@ -47,14 +48,29 @@ export const NotificationButton = memo(({ className }: Props) => {
   return (
     <div>
       <BrowserView>
-        <PopoverDeprecated
-          anchor="bottom end"
-          menuClassName={styles.notificationMenu}
-          className={classNames("", {}, [className])}
-          button={button}
-        >
-          <NotificationList className={styles.notifications} />
-        </PopoverDeprecated>
+        <ToggleFeatures
+          featureName="isAppRedesigned"
+          on={
+            <Popover
+              anchor="bottom end"
+              menuClassName={styles.notificationMenu}
+              className={classNames("", {}, [className])}
+              button={button}
+            >
+              <NotificationList className={styles.notifications} />
+            </Popover>
+          }
+          off={
+            <PopoverDeprecated
+              anchor="bottom end"
+              menuClassName={styles.notificationMenu}
+              className={classNames("", {}, [className])}
+              button={button}
+            >
+              <NotificationList className={styles.notifications} />
+            </PopoverDeprecated>
+          }
+        />
       </BrowserView>
 
       <MobileView>

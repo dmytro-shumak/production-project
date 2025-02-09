@@ -8,6 +8,7 @@ import { memo, type ReactNode } from "react";
 
 import { HStack } from "../../../../redesigned/Stack";
 import { Button } from "../../../Button";
+import popupStyles from "../../styles/popup.module.css";
 
 import styles from "./ListBox.module.css";
 
@@ -47,7 +48,10 @@ export const ListBox = memo(
           value={value}
           disabled={readOnly}
           onChange={onChange}
-          className={classNames(styles.listBox, {}, [className])}
+          className={classNames(styles.listBox, {}, [
+            className,
+            popupStyles.menu,
+          ])}
         >
           <ListboxButton disabled={readOnly} as="div">
             <Button disabled={readOnly}>{value ?? defaultValue}</Button>

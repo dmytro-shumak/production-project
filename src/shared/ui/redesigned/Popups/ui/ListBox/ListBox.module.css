@@ -3,12 +3,12 @@
 }
 
 .options {
-  background-color: var(--card-bg);
+  background-color: var(--dark-bg-redesigned);
   position: absolute;
   padding: 0;
   z-index: 100;
   border-radius: 12px;
-  box-shadow: 4px 4px 8px var(--card-bg);
+  box-shadow: 4px 4px 8px var(--dark-bg-redesigned);
   min-width: var(--button-width);
 }
 
