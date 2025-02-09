@@ -84,7 +84,7 @@ const replaceComponent = (node: Node) => {
 
   const onAttribute = getAttributeNodeByName(attributes, "on");
   const offAttribute = getAttributeNodeByName(attributes, "off");
-  
+
   const featureNameAttribute = getAttributeNodeByName(attributes, "featureName");
   const featureName = featureNameAttribute?.getFirstDescendantByKind(SyntaxKind.StringLiteral)?.getText()?.slice(1, -1);
 
@@ -105,11 +105,11 @@ const replaceComponent = (node: Node) => {
 files.forEach((file) => {
   file.forEachDescendant((node) => {
     if (node.isKind(SyntaxKind.CallExpression) && isToggleFunction(node)) {
-      replaceToggleFunction(node);
+      return replaceToggleFunction(node);
     }
 
     if (node.isKind(SyntaxKind.JsxSelfClosingElement) && isToggleComponent(node)) {
-      replaceComponent(node);
+      return replaceComponent(node);
     }
   });
 });
