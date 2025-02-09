@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Text, TextSize, TextTheme } from "./Text";
+import { Text } from "./Text";
 
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator";
 import { Theme } from "@/shared/const";
@@ -35,7 +35,7 @@ export const Error: Story = {
   args: {
     title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     text: "Hic aliquid architecto cumque quidem harum, rerum omnis nemo quaerat dolores. At velit, dignissimos fugit temporibus exercitationem nulla reprehenderit atque vitae eaque!",
-    theme: TextTheme.ERROR,
+    variant: "error",
   },
 };
 
@@ -82,26 +82,26 @@ export const OnlyTextDark: Story = {
   },
 };
 
-export const SizeL: Story = {
+export const SizeLarge: Story = {
   args: {
     title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     text: "Hic aliquid architecto cumque quidem harum, rerum omnis nemo quaerat dolores. At velit, dignissimos fugit temporibus exercitationem nulla reprehenderit atque vitae eaque!",
-    size: TextSize.L,
+    size: "large",
   },
 };
 
-export const SizeM: Story = {
+export const SizeMedium: Story = {
   args: {
     title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     text: "Hic aliquid architecto cumque quidem harum, rerum omnis nemo quaerat dolores. At velit, dignissimos fugit temporibus exercitationem nulla reprehenderit atque vitae eaque!",
-    size: TextSize.M,
+    size: "medium",
   },
 };
 
-export const SizeS: Story = {
+export const SizeSmall: Story = {
   args: {
     title: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     text: "Hic aliquid architecto cumque quidem harum, rerum omnis nemo quaerat dolores. At velit, dignissimos fugit temporibus exercitationem nulla reprehenderit atque vitae eaque!",
-    size: TextSize.S,
+    size: "small",
   },
 };
