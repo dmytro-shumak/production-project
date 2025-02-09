@@ -71,6 +71,7 @@ export const Sidebar: FC<Props> = memo(({ className }) => {
           )}
         >
           <Button
+            data-testid="Sidebar.CollapsedButton"
             onClick={handleToggle}
             square
             size={ButtonSize.L}

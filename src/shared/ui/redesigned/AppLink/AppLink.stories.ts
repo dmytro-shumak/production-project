@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { AppLink } from "./AppLink";
-import { AppLinkTheme } from "./types";
 
 import { RouterDecorator } from "@/shared/config";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator";
@@ -33,13 +32,13 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
-    variant: AppLinkTheme.Primary,
+    variant: "primary",
   },
 };
 
-export const Secondary: Story = {
+export const Red: Story = {
   args: {
-    variant: AppLinkTheme.Secondary,
+    variant: "red",
   },
 };
 
@@ -49,7 +48,7 @@ export const PrimaryDark: Story = {
     backgrounds: { default: "dark" },
   },
   args: {
-    variant: AppLinkTheme.Primary,
+    variant: "primary",
   },
 };
 
@@ -60,6 +59,6 @@ export const SecondaryDark: Story = {
     backgrounds: { default: "dark" },
   },
   args: {
-    variant: AppLinkTheme.Secondary,
+    variant: "red",
   },
 };

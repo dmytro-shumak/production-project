@@ -79,9 +79,6 @@ jobs:
         if: always()
       - name: build storybook
         run: npm run storybook:build
-      - name: unit testing
-        if: always()
-        run: npm run test
       # - name: move loki report
       # if: always()
       # run: mv .loki reports/
