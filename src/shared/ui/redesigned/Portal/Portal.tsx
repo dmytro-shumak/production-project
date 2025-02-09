@@ -6,10 +6,6 @@ interface Props {
   portalContainer?: HTMLElement;
 }
 
-/**
- * deprecated, use components from redesign folder
- * @deprecated
- */
 export const Portal: FC<Props> = ({
   children,
   portalContainer = document.body,

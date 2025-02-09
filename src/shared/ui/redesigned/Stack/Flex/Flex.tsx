@@ -42,10 +42,6 @@ const directionClasses: Record<FlexDirection, string> = {
   column: styles.directionColumn,
 };
 
-/**
- * deprecated, use components from redesign folder
- * @deprecated
- */
 export const Flex = <T extends ElementType = "div">({
   tag,
   className,

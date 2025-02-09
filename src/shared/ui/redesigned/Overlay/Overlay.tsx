@@ -10,10 +10,6 @@ interface Props {
   children?: ReactNode;
 }
 
-/**
- * deprecated, use components from redesign folder
- * @deprecated
- */
 export const Overlay = ({ className, onClick, children }: Props) => {
   return (
     <div

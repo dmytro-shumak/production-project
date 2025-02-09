@@ -10,7 +10,14 @@ import {
 } from "@/entities/User";
 import { getRouteAdminPanel, getRouteProfile } from "@/shared/const/router";
 import { classNames, useAppSelector } from "@/shared/lib";
-import { Avatar, Dropdown, type DropdownItem } from "@/shared/ui";
+import { ToggleFeatures } from "@/shared/lib/features";
+import {
+  Avatar as AvatarDecrepated,
+  Dropdown as DropdownDeprecated,
+  type DropdownItem,
+} from "@/shared/ui";
+import { Avatar } from "@/shared/ui/redesigned/Avatar";
+import { Dropdown } from "@/shared/ui/redesigned/Popups";
 
 interface Props {
   className?: string;
@@ -53,11 +60,30 @@ export const AvatarDropdown = memo(({ className }: Props) => {
   }
 
   return (
-    <Dropdown
-      className={classNames("", {}, [className])}
-      anchor="bottom end"
-      button={<Avatar size={30} src={authData.avatar} invertedFallback />}
-      items={items}
+    <ToggleFeatures
+      featureName="isAppRedesigned"
+      on={
+        <Dropdown
+          className={classNames("", {}, [className])}
+          anchor="bottom end"
+          button={<Avatar size={48} src={authData.avatar} />}
+          items={items}
+        />
+      }
+      off={
+        <DropdownDeprecated
+          className={classNames("", {}, [className])}
+          anchor="bottom end"
+          button={
+            <AvatarDecrepated
+              size={30}
+              src={authData.avatar}
+              invertedFallback
+            />
+          }
+          items={items}
+        />
+      }
     />
   );
 });

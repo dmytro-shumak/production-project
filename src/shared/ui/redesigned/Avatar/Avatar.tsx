@@ -14,20 +14,9 @@ interface Props {
   src?: string;
   size?: number;
   alt?: string;
-  invertedFallback?: boolean;
 }
 
-/**
- * deprecated, use components from redesign folder
- * @deprecated
- */
-export const Avatar: FC<Props> = ({
-  className,
-  src,
-  size = 50,
-  alt,
-  invertedFallback,
-}) => {
+export const Avatar: FC<Props> = ({ className, src, size = 50, alt }) => {
   const style = useMemo<CSSProperties>(() => {
     return {
       width: size,
@@ -38,14 +27,7 @@ export const Avatar: FC<Props> = ({
   return (
     <AppImage
       fallback={<Skeleton width={size} height={size} borderRadius="100%" />}
-      errorFallback={
-        <Icon
-          Svg={AvatarFilled}
-          width={size}
-          height={size}
-          inverted={invertedFallback}
-        />
-      }
+      errorFallback={<Icon Svg={AvatarFilled} width={size} height={size} />}
       src={src}
       alt={alt}
       style={style}

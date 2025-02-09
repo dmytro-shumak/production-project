@@ -24,7 +24,7 @@ import {
   Skeleton,
   Text,
 } from "@/shared/ui";
-import { AppImage } from "@/shared/ui/deprecated/AppImage";
+import { AppImage } from "@/shared/ui/redesigned/AppImage";
 
 interface Props {
   className?: string;

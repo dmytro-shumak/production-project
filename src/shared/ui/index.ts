@@ -6,7 +6,7 @@ export * from "./deprecated/Card";
 export * from "./deprecated/Skeleton";
 export * from "./deprecated/Button";
 export * from "./deprecated/Icon";
-export * from "./deprecated/Stack";
+export * from "./redesigned/Stack";
 export * from "./deprecated/Popups";
 export * from "./deprecated/Text";
 export { Button } from "./deprecated/Button/Button";

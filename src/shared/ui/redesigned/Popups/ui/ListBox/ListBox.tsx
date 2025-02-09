@@ -29,10 +29,6 @@ interface Props {
   onChange?: <T extends string>(value: T) => void;
 }
 
-/**
- * deprecated, use components from redesign folder
- * @deprecated
- */
 export const ListBox = memo(
   ({
     className,

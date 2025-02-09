@@ -1,7 +1,7 @@
 import { type FC, type ReactNode } from "react";
 
-import { Overlay } from "../Overlay";
-import { Portal } from "../Portal/Portal";
+import { Overlay } from "../../redesigned/Overlay";
+import { Portal } from "../../redesigned/Portal/Portal";
 
 import styles from "./Modal.module.css";
 
