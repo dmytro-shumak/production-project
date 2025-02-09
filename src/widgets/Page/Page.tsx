@@ -8,11 +8,11 @@ import {
   scrollRestorationActions,
 } from "@/features/scrollRestoration";
 import {
+  classNames,
   useAppDispatch,
   useAppSelector,
   useInfiniteScroll,
   useInitialEffect,
-  classNames,
 } from "@/shared/lib";
 import { toggleFeatures } from "@/shared/lib/features";
 import { useThrottle } from "@/shared/lib/hooks/useThrottle/useThrottle";
@@ -39,7 +39,15 @@ export const Page = ({
     getScrollRestorationByPath(state, pathname),
   );
 
-  useInfiniteScroll({ triggerRef, wrapperRef, callback: onScrollEnd });
+  useInfiniteScroll({
+    triggerRef,
+    wrapperRef: toggleFeatures({
+      name: "isAppRedesigned",
+      on: () => null,
+      off: () => wrapperRef,
+    }),
+    callback: onScrollEnd,
+  });
 
   useInitialEffect(() => {
     if (wrapperRef.current) {
