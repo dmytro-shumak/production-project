@@ -1,3 +1,17 @@
 .notSelected path {
   fill-opacity: 0.3;
 }
+
+/* TODO: Adjust the styles according to the design  */
+
+/* redesigned */
+.articleViewSelectorRedesigned {
+  display: flex;
+
+  .notSelected {
+    path {
+      fill: var(--light-bg-redesigned);
+      fill-opacity: 1;
+    }
+  }
+}
