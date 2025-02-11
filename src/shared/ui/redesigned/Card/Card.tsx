@@ -12,6 +12,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
   variant?: CardVariant;
   padding?: CardPadding;
+  borderRadius?: number | string;
 }
 
 export const Card = ({
@@ -19,6 +20,7 @@ export const Card = ({
   children,
   variant = "normal",
   padding = "8",
+  borderRadius,
   ...otherProps
 }: Props) => {
   return (
@@ -28,6 +30,7 @@ export const Card = ({
         styles[variant],
         styles[`padding_${padding}`],
       ])}
+      style={{ borderRadius }}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...otherProps}
     >

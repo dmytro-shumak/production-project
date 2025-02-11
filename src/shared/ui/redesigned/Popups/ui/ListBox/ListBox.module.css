@@ -10,6 +10,7 @@
   border-radius: 12px;
   box-shadow: 4px 4px 8px var(--dark-bg-redesigned);
   min-width: var(--button-width);
+  cursor: pointer;
 }
 
 .item {
@@ -17,9 +18,13 @@
 }
 
 .active {
-  background: var(--inverted-primary-color);
+  background: var(--light-bg-redesigned);
 }
 
 .disabled {
   opacity: 0.4;
+}
+
+.selected {
+  background-color: var(--light-bg-redesigned);
 }

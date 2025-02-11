@@ -4,7 +4,7 @@ import {
   ListboxOption,
   ListboxOptions,
 } from "@headlessui/react";
-import { type ReactNode } from "react";
+import { useMemo, type ReactNode } from "react";
 
 import { HStack } from "../../../../redesigned/Stack";
 import { Button } from "../../../Button";
@@ -39,6 +39,11 @@ const ListBox = <T extends string>({
   readOnly,
   label,
 }: Props<T>) => {
+  const selectedItems = useMemo(
+    () => items.find((item) => item.value === value),
+    [items, value],
+  );
+
   return (
     <HStack gap={8} justify="start">
       {label && <span>{label}</span>}
@@ -51,7 +56,7 @@ const ListBox = <T extends string>({
       >
         <ListboxButton disabled={readOnly} as="div">
           <Button variant="filled" disabled={readOnly}>
-            {value ?? defaultValue}
+            {selectedItems?.content ?? defaultValue}
           </Button>
         </ListboxButton>
         <ListboxOptions
@@ -71,6 +76,7 @@ const ListBox = <T extends string>({
                   className={classNames(styles.item, {
                     [styles.active]: focus,
                     [styles.disabled]: disabled,
+                    [styles.selected]: selected,
                   })}
                 >
                   {selected && "✓"}

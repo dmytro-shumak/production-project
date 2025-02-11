@@ -32,9 +32,9 @@ export const LanguageSwitcher: FC<Props> = memo(({ className, collapsed }) => {
       i18n.changeLanguage("ru");
     }
     if (i18n.language === "ru") {
-      i18n.changeLanguage("uk");
+      i18n.changeLanguage("ua");
     }
-    if (i18n.language === "uk") {
+    if (i18n.language === "ua") {
       i18n.changeLanguage("en");
     }
   };

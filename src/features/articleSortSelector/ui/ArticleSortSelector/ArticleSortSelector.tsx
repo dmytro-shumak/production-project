@@ -5,8 +5,11 @@ import styles from "./ArticleSortSelector.module.css";
 
 import { ArticleSortField } from "@/entities/Article";
 import { classNames } from "@/shared/lib";
+import { ToggleFeatures } from "@/shared/lib/features";
 import type { SortOrder } from "@/shared/types";
-import { Select, type SelectOption } from "@/shared/ui";
+import { Select, VStack, type SelectOption } from "@/shared/ui";
+import { ListBox } from "@/shared/ui/redesigned/Popups";
+import { Text } from "@/shared/ui/redesigned/Text";
 
 interface Props {
   className?: string;
@@ -38,20 +41,46 @@ export const ArticleSortSelector = memo(
     );
 
     return (
-      <div className={classNames(styles.articleSortSelector, {}, [className])}>
-        <Select
-          options={sortFieldOptions}
-          label={t("SortBy")}
-          value={sort}
-          onChange={onChangeSort}
-        />
-        <Select
-          options={orderOptions}
-          label={t("SortType")}
-          value={order}
-          onChange={onChangeOrder}
-        />
-      </div>
+      <ToggleFeatures
+        featureName="isAppRedesigned"
+        on={
+          <div
+            className={classNames(styles.articleSortSelector, {}, [className])}
+          >
+            <VStack gap={8}>
+              <Text text={t("sortBy")} />
+              <ListBox
+                items={sortFieldOptions}
+                value={sort}
+                onChange={onChangeSort}
+              />
+              <ListBox
+                items={orderOptions}
+                value={order}
+                onChange={onChangeOrder}
+              />
+            </VStack>
+          </div>
+        }
+        off={
+          <div
+            className={classNames(styles.articleSortSelector, {}, [className])}
+          >
+            <Select
+              options={sortFieldOptions}
+              label={t("SortBy")}
+              value={sort}
+              onChange={onChangeSort}
+            />
+            <Select
+              options={orderOptions}
+              label={t("SortType")}
+              value={order}
+              onChange={onChangeOrder}
+            />
+          </div>
+        }
+      />
     );
   },
 );
