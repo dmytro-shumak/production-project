@@ -1,5 +1,6 @@
 .button {
   cursor: pointer;
+  padding: 8px 16px;
   color: var(--text-redesigned);
 }
 
@@ -71,4 +72,9 @@
 
 .outline {
   display: block;
+}
+
+.filled {
+  background-color: var(--light-bg-redesigned);
+  border-radius: 34px;
 }

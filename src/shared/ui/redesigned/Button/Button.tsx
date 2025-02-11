@@ -4,7 +4,7 @@ import styles from "./Button.module.css";
 
 import { classNames } from "@/shared/lib";
 
-export type ButtonVariant = "clear" | "outline";
+export type ButtonVariant = "clear" | "outline" | "filled";
 export type ButtonSize = "m" | "l" | "xl";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
