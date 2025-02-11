@@ -8,7 +8,6 @@ import { type ReactNode } from "react";
 
 import { HStack } from "../../../../redesigned/Stack";
 import { Button } from "../../../Button";
-import popupStyles from "../../styles/popup.module.css";
 
 import styles from "./ListBox.module.css";
 
@@ -48,13 +47,12 @@ const ListBox = <T extends string>({
         value={value}
         disabled={readOnly}
         onChange={onChange}
-        className={classNames(styles.listBox, {}, [
-          className,
-          popupStyles.menu,
-        ])}
+        className={classNames(styles.listBox, {}, [className])}
       >
         <ListboxButton disabled={readOnly} as="div">
-          <Button disabled={readOnly}>{value ?? defaultValue}</Button>
+          <Button variant="filled" disabled={readOnly}>
+            {value ?? defaultValue}
+          </Button>
         </ListboxButton>
         <ListboxOptions
           anchor="bottom"

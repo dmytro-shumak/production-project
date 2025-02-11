@@ -1,11 +1,11 @@
-import { Suspense, useEffect } from "react";
+import { Suspense, useEffect, useLayoutEffect } from "react";
 
 import { AppRouter } from "./router";
 
 import { getUserInitiated, initAuthData } from "@/entities/User";
 import { MainLayout } from "@/shared/layouts/MainLayout";
 import { classNames, useAppDispatch, useAppSelector } from "@/shared/lib";
-import { ToggleFeatures } from "@/shared/lib/features";
+import { ToggleFeatures, toggleFeatures } from "@/shared/lib/features";
 import { useTheme } from "@/shared/lib/hooks";
 import { Loader } from "@/shared/ui/deprecated/Loader";
 import { NavBar } from "@/widgets/NavBar";
@@ -16,8 +16,14 @@ const App = () => {
   const dispatch = useAppDispatch();
   const initiated = useAppSelector(getUserInitiated);
 
-  useEffect(() => {
-    document.body.className = theme;
+  useLayoutEffect(() => {
+    document.body.className =
+      theme +
+      toggleFeatures({
+        name: "isAppRedesigned",
+        on: () => " app-redesigned",
+        off: () => "",
+      });
   }, [theme]);
 
   useEffect(() => {
@@ -32,7 +38,7 @@ const App = () => {
     <ToggleFeatures
       featureName="isAppRedesigned"
       on={
-        <div className={classNames("app-redesigned", {}, [theme])}>
+        <div className={classNames("", {}, [theme])}>
           <Suspense fallback={<Loader />}>
             <MainLayout
               content={<AppRouter />}
