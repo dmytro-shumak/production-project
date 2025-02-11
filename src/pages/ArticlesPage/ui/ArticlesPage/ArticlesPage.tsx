@@ -6,10 +6,13 @@ import { initializeArticlePage } from "../../model/services/initializeArticlePag
 import { articlePageReducer } from "../../model/slices/articlePageSlice";
 import { ArticleInfiniteList } from "../../ui/ArticleInfiniteList/ArticleInfiniteList";
 import { ArticlePageFilters } from "../ArticlePageFilters/ArticlePageFilters";
+import { FiltersContainer } from "../FiltersContainer/FiltersContainer";
+import { ViewSelectorContainer } from "../ViewSelectorContainer/ViewSelectorContainer";
 
 import styles from "./ArticlesPage.module.css";
 
 import { ArticlePageGreeting } from "@/features/articlePageGreeting";
+import { StickyContentLayout } from "@/shared/layouts/StickyContentLayout";
 import { classNames } from "@/shared/lib";
 import {
   useAppDispatch,
@@ -17,6 +20,7 @@ import {
   useInitialEffect,
   type ReducersList,
 } from "@/shared/lib";
+import { ToggleFeatures } from "@/shared/lib/features";
 import { Page } from "@/widgets/Page";
 
 interface Props {
@@ -42,15 +46,38 @@ const ArticlesPage: FC<Props> = ({ className }) => {
   });
 
   return (
-    <Page
-      dataTestid="ArticlesPage"
-      className={classNames(styles.articlesPage, {}, [className])}
-      onScrollEnd={onLoadNextPart}
-    >
-      <ArticlePageFilters />
-      <ArticleInfiniteList className={styles.list} />
-      <ArticlePageGreeting />
-    </Page>
+    <ToggleFeatures
+      featureName="isAppRedesigned"
+      on={
+        <StickyContentLayout
+          left={<ViewSelectorContainer />}
+          content={
+            <Page
+              dataTestid="ArticlesPage"
+              className={classNames(styles.articlesPageRedesigned, {}, [
+                className,
+              ])}
+              onScrollEnd={onLoadNextPart}
+            >
+              <ArticleInfiniteList className={styles.list} />
+              <ArticlePageGreeting />
+            </Page>
+          }
+          right={<FiltersContainer />}
+        />
+      }
+      off={
+        <Page
+          dataTestid="ArticlesPage"
+          className={classNames(styles.articlesPage, {}, [className])}
+          onScrollEnd={onLoadNextPart}
+        >
+          <ArticlePageFilters />
+          <ArticleInfiniteList className={styles.list} />
+          <ArticlePageGreeting />
+        </Page>
+      }
+    />
   );
 };
 

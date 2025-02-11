@@ -2,7 +2,9 @@ import { memo, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { ArticleType } from "@/entities/Article";
-import { Tabs, type TabItem } from "@/shared/ui";
+import { ToggleFeatures } from "@/shared/lib/features";
+import { Tabs as TabsDeprecated, type TabItem } from "@/shared/ui";
+import { Tabs } from "@/shared/ui/redesigned/Tabs";
 
 interface Props {
   className?: string;
@@ -16,7 +18,7 @@ export const ArticleTypeTabs = memo(
 
     const tabs = useMemo<TabItem[]>(
       () => [
-        { content: t("All"), value: ArticleType.ALL },
+        { content: t("AllArticles"), value: ArticleType.ALL },
         { content: t("IT"), value: ArticleType.IT },
         { content: t("Article"), value: ArticleType.ARTICLE },
         { content: t("Business"), value: ArticleType.BUSINESS },
@@ -34,11 +36,25 @@ export const ArticleTypeTabs = memo(
     );
 
     return (
-      <Tabs
-        className={className}
-        tabs={tabs}
-        value={value}
-        onTabChange={onTabChange}
+      <ToggleFeatures
+        featureName="isAppRedesigned"
+        on={
+          <Tabs
+            direction="column"
+            className={className}
+            tabs={tabs}
+            value={value}
+            onTabChange={onTabChange}
+          />
+        }
+        off={
+          <TabsDeprecated
+            className={className}
+            tabs={tabs}
+            value={value}
+            onTabChange={onTabChange}
+          />
+        }
       />
     );
   },

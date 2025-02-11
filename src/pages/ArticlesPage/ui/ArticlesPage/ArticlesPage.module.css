@@ -5,3 +5,10 @@
 .list {
   margin-top: 30px;
 }
+
+/* redesigned */
+.articlesPageRedesigned {
+  .list {
+    margin-top: 0;
+  }
+}
