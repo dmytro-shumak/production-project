@@ -8,9 +8,11 @@ import { useMemo, type ReactNode } from "react";
 
 import { HStack } from "../../../../redesigned/Stack";
 import { Button } from "../../../Button";
+import { Icon } from "../../../Icon";
 
 import styles from "./ListBox.module.css";
 
+import ArrowButtonIcon from "@/shared/assets/icons/arrow-bottom.svg?react";
 import { classNames } from "@/shared/lib";
 import { typedMemo } from "@/shared/types";
 
@@ -55,7 +57,11 @@ const ListBox = <T extends string>({
         className={classNames(styles.listBox, {}, [className])}
       >
         <ListboxButton disabled={readOnly} as="div">
-          <Button variant="filled" disabled={readOnly}>
+          <Button
+            variant="filled"
+            disabled={readOnly}
+            buttonSuffix={<Icon Svg={ArrowButtonIcon} />}
+          >
             {selectedItems?.content ?? defaultValue}
           </Button>
         </ListboxButton>

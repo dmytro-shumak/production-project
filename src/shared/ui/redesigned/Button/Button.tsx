@@ -13,6 +13,8 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   square?: boolean;
   variant?: ButtonVariant;
   size?: ButtonSize;
+  buttonPrefix?: ReactNode;
+  buttonSuffix?: ReactNode;
 }
 
 export const Button = memo<Props>(
@@ -20,6 +22,8 @@ export const Button = memo<Props>(
     className,
     children,
     disabled,
+    buttonPrefix,
+    buttonSuffix,
     variant = "outline",
     square = false,
     size = "m",
@@ -31,6 +35,7 @@ export const Button = memo<Props>(
         {
           [styles.square]: square,
           [styles.disabled]: disabled,
+          [styles.hasPrefixOrSuffix]: !!buttonPrefix || !!buttonSuffix,
         },
         [className, styles[variant], styles[size]],
       )}
@@ -39,7 +44,13 @@ export const Button = memo<Props>(
       {...buttonProps}
       type="button"
     >
+      {buttonPrefix && (
+        <span className={styles.buttonPrefix}>{buttonPrefix}</span>
+      )}
       {children}
+      {buttonSuffix && (
+        <span className={styles.buttonSuffix}>{buttonSuffix}</span>
+      )}
     </button>
   ),
 );

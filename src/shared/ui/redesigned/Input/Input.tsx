@@ -49,7 +49,7 @@ export const Input = memo(
             {label}
           </label>
         )}
-        <div className={styles.inputPrefix}>{inputPrefix}</div>
+        <span className={styles.inputPrefix}>{inputPrefix}</span>
         <input
           {...otherProps}
           className={classNames(styles.input, { [styles.readOnly]: readOnly })}
