@@ -7,6 +7,8 @@ import {
   type ReactNode,
 } from "react";
 
+import { HStack } from "../Stack";
+
 import styles from "./Input.module.css";
 
 import { classNames } from "@/shared/lib";
@@ -30,13 +32,14 @@ export const Input = memo(
   }: Props) => {
     const id = useId();
     const ref = useRef<HTMLInputElement>(null);
+
     useEffect(() => {
       if (autoFocus) {
         ref.current?.focus();
       }
     }, [autoFocus]);
 
-    return (
+    const input = (
       <div
         className={classNames(
           styles.container,
@@ -44,11 +47,6 @@ export const Input = memo(
           [className],
         )}
       >
-        {label && (
-          <label className={styles.label} htmlFor={id}>
-            {label}
-          </label>
-        )}
         <span className={styles.inputPrefix}>{inputPrefix}</span>
         <input
           {...otherProps}
@@ -59,5 +57,18 @@ export const Input = memo(
         />
       </div>
     );
+
+    if (label) {
+      return (
+        <HStack gap={8}>
+          <label className={styles.label} htmlFor={id}>
+            {label}
+          </label>
+          {input}
+        </HStack>
+      );
+    }
+
+    return input;
   },
 );

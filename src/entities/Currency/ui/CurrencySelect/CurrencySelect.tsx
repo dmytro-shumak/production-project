@@ -3,7 +3,9 @@ import { useTranslation } from "react-i18next";
 
 import { Currency } from "../../model/constants/currency";
 
-import { ListBox } from "@/shared/ui";
+import { ToggleFeatures } from "@/shared/lib/features";
+import { ListBox as ListBoxDeprecate } from "@/shared/ui";
+import { ListBox } from "@/shared/ui/redesigned/Popups";
 
 interface Props {
   className?: string;
@@ -29,14 +31,30 @@ export const CurrencySelect: FC<Props> = memo(
     );
 
     return (
-      <ListBox
-        className={className}
-        onChange={onChangeHandler}
-        value={value}
-        defaultValue={t("ChooseCurrency")}
-        label={t("ChooseCurrency")}
-        items={options}
-        readOnly={readOnly}
+      <ToggleFeatures
+        featureName="isAppRedesigned"
+        on={
+          <ListBox
+            className={className}
+            onChange={onChangeHandler}
+            value={value}
+            defaultValue={t("ChooseCurrency")}
+            label={t("Currency")}
+            items={options}
+            readOnly={readOnly}
+          />
+        }
+        off={
+          <ListBoxDeprecate
+            className={className}
+            onChange={onChangeHandler}
+            value={value}
+            defaultValue={t("ChooseCurrency")}
+            label={t("Currency")}
+            items={options}
+            readOnly={readOnly}
+          />
+        }
       />
     );
   },
