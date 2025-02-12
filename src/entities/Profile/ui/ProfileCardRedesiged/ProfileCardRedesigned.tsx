@@ -87,37 +87,35 @@ export const ProfileCardRedesigned = memo(
 
     if (isLoading) {
       return (
-        <div className={classNames(styles.profileCard, {}, [className])}>
-          <Card padding="24">
-            <VStack gap={32}>
-              <HStack justify="center">
-                <Skeleton borderRadius="100%" width={128} height={128} />
-              </HStack>
-              <HStack gap={32}>
-                <VStack
-                  gap={16}
-                  justify="stretch"
-                  className={styles.inputColumnWrapper}
-                >
-                  <Skeleton width="100%" height={38} />
-                  <Skeleton width="100%" height={38} />
-                  <Skeleton width="100%" height={38} />
-                  <Skeleton width="100%" height={38} />
-                </VStack>
-                <VStack
-                  gap={16}
-                  justify="stretch"
-                  className={styles.inputColumnWrapper}
-                >
-                  <Skeleton width="100%" height={38} />
-                  <Skeleton width="100%" height={38} />
-                  <Skeleton width="100%" height={38} />
-                  <Skeleton width="100%" height={38} />
-                </VStack>
-              </HStack>
-            </VStack>
-          </Card>
-        </div>
+        <Card padding="24">
+          <VStack gap={32}>
+            <HStack justify="center">
+              <Skeleton borderRadius="100%" width={120} height={120} />
+            </HStack>
+            <HStack gap={32}>
+              <VStack
+                gap={16}
+                justify="stretch"
+                className={styles.inputColumnWrapper}
+              >
+                <Skeleton width="100%" height={38} />
+                <Skeleton width="100%" height={38} />
+                <Skeleton width="100%" height={38} />
+                <Skeleton width="100%" height={38} />
+              </VStack>
+              <VStack
+                gap={16}
+                justify="stretch"
+                className={styles.inputColumnWrapper}
+              >
+                <Skeleton width="100%" height={38} />
+                <Skeleton width="100%" height={38} />
+                <Skeleton width="100%" height={38} />
+                <Skeleton width="100%" height={38} />
+              </VStack>
+            </HStack>
+          </VStack>
+        </Card>
       );
     }
 
