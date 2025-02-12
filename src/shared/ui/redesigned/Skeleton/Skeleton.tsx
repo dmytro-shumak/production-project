@@ -11,10 +11,6 @@ interface Props {
   borderRadius?: string | number;
 }
 
-/**
- * deprecated, use components from redesign folder
- * @deprecated
- */
 export const Skeleton = memo(
   ({ className, borderRadius, height, width }: Props) => {
     return (

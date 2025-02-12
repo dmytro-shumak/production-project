@@ -15,7 +15,6 @@ import {
   getProfileValidateErrors,
   profileReducer,
 } from "@/entities/Profile";
-import { ProfileRating } from "@/features/profileRating";
 import { useAppDispatch, useAppSelector, classNames } from "@/shared/lib";
 import {
   useAsyncReducer,
@@ -84,7 +83,7 @@ const ProfilePage: FC<Props> = ({ className }) => {
           error={error}
           readOnly={readOnly}
         />
-        <ProfileRating profileId={id} />
+        {/* <ProfileRating profileId={id} /> */}
       </VStack>
     </Page>
   );
