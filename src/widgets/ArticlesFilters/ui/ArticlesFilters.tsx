@@ -47,6 +47,7 @@ export const ArticlesFilters = memo(
       >
         <VStack gap={32}>
           <Input
+            size="small"
             placeholder={t("Search")}
             onChange={onChangeSearch}
             value={search}

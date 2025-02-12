@@ -13,12 +13,15 @@ import styles from "./Input.module.css";
 
 import { classNames } from "@/shared/lib";
 
+type InputSize = "small" | "medium" | "large";
+
 interface Props
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, "readOnly"> {
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, "readOnly" | "size"> {
   className?: string;
   label?: string;
   readOnly?: boolean;
   inputPrefix?: ReactNode;
+  size?: InputSize;
 }
 
 export const Input = memo(
@@ -28,6 +31,7 @@ export const Input = memo(
     autoFocus,
     readOnly,
     inputPrefix,
+    size = "medium",
     ...otherProps
   }: Props) => {
     const id = useId();
@@ -44,7 +48,7 @@ export const Input = memo(
         className={classNames(
           styles.container,
           { [styles.withInputPrefix]: !!inputPrefix },
-          [className],
+          [className, styles[size]],
         )}
       >
         <span className={styles.inputPrefix}>{inputPrefix}</span>

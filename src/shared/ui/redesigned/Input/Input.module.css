@@ -4,8 +4,19 @@
   border-radius: 48px;
   padding: 8px 16px;
   border: 1px solid var(--icon-redesigned);
-  height: 32px;
   width: 100%;
+}
+
+.small {
+  height: 32px;
+}
+
+.medium {
+  height: 38px;
+}
+
+.large {
+  height: 44px;
 }
 
 .withInputPrefix {
@@ -42,8 +53,7 @@
 }
 
 .readOnly {
-  background-color: #c5d0da;
-  color: #495057;
   border: none;
   cursor: not-allowed;
+  opacity: 0.5;
 }
