@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  align-items: center;
+  border-radius: 48px;
+  padding: 8px 16px;
+  border: 1px solid var(--icon-redesigned);
+  height: 38px;
+  width: 100%;
+}
+
+.withInputPrefix {
+  padding-left: 8px;
+}
+
+.inputPrefix {
+  display: flex;
+}
+
+.container:focus-within path  {
+  fill: var(--accent-redesigned)
+}
+
+.container:focus-within {
+  border-color: var(--accent-redesigned)
+}
+
+.label {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.input {
+  color: var(--text-redesigned);
+  font-size: 16px;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--hint-redesigned)
+}
+
+.readOnly {
+  background-color: #c5d0da;
+  color: #495057;
+  border: none;
+  cursor: not-allowed;
+}

@@ -6,11 +6,13 @@ import styles from "./ArticlesFilters.module.css";
 import type { ArticleSortField, ArticleType } from "@/entities/Article";
 import { ArticleSortSelector } from "@/features/articleSortSelector";
 import { ArticleTypeTabs } from "@/features/articleTypeTabs";
+import SearchIcon from "@/shared/assets/icons/search.svg?react";
 import { classNames } from "@/shared/lib";
 import type { SortOrder } from "@/shared/types";
 import { VStack } from "@/shared/ui";
-import { Input } from "@/shared/ui/deprecated/Input";
 import { Card } from "@/shared/ui/redesigned/Card";
+import { Icon } from "@/shared/ui/redesigned/Icon";
+import { Input } from "@/shared/ui/redesigned/Input";
 
 interface Props {
   className?: string;
@@ -48,6 +50,7 @@ export const ArticlesFilters = memo(
             placeholder={t("Search")}
             onChange={onChangeSearch}
             value={search}
+            inputPrefix={<Icon Svg={SearchIcon} />}
             data-testid="ArticleSearchInput"
           />
           <ArticleSortSelector
