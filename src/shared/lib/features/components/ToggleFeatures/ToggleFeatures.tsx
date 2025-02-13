@@ -1,6 +1,6 @@
 import { type ReactNode, memo } from "react";
 
-import { getFeaturesFlags } from "../setGetFeatures";
+import { getFeaturesFlags } from "../../lib/setGetFeatures";
 
 import type { FeaturesFlags } from "@/shared/types/featuresFlags";
 
