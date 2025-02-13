@@ -17,6 +17,7 @@ interface Props {
   variant?: TextVariant;
   align?: TextAlign;
   size?: TextSize;
+  bold?: boolean;
 }
 
 type HeaderTag = "h1" | "h2" | "h3";
@@ -32,6 +33,7 @@ export const Text = memo(
     className,
     text,
     title,
+    bold,
     variant = "primary",
     align = "left",
     size = "medium",
@@ -40,7 +42,7 @@ export const Text = memo(
 
     return (
       <div
-        className={classNames(styles.text, {}, [
+        className={classNames(styles.text, { [styles.bold]: bold }, [
           className,
           styles[align],
           styles[size],

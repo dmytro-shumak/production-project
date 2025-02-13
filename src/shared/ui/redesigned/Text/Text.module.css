@@ -58,3 +58,7 @@
 .small .title {
   font-size: var(--font-sm-redesigned);
 }
+
+.bold {
+  font-weight: 700;
+}
