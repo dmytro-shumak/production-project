@@ -6,6 +6,7 @@ import { Portal } from "../../redesigned/Portal/Portal";
 import styles from "./Modal.module.css";
 
 import { classNames } from "@/shared/lib";
+import { toggleFeatures } from "@/shared/lib/features";
 import { useModal } from "@/shared/lib/hooks";
 
 interface Props {
@@ -16,10 +17,6 @@ interface Props {
   onClose?: () => void;
 }
 
-/**
- * deprecated, use components from redesign folder
- * @deprecated
- */
 export const Modal: FC<Props> = ({
   className,
   contentClassName,
@@ -34,6 +31,11 @@ export const Modal: FC<Props> = ({
       <div
         className={classNames(styles.modal, { [styles.opened]: isOpen }, [
           className,
+          toggleFeatures({
+            name: "isAppRedesigned",
+            on: () => styles.modalNew,
+            off: () => styles.modalOld,
+          }),
         ])}
       >
         <Overlay onClick={onClose}>

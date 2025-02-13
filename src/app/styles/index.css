@@ -6,10 +6,10 @@
 
 body {
   font: var(--font-md);
+  color: var(--primary-color);
 }
 
 .app {
-  color: var(--primary-color);
   background: var(--bg-color);
   min-height: 100vh;
 }

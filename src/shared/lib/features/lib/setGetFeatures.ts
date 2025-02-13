@@ -7,7 +7,7 @@ export const setFeaturesFlags = (flags: FeaturesFlags): void => {
 };
 
 export const getFeaturesFlags = (flag: keyof FeaturesFlags) => {
-  return featureFlags?.[flag];
+  return featureFlags?.[flag] ?? true;
 };
 
 export const getAllFeatureFlags = () => featureFlags;
