@@ -6,12 +6,14 @@ import { classNames } from "@/shared/lib";
 
 export type FlexJustify = "start" | "end" | "center" | "between" | "stretch";
 export type FlexAlign = "start" | "end" | "center" | "stretch";
+export type FlexWrap = "nowrap" | "wrap";
 export type FlexDirection = "row" | "column";
 
 export interface FlexOwnProps {
   justify?: FlexJustify;
   align?: FlexAlign;
   direction?: FlexDirection;
+  wrap?: FlexWrap;
   gap?: string | number;
   children?: ReactNode;
   className?: string;
@@ -49,6 +51,7 @@ export const Flex = <T extends ElementType = "div">({
   align = "center",
   direction = "row",
   justify = "center",
+  wrap = "nowrap",
   gap = 8,
   ...restProps
 }: FlexProps<T>) => {
@@ -61,6 +64,7 @@ export const Flex = <T extends ElementType = "div">({
         justifyClasses[justify],
         alignClasses[align],
         directionClasses[direction],
+        styles[wrap],
       ])}
       style={{ gap }}
       {...restProps} // Spreading the rest of the props here

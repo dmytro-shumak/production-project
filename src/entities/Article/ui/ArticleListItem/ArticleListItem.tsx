@@ -10,7 +10,7 @@ import { ToggleFeatures } from "@/shared/lib/features";
 interface Props {
   className?: string;
   article: Article;
-  view?: ArticleView;
+  view: ArticleView;
   target?: HTMLAttributeAnchorTarget;
 }
 

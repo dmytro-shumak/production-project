@@ -45,3 +45,11 @@
 .directionColumn {
   flex-direction: column;
 }
+
+.nowrap {
+  flex-wrap: nowrap;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
