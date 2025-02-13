@@ -34,5 +34,6 @@
   "Ascending": "Ascending",
   "Descending": "Descending",
   "ArticleWelcomeTitle": "Welcome to the Article page",
-  "ArticleWelcomeText": "This is a simple article page. You can see the article title, creation date, views count, and comments. You can also create, edit, and delete your own comments."
+  "ArticleWelcomeText": "This is a simple article page. You can see the article title, creation date, views count, and comments. You can also create, edit, and delete your own comments.",
+  "ReadMore": "Read more..."
 }

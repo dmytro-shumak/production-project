@@ -49,7 +49,7 @@ export const ArticleList = memo(
             styles[view],
           ])}
         >
-          <Text title={t("ArticlesNotFound")} size={TextSize.L} />;
+          <Text title={t("ArticlesNotFound")} size={TextSize.L} />
         </div>
       );
     }
