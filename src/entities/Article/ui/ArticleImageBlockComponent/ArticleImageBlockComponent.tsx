@@ -5,7 +5,9 @@ import type { ArticleImageBlock } from "../../model/types/article";
 import styles from "./ArticleImageBlockComponent.module.css";
 
 import { classNames } from "@/shared/lib";
-import { Text } from "@/shared/ui";
+import { ToggleFeatures } from "@/shared/lib/features";
+import { Text as TextDeprecated } from "@/shared/ui";
+import { Text } from "@/shared/ui/redesigned/Text";
 
 interface Props {
   className?: string;
@@ -17,7 +19,13 @@ export const ArticleImageBlockComponent = memo(
     return (
       <div className={classNames("", {}, [className])}>
         <img src={block.src} className={styles.img} alt={block.title} />
-        {block.title && <Text text={block.title} />}
+        {block.title && (
+          <ToggleFeatures
+            featureName="isAppRedesigned"
+            on={<Text text={block.title} />}
+            off={<TextDeprecated text={block.title} />}
+          />
+        )}
       </div>
     );
   },

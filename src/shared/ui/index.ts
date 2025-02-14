@@ -10,7 +10,7 @@ export * from "./redesigned/Stack";
 export * from "./deprecated/Popups";
 export * from "./deprecated/Text";
 export { Button } from "./deprecated/Button/Button";
-export { Code } from "./deprecated/Code/Code";
+export { Code } from "./redesigned/Code/Code";
 
 export * from "./deprecated/Tabs/Tabs";
 export * from "./deprecated/StarRating";

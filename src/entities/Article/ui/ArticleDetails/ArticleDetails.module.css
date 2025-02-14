@@ -21,3 +21,8 @@
 .block {
   margin-top: 16px;
 }
+
+.img {
+  width: 100%;
+  max-width: 420px;
+}
