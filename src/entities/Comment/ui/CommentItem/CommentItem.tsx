@@ -6,7 +6,16 @@ import styles from "./CommentItem.module.css";
 
 import { getRouteProfile } from "@/shared/const/router";
 import { classNames } from "@/shared/lib";
-import { AppLinkDeprecated, Avatar, Text } from "@/shared/ui";
+import { ToggleFeatures } from "@/shared/lib/features";
+import {
+  AppLinkDeprecated,
+  Avatar as AvatarDeprecated,
+  Text as TextDeprecated,
+} from "@/shared/ui";
+import { AppLink } from "@/shared/ui/redesigned";
+import { Avatar } from "@/shared/ui/redesigned/Avatar";
+import { Card } from "@/shared/ui/redesigned/Card";
+import { Text } from "@/shared/ui/redesigned/Text";
 
 interface Props {
   className?: string;
@@ -15,18 +24,46 @@ interface Props {
 
 export const CommentItem = memo(({ className, comment }: Props) => {
   return (
-    <div
-      className={classNames(styles.commentItem, {}, [className])}
-      data-testid="CommentItem"
-    >
-      <AppLinkDeprecated
-        className={styles.header}
-        to={getRouteProfile(comment.user.id)}
-      >
-        {comment.user.avatar && <Avatar size={30} src={comment.user.avatar} />}
-        <Text title={comment.user.username} />
-      </AppLinkDeprecated>
-      <Text text={comment.text} className={styles.text} />
-    </div>
+    <ToggleFeatures
+      featureName="isAppRedesigned"
+      on={
+        <Card padding="24" borderRadius={34}>
+          <div
+            className={classNames(styles.commentItemRedesigned, {}, [
+              className,
+            ])}
+            data-testid="CommentItem"
+          >
+            <AppLink
+              className={styles.header}
+              to={getRouteProfile(comment.user.id)}
+            >
+              {comment.user.avatar && (
+                <Avatar size={30} src={comment.user.avatar} />
+              )}
+              <Text text={comment.user.username} bold />
+            </AppLink>
+            <Text text={comment.text} />
+          </div>
+        </Card>
+      }
+      off={
+        <div
+          className={classNames(styles.commentItem, {}, [className])}
+          data-testid="CommentItem"
+        >
+          <AppLinkDeprecated
+            className={styles.header}
+            to={getRouteProfile(comment.user.id)}
+          >
+            {comment.user.avatar && (
+              <AvatarDeprecated size={30} src={comment.user.avatar} />
+            )}
+            <TextDeprecated title={comment.user.username} />
+          </AppLinkDeprecated>
+          <TextDeprecated text={comment.text} className={styles.text} />
+        </div>
+      }
+    />
   );
 });

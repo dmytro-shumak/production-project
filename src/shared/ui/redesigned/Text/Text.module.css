@@ -59,6 +59,6 @@
   font: var(--font-sm-redesigned);
 }
 
-.bold .title, .body .text {
+.bold .title, .bold .text {
   font-weight: 700;
 }

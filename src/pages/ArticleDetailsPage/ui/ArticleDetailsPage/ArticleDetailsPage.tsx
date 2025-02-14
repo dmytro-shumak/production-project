@@ -16,7 +16,8 @@ import { ArticleRecommendationsList } from "@/features/articleRecommendationsLis
 import { StickyContentLayout } from "@/shared/layouts/StickyContentLayout";
 import { classNames, useAsyncReducer, type ReducersList } from "@/shared/lib";
 import { ToggleFeatures } from "@/shared/lib/features";
-import { Text, TextSize, VStack } from "@/shared/ui";
+import { Text as TextDeprecated, TextSize, VStack } from "@/shared/ui";
+import { Text } from "@/shared/ui/redesigned/Text";
 import { Page } from "@/widgets/Page";
 
 interface Props {
@@ -52,7 +53,7 @@ const ArticleDetailsPage: FC<Props> = ({ className }) => {
                 <Text
                   title={t("Recommendations")}
                   className={styles.commentTitle}
-                  size={TextSize.L}
+                  size="large"
                 />
                 <ArticleRecommendationsList />
               </VStack>
@@ -74,7 +75,7 @@ const ArticleDetailsPage: FC<Props> = ({ className }) => {
             off={null}
           />
           <VStack gap={16}>
-            <Text
+            <TextDeprecated
               title={t("Recommendations")}
               className={styles.commentTitle}
               size={TextSize.L}

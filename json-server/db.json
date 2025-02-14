@@ -840,6 +840,12 @@
       "userId": "1",
       "text": "961674",
       "id": "qlufXWQ"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum error ratione sunt, minus earum soluta, sit, exercitationem rem eius ut officiis. Repellendus pariatur quidem porro ratione, incidunt rerum voluptatibus iste?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum error ratione sunt, minus earum soluta, sit, exercitationem rem eius ut officiis. Repellendus pariatur quidem porro ratione, incidunt rerum voluptatibus iste?",
+      "id": "ZkmSaOW"
     }
   ],
   "users": [
@@ -874,7 +880,7 @@
       },
       "avatar": "https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png",
       "jsonSettings": {
-        "theme": "app-light-theme",
+        "theme": "app-dark-theme",
         "isFirstVisit": false,
         "settingsPageHasBeenOpened": false,
         "isArticlePageHasBeenVisited": true
@@ -998,6 +1004,12 @@
       "rate": 5,
       "feedback": "",
       "id": "tN_ZLXE"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "rate": 4,
+      "id": "uxzD2H1"
     }
   ],
   "profile-ratings": [
