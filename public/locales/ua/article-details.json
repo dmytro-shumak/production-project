@@ -2,5 +2,9 @@
   "ErrorLoadingDetailsPage": "Error occurred while loading details page",
   "Comments": "Comments",
   "BackToList": "Back to list",
-  "Edit": "Редагувати"
+  "Edit": "Редагувати",
+  "ViewsCount_one": "{{count}} перегляд",
+  "ViewsCount_many": "{{count}} переглядів",
+  "ViewsCount_few": "{{count}} перегляди",
+  "ViewsCount_other": "{{count}} перегляди"
 }

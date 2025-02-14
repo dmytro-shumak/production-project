@@ -2,5 +2,7 @@
   "ErrorLoadingDetailsPage": "Error occurred while loading details page",
   "Comments": "Comments",
   "BackToList": "Back to list",
-  "Edit": "Edit"
+  "Edit": "Edit",
+  "ViewsCount_one": "{{count}} view",
+  "ViewsCount_other": "{{count}} views"
 }

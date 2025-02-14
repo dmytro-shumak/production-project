@@ -2,5 +2,8 @@
   "ErrorLoadingDetailsPage": "Error occurred while loading details page",
   "Comments": "Comments",
   "BackToList": "Back to list",
-  "Edit": "Редактировать"
+  "Edit": "Редактировать",
+  "ViewsCount_one": "{{count}} просмотр",
+  "ViewsCount_many": "{{count}} просмотров",
+  "ViewsCount_few": "{{count}} просмотра"
 }
