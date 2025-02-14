@@ -36,29 +36,29 @@
 }
 
 .medium .title {
-  font-size: var(--font-lg-redesigned);
+  font: var(--font-lg-redesigned);
 }
 
 .medium .text {
-  font-size: var(--font-md-redesigned);
+  font: var(--font-md-redesigned);
 }
 
 .large .title {
-  font-size: var(--font-xl-redesigned);
+  font: var(--font-xl-redesigned);
 }
 
 .large .text {
-  font-size: var(--font-lg-redesigned);
+  font: var(--font-lg-redesigned);
 }
 
 .small .text {
-  font-size: var(--font-sm-redesigned);
+  font: var(--font-sm-redesigned);
 }
 
 .small .title {
-  font-size: var(--font-sm-redesigned);
+  font: var(--font-sm-redesigned);
 }
 
-.bold {
+.bold .title, .body .text {
   font-weight: 700;
 }
