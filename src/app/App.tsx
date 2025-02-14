@@ -38,7 +38,7 @@ const App = () => {
     <ToggleFeatures
       featureName="isAppRedesigned"
       on={
-        <div className={classNames("app", {}, [theme])}>
+        <div className={classNames("", {}, [theme])}>
           <Suspense fallback={<Loader />}>
             <MainLayout
               content={<AppRouter />}
