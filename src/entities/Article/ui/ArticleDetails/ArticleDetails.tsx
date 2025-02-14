@@ -21,7 +21,7 @@ import {
   useAsyncReducer,
   type ReducersList,
 } from "@/shared/lib";
-import { ToggleFeatures } from "@/shared/lib/features";
+import { ToggleFeatures, toggleFeatures } from "@/shared/lib/features";
 import {
   Avatar as AvatarDeprecated,
   HStack,
@@ -33,7 +33,7 @@ import {
   TextTheme,
 } from "@/shared/ui";
 import { AppImage } from "@/shared/ui/redesigned/AppImage";
-import { Skeleton } from "@/shared/ui/redesigned/Skeleton";
+import { Skeleton as SkeletonRedesigned } from "@/shared/ui/redesigned/Skeleton";
 import { Text } from "@/shared/ui/redesigned/Text";
 
 interface Props {
@@ -84,7 +84,9 @@ const Redesigned = () => {
       <Text title={article?.title} size="large" bold />
       <Text title={article?.subtitle} />
       <AppImage
-        fallback={<Skeleton width="100%" height={420} borderRadius={16} />}
+        fallback={
+          <SkeletonRedesigned width="100%" height={420} borderRadius={16} />
+        }
         src={article?.img}
         className={styles.img}
       />
@@ -108,31 +110,25 @@ export const ArticleDetails: FC<Props> = memo(({ className, id }) => {
     }
   }, [dispatch, id]);
 
+  const Skeleton = toggleFeatures({
+    name: "isAppRedesigned",
+    on: () => SkeletonRedesigned,
+    off: () => SkeletonDeprecated,
+  });
+
   if (isLoading) {
     return (
       <div>
-        <SkeletonDeprecated
+        <Skeleton
           width={200}
           height={200}
           borderRadius="100%"
           className={styles.avatar}
         />
-        <SkeletonDeprecated width={300} height={32} className={styles.title} />
-        <SkeletonDeprecated
-          width={600}
-          height={24}
-          className={styles.skeleton}
-        />
-        <SkeletonDeprecated
-          width="100%"
-          height={200}
-          className={styles.skeleton}
-        />
-        <SkeletonDeprecated
-          width="100%"
-          height={200}
-          className={styles.skeleton}
-        />
+        <Skeleton width={300} height={32} className={styles.title} />
+        <Skeleton width={600} height={24} className={styles.skeleton} />
+        <Skeleton width="100%" height={200} className={styles.skeleton} />
+        <Skeleton width="100%" height={200} className={styles.skeleton} />
       </div>
     );
   }
