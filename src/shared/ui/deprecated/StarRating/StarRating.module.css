@@ -13,3 +13,17 @@
 .selected {
   cursor: auto;
 }
+
+.starRatingRedesigned {
+  display: flex;
+  gap: 4px;
+  
+  path {
+    stroke: var(--icon-redesigned);
+  }
+
+  .active path {
+    fill: var(--icon-redesigned);
+  }
+
+}
