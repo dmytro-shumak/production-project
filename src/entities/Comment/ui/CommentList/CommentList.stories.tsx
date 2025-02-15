@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { CommentList } from "./CommentList";
 
 import { RouterDecorator } from "@/shared/config";
+import { FeatureFlagsDecorator } from "@/shared/config/storybook/FeatureFlagsDecorator";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator";
 import { Theme } from "@/shared/const";
 
@@ -49,6 +50,13 @@ export const Primary: Story = {
   args: {
     comments,
   },
+};
+
+export const PrimaryRedesigned: Story = {
+  args: {
+    comments,
+  },
+  decorators: [FeatureFlagsDecorator({ isAppRedesigned: true })],
 };
 
 export const Dark: Story = {

@@ -4,6 +4,7 @@ import { ProfileCard } from "./ProfileCard";
 
 import { Country } from "@/entities/Country";
 import { Currency } from "@/entities/Currency";
+import { FeatureFlagsDecorator } from "@/shared/config/storybook/FeatureFlagsDecorator";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -23,21 +24,28 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const primaryArgs = {
+  data: {
+    age: 18,
+    country: Country.Germany,
+    firstName: "John",
+    lastName: "Doe",
+    avatar:
+      "https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&q=70&fm=webp",
+    username: "john_doe",
+    city: "Berlin",
+    currency: Currency.AWG,
+  },
+};
+
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
-  args: {
-    data: {
-      age: 18,
-      country: Country.Germany,
-      firstName: "John",
-      lastName: "Doe",
-      avatar:
-        "https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&q=70&fm=webp",
-      username: "john_doe",
-      city: "Berlin",
-      currency: Currency.AWG,
-    },
-  },
+  args: primaryArgs,
+};
+
+export const PrimaryRedesigned: Story = {
+  args: primaryArgs,
+  decorators: [FeatureFlagsDecorator({ isAppRedesigned: true })],
 };
 
 export const WithError: Story = {
