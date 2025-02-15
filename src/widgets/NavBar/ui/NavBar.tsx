@@ -9,16 +9,17 @@ import { AvatarDropdown } from "@/features/avatarDropdown";
 import { NotificationButton } from "@/features/notificationButton";
 import { getRouteArticleCreate } from "@/shared/const/router";
 import { classNames, useAppSelector } from "@/shared/lib";
-import { ToggleFeatures } from "@/shared/lib/features";
+import { ToggleFeatures, toggleFeatures } from "@/shared/lib/features";
 import {
   AppLinkDeprecated,
   AppLinkTheme,
-  Button,
+  Button as ButtonDeprecated,
   ButtonTheme,
   HStack,
   Text,
   TextTheme,
 } from "@/shared/ui";
+import { Button } from "@/shared/ui/redesigned/Button";
 
 interface Props {
   className?: string;
@@ -81,11 +82,31 @@ export const NavBar = memo(({ className }: Props) => {
   }
 
   return (
-    <nav className={classNames(styles.navBar, {}, [className])}>
+    <nav
+      className={classNames(
+        toggleFeatures({
+          name: "isAppRedesigned",
+          on: () => styles.navBarRedesigned,
+          off: () => styles.navBar,
+        }),
+        {},
+        [className],
+      )}
+    >
       <ul className={styles.links}>
-        <Button theme={ButtonTheme.Outline} onClick={openModal}>
-          {t("Login")}
-        </Button>
+        <ToggleFeatures
+          featureName="isAppRedesigned"
+          on={
+            <Button variant="clear" onClick={openModal}>
+              {t("Login")}
+            </Button>
+          }
+          off={
+            <ButtonDeprecated theme={ButtonTheme.Outline} onClick={openModal}>
+              {t("Login")}
+            </ButtonDeprecated>
+          }
+        />
       </ul>
       <LoginModal isOpen={isModalOpen} onClose={closeModal} />
     </nav>
