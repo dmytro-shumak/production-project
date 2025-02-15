@@ -8,6 +8,7 @@ import React, {
 
 import { useJsonSettings } from "@/entities/User";
 import { Theme } from "@/shared/const";
+import { LocalStorageKeys } from "@/shared/constants";
 import { ThemeContext } from "@/shared/lib/context/ThemeContext";
 
 interface Props {
@@ -15,10 +16,12 @@ interface Props {
   initialTheme?: Theme;
 }
 
+const fallbackTheme = localStorage.getItem(LocalStorageKeys.THEME) as Theme;
+
 export const ThemeProvider: React.FC<Props> = ({ children, initialTheme }) => {
   const { theme: defaultTheme } = useJsonSettings();
   const [theme, setTheme] = useState<Theme>(
-    initialTheme || defaultTheme || Theme.Light,
+    initialTheme || fallbackTheme || Theme.Light,
   );
   const isThemeInitialized = useRef(false);
 

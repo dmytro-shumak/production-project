@@ -3,9 +3,11 @@ import { Suspense, useEffect, useLayoutEffect } from "react";
 import { AppRouter } from "./router";
 
 import { getUserInitiated, initAuthData } from "@/entities/User";
+import { LocalStorageKeys } from "@/shared/constants";
+import { AppLoaderLayout } from "@/shared/layouts/AppLoaderLayout";
 import { MainLayout } from "@/shared/layouts/MainLayout";
 import { classNames, useAppDispatch, useAppSelector } from "@/shared/lib";
-import { ToggleFeatures, toggleFeatures } from "@/shared/lib/features";
+import { ToggleFeatures } from "@/shared/lib/features";
 import { useTheme } from "@/shared/lib/hooks";
 import { Loader } from "@/shared/ui/deprecated/Loader";
 import { NavBar } from "@/widgets/NavBar";
@@ -17,13 +19,8 @@ const App = () => {
   const initiated = useAppSelector(getUserInitiated);
 
   useLayoutEffect(() => {
-    document.body.className =
-      theme +
-      toggleFeatures({
-        name: "isAppRedesigned",
-        on: () => " app-redesigned",
-        off: () => "",
-      });
+    document.body.className = `${theme} app-redesigned`;
+    localStorage.setItem(LocalStorageKeys.THEME, theme);
   }, [theme]);
 
   useEffect(() => {
@@ -33,7 +30,15 @@ const App = () => {
   }, [dispatch, initiated]);
 
   if (!initiated) {
-    return <Loader />;
+    return <AppLoaderLayout />;
+
+    // return (
+    //   <ToggleFeatures
+    //     featureName="isAppRedesigned"
+    //     on={<AppLoaderLayout />}
+    //     off={<Loader />}
+    //   />
+    // );
   }
 
   return (
