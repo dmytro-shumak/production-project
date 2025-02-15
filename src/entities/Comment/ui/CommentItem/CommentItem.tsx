@@ -27,7 +27,7 @@ export const CommentItem = memo(({ className, comment }: Props) => {
     <ToggleFeatures
       featureName="isAppRedesigned"
       on={
-        <Card padding="24" borderRadius={34}>
+        <Card padding="24" borderRadius={20}>
           <div
             className={classNames(styles.commentItemRedesigned, {}, [
               className,

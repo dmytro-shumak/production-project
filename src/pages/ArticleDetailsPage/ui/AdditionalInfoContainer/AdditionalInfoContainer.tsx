@@ -25,7 +25,7 @@ export const AdditionalInfoContainer = memo(({ className }: Props) => {
   }
 
   return (
-    <Card padding="24" borderRadius={32}>
+    <Card padding="24" borderRadius={20}>
       <ArticleAdditionalInfo
         author={article.user}
         createdAt={article.createdAt}

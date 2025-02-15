@@ -16,7 +16,7 @@ export const DetailsContainer = memo(({ className }: Props) => {
   }
 
   return (
-    <Card className={className} padding="24" borderRadius={32}>
+    <Card className={className} padding="24" borderRadius={20}>
       <ArticleDetails id={id} />
     </Card>
   );

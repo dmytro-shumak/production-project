@@ -101,7 +101,7 @@ export const ArticleListItemRedesigned = memo(
           styles[view],
         ])}
       >
-        <Card className={styles.card} borderRadius={40} padding="0">
+        <Card className={styles.card} borderRadius={20} padding="0">
           <AppImage
             fallback={<Skeleton width="100%" height={200} />}
             alt={article.title}

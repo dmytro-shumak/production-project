@@ -191,7 +191,7 @@ export const RatingCard = memo(
           <Card
             className={styles.card}
             data-testid="RatingCard"
-            borderRadius={32}
+            borderRadius={20}
             padding="24"
           >
             {content}
