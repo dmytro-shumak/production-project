@@ -18,7 +18,7 @@ interface Props {
   className?: string;
   sort: ArticleSortField;
   order: SortOrder;
-  search?: string;
+  search: string;
   onChangeSearch: (e: ChangeEvent<HTMLInputElement>) => void;
   onChangeSort: (sort: ArticleSortField) => void;
   onChangeOrder: (order: SortOrder) => void;

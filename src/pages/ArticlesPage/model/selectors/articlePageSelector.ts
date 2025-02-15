@@ -30,7 +30,7 @@ export const getArticlePageSort = (state: RootState) =>
   state.articlePage?.sort || ArticleSortField.VIEWS;
 
 export const getArticlePageSearch = (state: RootState) =>
-  state.articlePage?.search;
+  state.articlePage?.search || "";
 
 export const getArticlePageType = (state: RootState) =>
   state.articlePage?.type ?? ArticleType.ALL;
