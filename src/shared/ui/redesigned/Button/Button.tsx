@@ -5,6 +5,7 @@ import styles from "./Button.module.css";
 import { classNames } from "@/shared/lib";
 
 export type ButtonVariant = "clear" | "outline" | "filled";
+export type ButtonColor = "normal" | "success" | "cancel";
 export type ButtonSize = "m" | "l" | "xl";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -13,6 +14,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   square?: boolean;
   variant?: ButtonVariant;
   size?: ButtonSize;
+  color?: ButtonColor;
   buttonPrefix?: ReactNode;
   buttonSuffix?: ReactNode;
 }
@@ -24,6 +26,7 @@ export const Button = memo<Props>(
     disabled,
     buttonPrefix,
     buttonSuffix,
+    color = "normal",
     variant = "outline",
     square = false,
     size = "m",
@@ -37,7 +40,7 @@ export const Button = memo<Props>(
           [styles.disabled]: disabled,
           [styles.hasPrefixOrSuffix]: !!buttonPrefix || !!buttonSuffix,
         },
-        [className, styles[variant], styles[size]],
+        [className, styles[variant], styles[size], styles[color]],
       )}
       disabled={disabled}
       // eslint-disable-next-line react/jsx-props-no-spreading

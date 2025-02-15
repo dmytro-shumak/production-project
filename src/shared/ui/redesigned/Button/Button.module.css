@@ -94,6 +94,19 @@
   border-color: var(--accent-redesigned);
 }
 
+.outline.normal {
+  border: 1px solid var(--icon-redesigned);
+}
+
+.outline.success {
+  border: 1px solid var(--save-redesigned);
+}
+
+.outline.cancel {
+  border: 1px solid var(--cancel-redesigned);
+}
+
+
 .filled {
   background-color: var(--light-bg-redesigned);
   border-radius: 34px;
