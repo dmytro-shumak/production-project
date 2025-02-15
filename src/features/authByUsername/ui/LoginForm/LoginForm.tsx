@@ -17,8 +17,17 @@ import {
   useAsyncReducer,
   classNames,
 } from "@/shared/lib";
-import { Button, ButtonTheme, Text, TextTheme } from "@/shared/ui";
-import { Input } from "@/shared/ui/deprecated/Input";
+import { ToggleFeatures } from "@/shared/lib/features";
+import {
+  Button as ButtonDeprecated,
+  ButtonTheme,
+  Text as TextDeprecated,
+  TextTheme,
+} from "@/shared/ui";
+import { Input as InputDeprecated } from "@/shared/ui/deprecated/Input";
+import { Button } from "@/shared/ui/redesigned/Button";
+import { Input } from "@/shared/ui/redesigned/Input";
+import { Text } from "@/shared/ui/redesigned/Text";
 
 interface Props {
   className?: string;
@@ -65,29 +74,60 @@ export const LoginForm: FC<Props> = ({ className, isOpen, onSuccess }) => {
   }, [dispatch, onSuccess, password, username]);
 
   return (
-    <div className={classNames(styles.loginForm, {}, [className])}>
-      <Text title={t("Login")} />
-      {error && <Text text={error} theme={TextTheme.ERROR} />}
-      <Input
-        label="Username"
-        autoFocus={isOpen}
-        onChange={handleChangeUsername}
-        value={username}
-      />
-      <Input
-        label="Password"
-        type="password"
-        onChange={handleChangePassword}
-        value={password}
-      />
-      <Button
-        className={styles.loginBtn}
-        theme={ButtonTheme.Outline}
-        onClick={handleLoginClick}
-        disabled={isLoading}
-      >
-        {t("Login")}
-      </Button>
-    </div>
+    <ToggleFeatures
+      featureName="isAppRedesigned"
+      on={
+        <div className={classNames(styles.loginForm, {}, [className])}>
+          <Text title={t("Login")} />
+          {error && <Text text={error} variant="error" />}
+          <Input
+            label="Username"
+            autoFocus={isOpen}
+            onChange={handleChangeUsername}
+            value={username}
+          />
+          <Input
+            label="Password"
+            type="password"
+            onChange={handleChangePassword}
+            value={password}
+          />
+          <Button
+            className={styles.loginBtn}
+            variant="outline"
+            onClick={handleLoginClick}
+            disabled={isLoading}
+          >
+            {t("Login")}
+          </Button>
+        </div>
+      }
+      off={
+        <div className={classNames(styles.loginForm, {}, [className])}>
+          <TextDeprecated title={t("Login")} />
+          {error && <TextDeprecated text={error} theme={TextTheme.ERROR} />}
+          <InputDeprecated
+            label="Username"
+            autoFocus={isOpen}
+            onChange={handleChangeUsername}
+            value={username}
+          />
+          <InputDeprecated
+            label="Password"
+            type="password"
+            onChange={handleChangePassword}
+            value={password}
+          />
+          <ButtonDeprecated
+            className={styles.loginBtn}
+            theme={ButtonTheme.Outline}
+            onClick={handleLoginClick}
+            disabled={isLoading}
+          >
+            {t("Login")}
+          </ButtonDeprecated>
+        </div>
+      }
+    />
   );
 };
