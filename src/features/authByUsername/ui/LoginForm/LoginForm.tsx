@@ -18,6 +18,7 @@ import {
   classNames,
 } from "@/shared/lib";
 import { ToggleFeatures } from "@/shared/lib/features";
+import { useForceUpdate } from "@/shared/lib/render/forceUpdate";
 import {
   Button as ButtonDeprecated,
   ButtonTheme,
@@ -52,6 +53,8 @@ export const LoginForm: FC<Props> = ({ className, isOpen, onSuccess }) => {
     error,
   } = useAppSelector(getLoginState) ?? {};
 
+  const forceUpdate = useForceUpdate();
+
   const handleChangeUsername = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
       dispatch(setUsername(e.target.value));
@@ -70,8 +73,9 @@ export const LoginForm: FC<Props> = ({ className, isOpen, onSuccess }) => {
     const result = await dispatch(loginByUsername({ password, username }));
     if (result.meta.requestStatus === "fulfilled") {
       onSuccess?.();
+      forceUpdate();
     }
-  }, [dispatch, onSuccess, password, username]);
+  }, [dispatch, forceUpdate, onSuccess, password, username]);
 
   return (
     <ToggleFeatures

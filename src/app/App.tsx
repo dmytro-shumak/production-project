@@ -27,8 +27,10 @@ const App = () => {
   }, [theme]);
 
   useEffect(() => {
-    dispatch(initAuthData());
-  }, [dispatch]);
+    if (!initiated) {
+      dispatch(initAuthData());
+    }
+  }, [dispatch, initiated]);
 
   if (!initiated) {
     return <Loader />;
