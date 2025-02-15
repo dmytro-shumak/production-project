@@ -11,6 +11,7 @@ import { ToggleFeatures } from "@/shared/lib/features";
 import { useTheme } from "@/shared/lib/hooks";
 import { Loader } from "@/shared/ui/deprecated/Loader";
 import { NavBar } from "@/widgets/NavBar";
+import { ScrollToolbar } from "@/widgets/ScrollToolbar";
 import { Sidebar } from "@/widgets/Sidebar";
 
 const App = () => {
@@ -51,6 +52,7 @@ const App = () => {
               content={<AppRouter />}
               sidebar={<Sidebar />}
               header={<NavBar />}
+              toolbar={<ScrollToolbar />}
             />
           </Suspense>
         </div>
