@@ -1,5 +1,6 @@
-import { Suspense, useEffect, useLayoutEffect } from "react";
+import { Suspense, memo, useEffect, useLayoutEffect } from "react";
 
+import { withTheme } from "./providers/theme/ui/withTheme";
 import { AppRouter } from "./router";
 
 import { getUserInitiated, initAuthData } from "@/entities/User";
@@ -14,7 +15,7 @@ import { NavBar } from "@/widgets/NavBar";
 import { ScrollToolbar } from "@/widgets/ScrollToolbar";
 import { Sidebar } from "@/widgets/Sidebar";
 
-const App = () => {
+const App = memo(() => {
   const { theme } = useTheme();
   const dispatch = useAppDispatch();
   const initiated = useAppSelector(getUserInitiated);
@@ -70,6 +71,6 @@ const App = () => {
       }
     />
   );
-};
+});
 
-export default App;
+export default withTheme(App);
