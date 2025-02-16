@@ -13,4 +13,4 @@ export { Button } from "./deprecated/Button/Button";
 export { Code } from "./redesigned/Code/Code";
 
 export * from "./deprecated/Tabs/Tabs";
-export * from "./deprecated/StarRating";
+export * from "./redesigned/StarRating";

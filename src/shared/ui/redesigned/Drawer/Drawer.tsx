@@ -19,10 +19,6 @@ interface Props {
 const height = window.innerHeight - 100;
 
 // TODO: improve first animation
-/**
- * deprecated, use components from redesign folder
- * @deprecated
- */
 const DrawerContent = memo(
   ({ children, className, isOpen, onClose }: Props) => {
     const { Gesture, Spring } = useAnimationLibs();

@@ -1,13 +1,3 @@
-.overlay {
-  width: 100%;
-  height: 100%;
-  background-color: var(--overlay-color);
-  color: var(--primary-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .overlayRedesigned {
   width: 100%;
   height: 100%;

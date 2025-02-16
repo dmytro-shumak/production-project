@@ -46,8 +46,6 @@
   height: 0;
 }
 
-/* redesigned */
-
 .sidebar {
   position: relative;
   background: var(--light-bg-redesigned);

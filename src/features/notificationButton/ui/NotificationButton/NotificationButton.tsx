@@ -5,7 +5,6 @@ import styles from "./NotificationButton.module.css";
 
 import { NotificationList } from "@/entities/Notifications";
 import NotificationIcon from "@/shared/assets/icons/notification-new.svg?react";
-import { classNames } from "@/shared/lib";
 import { Drawer } from "@/shared/ui/redesigned/Drawer";
 import { Icon } from "@/shared/ui/redesigned/Icon";
 import { Popover } from "@/shared/ui/redesigned/Popups";
@@ -35,7 +34,7 @@ export const NotificationButton = memo(({ className }: Props) => {
         <Popover
           anchor="bottom end"
           menuClassName={styles.notificationMenu}
-          className={classNames("", {}, [className])}
+          className={className}
           button={button}
         >
           <NotificationList className={styles.notifications} />

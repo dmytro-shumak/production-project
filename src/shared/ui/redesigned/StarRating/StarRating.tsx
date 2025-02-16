@@ -1,6 +1,6 @@
 import { memo, useState } from "react";
 
-import { Icon } from "../../redesigned/Icon";
+import { Icon } from "../Icon";
 
 import styles from "./StarRating.module.css";
 
@@ -15,11 +15,6 @@ interface Props {
 }
 
 const stars = [1, 2, 3, 4, 5];
-
-/**
- * deprecated, use components from redesign folder
- * @deprecated
- */
 export const StarRating = memo(
   ({ className, onSelect, selectedStars = 0, size = 30 }: Props) => {
     const [hoveredStars, setHoveredStars] = useState<number>(selectedStars);

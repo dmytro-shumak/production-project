@@ -13,7 +13,6 @@ import styles from "./ArticlesPage.module.css";
 import { ArticlePageGreeting } from "@/features/articlePageGreeting";
 import { StickyContentLayout } from "@/shared/layouts/StickyContentLayout";
 import {
-  classNames,
   useAppDispatch,
   useAsyncReducer,
   useInitialEffect,
@@ -49,7 +48,7 @@ const ArticlesPage: FC<Props> = ({ className }) => {
       content={
         <Page
           dataTestid="ArticlesPage"
-          className={classNames(styles.articlesPageRedesigned, {}, [className])}
+          className={className}
           onScrollEnd={onLoadNextPart}
         >
           <ArticleInfiniteList className={styles.list} />

@@ -29,13 +29,6 @@
   .content {
     background-color: var(--light-bg-redesigned);
   }
-
-}
-
-.modalOld {
-  .content {
-    background: var(--bg-color);
-  }
 }
 
 .opened {

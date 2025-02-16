@@ -1,12 +1,3 @@
-.navBar {
-  width: 100%;
-  height: var(--navbar-height);
-  background-color: var(--inverted-bg-color);
-  padding: 20px;
-  display: flex;
-  align-items: center;
-}
-
 .navBarRedesigned {
   padding: 16px;
 }
@@ -16,11 +7,6 @@
   align-items: center;
   gap: 10px;
   margin-left: auto;
-}
-
-.appName {
-  width: calc(var(--sidebar-width) - 20px);
-  padding-left: 15px;
 }
 
 .actions {

@@ -36,11 +36,4 @@
   .sheet {
     background-color: var(--light-bg-redesigned);
   }
-
-}
-
-.drawerOld {
-  .sheet {
-    background: var(--bg-color);
-  }
 }

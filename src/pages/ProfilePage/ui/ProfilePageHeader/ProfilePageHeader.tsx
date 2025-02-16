@@ -8,7 +8,7 @@ import {
   profileActions,
   updateProfileData,
 } from "@/entities/Profile";
-import { classNames, useAppDispatch, useAppSelector } from "@/shared/lib";
+import { useAppDispatch, useAppSelector } from "@/shared/lib";
 import { HStack } from "@/shared/ui";
 import { Button } from "@/shared/ui/redesigned/Button";
 import { Card } from "@/shared/ui/redesigned/Card";
@@ -44,7 +44,7 @@ export const ProfilePageHeader: FC<Props> = ({ className }) => {
   // TODO: remove this due to design
   return (
     <Card borderRadius={34} padding="24">
-      <HStack justify="between" className={classNames("", {}, [className])}>
+      <HStack justify="between" className={className}>
         <Text title={t("Profile")} />
         {canEditProfile && (
           <HStack gap={8}>
