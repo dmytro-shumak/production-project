@@ -8,7 +8,8 @@ import styles from "./ArticleList.module.css";
 import { ArticleListSkeleton } from "./ArticleListSkeleton";
 
 import { classNames } from "@/shared/lib";
-import { HStack, Text, TextSize } from "@/shared/ui";
+import { HStack } from "@/shared/ui";
+import { Text } from "@/shared/ui/redesigned/Text";
 
 interface Props {
   className?: string;
@@ -49,18 +50,13 @@ export const ArticleList = memo(
             styles[view],
           ])}
         >
-          <Text title={t("ArticlesNotFound")} size={TextSize.L} />
+          <Text title={t("ArticlesNotFound")} size="large" />
         </div>
       );
     }
 
     return (
-      <HStack
-        gap={16}
-        wrap="wrap"
-        className={classNames(styles.articleListRedesigned, {}, [])}
-        data-testid="ArticleList"
-      >
+      <HStack gap={16} wrap="wrap" data-testid="ArticleList">
         {articles.map((article) => (
           <ArticleListItem
             article={article}

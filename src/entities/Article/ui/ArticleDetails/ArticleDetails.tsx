@@ -19,7 +19,6 @@ import {
   useAsyncReducer,
   type ReducersList,
 } from "@/shared/lib";
-import { TextAlign, Text as TextDeprecated, TextTheme } from "@/shared/ui";
 import { AppImage } from "@/shared/ui/redesigned/AppImage";
 import { Skeleton as SkeletonRedesigned } from "@/shared/ui/redesigned/Skeleton";
 import { Text } from "@/shared/ui/redesigned/Text";
@@ -88,10 +87,10 @@ export const ArticleDetails: FC<Props> = memo(({ className, id }) => {
 
   if (error) {
     return (
-      <TextDeprecated
+      <Text
         title={t("ErrorLoadingDetailsPage")}
-        align={TextAlign.CENTER}
-        theme={TextTheme.ERROR}
+        align="center"
+        variant="error"
       />
     );
   }

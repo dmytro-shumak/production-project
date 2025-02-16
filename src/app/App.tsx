@@ -9,7 +9,6 @@ import { AppLoaderLayout } from "@/shared/layouts/AppLoaderLayout";
 import { MainLayout } from "@/shared/layouts/MainLayout";
 import { classNames, useAppDispatch, useAppSelector } from "@/shared/lib";
 import { useTheme } from "@/shared/lib/hooks";
-import { Loader } from "@/shared/ui/deprecated/Loader";
 import { NavBar } from "@/widgets/NavBar";
 import { ScrollToolbar } from "@/widgets/ScrollToolbar";
 import { Sidebar } from "@/widgets/Sidebar";
@@ -32,19 +31,11 @@ const App = memo(() => {
 
   if (!initiated) {
     return <AppLoaderLayout />;
-
-    // return (
-    //   <ToggleFeatures
-    //     featureName="isAppRedesigned"
-    //     on={<AppLoaderLayout />}
-    //     off={<Loader />}
-    //   />
-    // );
   }
 
   return (
     <div className={classNames("", {}, [theme])}>
-      <Suspense fallback={<Loader />}>
+      <Suspense fallback={<AppLoaderLayout />}>
         <MainLayout
           content={<AppRouter />}
           sidebar={<Sidebar />}

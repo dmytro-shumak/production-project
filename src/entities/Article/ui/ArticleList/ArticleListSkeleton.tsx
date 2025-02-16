@@ -4,8 +4,8 @@ import { ArticleView } from "../../model/types/article";
 
 import styles from "./ArticleList.module.css";
 
-import { Card as CardRedesigned } from "@/shared/ui/redesigned/Card";
-import { Skeleton as SkeletonRedesigned } from "@/shared/ui/redesigned/Skeleton";
+import { Card } from "@/shared/ui/redesigned/Card";
+import { Skeleton } from "@/shared/ui/redesigned/Skeleton";
 
 interface Props {
   view?: ArticleView;
@@ -13,10 +13,6 @@ interface Props {
 
 export const ArticleListSkeleton = memo(
   ({ view = ArticleView.GRID }: Props) => {
-    const Skeleton = SkeletonRedesigned;
-
-    const Card = CardRedesigned;
-
     if (view === ArticleView.GRID) {
       return new Array(9).fill(0).map((_item, index) => (
         <Card key={index}>
