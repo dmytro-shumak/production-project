@@ -7,7 +7,7 @@ import styles from "./NotificationList.module.css";
 
 import { classNames } from "@/shared/lib";
 import { VStack } from "@/shared/ui";
-import { Skeleton as SkeletonRedesigned } from "@/shared/ui/redesigned/Skeleton";
+import { Skeleton } from "@/shared/ui/redesigned/Skeleton";
 
 interface Props {
   className?: string;
@@ -17,8 +17,6 @@ export const NotificationList = memo(({ className }: Props) => {
   const { data: notifications, isLoading } = useNotifications(null, {
     pollingInterval: 5000,
   });
-
-  const Skeleton = SkeletonRedesigned;
 
   return (
     <VStack

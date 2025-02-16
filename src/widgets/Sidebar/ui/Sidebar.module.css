@@ -70,29 +70,29 @@
   padding-top: 20px;
 }
 
-.sidebarRedesigned .links{
+.sidebar .links{
   margin-top: 40px;
 }
 
-.sidebarRedesigned .links a {
+.sidebar .links a {
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
-.sidebarRedesigned .links a span {
+.sidebar .links a span {
   transition: opacity 0.3s;
   display: block;
 }
 
 
-.sidebarRedesigned .collapsed .links a span {
+.sidebar .collapsed .links a span {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-.sidebarRedesigned .button {
+.sidebar .button {
   position: absolute;
   right: 0;
   top: 50%;
@@ -100,7 +100,7 @@
   transform: rotate(90deg);
 }
 
-.sidebarRedesigned.collapsed {
+.sidebar.collapsed {
   width: 50px;
   
   .switchers {
@@ -109,7 +109,7 @@
   }
 } 
 
-.sidebarRedesigned.collapsed .button {
+.sidebar.collapsed .button {
   margin-right: 0;
   transform: rotate(-90deg);
 }

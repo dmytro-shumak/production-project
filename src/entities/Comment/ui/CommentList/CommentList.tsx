@@ -4,9 +4,8 @@ import { useTranslation } from "react-i18next";
 import type { Comment } from "../../model/types/comment";
 import { CommentItem } from "../CommentItem/CommentItem";
 
-import { classNames } from "@/shared/lib";
 import { VStack } from "@/shared/ui";
-import { Skeleton as SkeletonRedesigned } from "@/shared/ui/redesigned/Skeleton";
+import { Skeleton } from "@/shared/ui/redesigned/Skeleton";
 import { Text } from "@/shared/ui/redesigned/Text";
 
 interface Props {
@@ -17,7 +16,6 @@ interface Props {
 
 export const CommentList = memo(({ className, comments, isLoading }: Props) => {
   const { t } = useTranslation("");
-  const Skeleton = SkeletonRedesigned;
   if (isLoading) {
     return (
       <VStack gap={20}>
@@ -29,11 +27,7 @@ export const CommentList = memo(({ className, comments, isLoading }: Props) => {
   }
 
   return (
-    <VStack
-      gap={20}
-      align="stretch"
-      className={classNames("", {}, [className])}
-    >
+    <VStack gap={20} align="stretch" className={className}>
       {comments?.length ? (
         comments.map((comment) => (
           <CommentItem comment={comment} key={comment.id} />

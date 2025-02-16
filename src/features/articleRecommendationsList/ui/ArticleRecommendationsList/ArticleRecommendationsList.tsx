@@ -23,11 +23,11 @@ export const ArticleRecommendationsList = memo(
     } = useArticleRecommendationListQuery(3);
 
     if (isLoading) {
-      return <Text title={t("Loading...")} />;
+      return <Text title={t("Loading")} />;
     }
 
     if (error || !articles) {
-      return <Text title={t("Error occurred")} text={JSON.stringify(error)} />;
+      return <Text title={t("ErrorOccurred")} text={JSON.stringify(error)} />;
     }
 
     return (

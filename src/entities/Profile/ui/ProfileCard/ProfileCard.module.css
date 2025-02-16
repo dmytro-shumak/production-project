@@ -3,14 +3,6 @@
   border: 2px solid var(--inverted-bg-color);
 }
 
-.loader {
-  min-height: 223px;
-}
-
-.editing {
-  border: 2px solid var(--inverted-primary-color);
-}
-
 .inputColumnWrapper {
   flex: 1;
 }

@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 
 import styles from "./AddCommentForm.module.css";
 
-import { classNames } from "@/shared/lib";
 import { HStack } from "@/shared/ui";
 import { Button } from "@/shared/ui/redesigned/Button";
 import { Card } from "@/shared/ui/redesigned/Card";
@@ -37,9 +36,7 @@ const AddCommentForm = memo(
           gap={16}
           justify="between"
           align="center"
-          className={classNames(styles.addCommentFormRedesigned, {}, [
-            className,
-          ])}
+          className={className}
           data-testid="AddCommentForm"
         >
           <Input

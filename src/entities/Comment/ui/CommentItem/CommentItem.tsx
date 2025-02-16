@@ -5,7 +5,6 @@ import type { Comment } from "../../model/types/comment";
 import styles from "./CommentItem.module.css";
 
 import { getRouteProfile } from "@/shared/const/router";
-import { classNames } from "@/shared/lib";
 import { AppLink } from "@/shared/ui/redesigned";
 import { Avatar } from "@/shared/ui/redesigned/Avatar";
 import { Card } from "@/shared/ui/redesigned/Card";
@@ -19,10 +18,7 @@ interface Props {
 export const CommentItem = memo(({ className, comment }: Props) => {
   return (
     <Card padding="24" borderRadius={20}>
-      <div
-        className={classNames(styles.commentItemRedesigned, {}, [className])}
-        data-testid="CommentItem"
-      >
+      <div className={className} data-testid="CommentItem">
         <AppLink
           className={styles.header}
           to={getRouteProfile(comment.user.id)}
