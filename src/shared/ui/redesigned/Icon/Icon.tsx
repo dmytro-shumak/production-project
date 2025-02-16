@@ -1,8 +1,14 @@
-import { memo, type FunctionComponent, type SVGAttributes } from "react";
+import {
+  memo,
+  type ButtonHTMLAttributes,
+  type FunctionComponent,
+  type SVGAttributes,
+} from "react";
 
 import styles from "./Icon.module.css";
 
 import { classNames } from "@/shared/lib";
+import type { DataAttributes } from "@/shared/types";
 
 type SvgProps = Omit<SVGAttributes<SVGElement>, "onClick">;
 
@@ -18,6 +24,7 @@ interface NonClickableIconProps extends IconBaseProps {
 interface ClickableIconProps extends IconBaseProps {
   clickable: true;
   onClick: () => void;
+  buttonProps?: ButtonHTMLAttributes<HTMLButtonElement> & DataAttributes;
 }
 
 type Props = NonClickableIconProps | ClickableIconProps;
@@ -48,6 +55,7 @@ export const Icon = memo((props: Props) => {
         type="button"
         className={styles.button}
         style={{ height, width }}
+        {...props.buttonProps}
       >
         {icon}
       </button>

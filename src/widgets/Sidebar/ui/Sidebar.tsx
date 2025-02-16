@@ -27,11 +27,9 @@ export const Sidebar: FC<Props> = memo(({ className }) => {
 
   return (
     <aside
-      className={classNames(
-        styles.sidebarRedesigned,
-        { [styles.collapsed]: collapsed },
-        [className],
-      )}
+      className={classNames(styles.sidebar, { [styles.collapsed]: collapsed }, [
+        className,
+      ])}
     >
       <AppLogo className={styles.appLogo} size={collapsed ? 30 : 50} />
       <VStack className={styles.links} tag="ul">
@@ -48,6 +46,7 @@ export const Sidebar: FC<Props> = memo(({ className }) => {
         className={styles.button}
         clickable
         Svg={ArrowIcon}
+        buttonProps={{ "data-testid": "Sidebar.CollapsedButton" }}
       />
       <div className={styles.switchers}>
         <ThemeSwitcher />

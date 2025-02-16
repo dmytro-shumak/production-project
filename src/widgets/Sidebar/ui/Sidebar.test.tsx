@@ -11,11 +11,9 @@ describe("Sidebar", () => {
     const sidebar = container.querySelector(".sidebar");
 
     expect(sidebar).not.toHaveClass("collapsed");
-    expect(button).toHaveTextContent("<");
 
     fireEvent.click(button);
 
     expect(sidebar).toHaveClass("collapsed");
-    expect(button).toHaveTextContent(">");
   });
 });
