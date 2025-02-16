@@ -51,7 +51,7 @@ export const Sidebar: FC<Props> = memo(({ className }) => {
       />
       <div className={styles.switchers}>
         <ThemeSwitcher />
-        <LangSwitcher collapsed={collapsed} />
+        <LangSwitcher />
       </div>
     </aside>
   );
