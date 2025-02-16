@@ -4,9 +4,7 @@ import { useTranslation } from "react-i18next";
 import styles from "./AddCommentForm.module.css";
 
 import { classNames } from "@/shared/lib";
-import { ToggleFeatures } from "@/shared/lib/features";
-import { Button as ButtonDeprecated, ButtonTheme, HStack } from "@/shared/ui";
-import { Input as InputDeprecated } from "@/shared/ui/deprecated/Input";
+import { HStack } from "@/shared/ui";
 import { Button } from "@/shared/ui/redesigned/Button";
 import { Card } from "@/shared/ui/redesigned/Card";
 import { Input } from "@/shared/ui/redesigned/Input";
@@ -34,59 +32,31 @@ const AddCommentForm = memo(
     }, [onSendComment, text]);
 
     return (
-      <ToggleFeatures
-        featureName="isAppRedesigned"
-        on={
-          <Card padding="24" borderRadius={20}>
-            <HStack
-              gap={16}
-              justify="between"
-              align="center"
-              className={classNames(styles.addCommentFormRedesigned, {}, [
-                className,
-              ])}
-              data-testid="AddCommentForm"
-            >
-              <Input
-                placeholder={t("EnterTextComment")}
-                value={text}
-                onChange={onCommentTextChange}
-                className={styles.input}
-                data-testid="AddCommentForm.Input"
-              />
-              <Button
-                onClick={handleSendComment}
-                data-testid="AddCommentForm.Button"
-              >
-                {t("Submit")}
-              </Button>
-            </HStack>
-          </Card>
-        }
-        off={
-          <HStack
-            justify="between"
-            align="center"
-            className={classNames(styles.addCommentForm, {}, [className])}
-            data-testid="AddCommentForm"
+      <Card padding="24" borderRadius={20}>
+        <HStack
+          gap={16}
+          justify="between"
+          align="center"
+          className={classNames(styles.addCommentFormRedesigned, {}, [
+            className,
+          ])}
+          data-testid="AddCommentForm"
+        >
+          <Input
+            placeholder={t("EnterTextComment")}
+            value={text}
+            onChange={onCommentTextChange}
+            className={styles.input}
+            data-testid="AddCommentForm.Input"
+          />
+          <Button
+            onClick={handleSendComment}
+            data-testid="AddCommentForm.Button"
           >
-            <InputDeprecated
-              placeholder={t("EnterTextComment")}
-              value={text}
-              onChange={onCommentTextChange}
-              className={styles.input}
-              data-testid="AddCommentForm.Input"
-            />
-            <ButtonDeprecated
-              theme={ButtonTheme.Primary}
-              onClick={handleSendComment}
-              data-testid="AddCommentForm.Button"
-            >
-              {t("Submit")}
-            </ButtonDeprecated>
-          </HStack>
-        }
-      />
+            {t("Submit")}
+          </Button>
+        </HStack>
+      </Card>
     );
   },
 );

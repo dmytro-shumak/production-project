@@ -14,7 +14,6 @@ import {
   useInfiniteScroll,
   useInitialEffect,
 } from "@/shared/lib";
-import { toggleFeatures } from "@/shared/lib/features";
 import { useThrottle } from "@/shared/lib/hooks/useThrottle/useThrottle";
 
 interface Props {
@@ -41,11 +40,7 @@ export const Page = ({
 
   useInfiniteScroll({
     triggerRef,
-    wrapperRef: toggleFeatures({
-      name: "isAppRedesigned",
-      on: () => null,
-      off: () => wrapperRef,
-    }),
+    wrapperRef: null,
     callback: onScrollEnd,
   });
 
@@ -66,15 +61,7 @@ export const Page = ({
 
   return (
     <main
-      className={classNames(
-        toggleFeatures({
-          name: "isAppRedesigned",
-          on: () => styles.pageRedesigned,
-          off: () => styles.page,
-        }),
-        {},
-        [className],
-      )}
+      className={classNames(styles.pageRedesigned, {}, [className])}
       ref={wrapperRef}
       id="pageContainer"
       onScroll={onScroll}

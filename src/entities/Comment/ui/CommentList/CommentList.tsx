@@ -5,12 +5,7 @@ import type { Comment } from "../../model/types/comment";
 import { CommentItem } from "../CommentItem/CommentItem";
 
 import { classNames } from "@/shared/lib";
-import { ToggleFeatures, toggleFeatures } from "@/shared/lib/features";
-import {
-  Skeleton as SkeletonDeprecated,
-  Text as TextDeprecated,
-  VStack,
-} from "@/shared/ui";
+import { VStack } from "@/shared/ui";
 import { Skeleton as SkeletonRedesigned } from "@/shared/ui/redesigned/Skeleton";
 import { Text } from "@/shared/ui/redesigned/Text";
 
@@ -22,11 +17,7 @@ interface Props {
 
 export const CommentList = memo(({ className, comments, isLoading }: Props) => {
   const { t } = useTranslation("");
-  const Skeleton = toggleFeatures({
-    name: "isAppRedesigned",
-    on: () => SkeletonRedesigned,
-    off: () => SkeletonDeprecated,
-  });
+  const Skeleton = SkeletonRedesigned;
   if (isLoading) {
     return (
       <VStack gap={20}>
@@ -48,11 +39,7 @@ export const CommentList = memo(({ className, comments, isLoading }: Props) => {
           <CommentItem comment={comment} key={comment.id} />
         ))
       ) : (
-        <ToggleFeatures
-          featureName="isAppRedesigned"
-          on={<Text text={t("CommentsEmpty")} />}
-          off={<TextDeprecated text={t("CommentsEmpty")} />}
-        />
+        <Text text={t("CommentsEmpty")} />
       )}
     </VStack>
   );

@@ -2,10 +2,7 @@ import { memo, type HTMLAttributeAnchorTarget } from "react";
 
 import { ArticleView, type Article } from "../../model/types/article";
 
-import { ArticleListItemDeprecated } from "./ArticleListItemDeprecated/ArticleListItemDeprecated";
 import { ArticleListItemRedesigned } from "./ArticleListItemRedesigned/ArticleListItemRedesigned";
-
-import { ToggleFeatures } from "@/shared/lib/features";
 
 interface Props {
   className?: string;
@@ -15,11 +12,5 @@ interface Props {
 }
 
 export const ArticleListItem = memo((props: Props) => {
-  return (
-    <ToggleFeatures
-      featureName="isAppRedesigned"
-      on={<ArticleListItemRedesigned {...props} />}
-      off={<ArticleListItemDeprecated {...props} />}
-    />
-  );
+  return <ArticleListItemRedesigned {...props} />;
 });

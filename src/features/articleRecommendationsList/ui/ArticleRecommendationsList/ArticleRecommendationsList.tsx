@@ -5,8 +5,7 @@ import { useArticleRecommendationListQuery } from "./api/articleRecommendationsA
 
 import { ArticleList } from "@/entities/Article";
 import { classNames } from "@/shared/lib";
-import { ToggleFeatures } from "@/shared/lib/features";
-import { Text as TextDeprecated, TextSize, VStack } from "@/shared/ui";
+import { VStack } from "@/shared/ui";
 import { Text } from "@/shared/ui/redesigned/Text";
 
 interface ArticleRecommendationsListProps {
@@ -24,28 +23,11 @@ export const ArticleRecommendationsList = memo(
     } = useArticleRecommendationListQuery(3);
 
     if (isLoading) {
-      return (
-        <ToggleFeatures
-          featureName="isAppRedesigned"
-          on={<Text title={t("Loading...")} />}
-          off={<TextDeprecated title={t("Loading...")} />}
-        />
-      );
+      return <Text title={t("Loading...")} />;
     }
 
     if (error || !articles) {
-      return (
-        <ToggleFeatures
-          featureName="isAppRedesigned"
-          on={<Text title={t("Error occurred")} text={JSON.stringify(error)} />}
-          off={
-            <TextDeprecated
-              title={t("Error occurred")}
-              text={JSON.stringify(error)}
-            />
-          }
-        />
-      );
+      return <Text title={t("Error occurred")} text={JSON.stringify(error)} />;
     }
 
     return (
@@ -55,11 +37,7 @@ export const ArticleRecommendationsList = memo(
         data-testid="ArticleRecommendationsList"
       >
         <ArticleList articles={articles} target="_blank" />
-        <ToggleFeatures
-          featureName="isAppRedesigned"
-          on={<Text title={t("Comments")} size="large" />}
-          off={<TextDeprecated title={t("Comments")} size={TextSize.L} />}
-        />
+        <Text title={t("Comments")} size="large" />
       </VStack>
     );
   },

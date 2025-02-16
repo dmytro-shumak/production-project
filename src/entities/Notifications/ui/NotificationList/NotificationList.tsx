@@ -6,8 +6,7 @@ import { NotificationItem } from "../NotificationItem/NotificationItem";
 import styles from "./NotificationList.module.css";
 
 import { classNames } from "@/shared/lib";
-import { toggleFeatures } from "@/shared/lib/features";
-import { Skeleton as SkeletonDeprecated, VStack } from "@/shared/ui";
+import { VStack } from "@/shared/ui";
 import { Skeleton as SkeletonRedesigned } from "@/shared/ui/redesigned/Skeleton";
 
 interface Props {
@@ -19,11 +18,7 @@ export const NotificationList = memo(({ className }: Props) => {
     pollingInterval: 5000,
   });
 
-  const Skeleton = toggleFeatures({
-    name: "isAppRedesigned",
-    on: () => SkeletonRedesigned,
-    off: () => SkeletonDeprecated,
-  });
+  const Skeleton = SkeletonRedesigned;
 
   return (
     <VStack

@@ -8,7 +8,6 @@ import styles from "./ArticleList.module.css";
 import { ArticleListSkeleton } from "./ArticleListSkeleton";
 
 import { classNames } from "@/shared/lib";
-import { ToggleFeatures } from "@/shared/lib/features";
 import { HStack, Text, TextSize } from "@/shared/ui";
 
 interface Props {
@@ -56,46 +55,22 @@ export const ArticleList = memo(
     }
 
     return (
-      <ToggleFeatures
-        featureName="isAppRedesigned"
-        on={
-          <HStack
-            gap={16}
-            wrap="wrap"
-            className={classNames(styles.articleListRedesigned, {}, [])}
-            data-testid="ArticleList"
-          >
-            {articles.map((article) => (
-              <ArticleListItem
-                article={article}
-                view={view}
-                target={target}
-                key={article.id}
-                className={styles.card}
-              />
-            ))}
-          </HStack>
-        }
-        off={
-          <div
-            className={classNames(styles.articleList, {}, [
-              className,
-              styles[view],
-            ])}
-            data-testid="ArticleList"
-          >
-            {articles.map((article) => (
-              <ArticleListItem
-                article={article}
-                view={view}
-                target={target}
-                key={article.id}
-                className={styles.card}
-              />
-            ))}
-          </div>
-        }
-      />
+      <HStack
+        gap={16}
+        wrap="wrap"
+        className={classNames(styles.articleListRedesigned, {}, [])}
+        data-testid="ArticleList"
+      >
+        {articles.map((article) => (
+          <ArticleListItem
+            article={article}
+            view={view}
+            target={target}
+            key={article.id}
+            className={styles.card}
+          />
+        ))}
+      </HStack>
     );
   },
 );

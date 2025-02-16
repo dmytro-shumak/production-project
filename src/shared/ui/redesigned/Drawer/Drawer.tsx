@@ -7,7 +7,6 @@ import styles from "./Drawer.module.css";
 
 import { classNames, useModal } from "@/shared/lib";
 import { AnimationProvider, useAnimationLibs } from "@/shared/lib/components";
-import { toggleFeatures } from "@/shared/lib/features";
 import { useTheme } from "@/shared/lib/hooks";
 
 interface Props {
@@ -91,16 +90,7 @@ const DrawerContent = memo(
             {
               [styles.opened]: isOpen,
             },
-            [
-              className,
-              theme,
-              "app_drawer",
-              toggleFeatures({
-                name: "isAppRedesigned",
-                on: () => styles.drawerNew,
-                off: () => styles.drawerOld,
-              }),
-            ],
+            [className, theme, "app_drawer", styles.drawerNew],
           )}
         >
           <Overlay onClick={onClose} className={styles.overlay} />

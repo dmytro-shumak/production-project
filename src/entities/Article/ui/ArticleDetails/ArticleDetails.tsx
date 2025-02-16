@@ -12,8 +12,6 @@ import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice";
 import styles from "./ArticleDetails.module.css";
 import { renderArticleBlock } from "./renderArticleBlock";
 
-import CalendarIcon from "@/shared/assets/icons/calendar.svg?react";
-import EyeIcon from "@/shared/assets/icons/eye.svg?react";
 import {
   classNames,
   useAppDispatch,
@@ -21,17 +19,7 @@ import {
   useAsyncReducer,
   type ReducersList,
 } from "@/shared/lib";
-import { ToggleFeatures, toggleFeatures } from "@/shared/lib/features";
-import {
-  Avatar as AvatarDeprecated,
-  HStack,
-  Icon as IconDeprecated,
-  Skeleton as SkeletonDeprecated,
-  TextAlign,
-  Text as TextDeprecated,
-  TextSize,
-  TextTheme,
-} from "@/shared/ui";
+import { TextAlign, Text as TextDeprecated, TextTheme } from "@/shared/ui";
 import { AppImage } from "@/shared/ui/redesigned/AppImage";
 import { Skeleton as SkeletonRedesigned } from "@/shared/ui/redesigned/Skeleton";
 import { Text } from "@/shared/ui/redesigned/Text";
@@ -43,37 +31,6 @@ interface Props {
 
 const reducer: ReducersList = {
   articleDetails: articleDetailsReducer,
-};
-
-const Deprecated = () => {
-  const article = useAppSelector(getArticleDetailsData);
-
-  return (
-    <>
-      <HStack justify="center">
-        <AvatarDeprecated
-          size={200}
-          src={article?.img}
-          className={styles.avatar}
-        />
-      </HStack>
-      <TextDeprecated
-        title={article?.title}
-        text={article?.subtitle}
-        className={styles.title}
-        size={TextSize.L}
-      />
-      <HStack justify="start" gap={6}>
-        <IconDeprecated Svg={EyeIcon} />
-        <TextDeprecated text={String(article?.views)} />
-      </HStack>
-      <HStack justify="start" gap={6}>
-        <IconDeprecated Svg={CalendarIcon} />
-        <TextDeprecated text={article?.createdAt} />
-      </HStack>
-      {article?.blocks.map(renderArticleBlock)}
-    </>
-  );
 };
 
 const Redesigned = () => {
@@ -110,11 +67,7 @@ export const ArticleDetails: FC<Props> = memo(({ className, id }) => {
     }
   }, [dispatch, id]);
 
-  const Skeleton = toggleFeatures({
-    name: "isAppRedesigned",
-    on: () => SkeletonRedesigned,
-    off: () => SkeletonDeprecated,
-  });
+  const Skeleton = SkeletonRedesigned;
 
   if (isLoading) {
     return (
@@ -148,11 +101,7 @@ export const ArticleDetails: FC<Props> = memo(({ className, id }) => {
       className={classNames(styles.articleDetails, {}, [className])}
       data-testid="ArticleDetails"
     >
-      <ToggleFeatures
-        featureName="isAppRedesigned"
-        on={<Redesigned />}
-        off={<Deprecated />}
-      />
+      <Redesigned />
     </div>
   );
 });

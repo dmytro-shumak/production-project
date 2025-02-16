@@ -4,11 +4,6 @@ import { ArticleView } from "../../model/types/article";
 
 import styles from "./ArticleList.module.css";
 
-import { toggleFeatures } from "@/shared/lib/features";
-import {
-  Card as CardDeprecated,
-  Skeleton as SkeletonDeprecated,
-} from "@/shared/ui";
 import { Card as CardRedesigned } from "@/shared/ui/redesigned/Card";
 import { Skeleton as SkeletonRedesigned } from "@/shared/ui/redesigned/Skeleton";
 
@@ -18,17 +13,9 @@ interface Props {
 
 export const ArticleListSkeleton = memo(
   ({ view = ArticleView.GRID }: Props) => {
-    const Skeleton = toggleFeatures({
-      name: "isAppRedesigned",
-      on: () => SkeletonRedesigned,
-      off: () => SkeletonDeprecated,
-    });
+    const Skeleton = SkeletonRedesigned;
 
-    const Card = toggleFeatures({
-      name: "isAppRedesigned",
-      on: () => CardRedesigned,
-      off: () => CardDeprecated,
-    });
+    const Card = CardRedesigned;
 
     if (view === ArticleView.GRID) {
       return new Array(9).fill(0).map((_item, index) => (

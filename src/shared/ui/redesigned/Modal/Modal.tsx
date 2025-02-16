@@ -6,7 +6,6 @@ import { Portal } from "../../redesigned/Portal/Portal";
 import styles from "./Modal.module.css";
 
 import { classNames } from "@/shared/lib";
-import { toggleFeatures } from "@/shared/lib/features";
 import { useModal } from "@/shared/lib/hooks";
 
 interface Props {
@@ -31,11 +30,7 @@ export const Modal: FC<Props> = ({
       <div
         className={classNames(styles.modal, { [styles.opened]: isOpen }, [
           className,
-          toggleFeatures({
-            name: "isAppRedesigned",
-            on: () => styles.modalNew,
-            off: () => styles.modalOld,
-          }),
+          styles.modalNew,
         ])}
       >
         <Overlay onClick={onClose}>

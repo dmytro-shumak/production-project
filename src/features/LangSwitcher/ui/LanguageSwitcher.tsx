@@ -4,12 +4,6 @@ import { useTranslation } from "react-i18next";
 import styles from "./LanguageSwitcher.module.css";
 
 import { classNames } from "@/shared/lib";
-import { ToggleFeatures } from "@/shared/lib/features";
-import {
-  Button as ButtonDecrepated,
-  ButtonSize,
-  ButtonTheme,
-} from "@/shared/ui";
 import { Button } from "@/shared/ui/redesigned/Button";
 
 interface Props {
@@ -20,11 +14,13 @@ interface Props {
 export const LanguageSwitcher: FC<Props> = memo(({ className, collapsed }) => {
   const { i18n, t } = useTranslation();
 
-  const changeLanguage = (language: string) => {
-    i18n.changeLanguage(language);
-  };
+  // const changeLanguage = (language: string) => {
+  //   i18n.changeLanguage(language);
+  // };
 
-  const buttonSize = collapsed ? ButtonSize.S : ButtonSize.M;
+  console.warn("t", t, "collapsed", collapsed);
+
+  // const buttonSize = collapsed ? ButtonSize.S : ButtonSize.M;
 
   const toggleLanguage = () => {
     // TODO: fix language changing
@@ -40,48 +36,12 @@ export const LanguageSwitcher: FC<Props> = memo(({ className, collapsed }) => {
   };
 
   return (
-    <ToggleFeatures
-      featureName="isAppRedesigned"
-      on={
-        <Button
-          variant="clear"
-          className={styles.button}
-          onClick={toggleLanguage}
-        >
-          {i18n.language.toUpperCase()}
-        </Button>
-      }
-      off={
-        <div
-          className={classNames(
-            styles.languageSwitcher,
-            { [styles.collapsed]: collapsed },
-            [className],
-          )}
-        >
-          <ButtonDecrepated
-            onClick={() => changeLanguage("en")}
-            theme={ButtonTheme.Clear}
-            size={buttonSize}
-          >
-            {t("English")}
-          </ButtonDecrepated>
-          <ButtonDecrepated
-            onClick={() => changeLanguage("ru")}
-            theme={ButtonTheme.Clear}
-            size={buttonSize}
-          >
-            {t("Russian")}
-          </ButtonDecrepated>
-          <ButtonDecrepated
-            onClick={() => changeLanguage("uk")}
-            theme={ButtonTheme.Clear}
-            size={buttonSize}
-          >
-            {t("Ukrainian")}
-          </ButtonDecrepated>
-        </div>
-      }
-    />
+    <Button
+      variant="clear"
+      className={classNames(styles.button, {}, [className])}
+      onClick={toggleLanguage}
+    >
+      {i18n.language.toUpperCase()}
+    </Button>
   );
 });

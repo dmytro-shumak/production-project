@@ -8,15 +8,12 @@ import { AdditionalInfoContainer } from "../AdditionalInfoContainer/AdditionalIn
 import { DetailsContainer } from "../DetailsContainer/DetailsContainer";
 
 import styles from "./ArticleDetailsPage.module.css";
-import { ArticleDetailsPageHeader } from "./ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 
-import { ArticleDetails } from "@/entities/Article";
 import { ArticleRating } from "@/features/articleRating";
 import { ArticleRecommendationsList } from "@/features/articleRecommendationsList";
 import { StickyContentLayout } from "@/shared/layouts/StickyContentLayout";
 import { classNames, useAsyncReducer, type ReducersList } from "@/shared/lib";
-import { ToggleFeatures } from "@/shared/lib/features";
-import { Text as TextDeprecated, TextSize, VStack } from "@/shared/ui";
+import { VStack } from "@/shared/ui";
 import { Text } from "@/shared/ui/redesigned/Text";
 import { Page } from "@/widgets/Page";
 
@@ -39,52 +36,25 @@ const ArticleDetailsPage: FC<Props> = ({ className }) => {
   }
 
   return (
-    <ToggleFeatures
-      featureName="isAppRedesigned"
-      on={
-        <StickyContentLayout
-          content={
-            <Page
-              className={classNames(styles.articleDetailsPage, {}, [className])}
-            >
-              <DetailsContainer />
-              <ArticleRating articleId={id} />
-              <VStack gap={16}>
-                <Text
-                  title={t("Recommendations")}
-                  className={styles.commentTitle}
-                  size="large"
-                />
-                <ArticleRecommendationsList />
-              </VStack>
-              <ArticleDetailsComments id={id} />
-            </Page>
-          }
-          right={<AdditionalInfoContainer />}
-        />
-      }
-      off={
+    <StickyContentLayout
+      content={
         <Page
           className={classNames(styles.articleDetailsPage, {}, [className])}
         >
-          <ArticleDetailsPageHeader />
-          <ArticleDetails id={id} />
-          <ToggleFeatures
-            featureName="isArticleRatingEnabled"
-            on={<ArticleRating articleId={id} />}
-            off={null}
-          />
+          <DetailsContainer />
+          <ArticleRating articleId={id} />
           <VStack gap={16}>
-            <TextDeprecated
+            <Text
               title={t("Recommendations")}
               className={styles.commentTitle}
-              size={TextSize.L}
+              size="large"
             />
             <ArticleRecommendationsList />
           </VStack>
           <ArticleDetailsComments id={id} />
         </Page>
       }
+      right={<AdditionalInfoContainer />}
     />
   );
 };

@@ -8,7 +8,6 @@ import { LocalStorageKeys } from "@/shared/constants";
 import { AppLoaderLayout } from "@/shared/layouts/AppLoaderLayout";
 import { MainLayout } from "@/shared/layouts/MainLayout";
 import { classNames, useAppDispatch, useAppSelector } from "@/shared/lib";
-import { ToggleFeatures } from "@/shared/lib/features";
 import { useTheme } from "@/shared/lib/hooks";
 import { Loader } from "@/shared/ui/deprecated/Loader";
 import { NavBar } from "@/widgets/NavBar";
@@ -44,32 +43,16 @@ const App = memo(() => {
   }
 
   return (
-    <ToggleFeatures
-      featureName="isAppRedesigned"
-      on={
-        <div className={classNames("", {}, [theme])}>
-          <Suspense fallback={<Loader />}>
-            <MainLayout
-              content={<AppRouter />}
-              sidebar={<Sidebar />}
-              header={<NavBar />}
-              toolbar={<ScrollToolbar />}
-            />
-          </Suspense>
-        </div>
-      }
-      off={
-        <div className={classNames("app", {}, [theme])}>
-          <Suspense fallback={<Loader />}>
-            <NavBar />
-            <div className="content-page">
-              <Sidebar />
-              <AppRouter />
-            </div>
-          </Suspense>
-        </div>
-      }
-    />
+    <div className={classNames("", {}, [theme])}>
+      <Suspense fallback={<Loader />}>
+        <MainLayout
+          content={<AppRouter />}
+          sidebar={<Sidebar />}
+          header={<NavBar />}
+          toolbar={<ScrollToolbar />}
+        />
+      </Suspense>
+    </div>
   );
 });
 

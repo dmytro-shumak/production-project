@@ -1,13 +1,11 @@
 import { memo, useState } from "react";
 
 import { Icon } from "../../redesigned/Icon";
-import { Icon as IconDeprecated } from "../Icon/Icon";
 
 import styles from "./StarRating.module.css";
 
 import StarIcon from "@/shared/assets/icons/star.svg?react";
 import { classNames } from "@/shared/lib";
-import { ToggleFeatures, toggleFeatures } from "@/shared/lib/features";
 
 interface Props {
   className?: string;
@@ -48,55 +46,23 @@ export const StarRating = memo(
     };
 
     return (
-      <div
-        className={classNames(
-          toggleFeatures({
-            name: "isAppRedesigned",
-            on: () => styles.starRatingRedesigned,
-            off: () => "",
-          }),
-          {},
-          [className],
-        )}
-      >
+      <div className={classNames(styles.starRatingRedesigned, {}, [className])}>
         {stars.map((starNumber) => (
-          <ToggleFeatures
-            featureName="isAppRedesigned"
-            on={
-              <Icon
-                clickable={!isSelected}
-                Svg={StarIcon}
-                onClick={handleClick(starNumber)}
-                key={starNumber}
-                onMouseEnter={handleMouseEnter(starNumber)}
-                onMouseLeave={handleMouseLeave}
-                className={classNames(styles.starIcon, {
-                  [styles.active]: hoveredStars >= starNumber,
-                  [styles.selected]: isSelected,
-                })}
-                width={size}
-                height={size}
-                data-testid={`StarRating.${starNumber}`}
-                data-selected={selectedStars >= starNumber}
-              />
-            }
-            off={
-              <IconDeprecated
-                Svg={StarIcon}
-                onClick={handleClick(starNumber)}
-                key={starNumber}
-                onMouseEnter={handleMouseEnter(starNumber)}
-                onMouseLeave={handleMouseLeave}
-                className={classNames(styles.starIcon, {
-                  [styles.active]: hoveredStars >= starNumber,
-                  [styles.selected]: isSelected,
-                })}
-                width={size}
-                height={size}
-                data-testid={`StarRating.${starNumber}`}
-                data-selected={selectedStars >= starNumber}
-              />
-            }
+          <Icon
+            clickable={!isSelected}
+            Svg={StarIcon}
+            onClick={handleClick(starNumber)}
+            key={starNumber}
+            onMouseEnter={handleMouseEnter(starNumber)}
+            onMouseLeave={handleMouseLeave}
+            className={classNames(styles.starIcon, {
+              [styles.active]: hoveredStars >= starNumber,
+              [styles.selected]: isSelected,
+            })}
+            width={size}
+            height={size}
+            data-testid={`StarRating.${starNumber}`}
+            data-selected={selectedStars >= starNumber}
           />
         ))}
       </div>

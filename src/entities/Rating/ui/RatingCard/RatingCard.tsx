@@ -4,17 +4,8 @@ import { useTranslation } from "react-i18next";
 
 import styles from "./RatingCard.module.css";
 
-import { ToggleFeatures } from "@/shared/lib/features";
-import {
-  Button as ButtonDeprecated,
-  ButtonTheme,
-  Card as CardDeprecated,
-  HStack,
-  StarRating,
-  Text as TextDeprecated,
-  VStack,
-} from "@/shared/ui";
-import { Input as InputDeprecated } from "@/shared/ui/deprecated/Input";
+import { classNames } from "@/shared/lib";
+import { HStack, StarRating, VStack } from "@/shared/ui";
 import { Button } from "@/shared/ui/redesigned/Button";
 import { Card } from "@/shared/ui/redesigned/Card";
 import { Drawer } from "@/shared/ui/redesigned/Drawer";
@@ -77,45 +68,21 @@ export const RatingCard = memo(
     );
 
     const modalContent = (
-      <ToggleFeatures
-        featureName="isAppRedesigned"
-        on={
-          <>
-            <Text title={feedbackTitle} />
-            <Input
-              value={feedback}
-              onChange={handleInputChange}
-              placeholder={t("YourFeedback")}
-              data-testid="RatingCard.Input"
-            />
-          </>
-        }
-        off={
-          <>
-            <TextDeprecated title={feedbackTitle} />
-            <InputDeprecated
-              value={feedback}
-              onChange={handleInputChange}
-              placeholder={t("YourFeedback")}
-              data-testid="RatingCard.Input"
-            />
-          </>
-        }
-      />
+      <>
+        <Text title={feedbackTitle} />
+        <Input
+          value={feedback}
+          onChange={handleInputChange}
+          placeholder={t("YourFeedback")}
+          data-testid="RatingCard.Input"
+        />
+      </>
     );
 
     const content = (
       <>
         <VStack align="center" gap={8}>
-          <ToggleFeatures
-            featureName="isAppRedesigned"
-            on={<Text title={starsCount ? t("ThanksForFeedback") : title} />}
-            off={
-              <TextDeprecated
-                title={starsCount ? t("ThanksForFeedback") : title}
-              />
-            }
-          />
+          <Text title={starsCount ? t("ThanksForFeedback") : title} />
           <StarRating
             size={32}
             onSelect={handleSelectStars}
@@ -126,42 +93,14 @@ export const RatingCard = memo(
           <Modal isOpen={isModalOpen} contentClassName={styles.modalContent}>
             <VStack gap={32}>
               {modalContent}
-              <ToggleFeatures
-                featureName="isAppRedesigned"
-                on={
-                  <HStack gap={16} justify="end">
-                    <Button
-                      onClick={cancelHandle}
-                      data-testid="RatingCard.Close"
-                    >
-                      {t("Close")}
-                    </Button>
-                    <Button
-                      onClick={acceptHandle}
-                      data-testid="RatingCard.Send"
-                    >
-                      {t("Send")}
-                    </Button>
-                  </HStack>
-                }
-                off={
-                  <HStack gap={16} justify="end">
-                    <ButtonDeprecated
-                      onClick={cancelHandle}
-                      theme={ButtonTheme.OutlineRed}
-                      data-testid="RatingCard.Close"
-                    >
-                      {t("Close")}
-                    </ButtonDeprecated>
-                    <ButtonDeprecated
-                      onClick={acceptHandle}
-                      data-testid="RatingCard.Send"
-                    >
-                      {t("Send")}
-                    </ButtonDeprecated>
-                  </HStack>
-                }
-              />
+              <HStack gap={16} justify="end">
+                <Button onClick={cancelHandle} data-testid="RatingCard.Close">
+                  {t("Close")}
+                </Button>
+                <Button onClick={acceptHandle} data-testid="RatingCard.Send">
+                  {t("Send")}
+                </Button>
+              </HStack>
             </VStack>
           </Modal>
         </BrowserView>
@@ -169,15 +108,7 @@ export const RatingCard = memo(
           <Drawer isOpen={isModalOpen} onClose={cancelHandle}>
             <VStack gap={32}>
               {modalContent}
-              <ToggleFeatures
-                featureName="isAppRedesigned"
-                on={<Button onClick={acceptHandle}>{t("Send")}</Button>}
-                off={
-                  <ButtonDeprecated onClick={acceptHandle}>
-                    {t("Send")}
-                  </ButtonDeprecated>
-                }
-              />
+              <Button onClick={acceptHandle}>{t("Send")}</Button>
             </VStack>
           </Drawer>
         </MobileView>
@@ -185,24 +116,14 @@ export const RatingCard = memo(
     );
 
     return (
-      <ToggleFeatures
-        featureName="isAppRedesigned"
-        on={
-          <Card
-            className={styles.card}
-            data-testid="RatingCard"
-            borderRadius={20}
-            padding="24"
-          >
-            {content}
-          </Card>
-        }
-        off={
-          <CardDeprecated className={className} data-testid="RatingCard">
-            {content}
-          </CardDeprecated>
-        }
-      />
+      <Card
+        className={classNames(styles.card, {}, [className])}
+        data-testid="RatingCard"
+        borderRadius={20}
+        padding="24"
+      >
+        {content}
+      </Card>
     );
   },
 );

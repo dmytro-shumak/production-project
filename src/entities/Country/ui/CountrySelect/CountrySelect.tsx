@@ -3,8 +3,6 @@ import { useTranslation } from "react-i18next";
 
 import { Country } from "../../model/constants/country";
 
-import { ToggleFeatures } from "@/shared/lib/features";
-import { ListBox as ListBoxDeprecated } from "@/shared/ui";
 import { ListBox } from "@/shared/ui/redesigned/Popups";
 
 interface Props {
@@ -31,30 +29,14 @@ export const CountrySelect: FC<Props> = memo(
     );
 
     return (
-      <ToggleFeatures
-        featureName="isAppRedesigned"
-        on={
-          <ListBox
-            className={className}
-            onChange={onChangeHandler}
-            value={value}
-            defaultValue={t("ChooseCurrency")}
-            items={options}
-            label={t("Country")}
-            readOnly={readOnly}
-          />
-        }
-        off={
-          <ListBoxDeprecated
-            className={className}
-            onChange={onChangeHandler}
-            value={value}
-            defaultValue={t("ChooseCurrency")}
-            items={options}
-            label={t("Country")}
-            readOnly={readOnly}
-          />
-        }
+      <ListBox
+        className={className}
+        onChange={onChangeHandler}
+        value={value}
+        defaultValue={t("ChooseCurrency")}
+        items={options}
+        label={t("Country")}
+        readOnly={readOnly}
       />
     );
   },
