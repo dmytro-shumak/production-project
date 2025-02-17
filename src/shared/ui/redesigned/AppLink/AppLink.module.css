@@ -3,11 +3,11 @@
 }
 
 .primary:hover {
-  color: var(--accent-redesigned)
+  color: var(--accent-redesigned);
 }
 
 .red {
-  color: var(--cancel-redesigned)
+  color: var(--cancel-redesigned);
 }
 
 .red:hover {

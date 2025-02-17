@@ -14,11 +14,11 @@
   color: var(--accent-redesigned);
 
   .buttonSuffix path {
-    fill: var(--accent-redesigned)
+    fill: var(--accent-redesigned);
   }
 
   .buttonPrefix path {
-    fill: var(--accent-redesigned)
+    fill: var(--accent-redesigned);
   }
 }
 
@@ -106,12 +106,12 @@
   border: 1px solid var(--cancel-redesigned);
 }
 
-
 .filled {
   background-color: var(--light-bg-redesigned);
   border-radius: 34px;
 }
 
-.buttonPrefix, .buttonSuffix {
+.buttonPrefix,
+.buttonSuffix {
   display: flex;
 }

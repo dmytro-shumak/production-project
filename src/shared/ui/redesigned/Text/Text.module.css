@@ -22,7 +22,6 @@
   color: var(--accent-redesigned);
 }
 
-
 .left {
   text-align: left;
 }
@@ -59,6 +58,7 @@
   font: var(--font-sm-redesigned);
 }
 
-.bold .title, .bold .text {
+.bold .title,
+.bold .text {
   font-weight: 700;
 }

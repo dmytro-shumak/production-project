@@ -27,12 +27,12 @@
   display: flex;
 }
 
-.container:focus-within path  {
-  fill: var(--accent-redesigned)
+.container:focus-within path {
+  fill: var(--accent-redesigned);
 }
 
 .container:focus-within {
-  border-color: var(--accent-redesigned)
+  border-color: var(--accent-redesigned);
 }
 
 .label {
@@ -49,7 +49,7 @@
 }
 
 .input::placeholder {
-  color: var(--hint-redesigned)
+  color: var(--hint-redesigned);
 }
 
 .readOnly {

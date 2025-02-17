@@ -63,12 +63,11 @@
   }
 }
 
-
 .appLogo {
   padding-top: 20px;
 }
 
-.sidebar .links{
+.sidebar .links {
   margin-top: 40px;
 }
 
@@ -82,7 +81,6 @@
   transition: opacity 0.3s;
   display: block;
 }
-
 
 .sidebar .collapsed .links a span {
   opacity: 0;
@@ -100,12 +98,12 @@
 
 .sidebar.collapsed {
   width: 50px;
-  
+
   .switchers {
     flex-direction: column;
     align-items: center;
   }
-} 
+}
 
 .sidebar.collapsed .button {
   margin-right: 0;

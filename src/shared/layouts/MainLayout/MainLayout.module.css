@@ -1,9 +1,8 @@
 .mainLayout {
   min-height: 100vh;
   display: grid;
-  grid-template-areas: 'sidebar content rightbar';
+  grid-template-areas: "sidebar content rightbar";
   grid-template-columns: min-content 1fr 100px;
-
 }
 
 .sidebar {
@@ -20,7 +19,8 @@
   width: 100%;
 }
 
-.rightBar, .sidebar {
+.rightBar,
+.sidebar {
   position: sticky;
   top: 0;
   height: 100vh;
