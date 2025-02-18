@@ -1,7 +1,4 @@
-export * from "./deprecated/Select";
-export * from "./deprecated/Skeleton";
 export * from "./deprecated/Button";
-export * from "./deprecated/Icon";
 export * from "./redesigned/Stack";
 export * from "./deprecated/Popups";
 export * from "./deprecated/Text";

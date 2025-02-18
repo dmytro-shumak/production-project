@@ -2,7 +2,7 @@ import { memo, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { ArticleType } from "@/entities/Article";
-import { Tabs } from "@/shared/ui/redesigned/Tabs";
+import { Tabs, type TabItem } from "@/shared/ui/redesigned/Tabs";
 
 interface Props {
   className?: string;
@@ -14,7 +14,7 @@ export const ArticleTypeTabs = memo(
   ({ className, value, onChangeType }: Props) => {
     const { t } = useTranslation();
 
-    const tabs = useMemo<unknown[]>(
+    const tabs = useMemo<TabItem[]>(
       () => [
         { content: t("AllArticles"), value: ArticleType.ALL },
         { content: t("IT"), value: ArticleType.IT },
@@ -26,7 +26,7 @@ export const ArticleTypeTabs = memo(
     );
 
     const onTabChange = useCallback(
-      (articleType: unknown) => {
+      (articleType: TabItem) => {
         // TODO: add generic to tabs
         onChangeType(articleType.value as ArticleType);
       },
