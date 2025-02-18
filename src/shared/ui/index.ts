@@ -1,4 +1,3 @@
-export * from "./deprecated/Avatar";
 export * from "./deprecated/Select";
 export * from "./deprecated/Card";
 export * from "./deprecated/Skeleton";
