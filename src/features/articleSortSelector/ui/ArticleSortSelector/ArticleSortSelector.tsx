@@ -6,8 +6,8 @@ import styles from "./ArticleSortSelector.module.css";
 import { ArticleSortField } from "@/entities/Article";
 import { classNames } from "@/shared/lib";
 import type { SortOrder } from "@/shared/types";
-import { VStack, type SelectOption } from "@/shared/ui";
-import { ListBox } from "@/shared/ui/redesigned/Popups";
+import { VStack } from "@/shared/ui";
+import { ListBox, type ListBoxItem } from "@/shared/ui/redesigned/Popups";
 import { Text } from "@/shared/ui/redesigned/Text";
 
 interface Props {
@@ -22,7 +22,7 @@ export const ArticleSortSelector = memo(
   ({ className, order, sort, onChangeOrder, onChangeSort }: Props) => {
     const { t } = useTranslation();
 
-    const orderOptions = useMemo<SelectOption<SortOrder>[]>(
+    const orderOptions = useMemo<ListBoxItem<SortOrder>[]>(
       () => [
         { value: "asc", content: t("Ascending") },
         { value: "desc", content: t("Descending") },
@@ -30,7 +30,7 @@ export const ArticleSortSelector = memo(
       [t],
     );
 
-    const sortFieldOptions = useMemo<SelectOption<ArticleSortField>[]>(
+    const sortFieldOptions = useMemo<ListBoxItem<ArticleSortField>[]>(
       () => [
         { value: ArticleSortField.VIEWS, content: t("Views") },
         { value: ArticleSortField.TITLE, content: t("Title") },
