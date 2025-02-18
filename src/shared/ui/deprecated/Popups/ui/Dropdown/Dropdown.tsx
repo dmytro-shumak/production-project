@@ -2,7 +2,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import type { AnchorProps } from "@headlessui/react/dist/internal/floating";
 import type { ReactNode } from "react";
 
-import { AppLink } from "../../../AppLink";
+// import { AppLink } from "../../../AppLink";
 import popupStyles from "../../styles/popup.module.css";
 
 import styles from "./Dropdown.module.css";
@@ -42,9 +42,8 @@ export const Dropdown = ({
           if (item.href) {
             return (
               <MenuItem
-                as={AppLink}
+                as="div"
                 key={index}
-                to={item.href}
                 disabled={item.disabled}
                 className={classNames(styles.link, {}, [item.className])}
               >
@@ -61,7 +60,7 @@ export const Dropdown = ({
 
           return (
             <MenuItem
-              as={item.href ? AppLink : "div"}
+              as="div"
               disabled={item.disabled}
               className={item.className}
               key={index}
