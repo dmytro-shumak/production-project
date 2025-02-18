@@ -88,7 +88,7 @@ module.exports = {
     "react/prop-types": "off",
     "react/no-array-index-key": "off",
     "no-console": ["warn", { allow: ["warn", "error"] }],
-    "@typescript-eslint/no-explicit-any": ["error", { ignoreRestArgs: true }],
+    "@typescript-eslint/no-explicit-any": ["warn", { ignoreRestArgs: true }],
     "newline-before-return": "error",
     "no-unused-expressions": ["error", { allowShortCircuit: true }],
     "production-shumak-plugin/path-checker": ["error", { alias: "@" }],
