@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 
 import { saveJsonSettings, useJsonSettings } from "@/entities/User";
 import { useAppDispatch } from "@/shared/lib";
-import { Text } from "@/shared/ui";
 import { Modal } from "@/shared/ui/redesigned/Modal";
+import { Text } from "@/shared/ui/redesigned/Text";
 
 export const ArticlePageGreeting = memo(() => {
   const { t } = useTranslation();

@@ -21,7 +21,8 @@ import {
   type ReducersList,
 } from "@/shared/lib/hooks/useAsyncReducer/useAsyncReducer";
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { Text, TextTheme, VStack } from "@/shared/ui";
+import { VStack } from "@/shared/ui";
+import { Text } from "@/shared/ui/redesigned/Text";
 import { Page } from "@/widgets/Page";
 
 const initialReducer: ReducersList = {
@@ -72,7 +73,7 @@ const ProfilePage: FC<Props> = ({ className }) => {
         {validateErrors?.length !== 0 &&
           validateErrors?.map((err) => (
             <Text
-              theme={TextTheme.ERROR}
+              variant="error"
               text={validateErrorTranslate[err]}
               key={err}
             />
