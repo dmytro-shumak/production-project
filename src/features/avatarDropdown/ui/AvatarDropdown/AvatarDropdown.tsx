@@ -14,9 +14,8 @@ import {
   getRouteSettings,
 } from "@/shared/const/router";
 import { classNames, useAppSelector } from "@/shared/lib";
-import { type DropdownItem } from "@/shared/ui";
 import { Avatar } from "@/shared/ui/redesigned/Avatar";
-import { Dropdown } from "@/shared/ui/redesigned/Popups";
+import { Dropdown, type DropdownItem } from "@/shared/ui/redesigned/Popups";
 
 interface Props {
   className?: string;
