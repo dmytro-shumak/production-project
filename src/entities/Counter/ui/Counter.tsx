@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useCounterValue } from "../model/selectors/getCounterValue/getCounterValue";
 import { useCounterActions } from "../model/slice/counterSlice";
 
-import { Button } from "@/shared/ui";
+import { Button } from "@/shared/ui/redesigned/Button";
 
 export const Counter: FC = () => {
   const value = useCounterValue();
@@ -27,7 +27,7 @@ export const Counter: FC = () => {
   return (
     <div>
       <h1 data-testid="value-title">
-        {t("Value")} {value}{" "}
+        {t("Value")} {value}
       </h1>
       <Button onClick={handleIncrement} data-testid="increment-button">
         {t("Increment")}
