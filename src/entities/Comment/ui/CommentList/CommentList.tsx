@@ -4,8 +4,8 @@ import { useTranslation } from "react-i18next";
 import type { Comment } from "../../model/types/comment";
 import { CommentItem } from "../CommentItem/CommentItem";
 
-import { VStack } from "@/shared/ui";
 import { Skeleton } from "@/shared/ui/redesigned/Skeleton";
+import { VStack } from "@/shared/ui/redesigned/Stack";
 import { Text } from "@/shared/ui/redesigned/Text";
 
 interface Props {

@@ -8,7 +8,7 @@ import styles from "./ArticleList.module.css";
 import { ArticleListSkeleton } from "./ArticleListSkeleton";
 
 import { classNames } from "@/shared/lib";
-import { HStack } from "@/shared/ui";
+import { HStack } from "@/shared/ui/redesigned/Stack";
 import { Text } from "@/shared/ui/redesigned/Text";
 
 interface Props {

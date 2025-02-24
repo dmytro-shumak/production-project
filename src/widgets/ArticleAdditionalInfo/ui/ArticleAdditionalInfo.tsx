@@ -2,9 +2,9 @@ import { memo } from "react";
 import { useTranslation } from "react-i18next";
 
 import type { User } from "@/entities/User";
-import { HStack, VStack } from "@/shared/ui";
 import { Avatar } from "@/shared/ui/redesigned/Avatar";
 import { Button } from "@/shared/ui/redesigned/Button";
+import { HStack, VStack } from "@/shared/ui/redesigned/Stack";
 import { Text } from "@/shared/ui/redesigned/Text";
 
 interface Props {

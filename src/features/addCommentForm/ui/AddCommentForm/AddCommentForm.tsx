@@ -3,10 +3,10 @@ import { useTranslation } from "react-i18next";
 
 import styles from "./AddCommentForm.module.css";
 
-import { HStack } from "@/shared/ui";
 import { Button } from "@/shared/ui/redesigned/Button";
 import { Card } from "@/shared/ui/redesigned/Card";
 import { Input } from "@/shared/ui/redesigned/Input";
+import { HStack } from "@/shared/ui/redesigned/Stack";
 
 export interface AddCommentFormProps {
   className?: string;

@@ -13,7 +13,7 @@ import { ArticleRating } from "@/features/articleRating";
 import { ArticleRecommendationsList } from "@/features/articleRecommendationsList";
 import { StickyContentLayout } from "@/shared/layouts/StickyContentLayout";
 import { classNames, useAsyncReducer, type ReducersList } from "@/shared/lib";
-import { VStack } from "@/shared/ui";
+import { VStack } from "@/shared/ui/redesigned/Stack";
 import { Text } from "@/shared/ui/redesigned/Text";
 import { Page } from "@/widgets/Page";
 

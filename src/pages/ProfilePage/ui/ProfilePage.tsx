@@ -21,7 +21,7 @@ import {
   type ReducersList,
 } from "@/shared/lib/hooks/useAsyncReducer/useAsyncReducer";
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { VStack } from "@/shared/ui";
+import { VStack } from "@/shared/ui/redesigned/Stack";
 import { Text } from "@/shared/ui/redesigned/Text";
 import { Page } from "@/widgets/Page";
 

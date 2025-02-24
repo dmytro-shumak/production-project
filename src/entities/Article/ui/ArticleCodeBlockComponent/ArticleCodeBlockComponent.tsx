@@ -5,7 +5,7 @@ import type { ArticleCodeBlock } from "../../model/types/article";
 import styles from "./ArticleCodeBlockComponent.module.css";
 
 import { classNames } from "@/shared/lib";
-import { Code } from "@/shared/ui";
+import { Code } from "@/shared/ui/redesigned/Code";
 
 interface Props {
   className?: string;

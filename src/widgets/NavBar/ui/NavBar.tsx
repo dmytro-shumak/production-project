@@ -8,8 +8,8 @@ import { LoginModal } from "@/features/authByUsername";
 import { AvatarDropdown } from "@/features/avatarDropdown";
 import { NotificationButton } from "@/features/notificationButton";
 import { classNames, useAppSelector } from "@/shared/lib";
-import { HStack } from "@/shared/ui";
 import { Button } from "@/shared/ui/redesigned/Button";
+import { HStack } from "@/shared/ui/redesigned/Stack";
 
 interface Props {
   className?: string;

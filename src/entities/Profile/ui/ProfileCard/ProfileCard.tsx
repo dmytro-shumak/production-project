@@ -9,11 +9,11 @@ import styles from "./ProfileCard.module.css";
 import { Country, CountrySelect } from "@/entities/Country";
 import { Currency, CurrencySelect } from "@/entities/Currency";
 import { classNames, useAppDispatch } from "@/shared/lib";
-import { HStack, VStack } from "@/shared/ui";
 import { Avatar } from "@/shared/ui/redesigned/Avatar";
 import { Card } from "@/shared/ui/redesigned/Card";
 import { Input } from "@/shared/ui/redesigned/Input";
 import { Skeleton } from "@/shared/ui/redesigned/Skeleton";
+import { HStack, VStack } from "@/shared/ui/redesigned/Stack";
 import { Text } from "@/shared/ui/redesigned/Text";
 
 interface Props {

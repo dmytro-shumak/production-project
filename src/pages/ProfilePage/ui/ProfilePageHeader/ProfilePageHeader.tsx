@@ -9,9 +9,9 @@ import {
   updateProfileData,
 } from "@/entities/Profile";
 import { useAppDispatch, useAppSelector } from "@/shared/lib";
-import { HStack } from "@/shared/ui";
 import { Button } from "@/shared/ui/redesigned/Button";
 import { Card } from "@/shared/ui/redesigned/Card";
+import { HStack } from "@/shared/ui/redesigned/Stack";
 import { Text } from "@/shared/ui/redesigned/Text";
 
 interface Props {

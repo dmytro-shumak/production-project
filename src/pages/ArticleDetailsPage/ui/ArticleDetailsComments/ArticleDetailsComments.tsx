@@ -14,7 +14,7 @@ import {
   useInitialEffect,
   classNames,
 } from "@/shared/lib";
-import { VStack } from "@/shared/ui";
+import { VStack } from "@/shared/ui/redesigned/Stack";
 
 interface Props {
   className?: string;

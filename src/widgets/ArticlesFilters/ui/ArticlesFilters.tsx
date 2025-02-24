@@ -9,10 +9,10 @@ import { ArticleTypeTabs } from "@/features/articleTypeTabs";
 import SearchIcon from "@/shared/assets/icons/search.svg?react";
 import { classNames } from "@/shared/lib";
 import type { SortOrder } from "@/shared/types";
-import { VStack } from "@/shared/ui";
 import { Card } from "@/shared/ui/redesigned/Card";
 import { Icon } from "@/shared/ui/redesigned/Icon";
 import { Input } from "@/shared/ui/redesigned/Input";
+import { VStack } from "@/shared/ui/redesigned/Stack";
 
 interface Props {
   className?: string;

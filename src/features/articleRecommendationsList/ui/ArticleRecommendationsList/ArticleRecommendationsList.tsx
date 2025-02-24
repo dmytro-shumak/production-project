@@ -5,7 +5,7 @@ import { useArticleRecommendationListQuery } from "./api/articleRecommendationsA
 
 import { ArticleList } from "@/entities/Article";
 import { classNames } from "@/shared/lib";
-import { VStack } from "@/shared/ui";
+import { VStack } from "@/shared/ui/redesigned/Stack";
 import { Text } from "@/shared/ui/redesigned/Text";
 
 interface ArticleRecommendationsListProps {

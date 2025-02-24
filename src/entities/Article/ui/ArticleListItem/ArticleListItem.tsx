@@ -13,7 +13,6 @@ import styles from "./ArticleListItem.module.css";
 import EyeIcon from "@/shared/assets/icons/view.svg?react";
 import { getRouteArticleDetails } from "@/shared/const/router";
 import { classNames } from "@/shared/lib";
-import { HStack, VStack } from "@/shared/ui";
 import { AppLink } from "@/shared/ui/redesigned";
 import { AppImage } from "@/shared/ui/redesigned/AppImage";
 import { Avatar } from "@/shared/ui/redesigned/Avatar";
@@ -21,6 +20,7 @@ import { Button } from "@/shared/ui/redesigned/Button";
 import { Card } from "@/shared/ui/redesigned/Card";
 import { Icon } from "@/shared/ui/redesigned/Icon";
 import { Skeleton } from "@/shared/ui/redesigned/Skeleton";
+import { HStack, VStack } from "@/shared/ui/redesigned/Stack";
 import { Text } from "@/shared/ui/redesigned/Text";
 
 interface Props {

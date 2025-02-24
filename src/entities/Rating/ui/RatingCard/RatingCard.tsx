@@ -5,12 +5,13 @@ import { useTranslation } from "react-i18next";
 import styles from "./RatingCard.module.css";
 
 import { classNames } from "@/shared/lib";
-import { HStack, StarRating, VStack } from "@/shared/ui";
 import { Button } from "@/shared/ui/redesigned/Button";
 import { Card } from "@/shared/ui/redesigned/Card";
 import { Drawer } from "@/shared/ui/redesigned/Drawer";
 import { Input } from "@/shared/ui/redesigned/Input";
 import { Modal } from "@/shared/ui/redesigned/Modal";
+import { HStack, VStack } from "@/shared/ui/redesigned/Stack";
+import { StarRating } from "@/shared/ui/redesigned/StarRating";
 import { Text } from "@/shared/ui/redesigned/Text";
 
 interface Props {

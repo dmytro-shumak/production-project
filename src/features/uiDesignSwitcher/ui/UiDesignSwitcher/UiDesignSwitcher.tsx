@@ -4,9 +4,9 @@ import { useTranslation } from "react-i18next";
 import { getUserAuthData } from "@/entities/User";
 import { useAppDispatch, useAppSelector } from "@/shared/lib";
 import { getFeaturesFlags, updateFeatureFlag } from "@/shared/lib/features";
-import { HStack } from "@/shared/ui";
 import { ListBox } from "@/shared/ui/redesigned/Popups";
 import { Skeleton } from "@/shared/ui/redesigned/Skeleton";
+import { HStack } from "@/shared/ui/redesigned/Stack";
 import { Text } from "@/shared/ui/redesigned/Text";
 
 export const UiDesignSwitcher = () => {

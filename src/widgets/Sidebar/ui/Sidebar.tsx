@@ -9,9 +9,9 @@ import { LangSwitcher } from "@/features/LangSwitcher";
 import { ThemeSwitcher } from "@/features/ThemeSwitcher";
 import ArrowIcon from "@/shared/assets/icons/arrow-bottom.svg?react";
 import { classNames, useAppSelector } from "@/shared/lib";
-import { VStack } from "@/shared/ui";
 import { AppLogo } from "@/shared/ui/redesigned/AppLogo";
 import { Icon } from "@/shared/ui/redesigned/Icon";
+import { VStack } from "@/shared/ui/redesigned/Stack";
 
 interface Props {
   className?: string;

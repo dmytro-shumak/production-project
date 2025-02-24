@@ -6,8 +6,8 @@ import { NotificationItem } from "../NotificationItem/NotificationItem";
 import styles from "./NotificationList.module.css";
 
 import { classNames } from "@/shared/lib";
-import { VStack } from "@/shared/ui";
 import { Skeleton } from "@/shared/ui/redesigned/Skeleton";
+import { VStack } from "@/shared/ui/redesigned/Stack";
 
 interface Props {
   className?: string;

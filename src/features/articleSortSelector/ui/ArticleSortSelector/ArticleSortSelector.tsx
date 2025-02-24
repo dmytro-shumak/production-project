@@ -6,8 +6,8 @@ import styles from "./ArticleSortSelector.module.css";
 import { ArticleSortField } from "@/entities/Article";
 import { classNames } from "@/shared/lib";
 import type { SortOrder } from "@/shared/types";
-import { VStack } from "@/shared/ui";
 import { ListBox, type ListBoxItem } from "@/shared/ui/redesigned/Popups";
+import { VStack } from "@/shared/ui/redesigned/Stack";
 import { Text } from "@/shared/ui/redesigned/Text";
 
 interface Props {
