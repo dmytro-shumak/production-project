@@ -14,7 +14,7 @@
   cursor: auto;
 }
 
-.starRatingRedesigned {
+.starRating {
   display: flex;
   gap: 4px;
 

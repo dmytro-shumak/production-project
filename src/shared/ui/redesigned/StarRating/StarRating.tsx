@@ -41,7 +41,7 @@ export const StarRating = memo(
     };
 
     return (
-      <div className={classNames(styles.starRatingRedesigned, {}, [className])}>
+      <div className={classNames(styles.starRating, {}, [className])}>
         {stars.map((starNumber) => (
           <Icon
             clickable={!isSelected}
