@@ -14,7 +14,8 @@ interface Props {
   selectedStars?: number;
 }
 
-const stars = [1, 2, 3, 4, 5];
+const STARS = [1, 2, 3, 4, 5];
+
 export const StarRating = memo(
   ({ className, onSelect, selectedStars = 0, size = 30 }: Props) => {
     const [hoveredStars, setHoveredStars] = useState<number>(selectedStars);
@@ -42,7 +43,7 @@ export const StarRating = memo(
 
     return (
       <div className={classNames(styles.starRating, {}, [className])}>
-        {stars.map((starNumber) => (
+        {STARS.map((starNumber) => (
           <Icon
             clickable={!isSelected}
             Svg={StarIcon}
