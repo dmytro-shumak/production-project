@@ -30,6 +30,7 @@
     "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
     "generate:slice": "node ./scripts/createSlice/index.js",
     "prepare": "husky",
+    "coverage": "jest --coverage=true",
     "postinstall": "rm -rf node_modules/.cache",
     "remove-feature": "ts-node ./scripts/remove-feature.ts"
   },
