@@ -14,7 +14,7 @@ export const ArticleTypeTabs = memo(
   ({ className, value, onChangeType }: Props) => {
     const { t } = useTranslation();
 
-    const tabs = useMemo<TabItem[]>(
+    const tabs = useMemo<TabItem<ArticleType>[]>(
       () => [
         { content: t("AllArticles"), value: ArticleType.ALL },
         { content: t("IT"), value: ArticleType.IT },
@@ -26,9 +26,8 @@ export const ArticleTypeTabs = memo(
     );
 
     const onTabChange = useCallback(
-      (articleType: TabItem) => {
-        // TODO: add generic to tabs
-        onChangeType(articleType.value as ArticleType);
+      (articleType: TabItem<ArticleType>) => {
+        onChangeType(articleType.value);
       },
       [onChangeType],
     );

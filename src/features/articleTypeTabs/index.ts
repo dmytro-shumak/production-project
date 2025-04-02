@@ -1,1 +1,1 @@
-export { ArticleTypeTabs } from "./ui/ArticleTypeTabs/ArticleTypeTabs";
+export { MemoArticleTypeTabs as ArticleTypeTabs } from "./ui/ArticleTypeTabs/ArticleTypeTabs";

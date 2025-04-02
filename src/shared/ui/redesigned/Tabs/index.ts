@@ -1,1 +1,1 @@
-export * from "./Tabs";
+export { MemoTabs as Tabs, type TabItem } from "./Tabs";
